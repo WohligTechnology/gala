@@ -5,12 +5,16 @@ $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+$brand-green:#76c04f!default;
+$brand-white:#fff!default;
+$brand-grey:#a6a5a5!default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
 
 @import "other/font-fix";
 body {
+    font-family:"Avenir";
     padding-top: 70px;
 }
 
@@ -47,8 +51,9 @@ a,
 
 footer {
     font-size: 12px;
-    background-color: #eee;
-    padding: 10px 0;
+    background-color: $brand-green;
+    color: $brand-white;
+    padding: 15px 0;
     p {
         margin: 0;
     }
@@ -119,3 +124,179 @@ header {
 .nav-up {
     transform: translateY(-100%);
 }
+
+//mixins//
+
+@mixin display($display){
+     -webkit-display: $display;
+     -moz-display: $display;
+      -ms-display: $display;
+       display:$display;
+}
+
+@mixin fontsize($font){
+     -webkit-font-size: $font;
+     -moz-font-size: $font;
+      -ms-font-size: $font;
+       font-size:$font;
+}
+
+// * mixins for padding , margin and height-width given in bourbon
+
+@font-face{
+    font-family:"Avenir";
+    src:url("../fonts/AvenirNext-Regular.otf");
+}
+
+@font-face{
+    font-family:"AvenirBold";
+    src:url("../fonts/AvenirNext-Bold.otf");
+}
+
+//common classes//
+
+a{
+    color: $brand-white;
+    &:hover,&:focus{
+        color: $brand-white;
+        text-decoration: none;
+    }
+}
+.relative{
+      @include position(relative);
+}
+
+.padding{
+    padding: 0;
+}
+.division{
+    margin-top: -70px;
+}
+.bg-grey{
+    background-color: $brand-grey;
+}
+
+h2{
+    @include fontsize(36px);
+    font-weight: 600;
+}
+
+h3{
+    margin: 0;
+     @include fontsize(28px);
+}
+
+
+//common classes//
+
+//nav//
+.nav{
+    li{
+        a{
+            @include padding(10px 25px 10px 25px);
+    }
+    }
+}
+.navbar{
+    .container {
+    background-color: $brand-white;
+    } 
+}
+.navbar-default{
+    background-color:transparent;
+    border:transparent;
+    .navbar-nav  .active > a, .navbar-nav  .active > a:hover, .navbar-nav  .active > a:focus{
+    background-color:transparent;
+    border:transparent;
+    }
+}
+
+.navbar-fixed-top{
+    top:20px;
+}
+
+.navbar-brand{
+    padding: 5px 0;
+    margin: 0 !important;
+    height: auto;
+    width: 50px;
+    img{
+        width: 100%;
+    }
+}
+
+.navbar-collapse{
+    padding: 10px 0;
+}
+//nav//
+
+//social common template//
+
+.social-info{
+border-top: 1px solid $brand-green;
+@include padding(40px,null);
+color: $brand-grey;
+a{
+        color: $brand-grey;
+    }
+    ul,p{
+        @include margin(0px);
+    }
+    li{
+         @include margin(null 7px null 7px);
+    }
+}
+
+.address{
+    @include margin(20px null 20px null);
+}
+
+.mail-tel{
+ 
+    li:first-child{
+        @include position(relative);
+   &:after{
+     content: "";
+     @include position(absolute, 3px 0px null null);
+     @include size(7px,15px);
+     border-right: 1px solid #76c04f;
+    }
+    }
+   a{
+        color: $brand-green;
+    } 
+       li{
+           @include padding(null 15px null 15px);
+    }
+}
+
+//social common template//
+
+//footer//
+
+//footer//
+
+//home//
+
+
+//home//
+
+//division//
+
+.bg-division{
+    height: 62vh;
+    background-image: url("../img/division/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    h2{
+         @include position(absolute, 50%  null null 50% );
+         @include transform(translate(-50%,-50%));
+         color: #fff;
+    }
+}
+
+//division//
+
+
+

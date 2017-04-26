@@ -10,6 +10,7 @@ myApp.service('TemplateService', function () {
         this.header = "views/template/header.html";
         this.menu = "views/template/menu.html";
         this.content = "views/content/content.html";
+        this.social = "views/template/social.html";
         this.footer = "views/template/footer.html";
     };
 
