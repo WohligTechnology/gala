@@ -8,6 +8,8 @@ $brand-info: #000072 !default;
 $brand-green:#76c04f!default;
 $brand-white:#fff!default;
 $brand-grey:#a6a5a5!default;
+$brand-lgrey:#f9f9f9 !default;
+$brand-red:#ff3a40 !default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
@@ -48,6 +50,7 @@ a,
     cursor: pointer;
     transition: all ease 300ms;
 }
+//footer//
 
 footer {
     font-size: 12px;
@@ -58,6 +61,8 @@ footer {
         margin: 0;
     }
 }
+
+//footer//
 
 //bootstrap forms
 .input-lg,
@@ -162,18 +167,29 @@ a{
         text-decoration: none;
     }
 }
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
 .relative{
       @include position(relative);
 }
 
-.padding{
-    padding: 0;
+.padding0{
+     @include padding(0px);
 }
+
 .division{
     margin-top: -70px;
 }
+
 .bg-grey{
-    background-color: $brand-grey;
+    background-color: $brand-lgrey;
 }
 
 h2{
@@ -182,10 +198,43 @@ h2{
 }
 
 h3{
-    margin: 0;
-     @include fontsize(28px);
+     margin: 0;
+     @include fontsize(26px);
 }
 
+h4{
+ @include fontsize(16px);
+ font-weight: 700;
+}
+
+  .row-flex {
+    @include display(flex);
+    width: 100%;
+  }
+  
+  .col-flex {
+    @include flex(1);
+    display: block;
+    width: 50%;
+  }
+
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.31);
+    @include position(absolute,0 0 0 0);
+  }
+
+  .types-list{
+            a{
+color: #333333;
+&:hover{
+    color: $brand-green;
+}
+        }
+  }
+
+  .mt10{
+      margin-top: 10px;
+  }
 
 //common classes//
 
@@ -208,6 +257,11 @@ h3{
     .navbar-nav  .active > a, .navbar-nav  .active > a:hover, .navbar-nav  .active > a:focus{
     background-color:transparent;
     border:transparent;
+    }
+}
+.navbar-nav a{
+    &:hover{
+        color: $brand-green !important;
     }
 }
 
@@ -252,7 +306,6 @@ a{
 }
 
 .mail-tel{
- 
     li:first-child{
         @include position(relative);
    &:after{
@@ -272,19 +325,31 @@ a{
 
 //social common template//
 
-//footer//
-
-//footer//
-
-//home//
-
-
-//home//
-
 //division//
+.division-info{
+    h3{
+    @include padding (40px 0 30px 0);
+    color: $brand-red;
+    }
+  
+}
+.product{
+    @include padding (0 20px 0 10px);
+}
+
+.aside{
+    min-height: 900px;
+    h4{
+        margin-bottom: 15px;
+    }
+    li{
+        padding-bottom: 15px;
+ 
+    }
+}
 
 .bg-division{
-    height: 62vh;
+    height: 40vh;
     background-image: url("../img/division/banner.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -293,10 +358,142 @@ a{
          @include position(absolute, 50%  null null 50% );
          @include transform(translate(-50%,-50%));
          color: #fff;
+         letter-spacing: 10px;
     }
 }
 
+
+.door{
+    @include margin(10px);
+    cursor:pointer;
+    .door-info{
+    @include padding(10px 0);
+    box-shadow: 2px 2px 2px #ccc;
+    p{
+        margin: 0;
+        font-size: 18px;
+    }
+}
+}
+
+.door-img{
+    width: auto;
+    height: 315px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img1{
+   background-image: url("../img/division/door1.jpg"); 
+}
+
+.img2{
+   background-image: url("../img/division/door2.jpg"); 
+}
+
+.img3{
+   background-image: url("../img/division/door3.jpg"); 
+}
+
+.img4{
+   background-image: url("../img/division/door4.jpg"); 
+}
+
+.img5{
+   background-image: url("../img/division/door5.jpg"); 
+}
+
+.img6{
+   background-image: url("../img/division/door6.jpg"); 
+}
 //division//
 
+//about//
+.types{
+      @include padding(40px 0 30px 0);
+    li{
+     @include position (relative);
+     @include padding(0 20px 0 20px);
+        &:after{
+    content: "";
+    border-right: 1px solid $brand-green;
+    @include size(5px,20px);
+    @include position(absolute,0 0 null null);
+        }
+    }
+    li:last-child{
+        &:after{
+    border-right: transparent;
+        }
+    }
+    a{
+        font-size: 22px;
+        &:hover{
+            color: $brand-green;
+        }
+    }
+}
 
+.about{
+    .bg-division{
+ background-image: url("../img/about/banner.jpg"); 
+    }
+}
+
+  .main-list{
+      @include padding(80px 0 80px 0);
+       background-image: url("../img/about/2.jpg"); 
+           
+.img1{
+   background-image: url("../img/about/3.jpg"); 
+}
+
+.img2{
+   background-image: url("../img/about/4.jpg"); 
+}
+
+.img3{
+   background-image: url("../img/about/5.jpg"); 
+}
+
+.img4{
+   background-image: url("../img/about/6.jpg"); 
+}
+
+.img5{
+   background-image: url("../img/about/7.jpg"); 
+}
+
+.door{
+    position: relative;
+    transition: all ease 6s;
+    .door-info{
+    width: 60%;
+    @include position(absolute,50% null null 50%);
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.59);
+    }
+    .overlay{
+        background-color: transparent;
+    }
+    &:hover{
+        .overlay{
+       background-color: rgba(0, 0, 0, 0.31);
+       @include position(absolute,0 0 0 0);
+  } 
+
+  .door-info{
+        background-color: transparent;
+        box-shadow: none;
+      p{
+        
+          color: $brand-white;
+      }
+  }
+
+    }
+}
+   }
+//about//
 
