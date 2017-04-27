@@ -4,10 +4,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
         $scope.mySlides = [
-            'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
-            'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
-            'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
-            'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+            '../img/home/banner.jpg',
+            '../img/division/banner.jpg',
+            '../img/about/banner.jpg',
         ];
         var abc = _.times(100, function (n) {
             return n;

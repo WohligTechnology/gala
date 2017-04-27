@@ -158,6 +158,13 @@ header {
     src:url("../fonts/AvenirNext-Bold.otf");
 }
 
+@font-face{
+    font-family:"Savoye";
+    src:url("../fonts/Savoye.ttf");
+}
+
+ 
+
 //common classes//
 
 a{
@@ -184,12 +191,19 @@ li{
      @include padding(0px);
 }
 
+.margin0{
+    @include margin(0px);
+}
 .division{
     margin-top: -70px;
 }
 
 .bg-grey{
     background-color: $brand-lgrey;
+}
+
+h1{
+    @include fontsize(50px);
 }
 
 h2{
@@ -236,6 +250,9 @@ color: #333333;
       margin-top: 10px;
   }
 
+.whitey{
+    color: $brand-white;
+}
 //common classes//
 
 //nav//
@@ -307,7 +324,7 @@ a{
 
 .mail-tel{
     li:first-child{
-        @include position(relative);
+        @extend .relative;
    &:after{
      content: "";
      @include position(absolute, 3px 0px null null);
@@ -413,7 +430,7 @@ a{
 .types{
       @include padding(40px 0 30px 0);
     li{
-     @include position (relative);
+     @extend .relative;
      @include padding(0 20px 0 20px);
         &:after{
     content: "";
@@ -466,7 +483,7 @@ a{
 }
 
 .door{
-    position: relative;
+    @extend .relative;
     transition: all ease 6s;
     .door-info{
     width: 60%;
@@ -495,5 +512,131 @@ a{
     }
 }
    }
-//about//
 
+   //about//
+
+   //home//
+
+.abouts{
+    @extend .relative;
+background-image: linear-gradient(to right, $brand-green 60%,white 40%)
+}
+
+.about-info{
+    width: 60%;
+    padding: 200px 150px 230px 50px;
+}
+
+.about-img{
+    @include position(absolute,45px 0 null null);
+    @include size (650px,auto);
+}
+.flex-bg{
+    position: absolute;
+    top: 1px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    img{
+   width: 412px;
+    }
+ 
+}
+
+.listings{
+ @extend .relative;
+background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
+.about-info{
+    width: auto;
+    padding: 100px 0px 100px 0px;
+}
+
+.img1{
+    background-image: url("../img/home/1.jpg");  
+}
+.img2{
+    background-image: url("../img/home/2.jpg");  
+}
+.img3{
+    background-image: url("../img/home/3.jpg");  
+}
+.img4{
+    background-image: url("../img/home/4.jpg");  
+}
+
+.img5{
+    background-image: url("../img/home/5.jpg");  
+}
+.img6{
+    background-image: url("../img/home/6.jpg");  
+}
+.img7{
+    background-image: url("../img/home/7.jpg");  
+}
+.img8{
+    background-image: url("../img/home/8.jpg");  
+}
+.img9{
+    background-image: url("../img/home/9.jpg");  
+}
+.img10{
+    background-image: url("../img/home/10.jpg");  
+}
+
+}
+//flexslider//
+
+.flex-direction-nav{
+ @include display(none);
+}
+
+.flex-control-nav{
+    bottom: 0;
+    z-index: 99;
+}
+
+.flex-control-paging li a{
+    @include size(8px,8px);
+}
+
+.flex-control-paging li a{
+    background-color: $brand-white;
+}
+
+.flex-control-paging li a:hover{
+ background-color: $brand-white;
+}
+
+.flex-control-paging li a.flex-active{
+   background-color: $brand-green;
+}
+
+//flexslider
+.main-banner{
+    .listings{
+        h1{
+            color: $brand-red;
+        }
+        .about-info{
+@include padding(10px 0 0 0);
+        }
+ 
+    }
+   .door-info{
+background-color: $brand-white;
+   }
+   .offers{
+    transform: translate(-50%, -50%);
+ @include position(absolute,15% null null 20%);
+            transform: translate(-50%,-50%);
+     
+          
+   }
+}
+
+.creativity{
+   font-family:"Savoye";  
+   @include position(absolute,27% null null 20%);
+}
+ //home//
