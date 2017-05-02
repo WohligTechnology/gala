@@ -1,12 +1,22 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
         $scope.mySlides = [
-            '../img/home/banner.jpg',
-            '../img/division/banner.jpg',
-            '../img/about/banner.jpg',
+          '../img/home/banner2.jpg',
+            '../img/home/banner3.jpg',
+            '../img/home/banner4.jpg',
+            '../img/home/banner5.jpg',
+            '../img/home/banner6.jpg'
+        ];
+
+        $scope.mySlidess=[
+            '../img/product/2.jpg',
+            '../img/product/3.jpg',
+            '../img/product/4.jpg',
+            '../img/product/5.jpg',
+            '../img/product/6.jpg'  
         ];
         var abc = _.times(100, function (n) {
             return n;
@@ -18,6 +28,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("This is a button Click");
         };
 
+
+$scope.openModal = function() {
+        var modalInstance = $uibModal.open({
+                animation: true,
+                scope: $scope,
+                // size: 'sm',
+                windowClass: 'eddy-modal',
+                templateUrl: "views/modal/welcome.html"
+            });
+};
+            
+$scope.openModal();
 
 
     })

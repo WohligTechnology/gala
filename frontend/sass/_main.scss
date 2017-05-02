@@ -539,17 +539,16 @@ background-image: linear-gradient(to right, $brand-green 60%,white 40%)
     @include position(absolute,45px 0 null null);
     @include size (650px,auto);
 }
-.flex-bg{
-    position: absolute;
-    top: 1px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 9;
-    img{
-   width: 412px;
-    }
- 
+.eddy-modal{
+padding: 30px 0;
+  img{
+      height: 70vh;
+  }
+  .btn{
+       font-family:"Avenir";
+       padding: 6px 40px;
+       margin-bottom: 30px;
+  }
 }
 
 .listings{
@@ -594,13 +593,16 @@ background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
 
 }
 //flexslider//
+.flexslider{
+    margin: 0;
+}
 
 .flex-direction-nav{
  @include display(none);
 }
 
 .flex-control-nav{
-    bottom: 0;
+    bottom: 80px;
     z-index: 99;
 }
 
@@ -640,8 +642,11 @@ background-color: $brand-white;
 }
 
 .creativity{
-   font-family:"Savoye";  
-   @include position(absolute,27% null null 20%);
+      @include position(absolute,25% null null 20%);
+      @include fontsize(20px);
+      font-style: italic;
+      color: $brand-white;
+      text-transform: capitalize;
 }
  //home//
 
