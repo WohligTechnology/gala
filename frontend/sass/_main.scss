@@ -10,6 +10,9 @@ $brand-white:#fff!default;
 $brand-grey:#a6a5a5!default;
 $brand-lgrey:#f9f9f9 !default;
 $brand-red:#ff3a40 !default;
+$brand-facebook:#3b5998 !default;
+$brand-google:#dd4b39 !default;
+$brand-tumblr:#529ECC  !default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
@@ -219,6 +222,11 @@ h3{
 h4{
  @include fontsize(16px);
  font-weight: 700;
+}
+
+h5{
+    @include fontsize(14px);
+    font-weight: 600;
 }
 
   .row-flex {
@@ -621,17 +629,13 @@ background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
         .about-info{
 @include padding(10px 0 0 0);
         }
- 
     }
    .door-info{
 background-color: $brand-white;
    }
    .offers{
     transform: translate(-50%, -50%);
- @include position(absolute,15% null null 20%);
-            transform: translate(-50%,-50%);
-     
-          
+    @include position(absolute,15% null null 20%);
    }
 }
 
@@ -640,3 +644,50 @@ background-color: $brand-white;
    @include position(absolute,27% null null 20%);
 }
  //home//
+
+ //gallery//
+
+ .product-inform{
+     p{
+          @include fontsize(12px);
+     }
+ }
+
+ .social-share{
+     p{
+    margin-right: 5px;
+     @include display(inline-block);
+     @include fontsize(14px);
+     font-weight: 600;
+     }
+     ul{
+          @include display(inline-block);
+            li{
+         @include size(30px,30px);
+         @include display(inline-block);
+         border-radius: 50%;
+         margin: 0 5px;
+         background-color:$brand-facebook;
+         line-height: 30px;
+         text-align: center;
+     }
+     li:nth-of-type(2){
+  background-color:$brand-google;
+     }
+       li:nth-of-type(3){
+  background-color:$brand-tumblr;
+     }
+     } 
+ }
+
+ .products-info{
+     @include padding(50px 0 50px 0);
+     button{
+          @include padding(6px 40px 6px 40px);
+          border: none;
+     }
+ }
+
+.space-tb{
+  @include padding(20px 0 30px 0);
+}

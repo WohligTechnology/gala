@@ -9289,6 +9289,13 @@ h4 {
   font-size: 16px;
   font-weight: 700; }
 
+h5 {
+  -webkit-font-size: 14px;
+  -moz-font-size: 14px;
+  -ms-font-size: 14px;
+  font-size: 14px;
+  font-weight: 600; }
+
 .row-flex {
   -webkit-display: flex;
   -moz-display: flex;
@@ -9598,14 +9605,62 @@ h4 {
           transform: translate(-50%, -50%);
   position: absolute;
   top: 15%;
-  left: 20%;
-  transform: translate(-50%, -50%); }
+  left: 20%; }
 
 .creativity {
   font-family: "Savoye";
   position: absolute;
   top: 27%;
   left: 20%; }
+
+.product-inform p {
+  -webkit-font-size: 12px;
+  -moz-font-size: 12px;
+  -ms-font-size: 12px;
+  font-size: 12px; }
+
+.social-share p {
+  margin-right: 5px;
+  -webkit-display: inline-block;
+  -moz-display: inline-block;
+  -ms-display: inline-block;
+  display: inline-block;
+  -webkit-font-size: 14px;
+  -moz-font-size: 14px;
+  -ms-font-size: 14px;
+  font-size: 14px;
+  font-weight: 600; }
+
+.social-share ul {
+  -webkit-display: inline-block;
+  -moz-display: inline-block;
+  -ms-display: inline-block;
+  display: inline-block; }
+  .social-share ul li {
+    width: 30px;
+    height: 30px;
+    -webkit-display: inline-block;
+    -moz-display: inline-block;
+    -ms-display: inline-block;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #3b5998;
+    line-height: 30px;
+    text-align: center; }
+  .social-share ul li:nth-of-type(2) {
+    background-color: #dd4b39; }
+  .social-share ul li:nth-of-type(3) {
+    background-color: #529ECC; }
+
+.products-info {
+  padding: 50px 0; }
+  .products-info button {
+    padding: 6px 40px;
+    border: none; }
+
+.space-tb {
+  padding: 20px 0 30px; }
 
 #fancybox-loading,
 .fancybox-close,

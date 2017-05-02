@@ -48,6 +48,34 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         TemplateService.social = "views/template/social.html";
     })
 
+
+       .controller('GalleryCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.getHTML("content/gallery.html");
+        TemplateService.title = "Gallery"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        TemplateService.social = "views/template/social.html";
+//         $(window).load(function() {
+//   // The slider being synced must be initialized first
+//   $('#carousel').flexslider({
+//     animation: "slide",
+//     controlNav: false,
+//     animationLoop: false,
+//     slideshow: false,
+//     itemWidth: 210,
+//     itemMargin: 5,
+//     asNavFor: '#carousel'
+//   });
+ 
+//   $('#slider').flexslider({
+//     animation: "slide",
+//     controlNav: false,
+//     animationLoop: false,
+//     slideshow: false,
+//     sync: "#carousel"
+//   });
+// });
+    })
+
     //Example API Controller
     .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
         apiService.getDemo($scope.formData, function (data) {
