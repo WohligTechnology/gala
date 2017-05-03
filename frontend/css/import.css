@@ -9232,7 +9232,7 @@ header {
 
 @font-face {
   font-family: "Savoye";
-  src: url("../fonts/Savoye.ttf"); }
+  src: url("../fonts/savoyeplain.ttf"); }
 
 a {
   color: #fff; }
@@ -9263,10 +9263,11 @@ li {
   background-color: #f9f9f9; }
 
 h1 {
-  -webkit-font-size: 50px;
-  -moz-font-size: 50px;
-  -ms-font-size: 50px;
-  font-size: 50px; }
+  -webkit-font-size: 70px;
+  -moz-font-size: 70px;
+  -ms-font-size: 70px;
+  font-size: 70px;
+  font-weight: 400; }
 
 h2 {
   -webkit-font-size: 36px;
@@ -9325,6 +9326,12 @@ h5 {
   color: #333333; }
   .types-list a:hover {
     color: #76c04f; }
+  .types-list a:active {
+    color: #000;
+    font-weight: 600; }
+  .types-list a:focus {
+    color: #000;
+    font-weight: 600; }
 
 .mt10 {
   margin-top: 10px; }
@@ -9341,7 +9348,9 @@ h5 {
 .navbar-default {
   background-color: transparent;
   border: transparent; }
-  .navbar-default .navbar-nav .active > a, .navbar-default .navbar-nav .active > a:hover, .navbar-default .navbar-nav .active > a:focus {
+  .navbar-default .navbar-nav .active > a,
+  .navbar-default .navbar-nav .active > a:hover,
+  .navbar-default .navbar-nav .active > a:focus {
     background-color: transparent;
     border: transparent; }
 
@@ -9368,7 +9377,8 @@ h5 {
   color: #a6a5a5; }
   .social-info a {
     color: #a6a5a5; }
-  .social-info ul, .social-info p {
+  .social-info ul,
+  .social-info p {
     margin: 0; }
   .social-info li {
     margin-right: 7px;
@@ -9408,13 +9418,13 @@ h5 {
   .aside li {
     padding-bottom: 15px; }
 
-.bg-division {
-  height: 40vh;
+.bg-division, .bg-divisions {
+  height: 60vh;
   background-image: url("../img/division/banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
-  .bg-division h2 {
+  .bg-division h2, .bg-divisions h2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9458,6 +9468,9 @@ h5 {
 .img6 {
   background-image: url("../img/division/door6.jpg"); }
 
+.bg-divisions {
+  height: 40vh !important; }
+
 .types {
   padding: 40px 0 30px; }
   .types li {
@@ -9482,6 +9495,7 @@ h5 {
 
 .main-list {
   padding: 80px 0;
+  margin-bottom: 40px;
   background-image: url("../img/about/2.jpg"); }
   .main-list .img1 {
     background-image: url("../img/about/3.jpg"); }
@@ -9519,18 +9533,22 @@ h5 {
         color: #fff; }
 
 .abouts {
+  margin: 60px 0;
   background-image: linear-gradient(to right, #76c04f 60%, white 40%); }
 
 .about-info {
-  width: 60%;
-  padding: 200px 150px 230px 50px; }
+  width: 50%;
+  padding: 200px 110px 100px 160px; }
 
 .about-img {
   position: absolute;
-  top: 45px;
-  right: 0;
+  top: 55px;
+  right: 65px;
   width: 650px;
   height: auto; }
+
+.about-data {
+  margin-top: 80px; }
 
 .eddy-modal {
   padding: 30px 0; }
@@ -9567,31 +9585,31 @@ h5 {
   .listings .img10 {
     background-image: url("../img/home/10.jpg"); }
 
-.flexslider {
-  margin: 0; }
-
-.flex-direction-nav {
+.flexslides .flex-direction-nav {
   -webkit-display: none;
   -moz-display: none;
   -ms-display: none;
   display: none; }
 
-.flex-control-nav {
-  bottom: 80px;
-  z-index: 99; }
-
-.flex-control-paging li a {
+.flexslides .flex-control-paging li a {
   width: 8px;
   height: 8px; }
 
-.flex-control-paging li a {
+.flexslides .flex-control-paging li a {
   background-color: #fff; }
 
-.flex-control-paging li a:hover {
+.flexslides .flex-control-paging li a:hover {
   background-color: #fff; }
 
-.flex-control-paging li a.flex-active {
+.flexslides .flex-control-paging li a.flex-active {
   background-color: #76c04f; }
+
+.flexslides .flex-control-nav {
+  bottom: 80px;
+  z-index: 99; }
+
+.flexslider {
+  border: none; }
 
 .main-banner .listings h1 {
   color: #ff3a40; }
@@ -9606,17 +9624,18 @@ h5 {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 20%; }
 
 .creativity {
   position: absolute;
-  top: 25%;
+  top: 28%;
   left: 20%;
-  -webkit-font-size: 20px;
-  -moz-font-size: 20px;
-  -ms-font-size: 20px;
-  font-size: 20px;
+  -webkit-font-size: 32px;
+  -moz-font-size: 32px;
+  -ms-font-size: 32px;
+  font-size: 32px;
+  font-family: "Savoye";
   font-style: italic;
   color: #fff;
   text-transform: capitalize; }
@@ -9669,6 +9688,35 @@ h5 {
 
 .space-tb {
   padding: 20px 0 30px; }
+
+.flexy {
+  margin-top: 30px; }
+  .flexy .flexslider {
+    margin: 0; }
+  .flexy .flex-control-nav {
+    -webkit-display: none;
+    -moz-display: none;
+    -ms-display: none;
+    display: none; }
+  .flexy .flex-direction-nav .flex-next {
+    right: -40px !important; }
+  .flexy .flex-direction-nav .flex-prev {
+    left: -50px !important; }
+  .flexy .flex-direction-nav a.flex-next:before, .flexy .flex-direction-nav a.flex-prev:before {
+    content: "";
+    background: url(../img/product/arrow2.png) no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    -webkit-display: block;
+    -moz-display: block;
+    -ms-display: block;
+    display: block; }
+  .flexy .flex-direction-nav a.flex-prev:before {
+    background: url(../img/product/arrow1.png) no-repeat; }
+
+sup {
+  font-size: 130%; }
 
 #fancybox-loading,
 .fancybox-close,

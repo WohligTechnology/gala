@@ -12,14 +12,15 @@ $brand-lgrey:#f9f9f9 !default;
 $brand-red:#ff3a40 !default;
 $brand-facebook:#3b5998 !default;
 $brand-google:#dd4b39 !default;
-$brand-tumblr:#529ECC  !default;
+$brand-tumblr:#529ECC !default;
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* Bootstrap Variables Goes Here */
 
 @import "other/font-fix";
+
 body {
-    font-family:"Avenir";
+    font-family: "Avenir";
     padding-top: 70px;
 }
 
@@ -53,8 +54,8 @@ a,
     cursor: pointer;
     transition: all ease 300ms;
 }
-//footer//
 
+//footer//
 footer {
     font-size: 12px;
     background-color: $brand-green;
@@ -66,7 +67,6 @@ footer {
 }
 
 //footer//
-
 //bootstrap forms
 .input-lg,
 .input-group-lg>.form-control,
@@ -134,274 +134,291 @@ header {
 }
 
 //mixins//
-
-@mixin display($display){
-     -webkit-display: $display;
-     -moz-display: $display;
-      -ms-display: $display;
-       display:$display;
+@mixin display($display) {
+    -webkit-display: $display;
+    -moz-display: $display;
+    -ms-display: $display;
+    display: $display;
 }
 
-@mixin fontsize($font){
-     -webkit-font-size: $font;
-     -moz-font-size: $font;
-      -ms-font-size: $font;
-       font-size:$font;
+@mixin fontsize($font) {
+    -webkit-font-size: $font;
+    -moz-font-size: $font;
+    -ms-font-size: $font;
+    font-size: $font;
 }
 
 // * mixins for padding , margin and height-width given in bourbon
-
-@font-face{
-    font-family:"Avenir";
-    src:url("../fonts/AvenirNext-Regular.otf");
+@font-face {
+    font-family: "Avenir";
+    src: url("../fonts/AvenirNext-Regular.otf");
 }
 
-@font-face{
-    font-family:"AvenirBold";
-    src:url("../fonts/AvenirNext-Bold.otf");
+@font-face {
+    font-family: "AvenirBold";
+    src: url("../fonts/AvenirNext-Bold.otf");
 }
 
-@font-face{
-    font-family:"Savoye";
-    src:url("../fonts/Savoye.ttf");
+@font-face {
+    font-family: "Savoye";
+    src: url("../fonts/savoyeplain.ttf");
 }
 
- 
 
 //common classes//
-
-a{
+a {
     color: $brand-white;
-    &:hover,&:focus{
+    &:hover,
+    &:focus {
         color: $brand-white;
         text-decoration: none;
     }
 }
-ul{
+
+ul {
     padding: 0;
     margin: 0;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
-.relative{
-      @include position(relative);
+.relative {
+    @include position(relative);
 }
 
-.padding0{
-     @include padding(0px);
+.padding0 {
+    @include padding(0px);
 }
 
-.margin0{
+.margin0 {
     @include margin(0px);
 }
-.division{
+
+.division {
     margin-top: -70px;
 }
 
-.bg-grey{
+.bg-grey {
     background-color: $brand-lgrey;
 }
 
-h1{
-    @include fontsize(50px);
+h1 {
+    @include fontsize(70px);
+    font-weight: 400;
 }
 
-h2{
+h2 {
     @include fontsize(36px);
     font-weight: 600;
 }
 
-h3{
-     margin: 0;
-     @include fontsize(26px);
+h3 {
+    margin: 0;
+    @include fontsize(26px);
 }
 
-h4{
- @include fontsize(16px);
- font-weight: 700;
+h4 {
+    @include fontsize(16px);
+    font-weight: 700;
 }
 
-h5{
+h5 {
     @include fontsize(14px);
     font-weight: 600;
 }
 
-  .row-flex {
+.row-flex {
     @include display(flex);
     width: 100%;
-  }
-  
-  .col-flex {
+}
+
+.col-flex {
     @include flex(1);
     display: block;
     width: 50%;
-  }
-
-  .overlay{
-    background-color: rgba(0, 0, 0, 0.31);
-    @include position(absolute,0 0 0 0);
-  }
-
-  .types-list{
-            a{
-color: #333333;
-&:hover{
-    color: $brand-green;
 }
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.31);
+    @include position(absolute,
+    0 0 0 0);
+}
+
+.types-list {
+    a {
+        color: #333333;
+        &:hover {
+            color: $brand-green;
         }
-  }
+        &:active{
+            color: #000;
+            font-weight: 600;
+        }
+           &:focus{
+            color: #000;
+            font-weight: 600;
+        }
+    }
+}
 
-  .mt10{
-      margin-top: 10px;
-  }
+.mt10 {
+    margin-top: 10px;
+}
 
-.whitey{
+.whitey {
     color: $brand-white;
 }
-//common classes//
 
+//common classes//
 //nav//
-.nav{
-    li{
-        a{
+.nav {
+    li {
+        a {
             @include padding(10px 25px 10px 25px);
-    }
+        }
     }
 }
-.navbar{
+
+.navbar {
     .container {
-    background-color: $brand-white;
-    } 
-}
-.navbar-default{
-    background-color:transparent;
-    border:transparent;
-    .navbar-nav  .active > a, .navbar-nav  .active > a:hover, .navbar-nav  .active > a:focus{
-    background-color:transparent;
-    border:transparent;
+        background-color: $brand-white;
     }
 }
-.navbar-nav a{
-    &:hover{
+
+.navbar-default {
+    background-color: transparent;
+    border: transparent;
+    .navbar-nav .active>a,
+    .navbar-nav .active>a:hover,
+    .navbar-nav .active>a:focus {
+        background-color: transparent;
+        border: transparent;
+    }
+}
+
+.navbar-nav a {
+    &:hover {
         color: $brand-green !important;
     }
 }
 
-.navbar-fixed-top{
-    top:20px;
+.navbar-fixed-top {
+    top: 20px;
 }
 
-.navbar-brand{
+.navbar-brand {
     padding: 5px 0;
     margin: 0 !important;
     height: auto;
     width: 50px;
-    img{
+    img {
         width: 100%;
     }
 }
 
-.navbar-collapse{
+.navbar-collapse {
     padding: 10px 0;
 }
+
 //nav//
-
 //social common template//
-
-.social-info{
-border-top: 1px solid $brand-green;
-@include padding(40px,null);
-color: $brand-grey;
-a{
+.social-info {
+    border-top: 1px solid $brand-green;
+    @include padding(40px,
+    null);
+    color: $brand-grey;
+    a {
         color: $brand-grey;
     }
-    ul,p{
+    ul,
+    p {
         @include margin(0px);
     }
-    li{
-         @include margin(null 7px null 7px);
+    li {
+        @include margin(null 7px null 7px);
     }
 }
 
-.address{
+.address {
     @include margin(20px null 20px null);
 }
 
-.mail-tel{
-    li:first-child{
+.mail-tel {
+    li:first-child {
         @extend .relative;
-   &:after{
-     content: "";
-     @include position(absolute, 3px 0px null null);
-     @include size(7px,15px);
-     border-right: 1px solid #76c04f;
+        &:after {
+            content: "";
+            @include position(absolute,
+            3px 0px null null);
+            @include size(7px,
+            15px);
+            border-right: 1px solid #76c04f;
+        }
     }
-    }
-   a{
+    a {
         color: $brand-green;
-    } 
-       li{
-           @include padding(null 15px null 15px);
+    }
+    li {
+        @include padding(null 15px null 15px);
     }
 }
 
 //social common template//
-
 //division//
-.division-info{
-    h3{
-    @include padding (40px 0 30px 0);
-    color: $brand-red;
+.division-info {
+    h3 {
+        @include padding (40px 0 30px 0);
+        color: $brand-red;
     }
-  
 }
-.product{
+
+.product {
     @include padding (0 20px 0 10px);
 }
 
-.aside{
+.aside {
     min-height: 900px;
-    h4{
+    h4 {
         margin-bottom: 15px;
     }
-    li{
+    li {
         padding-bottom: 15px;
- 
     }
 }
 
-.bg-division{
-    height: 40vh;
+.bg-division,.bg-divisions {
+    height: 60vh;
     background-image: url("../img/division/banner.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    h2{
-         @include position(absolute, 50%  null null 50% );
-         @include transform(translate(-50%,-50%));
-         color: #fff;
-         letter-spacing: 10px;
+    h2 {
+        @include position(absolute,
+        50% null null 50%);
+        @include transform(translate(-50%,
+        -50%));
+        color: #fff;
+        letter-spacing: 10px;
     }
 }
 
 
-.door{
+.door {
     @include margin(10px);
-    cursor:pointer;
-    .door-info{
-    @include padding(10px 0);
-    box-shadow: 2px 2px 2px #ccc;
-    p{
-        margin: 0;
-        font-size: 18px;
+    cursor: pointer;
+    .door-info {
+        @include padding(10px 0);
+        box-shadow: 2px 2px 2px #ccc;
+        p {
+            margin: 0;
+            font-size: 18px;
+        }
     }
 }
-}
 
-.door-img{
+.door-img {
     width: auto;
     height: 315px;
     background-position: center;
@@ -409,290 +426,326 @@ a{
     background-size: cover;
 }
 
-.img1{
-   background-image: url("../img/division/door1.jpg"); 
+.img1 {
+    background-image: url("../img/division/door1.jpg");
 }
 
-.img2{
-   background-image: url("../img/division/door2.jpg"); 
+.img2 {
+    background-image: url("../img/division/door2.jpg");
 }
 
-.img3{
-   background-image: url("../img/division/door3.jpg"); 
+.img3 {
+    background-image: url("../img/division/door3.jpg");
 }
 
-.img4{
-   background-image: url("../img/division/door4.jpg"); 
+.img4 {
+    background-image: url("../img/division/door4.jpg");
 }
 
-.img5{
-   background-image: url("../img/division/door5.jpg"); 
+.img5 {
+    background-image: url("../img/division/door5.jpg");
 }
 
-.img6{
-   background-image: url("../img/division/door6.jpg"); 
+.img6 {
+    background-image: url("../img/division/door6.jpg");
+}
+
+.bg-divisions{
+       height: 40vh !important;
 }
 //division//
-
 //about//
-.types{
-      @include padding(40px 0 30px 0);
-    li{
-     @extend .relative;
-     @include padding(0 20px 0 20px);
-        &:after{
-    content: "";
-    border-right: 1px solid $brand-green;
-    @include size(5px,20px);
-    @include position(absolute,0 0 null null);
+.types {
+    @include padding(40px 0 30px 0);
+    li {
+        @extend .relative;
+        @include padding(0 20px 0 20px);
+        &:after {
+            content: "";
+            border-right: 1px solid $brand-green;
+            @include size(5px,
+            20px);
+            @include position(absolute,
+            0 0 null null);
         }
     }
-    li:last-child{
-        &:after{
-    border-right: transparent;
+    li:last-child {
+        &:after {
+            border-right: transparent;
         }
     }
-    a{
+    a {
         font-size: 22px;
-        &:hover{
+        &:hover {
             color: $brand-green;
         }
     }
 }
 
-.about{
-    .bg-division{
- background-image: url("../img/about/banner.jpg"); 
+.about {
+    .bg-division {
+        background-image: url("../img/about/banner.jpg");
     }
 }
 
-  .main-list{
-      @include padding(80px 0 80px 0);
-       background-image: url("../img/about/2.jpg"); 
-           
-.img1{
-   background-image: url("../img/about/3.jpg"); 
+.main-list {
+    @include padding(80px 0 80px 0);
+    margin-bottom: 40px;
+    background-image: url("../img/about/2.jpg");
+    .img1 {
+        background-image: url("../img/about/3.jpg");
+    }
+    .img2 {
+        background-image: url("../img/about/4.jpg");
+    }
+    .img3 {
+        background-image: url("../img/about/5.jpg");
+    }
+    .img4 {
+        background-image: url("../img/about/6.jpg");
+    }
+    .img5 {
+        background-image: url("../img/about/7.jpg");
+    }
+    .door {
+        @extend .relative;
+        transition: all ease 6s;
+        .door-info {
+            width: 60%;
+            @include position(absolute,
+            50% null null 50%);
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.59);
+        }
+        .overlay {
+            background-color: transparent;
+        }
+        &:hover {
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.31);
+                @include position(absolute,
+                0 0 0 0);
+            }
+            .door-info {
+                background-color: transparent;
+                box-shadow: none;
+                p {
+                    color: $brand-white;
+                }
+            }
+        }
+    }
 }
 
-.img2{
-   background-image: url("../img/about/4.jpg"); 
-}
-
-.img3{
-   background-image: url("../img/about/5.jpg"); 
-}
-
-.img4{
-   background-image: url("../img/about/6.jpg"); 
-}
-
-.img5{
-   background-image: url("../img/about/7.jpg"); 
-}
-
-.door{
+//about//
+//home//
+.abouts {
     @extend .relative;
-    transition: all ease 6s;
-    .door-info{
-    width: 60%;
-    @include position(absolute,50% null null 50%);
-    transform: translate(-50%,-50%);
-    background-color: rgba(255, 255, 255, 0.59);
-    }
-    .overlay{
-        background-color: transparent;
-    }
-    &:hover{
-        .overlay{
-       background-color: rgba(0, 0, 0, 0.31);
-       @include position(absolute,0 0 0 0);
-  } 
+    margin: 60px 0;
+    background-image: linear-gradient(to right, $brand-green 60%, white 40%)
+}
 
-  .door-info{
-        background-color: transparent;
-        box-shadow: none;
-      p{
-        
-          color: $brand-white;
-      }
-  }
+.about-info {
+  width: 50%;
+  padding: 200px 110px 100px 160px;
+}
 
+.about-img {
+    @include position(absolute,
+    55px 65px null null);
+    @include size (650px,
+    auto);
+}
+
+.about-data{
+    margin-top: 80px;
+}
+
+.eddy-modal {
+    padding: 30px 0;
+    img {
+        height: 70vh;
+    }
+    .btn {
+        font-family: "Avenir";
+        padding: 6px 40px;
+        margin-bottom: 30px;
     }
 }
-   }
 
-   //about//
-
-   //home//
-
-.abouts{
+.listings {
     @extend .relative;
-background-image: linear-gradient(to right, $brand-green 60%,white 40%)
+    background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
+    .about-info {
+        width: auto;
+        padding: 100px 0px 100px 0px;
+    }
+    .img1 {
+        background-image: url("../img/home/1.jpg");
+    }
+    .img2 {
+        background-image: url("../img/home/2.jpg");
+    }
+    .img3 {
+        background-image: url("../img/home/3.jpg");
+    }
+    .img4 {
+        background-image: url("../img/home/4.jpg");
+    }
+    .img5 {
+        background-image: url("../img/home/5.jpg");
+    }
+    .img6 {
+        background-image: url("../img/home/6.jpg");
+    }
+    .img7 {
+        background-image: url("../img/home/7.jpg");
+    }
+    .img8 {
+        background-image: url("../img/home/8.jpg");
+    }
+    .img9 {
+        background-image: url("../img/home/9.jpg");
+    }
+    .img10 {
+        background-image: url("../img/home/10.jpg");
+    }
 }
 
-.about-info{
-    width: 60%;
-    padding: 200px 150px 230px 50px;
-}
-
-.about-img{
-    @include position(absolute,45px 0 null null);
-    @include size (650px,auto);
-}
-.eddy-modal{
-padding: 30px 0;
-  img{
-      height: 70vh;
-  }
-  .btn{
-       font-family:"Avenir";
-       padding: 6px 40px;
-       margin-bottom: 30px;
-  }
-}
-
-.listings{
- @extend .relative;
-background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
-.about-info{
-    width: auto;
-    padding: 100px 0px 100px 0px;
-}
-
-.img1{
-    background-image: url("../img/home/1.jpg");  
-}
-.img2{
-    background-image: url("../img/home/2.jpg");  
-}
-.img3{
-    background-image: url("../img/home/3.jpg");  
-}
-.img4{
-    background-image: url("../img/home/4.jpg");  
-}
-
-.img5{
-    background-image: url("../img/home/5.jpg");  
-}
-.img6{
-    background-image: url("../img/home/6.jpg");  
-}
-.img7{
-    background-image: url("../img/home/7.jpg");  
-}
-.img8{
-    background-image: url("../img/home/8.jpg");  
-}
-.img9{
-    background-image: url("../img/home/9.jpg");  
-}
-.img10{
-    background-image: url("../img/home/10.jpg");  
-}
-
-}
 //flexslider//
-.flexslider{
-    margin: 0;
+.flexslides {
+   
+    .flex-direction-nav {
+        @include display(none);
+    }
+    .flex-control-paging li a {
+        @include size(8px,
+        8px);
+    }
+    .flex-control-paging li a {
+        background-color: $brand-white;
+    }
+    .flex-control-paging li a:hover {
+        background-color: $brand-white;
+    }
+    .flex-control-paging li a.flex-active {
+        background-color: $brand-green;
+    }
+    .flex-control-nav {
+        bottom: 80px;
+        z-index: 99;
+    }
 }
 
-.flex-direction-nav{
- @include display(none);
-}
-
-.flex-control-nav{
-    bottom: 80px;
-    z-index: 99;
-}
-
-.flex-control-paging li a{
-    @include size(8px,8px);
-}
-
-.flex-control-paging li a{
-    background-color: $brand-white;
-}
-
-.flex-control-paging li a:hover{
- background-color: $brand-white;
-}
-
-.flex-control-paging li a.flex-active{
-   background-color: $brand-green;
-}
+ .flexslider{
+        border: none;
+    } 
 
 //flexslider
-.main-banner{
-    .listings{
-        h1{
+.main-banner {
+    .listings {
+        h1 {
             color: $brand-red;
         }
-        .about-info{
-@include padding(10px 0 0 0);
+        .about-info {
+            @include padding(10px 0 0 0);
         }
     }
-   .door-info{
-background-color: $brand-white;
-   }
-   .offers{
-    transform: translate(-50%, -50%);
-    @include position(absolute,15% null null 20%);
-   }
+    .door-info {
+        background-color: $brand-white;
+    }
+    .offers {
+        transform: translate(-50%, -50%);
+        @include position(absolute,
+        10% null null 20%);
+    }
 }
 
-.creativity{
-      @include position(absolute,25% null null 20%);
-      @include fontsize(20px);
-      font-style: italic;
-      color: $brand-white;
-      text-transform: capitalize;
+.creativity {
+    @include position(absolute,
+    28% null null 20%);
+    @include fontsize(32px);
+    font-family: "Savoye";
+    font-style: italic;
+    color: $brand-white;
+    text-transform: capitalize;
 }
- //home//
 
- //gallery//
+//home//
+//gallery//
+.product-inform {
+    p {
+        @include fontsize(12px);
+    }
+}
 
- .product-inform{
-     p{
-          @include fontsize(12px);
-     }
- }
+.social-share {
+    p {
+        margin-right: 5px;
+        @include display(inline-block);
+        @include fontsize(14px);
+        font-weight: 600;
+    }
+    ul {
+        @include display(inline-block);
+        li {
+            @include size(30px,
+            30px);
+            @include display(inline-block);
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: $brand-facebook;
+            line-height: 30px;
+            text-align: center;
+        }
+        li:nth-of-type(2) {
+            background-color: $brand-google;
+        }
+        li:nth-of-type(3) {
+            background-color: $brand-tumblr;
+        }
+    }
+}
 
- .social-share{
-     p{
-    margin-right: 5px;
-     @include display(inline-block);
-     @include fontsize(14px);
-     font-weight: 600;
-     }
-     ul{
-          @include display(inline-block);
-            li{
-         @include size(30px,30px);
-         @include display(inline-block);
-         border-radius: 50%;
-         margin: 0 5px;
-         background-color:$brand-facebook;
-         line-height: 30px;
-         text-align: center;
-     }
-     li:nth-of-type(2){
-  background-color:$brand-google;
-     }
-       li:nth-of-type(3){
-  background-color:$brand-tumblr;
-     }
-     } 
- }
+.products-info {
+    @include padding(50px 0 50px 0);
+    button {
+        @include padding(6px 40px 6px 40px);
+        border: none;
+    }
+}
 
- .products-info{
-     @include padding(50px 0 50px 0);
-     button{
-          @include padding(6px 40px 6px 40px);
-          border: none;
-     }
- }
+.space-tb {
+    @include padding(20px 0 30px 0);
+}
 
-.space-tb{
-  @include padding(20px 0 30px 0);
+.flexy {
+    margin-top: 30px;
+    .flexslider{
+        margin: 0;
+    }
+    .flex-control-nav {
+        @include display(none);
+    }
+    .flex-direction-nav .flex-next{
+        right: -40px!important;
+    }
+    .flex-direction-nav .flex-prev{
+         
+         left: -50px!important;
+    }
+    .flex-direction-nav a.flex-next:before,.flex-direction-nav a.flex-prev:before{
+    content: "";
+    background: url(../img/product/arrow2.png) no-repeat;
+    background-size: cover;
+    @include size(60px,60px);
+    @include display(block);
+    }
+    .flex-direction-nav a.flex-prev:before{
+       background: url(../img/product/arrow1.png) no-repeat;  
+    }
+}
+
+sup{
+    font-size: 130%;
 }

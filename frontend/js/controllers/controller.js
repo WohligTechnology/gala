@@ -11,13 +11,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             '../img/home/banner6.jpg'
         ];
 
-        $scope.mySlidess=[
-            '../img/product/2.jpg',
-            '../img/product/3.jpg',
-            '../img/product/4.jpg',
-            '../img/product/5.jpg',
-            '../img/product/6.jpg'  
-        ];
+     
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -76,6 +70,14 @@ $scope.openModal();
         TemplateService.title = "Gallery"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
+           $scope.mySlidess=[
+            '../img/product/2.jpg',
+            '../img/product/3.jpg',
+            '../img/product/4.jpg',
+            '../img/product/5.jpg',
+            '../img/product/6.jpg' ,
+            '../img/product/7.jpg' 
+        ];
 //         $(window).load(function() {
 //   // The slider being synced must be initialized first
 //   $('#carousel').flexslider({
