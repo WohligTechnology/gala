@@ -9839,4 +9839,6 @@ sup {
   .types {
     padding: 20px; }
   .types a {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .bg-division, .bg-divisions {
+    height: 40vh; } }
