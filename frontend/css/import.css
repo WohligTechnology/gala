@@ -9835,4 +9835,8 @@ sup {
   .product-inform {
     margin-top: 20px; }
   .creativity {
-    font-size: 26px; } }
+    font-size: 26px; }
+  .types {
+    padding: 20px; }
+  .types a {
+    font-size: 18px; } }
