@@ -18,7 +18,6 @@ $brand-tumblr:#529ECC !default;
 /* Bootstrap Variables Goes Here */
 
 @import "other/font-fix";
-
 body {
     font-family: "Avenir";
     padding-top: 70px;
@@ -164,7 +163,6 @@ header {
     src: url("../fonts/savoyeplain.ttf");
 }
 
-
 //common classes//
 a {
     color: $brand-white;
@@ -252,11 +250,11 @@ h5 {
         &:hover {
             color: $brand-green;
         }
-        &:active{
+        &:active {
             color: #000;
             font-weight: 600;
         }
-           &:focus{
+        &:focus {
             color: #000;
             font-weight: 600;
         }
@@ -388,7 +386,8 @@ h5 {
     }
 }
 
-.bg-division,.bg-divisions {
+.bg-division,
+.bg-divisions {
     height: 60vh;
     background-image: url("../img/division/banner.jpg");
     background-repeat: no-repeat;
@@ -403,7 +402,6 @@ h5 {
         letter-spacing: 10px;
     }
 }
-
 
 .door {
     @include margin(10px);
@@ -450,9 +448,10 @@ h5 {
     background-image: url("../img/division/door6.jpg");
 }
 
-.bg-divisions{
-       height: 40vh !important;
+.bg-divisions {
+    height: 40vh !important;
 }
+
 //division//
 //about//
 .types {
@@ -546,8 +545,8 @@ h5 {
 }
 
 .about-info {
-  width: 50%;
-  padding: 200px 110px 100px 160px;
+    width: 50%;
+    padding: 200px 110px 100px 160px;
 }
 
 .about-img {
@@ -557,7 +556,7 @@ h5 {
     auto);
 }
 
-.about-data{
+.about-data {
     margin-top: 80px;
 }
 
@@ -614,7 +613,6 @@ h5 {
 
 //flexslider//
 .flexslides {
-   
     .flex-direction-nav {
         @include display(none);
     }
@@ -637,9 +635,9 @@ h5 {
     }
 }
 
- .flexslider{
-        border: none;
-    } 
+.flexslider {
+    border: none;
+}
 
 //flexslider
 .main-banner {
@@ -668,6 +666,7 @@ h5 {
     font-family: "Savoye";
     font-style: italic;
     color: $brand-white;
+    line-height: 35px;
     text-transform: capitalize;
 }
 
@@ -721,31 +720,32 @@ h5 {
 
 .flexy {
     margin-top: 30px;
-    .flexslider{
+    .flexslider {
         margin: 0;
     }
     .flex-control-nav {
         @include display(none);
     }
-    .flex-direction-nav .flex-next{
+    .flex-direction-nav .flex-next {
         right: -40px!important;
     }
-    .flex-direction-nav .flex-prev{
-         
-         left: -50px!important;
+    .flex-direction-nav .flex-prev {
+        left: -50px!important;
     }
-    .flex-direction-nav a.flex-next:before,.flex-direction-nav a.flex-prev:before{
-    content: "";
-    background: url(../img/product/arrow2.png) no-repeat;
-    background-size: cover;
-    @include size(60px,60px);
-    @include display(block);
+    .flex-direction-nav a.flex-next:before,
+    .flex-direction-nav a.flex-prev:before {
+        content: "";
+        background: url(../img/product/arrow2.png) no-repeat;
+        background-size: cover;
+        @include size(60px,
+        60px);
+        @include display(block);
     }
-    .flex-direction-nav a.flex-prev:before{
-       background: url(../img/product/arrow1.png) no-repeat;  
+    .flex-direction-nav a.flex-prev:before {
+        background: url(../img/product/arrow1.png) no-repeat;
     }
 }
 
-sup{
+sup {
     font-size: 130%;
 }

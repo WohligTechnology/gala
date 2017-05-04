@@ -1,3 +1,88 @@
  @media (max-width: $screen-xs-max) {
      // Mobile
+
+     //common//
+     h1{
+         font-size: 40px;
+     }
+
+     h2{
+         font-size: 26px;
+     }
+
+.row-flex{
+    @include display(block);
+}
+
+.col-flex{
+    width: 100%;
+}
+
+  //common//
+
+  //home//
+.abouts {
+    margin: 10px 0;
+    background-color: #76c04f;
+    background-image:none;
+}
+.about-info {
+    width: auto;
+    padding: 20px 10px;
+}
+
+.main-banner .offers {
+    left: 35%;
+}
+
+.about-data {
+    margin-top: 180px;
+}
+
+.about-img{
+      @include display(none);
+}
+
+.eddy-modal img {
+    height: 50vh;
+}
+
+.flexslides .flex-control-nav {
+    bottom: 0px;
+}
+
+//home//
+
+//nav//
+
+.navbar-collapse{
+    float: none !important;
+    text-align: center;
+}
+
+footer {
+    .pull-right,p{
+  float: none !important;
+        text-align: center;
+    }
+      
+   
+}
+
+//nav//
+
+//division,gallery,about//
+.aside{
+    min-height: 250px;
+}
+
+.product-inform{
+    margin-top: 20px;
+}
+
+.creativity{
+    font-size: 26px;
+}
+//division//
+
  }

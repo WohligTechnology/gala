@@ -1,3 +1,43 @@
  @media (max-width: $screen-sm-max) {
      // Tablet
+
+     .about-img {
+    position: absolute;
+    top: 69px;
+    right: 24px;
+    width: 300px;
+    height: auto;
+}
+
+.about-info {
+    width: 80%;
+    padding: 160px 170px 60px 170px;
+}
+
+.abouts {
+    margin: 60px 0;
+    background-image: linear-gradient(to right, #76c04f 80%, white 20%);
+}
+
+.types li {
+    padding: 0 13px;
+}
+
+.aside{
+    min-height: 300px;
+}
+
+.flexy .flex-direction-nav .flex-prev {
+    left: -37px !important;
+}
+
+.flexy .flex-direction-nav a.flex-prev:before{
+    width: 35px;
+}
+.flex-nav-next{
+.flex-next{
+    display: none;
+}
+
+}
  }

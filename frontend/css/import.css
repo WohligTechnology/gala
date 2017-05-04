@@ -9418,13 +9418,15 @@ h5 {
   .aside li {
     padding-bottom: 15px; }
 
-.bg-division, .bg-divisions {
+.bg-division,
+.bg-divisions {
   height: 60vh;
   background-image: url("../img/division/banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
-  .bg-division h2, .bg-divisions h2 {
+  .bg-division h2,
+  .bg-divisions h2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9638,6 +9640,7 @@ h5 {
   font-family: "Savoye";
   font-style: italic;
   color: #fff;
+  line-height: 35px;
   text-transform: capitalize; }
 
 .product-inform p {
@@ -9702,7 +9705,8 @@ h5 {
     right: -40px !important; }
   .flexy .flex-direction-nav .flex-prev {
     left: -50px !important; }
-  .flexy .flex-direction-nav a.flex-next:before, .flexy .flex-direction-nav a.flex-prev:before {
+  .flexy .flex-direction-nav a.flex-next:before,
+  .flexy .flex-direction-nav a.flex-prev:before {
     content: "";
     background: url(../img/product/arrow2.png) no-repeat;
     background-size: cover;
@@ -9757,3 +9761,72 @@ sup {
 
 .fancybox-nav.fancybox-prev span {
   background-image: url(../img/prev.png); }
+
+@media (max-width: 991px) {
+  .about-img {
+    position: absolute;
+    top: 69px;
+    right: 24px;
+    width: 300px;
+    height: auto; }
+  .about-info {
+    width: 80%;
+    padding: 160px 170px 60px 170px; }
+  .abouts {
+    margin: 60px 0;
+    background-image: linear-gradient(to right, #76c04f 80%, white 20%); }
+  .types li {
+    padding: 0 13px; }
+  .aside {
+    min-height: 300px; }
+  .flexy .flex-direction-nav .flex-prev {
+    left: -37px !important; }
+  .flexy .flex-direction-nav a.flex-prev:before {
+    width: 35px; }
+  .flex-nav-next .flex-next {
+    display: none; } }
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 40px; }
+  h2 {
+    font-size: 26px; }
+  .row-flex {
+    -webkit-display: block;
+    -moz-display: block;
+    -ms-display: block;
+    display: block; }
+  .col-flex {
+    width: 100%; }
+  .abouts {
+    margin: 10px 0;
+    background-color: #76c04f;
+    background-image: none; }
+  .about-info {
+    width: auto;
+    padding: 20px 10px; }
+  .main-banner .offers {
+    left: 35%; }
+  .about-data {
+    margin-top: 180px; }
+  .about-img {
+    -webkit-display: none;
+    -moz-display: none;
+    -ms-display: none;
+    display: none; }
+  .eddy-modal img {
+    height: 50vh; }
+  .flexslides .flex-control-nav {
+    bottom: 0px; }
+  .navbar-collapse {
+    float: none !important;
+    text-align: center; }
+  footer .pull-right, footer p {
+    float: none !important;
+    text-align: center; }
+  .aside {
+    min-height: 250px; }
+  .product-inform {
+    margin-top: 20px; }
+  .creativity {
+    font-size: 26px; } }
