@@ -9784,7 +9784,13 @@ sup {
   .flexy .flex-direction-nav a.flex-prev:before {
     width: 35px; }
   .flex-nav-next .flex-next {
-    display: none; } }
+    display: none; }
+  .address p {
+    font-size: 12px; }
+  .social-info {
+    padding: 20px; }
+  .products-info {
+    padding: 20px 0; } }
 
 @media (max-width: 767px) {
   h1 {
