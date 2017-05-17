@@ -27,7 +27,7 @@ $scope.openModal = function() {
         var modalInstance = $uibModal.open({
                 animation: true,
                 scope: $scope,
-                // size: 'sm',
+                size: 'xl',
                 windowClass: 'eddy-modal',
                 templateUrl: "views/modal/welcome.html"
             });
