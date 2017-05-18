@@ -9662,12 +9662,11 @@ h5 {
 .creativity {
   position: absolute;
   top: 28%;
-  left: 10px;
-  -webkit-font-size: 32px;
-  -moz-font-size: 32px;
-  -ms-font-size: 32px;
-  font-size: 32px;
-  font-family: "Savoye";
+  left: 50px;
+  -webkit-font-size: 18px;
+  -moz-font-size: 18px;
+  -ms-font-size: 18px;
+  font-size: 18px;
   font-style: italic;
   color: #fff;
   line-height: 35px;
@@ -9768,7 +9767,7 @@ sup {
       padding: 13px 5px;
       display: inline-block;
       color: #fff !important;
-      font-family: "AvenirBold";
+      font-weight: 600;
       text-transform: uppercase;
       transition: all 800ms ease; }
       .dropdown-menu li a:hover {

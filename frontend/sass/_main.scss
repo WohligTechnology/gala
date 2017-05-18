@@ -685,9 +685,9 @@ h5 {
 
 .creativity {
     @include position(absolute,
-    28% null null 10px);
-    @include fontsize(32px);
-    font-family: "Savoye";
+    28% null null 50px);
+    @include fontsize(18px);
+    // font-family: "Savoye";
     font-style: italic;
     color: $brand-white;
     line-height: 35px;
@@ -791,7 +791,7 @@ sup {
             padding: 13px 5px;
             display: inline-block;
             color: #fff !important;
-            font-family: "AvenirBold";
+            font-weight: 600;
             text-transform: uppercase;
             transition: all 800ms ease;
             &:hover {
