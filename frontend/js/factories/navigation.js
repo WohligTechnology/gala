@@ -13,7 +13,59 @@ myApp.factory('NavigationService', function () {
         name: "DIVISION",
         classis: "active",
         anchor: "division",
-        subnav: []
+            subnav: [{
+            name: "uro Veneer World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Wood & Mouldings",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Mahaveer Corporation",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Euro Ceramic World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Euro Hardware World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Euro Flooring(p) LTD",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Euro Lighting World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Bath World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "vridhi Woods",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Drapes World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Hafele & Blum",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Stone World",
+            classis: "active",
+            anchor: "home"
+        },{
+            name: "Gala Furniture World",
+            classis: "active",
+            anchor: "home"
+        }]
     }, {
         name: "GALLERY",
         classis: "active",

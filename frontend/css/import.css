@@ -9314,6 +9314,23 @@ h5 {
   display: block;
   width: 50%; }
 
+.rows-flex {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: -webkit-box;
+  display: flex;
+  width: 100%; }
+
+.cols-flex {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: inline-block;
+  width: 23%; }
+
 .overlay {
   background-color: rgba(0, 0, 0, 0.31);
   position: absolute;
@@ -9332,6 +9349,10 @@ h5 {
   .types-list a:focus {
     color: #000;
     font-weight: 600; }
+
+.types-list .active {
+  color: #000;
+  font-weight: 600; }
 
 .mt10 {
   margin-top: 10px; }
@@ -9539,8 +9560,7 @@ h5 {
   background-image: linear-gradient(to right, #76c04f 60%, white 40%); }
 
 .about-info {
-  width: 50%;
-  padding: 200px 110px 100px 160px; }
+  padding: 100px 680px 230px 0px; }
 
 .about-img {
   position: absolute;
@@ -9550,7 +9570,7 @@ h5 {
   height: auto; }
 
 .about-data {
-  margin-top: 80px; }
+  margin-top: 25%; }
 
 .eddy-modal .modal-dialog {
   width: 100%;
@@ -9642,7 +9662,7 @@ h5 {
 .creativity {
   position: absolute;
   top: 28%;
-  left: 20%;
+  left: 10px;
   -webkit-font-size: 32px;
   -moz-font-size: 32px;
   -ms-font-size: 32px;
@@ -9734,6 +9754,105 @@ sup {
 
 .modal-xl {
   width: 1300px; }
+
+.dropdown-menu {
+  border-top: 3px solid #6AB751;
+  padding: 15px 10px;
+  background-color: rgba(48, 48, 48, 0.9);
+  top: 95% !important;
+  min-width: 965px; }
+  .dropdown-menu li {
+    padding: 10px 0 !important;
+    display: inline-block; }
+    .dropdown-menu li a {
+      padding: 13px 5px;
+      display: inline-block;
+      color: #fff !important;
+      font-family: "AvenirBold";
+      text-transform: uppercase;
+      transition: all 800ms ease; }
+      .dropdown-menu li a:hover {
+        color: #76c04f !important; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.navs li {
+  padding: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase; }
+  .navs li a {
+    color: #777; }
+
+.logos {
+  padding: 0 20% !important; }
+
+.hand1,
+.hand2,
+.hands1,
+.hands2,
+.handss1,
+.handss2 {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  top: -13px;
+  right: -22px; }
+
+.hand2 {
+  position: absolute;
+  top: -13px;
+  left: -22px; }
+
+.hands1,
+.hands2,
+.handss1,
+.handss2 {
+  position: absolute;
+  top: -2px;
+  right: 8px;
+  z-index: 99; }
+
+.hands2 {
+  position: absolute;
+  top: -2px;
+  left: 0px; }
+
+.handss1, .handss2 {
+  width: 70px;
+  height: auto; }
+
+.handss1 {
+  position: absolute;
+  top: -12px;
+  left: 26px; }
+
+.handss2 {
+  position: absolute;
+  top: -12px;
+  right: 26px; }
+
+.ok {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+.heart {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 100px; }
+
+.thumb {
+  width: 180px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 100px; }
 
 #fancybox-loading,
 .fancybox-close,

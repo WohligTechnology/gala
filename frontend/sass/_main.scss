@@ -238,6 +238,17 @@ h5 {
     width: 50%;
 }
 
+.rows-flex {
+    @include display(flex);
+    width: 100%;
+}
+
+.cols-flex {
+    @include flex(1);
+    display: inline-block;
+    width: 23%;
+}
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.31);
     @include position(absolute,
@@ -258,6 +269,10 @@ h5 {
             color: #000;
             font-weight: 600;
         }
+    }
+    .active {
+        color: #000;
+        font-weight: 600;
     }
 }
 
@@ -545,8 +560,7 @@ h5 {
 }
 
 .about-info {
-    width: 50%;
-    padding: 200px 110px 100px 160px;
+    padding: 100px 680px 230px 0px;
 }
 
 .about-img {
@@ -557,25 +571,24 @@ h5 {
 }
 
 .about-data {
-    margin-top: 80px;
+    margin-top: 25%;
 }
 
 .eddy-modal {
-    .modal-dialog{
-         width: 100%;
-  height: 100%;
-    margin: 0 auto;
-  padding: 0;
-  
-}
-.modal-content {
-  height: auto;
-  min-height: 100%;
-  border-radius: 0;
-}
-   img{
-       height: 90vh;
-   }
+    .modal-dialog {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+    }
+    img {
+        height: 90vh;
+    }
     .btn {
         font-family: "Avenir";
         padding: 6px 40px;
@@ -672,7 +685,7 @@ h5 {
 
 .creativity {
     @include position(absolute,
-    28% null null 20%);
+    28% null null 10px);
     @include fontsize(32px);
     font-family: "Savoye";
     font-style: italic;
@@ -765,3 +778,113 @@ sup {
     width: 1300px;
 }
 
+.dropdown-menu {
+    border-top: 3px solid #6AB751;
+    padding: 15px 10px;
+    background-color: rgba(48, 48, 48, 0.9);
+    top: 95% !important;
+    min-width: 965px;
+    li {
+        padding: 10px 0 !important;
+        display: inline-block;
+        a {
+            padding: 13px 5px;
+            display: inline-block;
+            color: #fff !important;
+            font-family: "AvenirBold";
+            text-transform: uppercase;
+            transition: all 800ms ease;
+            &:hover {
+                color: $brand-green !important;
+            }
+        }
+    }
+}
+
+//new navbar
+.navbar {
+    margin-bottom: 0;
+}
+
+.navs {
+    li {
+        padding: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        a {
+            color: #777;
+        }
+    }
+}
+
+.logos {
+    padding: 0 20% !important;
+}
+
+.hand1,
+.hand2,
+.hands1,
+.hands2,
+.handss1,
+.handss2 {
+    @include size(50px,
+    auto);
+    @include position(absolute,
+    -13px -22px null null);
+}
+
+.hand2 {
+    @include position(absolute,
+    -13px null null -22px);
+}
+
+.hands1,
+.hands2,
+.handss1,
+.handss2 {
+    @include position(absolute,
+    -2px 8px null null);
+    z-index: 99;
+}
+
+.hands2 {
+    @include position(absolute,
+    -2px null null 0px);
+}
+
+.handss1,.handss2{
+  @include size(70px,
+    auto);
+}
+
+.handss1 {
+    @include position(absolute,
+    -12px null null 26px);
+}
+
+.handss2 {
+    @include position(absolute,
+    -12px 26px null null );
+}
+
+.ok {
+    @include size(120px,
+    auto);
+    @include position(absolute,
+    null 0 0 null);
+}
+
+.heart {
+    @include size(200px,
+    auto);
+    @include position(absolute,
+    null null 0 100px);
+}
+
+.thumb{
+     @include size(180px,
+    auto);
+    @include position(absolute,
+    null null 0 100px);
+}

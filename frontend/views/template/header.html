@@ -1,4 +1,4 @@
-<header hide-on-scrol>
+<header hide-on-scrol class="hidden-lg">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -8,10 +8,76 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+                <a class="navbar-brand text-center" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
             </div>
             <div class="collapse navbar-collapse pull-right" id="nav-collapse">
                 <div ng-include="template.menu" class="template menu"></div>
+            </div>
+        </div>
+    </nav>
+</header>
+<header hide-on-scrol class="hidden-xs visible-lg">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar">
+                <ul class="navs text-center">
+                    <li> <a ui-sref="home">home</a></li>
+                    <li> <a ui-sref="about">about us</a> </li>
+                    <li> <a ui-sref="division">division </a>
+                        <ul class="dropdown-menu">
+                            <li class="rows-flex margin0 padding0">
+                                <div class="cols-flex">
+                                    <a href="#">uro Veneer World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="#">Wood & Mouldings</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Mahaveer Corporation</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Euro Ceramic World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Euro Hardware World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Euro Flooring(p) LTD</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Euro Lighting World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Bath World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">vridhi Woods</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Drapes World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Hafele & Blum</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Stone World</a>
+                                </div>
+                                <div class="cols-flex">
+                                    <a href="">Gala Furniture World</a>
+                                </div>
+                                <!--<div class="col-md-3" ng-repeat="submenu in menu.subnav" ui-sref-active="active">
+           <a ui-serf="{{submenu.anchor}}" ng-if="submenu.anchor">{{submenu.name}}</a>
+        </div>-->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="logos">
+                        <a class="navbar-brand text-center" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+                    </li>
+                    <li> <a ui-sref="">faq</a> </li>
+                    <li> <a ui-sref="gallery">gallery</a> </li>
+                    <li> <a ui-sref="">contact</a> </li>
+                </ul>
             </div>
         </div>
     </nav>
