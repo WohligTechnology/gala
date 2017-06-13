@@ -24,7 +24,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'HomeCtrl'
         })
         .state('division', {
-            url: "/division",
+            url: "/division/:category",
             templateUrl: tempateURL,
             controller: 'DivisionCtrl'
         })

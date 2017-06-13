@@ -11,11 +11,11 @@
     <section class="types-list text-center">
         <div class="container">
             <ul class="list-inline types">
-                <li><a href="">Door</a></li>
-                <li><a href="">Dupont Corian</a></li>
+                <li ng-repeat="s in subcategory"><a href="">{{s.name}}</a></li>
+                <!--<li><a href="">Dupont Corian</a></li>
                 <li><a href="">Exterior Cladding</a></li>
                 <li><a href="">Wallpaper</a></li>
-                <li><a href="">Decking</a></li>
+                <li><a href="">Decking</a></li>-->
             </ul>
         </div>
     </section>
@@ -28,8 +28,9 @@
                 <div class="hands2">
                     <img src="img/product/hand10.png" class="img-responsive" alt="product">
                 </div>
-                <div class="row">
-                    <div class="col-md-4" ng-repeat="s in woodmouldings">
+                <div class="row" ng-repeat="s2 in subcategoryBig">
+                    <!--//for 3 grid-->
+                    <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
                         <div class="door" ui-sref="division1">
                             <div class="overlay"></div>
                             <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
@@ -38,49 +39,34 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-md-4">
-                        <div class="door" ui-sref="division">
+                    <!--//for 3 grid-->
+                    <!--//for 1 grid-->
+                    <div class="col-md-4" ng-if="s2.length==1"></div>
+                    <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
+                        <div class="door" ui-sref="division1">
                             <div class="overlay"></div>
-                            <div class="door-img img2"></div>
+                            <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                             <div class="door-info">
-                                <p class="text-uppercase">Dupont Corian</p>
+                                <p class="text-uppercase">{{s.name}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="door" ui-sref="division">
+                    <div class="col-md-4" ng-if="s2.length==1"></div>
+                    <!--//for 1 grid-->
+                    <!--//for 2 grid-->
+                    <div class="col-md-2" ng-if="s2.length==2"></div>
+                    <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
+                        <div class="door">
                             <div class="overlay"></div>
-                            <div class="door-img img3"></div>
+                            <div class="door-img img4" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                             <div class="door-info">
-                                <p class="text-uppercase">Exterior Cladding</p>
+                                <p class="text-uppercase">{{s.name}}</p>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+                    <div class="col-md-2" ng-if="s2.length==2"></div>
+                    <!--//for 2 grid-->
                 </div>
-                <!--<div class="mt10">
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-4">
-                            <div class="door" ui-sref="division">
-                                <div class="overlay"></div>
-                                <div class="door-img img4"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">Wallpaper</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="door" ui-sref="division">
-                                <div class="overlay"></div>
-                                <div class="door-img img5"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">Decking</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>

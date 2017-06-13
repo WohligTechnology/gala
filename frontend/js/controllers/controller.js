@@ -49,13 +49,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         id: "galakitchenworld",
         url: "img/homenew/9.jpg"
     }, {
-
-    }, {
         name: "mahavir corporation (India)",
         id: "mahavircorporation",
         url: "img/homenew/10.jpg"
-    }, {
-
     }];
 
     //chunk//
@@ -99,90 +95,120 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     };
 })
 
-.controller('DivisionCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('DivisionCtrl', function ($scope, $stateParams, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.getHTML("content/division.html");
     TemplateService.title = "Division"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
 
+
+
+    $scope.category = $stateParams.category;
+    console.log("cat", $scope.category);
     //world//
-    $scope.uroveenerworld = [{
+    $scope.subcategoryAll = [{
         name: "Alabaster & MDF",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
     }, {
         name: "Designer Charcoal",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
     }, {
         name: " Designer Laminates",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
     }, {
         name: " Exclusive veener",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
     }, {
         name: " Panels & Acrylam",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
     }, {
         name: " Plywood",
         bannerImg: "img/",
-        bgImg: "img/"
-    }]
+        smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
+        bgImg: "img/",
+        category: "uroveenerworld"
+    }, {
+        name: "Door",
+        bannerImg: "img/",
+        smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
+        bgImg: "img/",
+        category: "woodmouldings"
+    }, {
+        name: "Dupont Corian",
+        bannerImg: "img/",
+        smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
+        bgImg: "img/",
+        category: "woodmouldings"
+    }, {
+        name: " Exterior Cladding",
+        bannerImg: "img/",
+        smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
+        bgImg: "img/",
+        category: "woodmouldings"
+    }, {
+        name: " Wallpaper",
+        bannerImg: "img/",
+        smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
+        bgImg: "img/",
+        category: "woodmouldings"
+    }, {
+        name: " Decking",
+        bannerImg: "img/",
+        smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
+        bgImg: "img/",
+        category: "woodmouldings"
+    }];
 
-    // woodmouldings
-    $scope.woodmouldings = [{
-            name: "Door",
-            bannerImg: "img/",
-            smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
-            bgImg: "img/"
-        }, {
-            name: "Dupont Corian",
-            bannerImg: "img/",
-            smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
-            bgImg: "img/"
-        }, {
-            name: " Exterior Cladding",
-            bannerImg: "img/",
-            smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
-            bgImg: "img/"
-        }, {
-            name: " Wallpaper",
-            bannerImg: "img/",
-            smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
-            bgImg: "img/"
-        }, {
-            name: " Decking",
-            bannerImg: "img/",
-            smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
-            bgImg: "img/"
-        }]
-        //bathworld
+
+    //bathworld
     $scope.bathworld = [{
         name: "CP Fittings",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
+        bgImg: "img/",
+        category: "bathworld"
     }, {
         name: "Faucets",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
+        bgImg: "img/",
+        category: "bathworld"
     }, {
         name: " Flooring Tiles",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
+        bgImg: "img/",
+        category: "bathworld"
     }, {
         name: " Kitchen Sinks",
         bannerImg: "img/",
-        bgImg: "img/"
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
+        bgImg: "img/",
+        category: "bathworld"
     }, {
         name: " Sanitary ware",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
         bgImg: "img/"
     }, {
         name: " Wall Tiles",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/bathworld/5.jpg",
         bgImg: "img/"
     }]
 
@@ -191,22 +217,27 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.galahardwareworlds = [{
         name: "Bathroom Acce",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
         bgImg: "img/"
     }, {
         name: "Cabinet Handles & Locks",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
         bgImg: "img/"
     }, {
         name: " Designer Hardware",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
         bgImg: "img/"
     }, {
         name: " Glass Fittings",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
         bgImg: "img/"
     }, {
         name: " SS Railings",
         bannerImg: "img/",
+        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
         bgImg: "img/"
     }]
 
@@ -348,6 +379,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         bannerImg: "img/",
         bgImg: "img/"
     }]
+    $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
+        return o.category == $scope.category;
+    });
+    //chunk//
+    $scope.subcategoryBig = _.chunk($scope.subcategory, 3);
+    console.log("$scope.subcategory ", $scope.subcategory);
 })
 
 .controller('Division1Ctrl', function ($scope, TemplateService, NavigationService, $timeout) {
