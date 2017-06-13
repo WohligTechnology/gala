@@ -136,27 +136,27 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.woodmouldings = [{
             name: "Door",
             bannerImg: "img/",
-            smallerImg: "img/about/3.jpg",
+            smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
             bgImg: "img/"
         }, {
             name: "Dupont Corian",
             bannerImg: "img/",
-            smallerImg: "img/about/4.jpg",
+            smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
             bgImg: "img/"
         }, {
             name: " Exterior Cladding",
             bannerImg: "img/",
-            smallerImg: "img/about/5.jpg",
+            smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
             bgImg: "img/"
         }, {
             name: " Wallpaper",
             bannerImg: "img/",
-            smallerImg: "img/about/6.jpg",
+            smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
             bgImg: "img/"
         }, {
             name: " Decking",
             bannerImg: "img/",
-            smallerImg: "img/about/7.jpg",
+            smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
             bgImg: "img/"
         }]
         //bathworld
