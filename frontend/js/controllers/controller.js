@@ -78,20 +78,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     };
 
     $scope.openModal();
-
-
-})
-
-.controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-    $scope.template = TemplateService.getHTML("content/form.html");
-    TemplateService.title = "Form"; //This is the Title of the Website
-    $scope.navigation = NavigationService.getNavigation();
-    TemplateService.social = "views/template/social.html";
-    $scope.formSubmitted = false;
-    $scope.submitForm = function (data) {
-        console.log(data);
-        $scope.formSubmitted = true;
-    };
 })
 
 .controller('DivisionCtrl', function ($scope, $stateParams, TemplateService, NavigationService, $timeout) {
@@ -107,342 +93,311 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     //world//
     $scope.subcategoryAll = [{
         name: "Alabaster & MDF",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: "Designer Charcoal",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: " Designer Laminates",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: " Exclusive veener",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: " Panels & Acrylam",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: " Plywood",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
         smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/Uroveneerworld.jpg",
         category: "uroveenerworld"
     }, {
         name: "Door",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/WoodMouldings.jpg",
         smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/WoodMouldings.jpg",
         category: "woodmouldings"
     }, {
         name: "Dupont Corian",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/WoodMouldings.jpg",
         smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/WoodMouldings.jpg",
         category: "woodmouldings"
     }, {
         name: " Exterior Cladding",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/WoodMouldings.jpg",
         smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/WoodMouldings.jpg",
         category: "woodmouldings"
     }, {
         name: " Wallpaper",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/WoodMouldings.jpg",
         smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/WoodMouldings.jpg",
         category: "woodmouldings"
     }, {
         name: " Decking",
-        bannerImg: "img/",
+        bannerImg: "img/divisions/banner/WoodMouldings.jpg",
         smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
-        bgImg: "img/",
+        bgImg: "img/divisions/bg/WoodMouldings.jpg",
         category: "woodmouldings"
-    }];
-
-
-    //bathworld
-    $scope.bathworld = [{
+    }, {
         name: "CP Fittings",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/CPFittings.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
     }, {
         name: "Faucets",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/Faucets.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
     }, {
-        name: " Flooring Tiles",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        name: "Flooring Tiles",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/FlooringTiles.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
     }, {
-        name: " Kitchen Sinks",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        name: "Kitchen Sinks",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/KitchenSinks.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
     }, {
-        name: " Sanitary ware",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        name: "Sanitary ware",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/Sanitaryware.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
     }, {
-        name: " Wall Tiles",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/",
+        name: "Wall Tiles",
+        bannerImg: "img/divisions/banner/Bathworld.jpg",
+        smallerImg: "img/divisions/categories/BathWorld/WallTiles.jpg",
+        bgImg: "img/divisions/bg/Bathworld.jpg",
         category: "bathworld"
-    }]
-
-    //galahardwareworlds
-
-    $scope.galahardwareworlds = [{
+    }, {
         name: "Bathroom Acce",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/",
+        bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        smallerImg: "img/divisions/categories/GalaHardwareWorld/BathroomAcce.jpg",
+        bgImg: "img/divisions/bg/Galahardwareworld.jpg",
         category: "galahardwareworlds"
     }, {
         name: "Cabinet Handles & Locks",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/",
+        bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        smallerImg: "img/divisions/categories/GalaHardwareWorld/CabinetHandlesLocks.jpg",
+        bgImg: "img/divisions/bg/Galahardwareworld.jpg",
         category: "galahardwareworlds"
     }, {
-        name: " Designer Hardware",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/",
+        name: "Designer Hardware",
+        bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        smallerImg: "img/divisions/categories/GalaHardwareWorld/DesignerHardware.jpg",
+        bgImg: "img/divisions/bg/Galahardwareworld.jpg",
         category: "galahardwareworlds"
     }, {
-        name: " Glass Fittings",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/",
+        name: "Glass Fittings",
+        bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        smallerImg: "img/divisions/categories/GalaHardwareWorld/GlassFittings.jpg",
+        bgImg: "img/divisions/bg/Galahardwareworld.jpg",
         category: "galahardwareworlds"
     }, {
-        name: " SS Railings",
-        bannerImg: "img/",
-        smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/",
+        name: "SS Railings",
+        bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        smallerImg: "img/divisions/categories/GalaHardwareWorld/SSRailings.jpg",
+        bgImg: "img/divisions/bg/Galahardwareworld.jpg",
         category: "galahardwareworlds"
-    }]
-
-    //galastoneworlds
-
-    $scope.galastoneworlds = [{
+    }, {
         name: "Exclusive Temple Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/ExclusiveTempleCollection.jpg",
         category: "galastoneworlds"
     }, {
         name: "Flex Stone Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/FlexStoneCollection.jpg",
         category: "galastoneworlds"
     }, {
-        name: " Metal Series Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        name: "Metal Series Collection",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/MetalSeriesCollection.jpg",
         category: "galastoneworlds"
     }, {
-        name: " Natural Stone Cladding Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        name: "Natural Stone Cladding Collection",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/NaturalStoneCladdingCollection.jpg",
         category: "galastoneworlds"
     }, {
-        name: " Odyssey Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        name: "Odyssey Collection",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/OdysseyCollection.jpg",
         category: "galastoneworlds"
     }, {
-        name: "  ORVI Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        name: "ORVI Collection",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/ORVICollection.jpg",
         category: "galastoneworlds"
     }, {
-        name: "  Wash Basin and Pebbles Collection",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        name: "Wash Basin and Pebbles Collection",
+        bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        smallerImg: "img/divisions/categories/GalaStoneWorld/WashBasinPebblesCollection.jpg",
         category: "galastoneworlds"
-    }]
-
-    //galafurnitureworlds
-
-    $scope.galafurnitureworlds = [{
+    }, {
         name: "Accessories & Carpets",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
         category: "galafurnitureworlds"
     }, {
         name: "Coffee Table",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
         category: "galafurnitureworlds"
     }, {
-        name: " Dining Tables",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        name: "Dining Tables",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
         category: "galafurnitureworlds"
     }, {
-        name: " Fabric Sofas",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        name: "Fabric Sofas",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/Fabric Sofas.jpg",
         category: "galafurnitureworlds"
     }, {
-        name: " Luxury Sofas",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        name: "Luxury Sofas",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/LuxurySofas.jpg",
         category: "galafurnitureworlds"
     }, {
-        name: "  Out Door",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        name: "Out Door",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/OutDoor.jpg",
         category: "galafurnitureworlds"
     }, {
-        name: "  Recliner Sofas",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        name: "Recliner Sofas",
+        bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        smallerImg: "img/divisions/categories/GalaFurnitureWorld/ReclinerSofas.jpg",
         category: "galafurnitureworlds"
-    }]
-
-    //eurolightingworld
-
-    $scope.eurolightingworld = [{
+    }, {
         name: "Ceiling Fans",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        smallerImg: "img/divisions/categories/EuroLightingWorld/CeilingFans.jpg",
         category: "eurolightingworld"
     }, {
         name: "Decoratives",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        smallerImg: "img/divisions/categories/EuroLightingWorld/Decoratives.jpg",
         category: "eurolightingworld"
     }, {
-        name: " Designer Lights",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        name: "Designer Lights",
+        bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        smallerImg: "img/divisions/categories/EuroLightingWorld/DesignerLights.jpg",
         category: "eurolightingworld"
     }, {
-        name: " Light Fixtures",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        name: "Light Fixtures",
+        bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        smallerImg: "img/divisions/categories/EuroLightingWorld/LightFixtures.jpg",
         category: "eurolightingworld"
-    }]
-
-    //galadrapesworld
-    $scope.galadrapesworld = [{
+    }, {
         name: "Blinds",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/Blinds.jpg",
         category: "galadrapesworld"
     }, {
         name: "Carpets Door mats and Runners",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/CarpetsDoormatsRunners.jpg",
         category: "galadrapesworld"
     }, {
-        name: " Curtains",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        name: "Curtains",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/Curtains.jpg",
         category: "galadrapesworld"
     }, {
-        name: " Home Linen & Accessories",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        name: "Home Linen & Accessories",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/HomeLinenAccessories.jpg",
         category: "galadrapesworld"
     }, {
-        name: " Mattress",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        name: "Mattress",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/Mattress.jpg",
         category: "galadrapesworld"
     }, {
-        name: " Upholstery",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        name: "Upholstery",
+        bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        smallerImg: "img/divisions/categories/GalaCurtainWorld/Upholstery.jpg",
         category: "galadrapesworld"
-    }]
-
-    //galakitchenworld
-
-    $scope.galakitchenworld = [{
+    }, {
         name: "Appliances",
         bannerImg: "img/",
         bgImg: "img/",
-        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        smallerImg: "img/divisions/categories/GalaKitchenWorld/Appliances.jpg",
         category: "galakitchenworld"
     }, {
         name: "Hobs & Chimneys",
         bannerImg: "img/",
         bgImg: "img/",
-        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        smallerImg: "img/divisions/categories/GalaKitchenWorld/HobsChimneys.jpg",
         category: "galakitchenworld"
     }, {
         name: " Kitchen & Wardrobe Acce",
         bannerImg: "img/",
         bgImg: "img/",
-        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        smallerImg: "img/divisions/categories/GalaKitchenWorld/KitchenWardrobeAcce.jpg",
         category: "galakitchenworld"
     }, {
         name: " Sliding Fittings",
         bannerImg: "img/",
         bgImg: "img/",
-        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        smallerImg: "img/divisions/categories/GalaKitchenWorld/SlidingFittings.jpg",
         category: "galakitchenworld"
-    }]
-
-    //mahavircorporation
-
-    $scope.mahavircorporation = [{
+    }, {
         name: "Aluminum Composite Panels",
-        bannerImg: "img/",
-        bgImg: "img/",
-        smallerImg: "img/divisions/categories/mahavircorporation/5.jpg",
+        bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
+        bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
+        smallerImg: "img/divisions/categories/MahaveerCorporation/AluminumCompositePanels.jpg",
         category: "mahavircorporation"
-    }]
+    }];
     $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
         return o.category == $scope.category;
     });
@@ -472,26 +427,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         '../img/product/6.jpg',
         '../img/product/7.jpg'
     ];
-    //         $(window).load(function() {
-    //   // The slider being synced must be initialized first
-    //   $('#carousel').flexslider({
-    //     animation: "slide",
-    //     controlNav: false,
-    //     animationLoop: false,
-    //     slideshow: false,
-    //     itemWidth: 210,
-    //     itemMargin: 5,
-    //     asNavFor: '#carousel'
-    //   });
 
-    //   $('#slider').flexslider({
-    //     animation: "slide",
-    //     controlNav: false,
-    //     animationLoop: false,
-    //     slideshow: false,
-    //     sync: "#carousel"
-    //   });
-    // });
 })
 
 //Example API Controller
