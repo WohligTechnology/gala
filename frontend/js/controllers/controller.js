@@ -15,7 +15,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         name: "uro veener world",
         id: "uroveenerworld",
         url: "img/homenew/1.jpg"
-
     }, {
         name: "wood & mouldings",
         id: "woodmouldings",
@@ -204,12 +203,14 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         name: " Sanitary ware",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "bathworld"
     }, {
         name: " Wall Tiles",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/bathworld/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "bathworld"
     }]
 
     //galahardwareworlds
@@ -218,27 +219,32 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         name: "Bathroom Acce",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "galahardwareworlds"
     }, {
         name: "Cabinet Handles & Locks",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "galahardwareworlds"
     }, {
         name: " Designer Hardware",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "galahardwareworlds"
     }, {
         name: " Glass Fittings",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "galahardwareworlds"
     }, {
         name: " SS Railings",
         bannerImg: "img/",
         smallerImg: "img/divisions/categories/galahardwareworlds/5.jpg",
-        bgImg: "img/"
+        bgImg: "img/",
+        category: "galahardwareworlds"
     }]
 
     //galastoneworlds
@@ -246,31 +252,45 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.galastoneworlds = [{
         name: "Exclusive Temple Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: "Flex Stone Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: " Metal Series Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: " Natural Stone Cladding Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: " Odyssey Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: "  ORVI Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }, {
         name: "  Wash Basin and Pebbles Collection",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galastoneworlds/5.jpg",
+        category: "galastoneworlds"
     }]
 
     //galafurnitureworlds
@@ -278,31 +298,45 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.galafurnitureworlds = [{
         name: "Accessories & Carpets",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: "Coffee Table",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: " Dining Tables",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: " Fabric Sofas",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: " Luxury Sofas",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: "  Out Door",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }, {
         name: "  Recliner Sofas",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galafurnitureworlds/5.jpg",
+        category: "galafurnitureworlds"
     }]
 
     //eurolightingworld
@@ -310,46 +344,66 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.eurolightingworld = [{
         name: "Ceiling Fans",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        category: "eurolightingworld"
     }, {
         name: "Decoratives",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        category: "eurolightingworld"
     }, {
         name: " Designer Lights",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        category: "eurolightingworld"
     }, {
         name: " Light Fixtures",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/eurolightingworld/5.jpg",
+        category: "eurolightingworld"
     }]
 
     //galadrapesworld
     $scope.galadrapesworld = [{
         name: "Blinds",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }, {
         name: "Carpets Door mats and Runners",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }, {
         name: " Curtains",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }, {
         name: " Home Linen & Accessories",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }, {
         name: " Mattress",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }, {
         name: " Upholstery",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galadrapesworld/5.jpg",
+        category: "galadrapesworld"
     }]
 
     //galakitchenworld
@@ -357,19 +411,27 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.galakitchenworld = [{
         name: "Appliances",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        category: "galakitchenworld"
     }, {
         name: "Hobs & Chimneys",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        category: "galakitchenworld"
     }, {
         name: " Kitchen & Wardrobe Acce",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        category: "galakitchenworld"
     }, {
         name: " Sliding Fittings",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/galakitchenworld/5.jpg",
+        category: "galakitchenworld"
     }]
 
     //mahavircorporation
@@ -377,7 +439,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.mahavircorporation = [{
         name: "Aluminum Composite Panels",
         bannerImg: "img/",
-        bgImg: "img/"
+        bgImg: "img/",
+        smallerImg: "img/divisions/categories/mahavircorporation/5.jpg",
+        category: "mahavircorporation"
     }]
     $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
         return o.category == $scope.category;
