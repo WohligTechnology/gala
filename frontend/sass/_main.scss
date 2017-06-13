@@ -604,34 +604,34 @@ h5 {
         padding: 100px 0px 100px 0px;
     }
     .img1 {
-        background-image: url("../img/home/1.jpg");
+        background-image: url("../img/homenew/1.jpg");
     }
     .img2 {
-        background-image: url("../img/home/2.jpg");
+        background-image: url("../img/homenew/2.jpg");
     }
     .img3 {
-        background-image: url("../img/home/3.jpg");
+        background-image: url("../img/homenew/3.jpg");
     }
     .img4 {
-        background-image: url("../img/home/4.jpg");
+        background-image: url("../img/homenew/4.jpg");
     }
     .img5 {
-        background-image: url("../img/home/5.jpg");
+        background-image: url("../img/homenew/5.jpg");
     }
     .img6 {
-        background-image: url("../img/home/6.jpg");
+        background-image: url("../img/homenew/6.jpg");
     }
     .img7 {
-        background-image: url("../img/home/7.jpg");
+        background-image: url("../img/homenew/7.jpg");
     }
     .img8 {
-        background-image: url("../img/home/8.jpg");
+        background-image: url("../img/homenew/8.jpg");
     }
     .img9 {
-        background-image: url("../img/home/9.jpg");
+        background-image: url("../img/homenew/9.jpg");
     }
     .img10 {
-        background-image: url("../img/home/10.jpg");
+        background-image: url("../img/homenew/10.jpg");
     }
 }
 
@@ -853,8 +853,9 @@ sup {
     -2px null null 0px);
 }
 
-.handss1,.handss2{
-  @include size(70px,
+.handss1,
+.handss2 {
+    @include size(70px,
     auto);
 }
 
@@ -865,7 +866,7 @@ sup {
 
 .handss2 {
     @include position(absolute,
-    -12px 26px null null );
+    -12px 26px null null);
 }
 
 .ok {
@@ -882,8 +883,8 @@ sup {
     null null 0 100px);
 }
 
-.thumb{
-     @include size(180px,
+.thumb {
+    @include size(180px,
     auto);
     @include position(absolute,
     null null 0 100px);

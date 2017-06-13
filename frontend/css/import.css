@@ -9597,25 +9597,25 @@ h5 {
     width: auto;
     padding: 100px 0px 100px 0px; }
   .listings .img1 {
-    background-image: url("../img/home/1.jpg"); }
+    background-image: url("../img/homenew/1.jpg"); }
   .listings .img2 {
-    background-image: url("../img/home/2.jpg"); }
+    background-image: url("../img/homenew/2.jpg"); }
   .listings .img3 {
-    background-image: url("../img/home/3.jpg"); }
+    background-image: url("../img/homenew/3.jpg"); }
   .listings .img4 {
-    background-image: url("../img/home/4.jpg"); }
+    background-image: url("../img/homenew/4.jpg"); }
   .listings .img5 {
-    background-image: url("../img/home/5.jpg"); }
+    background-image: url("../img/homenew/5.jpg"); }
   .listings .img6 {
-    background-image: url("../img/home/6.jpg"); }
+    background-image: url("../img/homenew/6.jpg"); }
   .listings .img7 {
-    background-image: url("../img/home/7.jpg"); }
+    background-image: url("../img/homenew/7.jpg"); }
   .listings .img8 {
-    background-image: url("../img/home/8.jpg"); }
+    background-image: url("../img/homenew/8.jpg"); }
   .listings .img9 {
-    background-image: url("../img/home/9.jpg"); }
+    background-image: url("../img/homenew/9.jpg"); }
   .listings .img10 {
-    background-image: url("../img/home/10.jpg"); }
+    background-image: url("../img/homenew/10.jpg"); }
 
 .flexslides .flex-direction-nav {
   -webkit-display: none;
@@ -9818,7 +9818,8 @@ sup {
   top: -2px;
   left: 0px; }
 
-.handss1, .handss2 {
+.handss1,
+.handss2 {
   width: 70px;
   height: auto; }
 
