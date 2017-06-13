@@ -29,7 +29,7 @@
                     <div class="row" ng-repeat="s2 in subcategoryBig">
                         <!--//for 3 grid-->
                         <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
-                            <div class="door" ui-sref="division1">
+                            <div class="door" ui-sref="divisions({divisioncategory:s.category[0],inner:s.name})">
                                 <div class="overlay"></div>
                                 <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                                 <div class="door-info">
@@ -41,7 +41,7 @@
                         <!--//for 1 grid-->
                         <div class="col-md-4" ng-if="s2.length==1"></div>
                         <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
-                            <div class="door" ui-sref="division1">
+                            <div class="door" ui-sref="divisions({divisioncategory:s.category,inner:s.name})">
                                 <div class="overlay"></div>
                                 <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                                 <div class="door-info">
@@ -54,7 +54,7 @@
                         <!--//for 2 grid-->
                         <div class="col-md-2" ng-if="s2.length==2"></div>
                         <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
-                            <div class="door">
+                            <div class="door" ui-sref="divisions({divisioncategory:s.category,inner:s.name})">
                                 <div class="overlay"></div>
                                 <div class="door-img img4" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                                 <div class="door-info">

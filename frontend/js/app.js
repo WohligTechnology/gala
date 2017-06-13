@@ -28,8 +28,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'DivisionCtrl'
         })
-        .state('division1', {
-            url: "/division1/:categoryinfo",
+        .state('divisions', {
+            url: "/divisions/:divisioncategory/:inner",
             templateUrl: tempateURL,
             controller: 'Division1Ctrl'
         })
