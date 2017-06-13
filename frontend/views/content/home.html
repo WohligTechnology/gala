@@ -14,16 +14,16 @@
             <h1 class="text-capitalize text-right ">our offerings</h1>
             <div class="about-info">
                 <div class="text-center product">
-                    <div class="row-flex">
-                        <div class="col-flex">
-                            <div class="door margin0" ui-sref="about">
-                                <div class="door-img img1"></div>
-                                <div class="door-info">
-                                    <p class="text-capitalize">uro veener world</p>
+                    <div class="row" ng-repeat="s in homecategory">
+                        <div class="col-md-4" ng-repeat="s1 in s">
+                            <div class="door margin0" ui-sref="division">
+                                <div class="door-img img1" ng-style="{'background-image': 'url(' + s1.url + ')'}"></div>
+                                <div class="door-info" ng-if="s1.name">
+                                    <p class="text-capitalize">{{s1.name}}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-flex">
+                        <!--<div class="col-flex">
                             <div class="door margin0" ui-sref="about">
                                 <div class="door-img img2"></div>
                                 <div class="door-info">
@@ -38,9 +38,9 @@
                                     <p class="text-capitalize">bath world</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
-                    <div class="row-flex">
+                    <!--<div class="row-flex">
                         <div class="col-flex">
                             <div class="door" ui-sref="about">
                                 <div class="door-img img4"></div>
@@ -65,8 +65,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row-flex">
+                    </div>-->
+                    <!--<div class="row-flex">
                         <div class="col-flex">
                             <div class="door" ui-sref="about">
                                 <div class="door-img img7"></div>
@@ -91,8 +91,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row-flex">
+                    </div>-->
+                    <!--<div class="row-flex">
                         <div class="col-flex">
                         </div>
                         <div class="col-flex">
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-flex">
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
     <section class="abouts ">
         <div class="container">
             <h1 class="text-capitalize offers whitey">about us</h1>
-            <p class="creativity">  creativity is limitless and so are the ways to expressions ! </p>
+            <p class="creativity"> creativity is limitless and so are the ways to expressions ! </p>
             <div class="about-info">
                 <div class="about-data text-right ">
                     <p class="whitey text-left">Our vision is to bring your dream space alive. We belive that a house can only be turned into the home,

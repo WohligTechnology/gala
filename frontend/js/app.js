@@ -23,17 +23,17 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'HomeCtrl'
         })
-          .state('about', {
-            url: "/about",
-            templateUrl: tempateURL,
-            controller: 'AboutCtrl'
-        })
-           .state('division', {
+        .state('division', {
             url: "/division",
             templateUrl: tempateURL,
             controller: 'DivisionCtrl'
         })
-         .state('gallery', {
+        .state('division1', {
+            url: "/division1",
+            templateUrl: tempateURL,
+            controller: 'Division1Ctrl'
+        })
+        .state('gallery', {
             url: "/gallery",
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'

@@ -11,6 +11,55 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         '../img/homenew/banner6.jpg'
     ];
 
+    $scope.category = [{
+        name: "uro veener world",
+        id: "uroveenerworld",
+        url: "img/homenew/1.jpg"
+
+    }, {
+        name: "wood & mouldings",
+        id: "woodmouldings",
+        url: "img/homenew/2.jpg"
+    }, {
+        name: " bath world",
+        id: "bathworld",
+        url: "img/homenew/3.jpg"
+    }, {
+        name: " gala hardware worlds",
+        id: "galahardwareworlds",
+        url: "img/homenew/4.jpg"
+    }, {
+        name: " gala stone worlds",
+        id: "galastoneworlds",
+        url: "img/homenew/5.jpg"
+    }, {
+        name: " gala furniture worlds",
+        id: "galafurnitureworlds",
+        url: "img/homenew/6.jpg"
+    }, {
+        name: "euro lighting world",
+        id: "eurolightingworld",
+        url: "img/homenew/7.jpg"
+    }, {
+        name: "gala drapes world",
+        id: "galadrapesworld",
+        url: "img/homenew/8.jpg"
+    }, {
+        name: "gala kitchen world",
+        id: "galakitchenworld",
+        url: "img/homenew/9.jpg"
+    }, {
+
+    }, {
+        name: "mahavir corporation (India)",
+        id: "mahavircorporation",
+        url: "img/homenew/10.jpg"
+    }, {
+
+    }];
+
+    //chunk//
+    $scope.homecategory = _.chunk($scope.category, 3);
 
     var abc = _.times(100, function (n) {
         return n;
@@ -50,16 +99,255 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     };
 })
 
-.controller('AboutCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
-    $scope.template = TemplateService.getHTML("content/about.html");
-    TemplateService.title = "About Us"; //This is the Title of the Website
-    $scope.navigation = NavigationService.getNavigation();
-    TemplateService.social = "views/template/social.html";
-})
-
 .controller('DivisionCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.getHTML("content/division.html");
     TemplateService.title = "Division"; //This is the Title of the Website
+    $scope.navigation = NavigationService.getNavigation();
+    TemplateService.social = "views/template/social.html";
+
+    //world//
+    $scope.uroveenerworld = [{
+        name: "Alabaster & MDF",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Designer Charcoal",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Designer Laminates",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Exclusive veener",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Panels & Acrylam",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Plywood",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    // woodmouldings
+    $scope.woodmouldings = [{
+            name: "Door",
+            bannerImg: "img/",
+            bgImg: "img/"
+        }, {
+            name: "Dupont Corian",
+            bannerImg: "img/",
+            bgImg: "img/"
+        }, {
+            name: " Exterior Cladding",
+            bannerImg: "img/",
+            bgImg: "img/"
+        }, {
+            name: " Wallpaper",
+            bannerImg: "img/",
+            bgImg: "img/"
+        }, {
+            name: " Decking",
+            bannerImg: "img/",
+            bgImg: "img/"
+        }]
+        //bathworld
+    $scope.bathworld = [{
+        name: "CP Fittings",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Faucets",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Flooring Tiles",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Kitchen Sinks",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Sanitary ware",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Wall Tiles",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //galahardwareworlds
+
+    $scope.galahardwareworlds = [{
+        name: "Bathroom Acce",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Cabinet Handles & Locks",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Designer Hardware",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Glass Fittings",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " SS Railings",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //galastoneworlds
+
+    $scope.galastoneworlds = [{
+        name: "Exclusive Temple Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Flex Stone Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Metal Series Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Natural Stone Cladding Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Odyssey Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "  ORVI Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "  Wash Basin and Pebbles Collection",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //galafurnitureworlds
+
+    $scope.galafurnitureworlds = [{
+        name: "Accessories & Carpets",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Coffee Table",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Dining Tables",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Fabric Sofas",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Luxury Sofas",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "  Out Door",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "  Recliner Sofas",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //eurolightingworld
+
+    $scope.eurolightingworld = [{
+        name: "Ceiling Fans",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Decoratives",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Designer Lights",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Light Fixtures",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //galadrapesworld
+    $scope.galadrapesworld = [{
+        name: "Blinds",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Carpets Door mats and Runners",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Curtains",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Home Linen & Accessories",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Mattress",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Upholstery",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //galakitchenworld
+
+    $scope.galakitchenworld = [{
+        name: "Appliances",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: "Hobs & Chimneys",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Kitchen & Wardrobe Acce",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }, {
+        name: " Sliding Fittings",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+
+    //mahavircorporation
+
+    $scope.mahavircorporation = [{
+        name: "Aluminum Composite Panels",
+        bannerImg: "img/",
+        bgImg: "img/"
+    }]
+})
+
+.controller('Division1Ctrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.getHTML("content/division1.html");
+    TemplateService.title = "Division1"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
 })
