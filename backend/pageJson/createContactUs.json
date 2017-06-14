@@ -1,12 +1,12 @@
 {
-    "title":"create ContactUs",
+    "title": "create ContactUs",
     "name": "ContactUs",
-    "jsonPage":"viewContactUs",
+    "jsonPage": "viewContactUs",
     "description": "",
-    "pageType":"create",
-    "urlFields": ["ContactUs"],  
-     "fields": [{
-         "name": "First Name",
+    "pageType": "create",
+    "urlFields": ["ContactUs"],
+    "fields": [{
+            "name": "First Name",
             "type": "text",
             "tableRef": "firstName",
             "id": "firstName",
@@ -14,9 +14,9 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },
-    {
-        "name": "Last Name",
+        },
+        {
+            "name": "Last Name",
             "type": "text",
             "tableRef": "lastName",
             "id": "lastName",
@@ -24,17 +24,17 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-         "name": "Email",
-            "type": "text",
+        }, {
+            "name": "Email",
+            "type": "email",
             "tableRef": "email",
             "id": "email",
             "placeholder": "Enter Email",
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-        "name": "Contact Number",
+        }, {
+            "name": "Contact Number",
             "type": "text",
             "tableRef": "contactNumber",
             "id": "contactNumber",
@@ -42,8 +42,8 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-        "name": "message",
+        }, {
+            "name": "message",
             "type": "text",
             "tableRef": "message",
             "id": "message",
@@ -51,8 +51,9 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-        
-    }],
+
+        }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitContactUs",

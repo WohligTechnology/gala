@@ -6,7 +6,7 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-         "name": "First Name",
+            "name": "First Name",
             "type": "text",
             "tableRef": "firstName",
             "id": "firstName",
@@ -14,9 +14,9 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },
-    {
-        "name": "Last Name",
+        },
+        {
+            "name": "Last Name",
             "type": "text",
             "tableRef": "lastName",
             "id": "lastName",
@@ -24,26 +24,26 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-         "name": "Email",
-            "type": "text",
+        }, {
+            "name": "Email",
+            "type": "email",
             "tableRef": "email",
             "id": "email",
             "placeholder": "Enter Email",
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-        "name": "Contact Number",
-            "type": "text",
+        }, {
+            "name": "Contact Number",
+            "type": "tel",
             "tableRef": "contactNumber",
             "id": "contactNumber",
             "placeholder": "Enter Contact Number",
             "view": true,
             "validation": ["required"],
             "url": ""
-    },{
-        "name": "Message",
+        }, {
+            "name": "Message",
             "type": "text",
             "tableRef": "message",
             "id": "message",
@@ -51,8 +51,9 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    }],
-     "action": [{
+        }
+    ],
+    "action": [{
         "name": "submit",
         "action": "submitContactUs",
         "stateName": {
@@ -78,5 +79,5 @@
     "preApi": {
         "url": "ContactUs/getOne",
         "params": "_id"
-    } 
+    }
 }

@@ -5,28 +5,29 @@
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "First Name",
-        "isSort": "",
-        "tableRef": "firstName"
-    },
-    {
-        "name": "Last Name",
-        "isSort": "",
-        "tableRef": "lastName"
-    },{
-        "name": "Email",
-        "isSort": "",
-        "tableRef": "email"
-    },{
-        "name": "Contact Number",
-        "isSort": "",
-        "tableRef": "contactNumber"
-    },{
-        "name": "Message",
-        "isSort": "",
-        "tableRef": "message"
-    }],
-     "action": [{
+            "name": "First Name",
+            "isSort": "",
+            "tableRef": "firstName"
+        },
+        {
+            "name": "Last Name",
+            "isSort": "",
+            "tableRef": "lastName"
+        }, {
+            "name": "Email",
+            "isSort": "",
+            "tableRef": "email"
+        }, {
+            "name": "Contact Number",
+            "isSort": "",
+            "tableRef": "contactNumber"
+        }, {
+            "name": "Message",
+            "isSort": "",
+            "tableRef": "message"
+        }
+    ],
+    "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
@@ -60,3 +61,4 @@
         "params": "_id"
     }
 }
+"type": "image"

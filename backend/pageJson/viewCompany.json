@@ -12,12 +12,14 @@
         {
             "name": "Banner",
             "isSort": "",
-            "tableRef": "banner"
+            "tableRef": "banner",
+            "type": "image"
         },
         {
             "name": "BackgroundBanner",
             "isSort": "",
-            "tableRef": "backgroundBanner"
+            "tableRef": "backgroundBanner",
+            "type": "image"
         },
         {
             "name": "Order",

@@ -1,12 +1,12 @@
 {
-    "title":"create Config",
+    "title": "create Config",
     "name": "Config",
-    "jsonPage":"viewConfig",
+    "jsonPage": "viewConfig",
     "description": "",
-    "pageType":"create",
-    "urlFields": ["Config"],  
-     "fields": [{
-         "name": "Name",
+    "pageType": "create",
+    "urlFields": ["Config"],
+    "fields": [{
+            "name": "Name",
             "type": "text",
             "tableRef": "name",
             "id": "name",
@@ -14,17 +14,18 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-    },
-    {
-        "name": "content",
-            "type": "text",
+        },
+        {
+            "name": "Content",
+            "type": "wysiwyg",
             "tableRef": "content",
             "id": "content",
             "placeholder": "Enter content",
             "view": true,
             "validation": ["required"],
             "url": ""
-    }],
+        }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitConfig",

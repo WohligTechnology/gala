@@ -16,7 +16,7 @@
         },
         {
             "name": "Banner",
-            "type": "text",
+            "type": "image",
             "tableRef": "banner",
             "placeholder": "Enter Banner",
             "id": "banner",
@@ -25,7 +25,7 @@
         },
         {
             "name": "BackgroundBanner",
-            "type": "text",
+            "type": "image",
             "tableRef": "backgroundBanner",
             "placeholder": "Enter BackgroundBanner",
             "id": "backgroundBanner",
@@ -34,7 +34,7 @@
         },
         {
             "name": "Order",
-            "type": "text",
+            "type": "number",
             "tableRef": "order",
             "placeholder": "Enter order",
             "id": "order",
