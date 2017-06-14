@@ -1,28 +1,29 @@
 {
-    "title":"create HomeBanner",
+    "title": "create HomeBanner",
     "name": "HomeBanner",
-    "jsonPage":"viewHomeBanner",
+    "jsonPage": "viewHomeBanner",
     "description": "",
-    "pageType":"create",
-    "urlFields": ["HomeBanner"],  
-     "fields": [{
-        "name": "Image",
-        "type": "image",
-        "tableRef": "image",
-        "placeholder": "Upload image",
-        "id": "image",
-        "validation": ["required"],
-        "url": ""
-    },
-    {
-        "name": "Order",
-        "type": "text",
-        "tableRef": "order",
-        "placeholder": "Enter Order",
-        "id": "order",
-        "validation": ["required"],
-        "url": ""
-    }],
+    "pageType": "create",
+    "urlFields": ["HomeBanner"],
+    "fields": [{
+            "name": "Image",
+            "type": "image",
+            "tableRef": "image",
+            "placeholder": "Upload image",
+            "id": "image",
+            "validation": ["required"],
+            "url": ""
+        },
+        {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter Order",
+            "id": "order",
+            "validation": ["required"],
+            "url": ""
+        }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitHomeBanner",
