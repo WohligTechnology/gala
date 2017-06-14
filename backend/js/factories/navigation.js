@@ -6,6 +6,7 @@ var uploadurl = imgurl;
 
 
 myApp.factory('NavigationService', function ($http) {
+<<<<<<< HEAD
      var navigation = [
         //  {
     //     name: "Users",
@@ -29,6 +30,21 @@ myApp.factory('NavigationService', function ($http) {
         sref:"#!/page/viewContactUs//",
         icon: "phone"        
     }];
+=======
+    var navigation = [{
+            name: "Users",
+            classis: "active",
+            sref: "#!/page/viewUser//",
+            icon: "phone"
+        },
+        {
+            name: "Company",
+            classis: "active",
+            sref: "#!/page/viewCompany//",
+
+        }
+    ];
+>>>>>>> c6e204a24ab17c4ca03a4f6589410ecc1ebd314c
 
     return {
         getnav: function () {
