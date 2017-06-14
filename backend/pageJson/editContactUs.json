@@ -1,0 +1,82 @@
+{
+    "title": "Edit ContactUs",
+    "name": "ContactUs",
+    "jsonPage": "viewContactUs",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+         "name": "First Name",
+            "type": "text",
+            "tableRef": "firstName",
+            "id": "firstName",
+            "placeholder": "Enter First Name",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },
+    {
+        "name": "Last Name",
+            "type": "text",
+            "tableRef": "lastName",
+            "id": "lastName",
+            "placeholder": "Enter Last Name",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },{
+         "name": "Email",
+            "type": "text",
+            "tableRef": "email",
+            "id": "email",
+            "placeholder": "Enter Email",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },{
+        "name": "Contact Number",
+            "type": "text",
+            "tableRef": "contactNumber",
+            "id": "contactNumber",
+            "placeholder": "Enter Contact Number",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },{
+        "name": "Message",
+            "type": "text",
+            "tableRef": "message",
+            "id": "message",
+            "placeholder": "Enter message",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    }],
+     "action": [{
+        "name": "submit",
+        "action": "submitContactUs",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewContactUs"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewContactUs"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "ContactUs/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "ContactUs/getOne",
+        "params": "_id"
+    } 
+}

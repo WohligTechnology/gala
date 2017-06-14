@@ -1,0 +1,50 @@
+{
+    "title":"create Config",
+    "name": "Config",
+    "jsonPage":"viewConfig",
+    "description": "",
+    "pageType":"create",
+    "urlFields": ["Config"],  
+     "fields": [{
+         "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "id": "name",
+            "placeholder": "Enter  Name",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },
+    {
+        "name": "content",
+            "type": "text",
+            "tableRef": "content",
+            "id": "content",
+            "placeholder": "Enter content",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitConfig",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewConfig"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewConfig"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Config/save"
+    }
+}

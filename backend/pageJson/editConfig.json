@@ -1,0 +1,55 @@
+{
+    "title": "Edit Config",
+    "name": "Config",
+    "jsonPage": "viewConfig",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+         "name": "name",
+            "type": "text",
+            "tableRef": "name",
+            "id": "name",
+            "placeholder": "Enter name",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    },
+    {
+        "name": "content",
+            "type": "text",
+            "tableRef": "content",
+            "id": "content",
+            "placeholder": "Enter content",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+    }],
+     "action": [{
+        "name": "submit",
+        "action": "submitConfig",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewConfig"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewConfig"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Config/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Config/getOne",
+        "params": "_id"
+    } 
+}

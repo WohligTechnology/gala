@@ -1,0 +1,51 @@
+{
+    "title": "HomeBanner",
+    "description": "List of HomeBanners",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+            "name": "Image",
+            "isSort": "",
+            "tableRef": "image"
+        },
+        {
+            "name": "Order",
+            "isSort": "",
+            "tableRef": "order"
+        }
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editHomeBanner",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete HomeBanner",
+        "content": "Are you sure you want to delete HomeBanner?",
+        "api": "HomeBanner/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createHomeBanner"
+    }],
+    "apiCall": {
+        "url": "HomeBanner/search",
+        "params": "_id"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "title": "Edit HomeBanner",
+    "name": "HomeBanner",
+    "jsonPage": "viewHomeBanner",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+            "name": "Image",
+            "type": "image",
+            "tableRef": "image",
+            "id": "image",
+            "placeholder": "Upload image",
+            "view": true,
+            "validation": ["required"],
+            "url": ""
+        },
+        {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter Order",
+            "id": "order",
+            "validation": ["required"],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitHomeBanner",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHomeBanner"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHomeBanner"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "HomeBanner/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "HomeBanner/getOne",
+        "params": "_id"
+    }
+}
