@@ -1,0 +1,67 @@
+{
+    "title": "Create Company",
+    "name": "Company",
+    "jsonPage": "viewCompany",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Company"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
+            "name": "Banner",
+            "type": "text",
+            "tableRef": "banner",
+            "placeholder": "Enter Banner",
+            "id": "banner",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
+            "name": "BackgroundBanner",
+            "type": "text",
+            "tableRef": "backgroundBanner",
+            "placeholder": "Enter BackgroundBanner",
+            "id": "backgroundBanner",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter order",
+            "id": "order",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitCompany",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompany"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompany"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Company/save"
+    }
+}
