@@ -692,23 +692,31 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     }, {
         names: "gala furniture worlds",
         name: "Accessories & Carpets",
+        namings: "",
         bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
         bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
         smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
-        category: "galafurnitureworlds"
+        smallersImg: "img/product/12.jpg",
+        category: "galafurnitureworlds",
+        inner: "Accessories"
     }, {
         names: "gala furniture worlds",
         name: "Coffee Table",
+        namings: "",
         bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
         bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
         smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
-        category: "galafurnitureworlds"
+        smallersImg: "img/product/22.jpg",
+        category: "galafurnitureworlds",
+        inner: "Coffee"
     }, {
         names: "gala furniture worlds",
         name: "Dining Tables",
+        namings: "",
         bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
         bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
         smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
+        smallersImg: "img/product/32.jpg",
         category: "galafurnitureworlds"
     }, {
         names: "gala furniture worlds",
