@@ -1,6 +1,4 @@
 {
-
-
     "title": "Edit Company Product",
     "name": "CompanyProduct",
     "jsonPage": "viewCompanyProduct",
@@ -17,7 +15,7 @@
             "url": ""
         }, {
             "name": "Description",
-            "type": "text",
+            "type": "textarea",
             "tableRef": "description",
             "placeholder": "Enter description",
             "id": "description",
