@@ -1,5 +1,5 @@
 {
-    "title": "ContactUs",
+    "title": "Contact Us",
     "description": "List of ContactUs",
     "pageType": "view",
     "sendIdWithCreate": true,
@@ -61,4 +61,3 @@
         "params": "_id"
     }
 }
-"type": "image"

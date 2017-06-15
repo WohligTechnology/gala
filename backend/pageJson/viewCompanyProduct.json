@@ -1,6 +1,7 @@
 {
-    "title": "Company",
-    "description": "List of Company",
+
+    "title": "View Company Product",
+    "description": "List of Company Products",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -8,23 +9,21 @@
             "name": "Name",
             "isSort": "",
             "tableRef": "name"
-        },
-        {
-            "name": "Banner",
+        }, {
+            "name": "Description",
             "isSort": "",
-            "tableRef": "banner",
-            "type": "image"
-        },
-        {
-            "name": "BackgroundBanner",
-            "isSort": "",
-            "tableRef": "backgroundBanner",
-            "type": "image"
-        },
-        {
+            "tableRef": "description"
+        }, {
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
+        },
+        {
+            "name": "Company Category",
+            "isSort": "",
+            "tableRef": "companyCategory",
+            "field": "name"
+
         }
     ],
     "action": [{
@@ -32,7 +31,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editCompany",
+        "action": "editCompanyProduct",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -41,9 +40,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Company",
-        "content": "Are you sure you want to delete Company?",
-        "api": "Company/delete",
+        "title": "Delete CompanyProduct",
+        "content": "Are you sure you want to delete Company Product?",
+        "api": "CompanyProduct/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -54,10 +53,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createCompany"
+        "action": "createCompanyProduct"
     }],
     "apiCall": {
-        "url": "Company/search",
+        "url": "CompanyProduct/search",
         "params": "_id"
     }
 }

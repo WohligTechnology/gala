@@ -16,9 +16,9 @@ var schema = new Schema({
         type: Number,
         unique: true
     },
-    message:{
+    message: {
         type: String,
-        
+
     }
 });
 

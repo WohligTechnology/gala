@@ -1,0 +1,123 @@
+{
+
+
+    "title": "Edit Company Product",
+    "name": "CompanyProduct",
+    "jsonPage": "viewCompanyProduct",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["CompanyProduct"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required"],
+            "url": ""
+        }, {
+            "name": "Description",
+            "type": "text",
+            "tableRef": "description",
+            "placeholder": "Enter description",
+            "id": "description",
+            "validation": ["required"],
+            "url": ""
+        },
+        {
+
+            "name": "Company Category",
+            "type": "tags",
+            "tableRef": "companyCategory",
+            "dropDownType": "single",
+            "dropDownField": "name",
+            "searchApi": "searchCall",
+            "placeholder": "Enter CompanyCategory Name",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": "CompanyCategory/search"
+
+        }, {
+            "name": "Order",
+            "type": "number",
+            "tableRef": "order",
+            "placeholder": "Enter order",
+            "id": "order",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }, {
+            "name": "Images",
+            "type": "box",
+            "tableRef": "images",
+            "validation": [
+                "required",
+                "trim",
+                ""
+            ],
+            "field": [{
+                "name": "Image",
+                "type": "image",
+                "tableRef": "image",
+                "tableValue": "image",
+                "placeholder": "Enter image",
+                "id": "productimage",
+                "option": "single",
+                "validation": ["", "trim", ""],
+                "onView": true,
+                "view": true,
+                "url": ""
+            }]
+        },
+        {
+            "name": "Enquiry",
+            "type": "box",
+            "tableRef": "enquiry",
+            "validation": ["required", "trim", ""],
+            "field": [{
+                "name": "Subject",
+                "type": "text",
+                "tableRef": "subject",
+                "placeholder": "Enter Subject",
+                "id": "subject",
+                "validation": ["", "trim", ""],
+                "url": "",
+                "onView": true
+            }, {
+                "name": "Enquiry",
+                "type": "text",
+                "tableRef": "enquiry",
+                "placeholder": "Enter Enquiry",
+                "id": "enquiry",
+                "validation": ["", "trim", ""],
+                "url": "",
+                "onView": true
+            }]
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitCompanyProduct",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompanyProduct"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompanyProduct"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "CompanyProduct/save"
+    },
+    "preApi": {
+        "url": "CompanyProduct/getOne",
+        "params": "_id"
+    }
+}

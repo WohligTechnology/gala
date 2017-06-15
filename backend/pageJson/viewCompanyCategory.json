@@ -1,6 +1,6 @@
 {
-    "title": "Company",
-    "description": "List of Company",
+    "title": "View Company Category",
+    "description": "List of Company Categories",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -8,23 +8,17 @@
             "name": "Name",
             "isSort": "",
             "tableRef": "name"
-        },
-        {
-            "name": "Banner",
-            "isSort": "",
-            "tableRef": "banner",
-            "type": "image"
-        },
-        {
-            "name": "BackgroundBanner",
-            "isSort": "",
-            "tableRef": "backgroundBanner",
-            "type": "image"
-        },
-        {
+        }, {
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
+        },
+        {
+            "name": "Company",
+            "isSort": "",
+            "tableRef": "company",
+            "type": "text",
+            "field": "name"
         }
     ],
     "action": [{
@@ -32,7 +26,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editCompany",
+        "action": "editCompanyCategory",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -41,9 +35,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Company",
-        "content": "Are you sure you want to delete Company?",
-        "api": "Company/delete",
+        "title": "Delete CompanyCategory",
+        "content": "Are you sure you want to delete Company Category?",
+        "api": "CompanyCategory/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -54,10 +48,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createCompany"
+        "action": "createCompanyCategory"
     }],
     "apiCall": {
-        "url": "Company/search",
+        "url": "CompanyCategory/search",
         "params": "_id"
     }
 }

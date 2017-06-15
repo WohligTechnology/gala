@@ -1,0 +1,62 @@
+{
+    "title": "Edit Company Category",
+    "name": "CompanyProduct",
+    "jsonPage": "viewCompanyCategory",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["CompanyCategory"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["required"],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "number",
+        "tableRef": "order",
+        "placeholder": "Enter Order",
+        "id": "order",
+        "validation": ["required"],
+        "url": ""
+    }, {
+        "name": "Company",
+        "type": "tags",
+        "tableRef": "company",
+        "dropDownType": "single",
+        "dropDownField": "name",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Company Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Company/search"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCompanyCategory",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompanyCategory"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCompanyCategory"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "CompanyCategory/save"
+    },
+    "preApi": {
+        "url": "CompanyCategory/getOne",
+        "params": "_id"
+    }
+}
