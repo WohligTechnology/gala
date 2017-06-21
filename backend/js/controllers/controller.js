@@ -443,6 +443,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             };
         }
         if ($scope.type.type == "box") {
+            console.log("in box: ", $scope.formData);
 
             if (!_.isArray($scope.formData[$scope.type.tableRef]) && $scope.formData[$scope.type.tableRef] === '') {
                 $scope.formData[$scope.type.tableRef] = [];
@@ -465,6 +466,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.editBox = function (state, data) {
             $scope.state = state;
             $scope.data = data;
+            $scope.formData[$scope.type.tableRef].push(data);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: '/backend/views/modal/modal.html',

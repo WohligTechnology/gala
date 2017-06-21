@@ -7,10 +7,10 @@
     "pageType": "create",
     "urlFields": ["CompanyProduct"],
     "fields": [{
-        "name": "Name",
+        "name": "Product Name",
         "type": "text",
         "tableRef": "name",
-        "placeholder": "Enter Name",
+        "placeholder": "Enter Product Name",
         "id": "name",
         "validation": ["required"],
         "url": ""
@@ -55,7 +55,7 @@
         "dropDownType": "single",
         "dropDownField": "name",
         "searchApi": "searchCall",
-        "placeholder": "Enter Company Name",
+        "placeholder": "Enter Company Category",
         "id": "companyCategory",
         "validation": ["", "trim", ""],
         "url": "CompanyCategory/search"

@@ -9,7 +9,7 @@
         "name": "Name",
         "type": "text",
         "tableRef": "name",
-        "placeholder": "Enter Name",
+        "placeholder": "Enter Category",
         "id": "name",
         "validation": ["required"],
         "url": ""
