@@ -466,6 +466,9 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.editBox = function (state, data) {
             $scope.state = state;
             $scope.data = data;
+            if (!$scope.formData[$scope.type.tableRef]) {
+                $scope.formData[$scope.type.tableRef] = []
+            }
             $scope.formData[$scope.type.tableRef].push(data);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,

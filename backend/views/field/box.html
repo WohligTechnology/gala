@@ -16,14 +16,16 @@
             </thead>
             <tbody>
                 <tr ng-repeat="data in model | filter:search.text ">
-                    <td ng-repeat="field2 in type.field" ng-if="field2.onView">{{data[field2.tableRef]}}</td>
-                    <!--<td ng-if="type.field[0].onView"><img src="{{data[type.field[0].tableRef] | serverimage}}"></td>-->
+                    <div ng-repeat="field2 in type.field">
+                        <td ng-repeat="field2 in type.field" ng-if="field2.onView && field2.type !='image'">{{data[field2.tableRef]}}</td>
+                        <td ng-if="type.field[0].onView && type.field[0].type=='image'"><img src="{{data[type.field[0].tableRef] | serverimage}} "></td>
+                    </div>
                     <td>
-                        <a class="btn btn-primary" ng-click="editBox('Edit',data)">
-                            <i class="fa fa-pencil"></i>
+                        <a class="btn btn-primary " ng-click="editBox( 'Edit',data) ">
+                            <i class="fa fa-pencil "></i>
                         </a>
-                        <a class="btn btn-danger" ng-click="deleteBox($index, model)">
-                            <i class="fa fa-trash"></i>
+                        <a class="btn btn-danger " ng-click="deleteBox($index, model) ">
+                            <i class="fa fa-trash "></i>
                         </a>
                     </td>
                 </tr>
