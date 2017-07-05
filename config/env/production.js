@@ -25,8 +25,8 @@ module.exports = {
    * Set the port in the production environment to 80                        *
    ***************************************************************************/
 
-  port: 80,
-  realHost: "http://tushar.io",
+  port: 8080,
+  realHost: "http://galaapi.wohlig.co.in",
   emails: ["chintan@wohlig.com", "saili.rawnang@wohlig.com", "prajakta.kamble@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com"]
 
   /***************************************************************************
