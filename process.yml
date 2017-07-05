@@ -1,5 +1,5 @@
 apps:
   - script: "app.js"
-    name: "NodeFramework - 80"
+    name: "Gala - 8080"
     watch: false
     args: "--prod"
