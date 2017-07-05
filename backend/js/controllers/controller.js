@@ -7,12 +7,11 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.navigation = NavigationService.getnav();
     })
 
-
     .controller('AccessController', function ($scope, TemplateService, NavigationService, $timeout, $state) {
         if ($.jStorage.get("accessToken")) {
 
         } else {
-            //$state.go("login");
+            $state.go("login");
         }
     })
 
@@ -242,7 +241,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         globalfunction.confDel = function (callback) {
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: '/backend/views/modal/conf-delete.html',
+                templateUrl: '/views/modal/conf-delete.html',
                 size: 'sm',
                 scope: $scope
             });
@@ -255,7 +254,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         globalfunction.openModal = function (callback) {
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: '/backend/views/modal/modal.html',
+                templateUrl: '/views/modal/modal.html',
                 size: 'lg',
                 scope: $scope
             });
@@ -405,6 +404,45 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
 
         $scope.template = "views/field/" + $scope.type.type + ".html";
 
+        // Multiple checkbox selection
+        if ($scope.type.type == "multipleCheckbox") {
+            if ($scope.type.url !== "") {
+                NavigationService.searchCall($scope.type.url, {
+                    keyword: ""
+                }, 1, function (data1) {
+                    $scope.items[$scope.type.tableRef] = data1.data.results;
+                    if ($scope.json.keyword._id) {
+                        console.log("Edit multiCheckbox formData: ", $scope.formData[$scope.type.tableRef]);
+                        for (var idx = 0; idx < $scope.items[$scope.type.tableRef].length; idx++) {
+                            for (var formIdx = 0; formIdx < $scope.formData[$scope.type.tableRef].length; formIdx++) {
+                                if ($scope.items[$scope.type.tableRef][idx]._id == $scope.formData[$scope.type.tableRef][formIdx]._id) {
+                                    $scope.items[$scope.type.tableRef][idx].checked = true;
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                $scope.items[$scope.type.tableRef] = $scope.type.dropDown;
+            }
+        }
+
+        // Set multiple checkbox field
+        $scope.setSelectedItem = function (item) {
+            if (typeof $scope.formData[$scope.type.tableRef] === 'undefined')
+                $scope.formData[$scope.type.tableRef] = [];
+            var index = _.findIndex($scope.formData[$scope.type.tableRef], function (doc) {
+                return doc._id == item._id;
+            });
+            if (index < 0) {
+                $scope.formData[$scope.type.tableRef].push({
+                    _id: item._id
+                });
+            } else {
+                $scope.formData[$scope.type.tableRef].splice(index, 1);
+            }
+        };
+
         function getJsonFromUrl(string) {
             var obj = _.split(string, '?');
             var returnval = {};
@@ -428,22 +466,20 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         }
         if ($scope.type.type == "youtube") {
             $scope.youtube = {};
-
-
             $scope.changeYoutubeUrl = function (string) {
                 if (string) {
                     $scope.formData[$scope.type.tableRef] = "";
                     var result = getJsonFromUrl(string);
-                    console.log(result);
                     if (result && result.v) {
                         $scope.formData[$scope.type.tableRef] = result.v;
+                    } else {
+                        $scope.formData[$scope.type.tableRef] = string;
                     }
                 }
 
             };
         }
         if ($scope.type.type == "box") {
-            console.log("in box: ", $scope.formData);
 
             if (!_.isArray($scope.formData[$scope.type.tableRef]) && $scope.formData[$scope.type.tableRef] === '') {
                 $scope.formData[$scope.type.tableRef] = [];
@@ -466,13 +502,9 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.editBox = function (state, data) {
             $scope.state = state;
             $scope.data = data;
-            if (!$scope.formData[$scope.type.tableRef]) {
-                $scope.formData[$scope.type.tableRef] = []
-            }
-            $scope.formData[$scope.type.tableRef].push(data);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: '/backend/views/modal/modal.html',
+                templateUrl: '/views/modal/modal.html',
                 size: 'lg',
                 scope: $scope
             });

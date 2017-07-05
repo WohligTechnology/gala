@@ -10,24 +10,25 @@
         <table class="table table-input" ng-if="model.length != 0">
             <thead>
                 <tr>
-                    <th ng-repeat="field in type.field" ng-if="field.onView">{{field.name}}</th>{{field}}
+                    <th ng-repeat="field in type.fields" ng-if="field.onView">{{field.name}}</th>
                     <th width="150px">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="data in model | filter:search.text ">
-                    <div ng-repeat="field2 in type.field">
-                        <td ng-repeat="field2 in type.field" ng-if="field2.onView && field2.type !='image'">{{data[field2.tableRef]}}</td>
-                        <td ng-if="type.field[0].onView && type.field[0].type=='image'"><img src="{{data[type.field[0].tableRef] | serverimage}} "></td>
-                    </div>
-                    <td>
-                        <a class="btn btn-primary " ng-click="editBox( 'Edit',data) ">
-                            <i class="fa fa-pencil "></i>
-                        </a>
-                        <a class="btn btn-danger " ng-click="deleteBox($index, model) ">
-                            <i class="fa fa-trash "></i>
-                        </a>
+                    <td ng-repeat="field2 in type.fields" ng-if="field2.onView && field2.type == 'selectFromTable'"> {{data[field2.tableRef+'-nameOnly']}}</td>
+                    <td ng-repeat="field2 in type.fields" ng-if="field2.onView && field2.type != 'selectFromTable'">
+                        <view-field type="field2" value="data"></view-field>
                     </td>
+                    <td>
+                        <td>
+                            <a class="btn btn-primary" ng-click="editBox('Edit',data)">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a class="btn btn-danger" ng-click="deleteBox($index, model)">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
                 </tr>
             </tbody>
         </table>
