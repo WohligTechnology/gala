@@ -3,3 +3,4 @@ apps:
     name: "Gala - 8080"
     watch: false
     args: "--prod"
+    exec_mode: "cluster"
