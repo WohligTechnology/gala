@@ -890,3 +890,41 @@ sup {
     @include position(absolute,
     null null 0 100px);
 }
+//scss for FAQ
+.faq-content{
+    margin: 50px 0;  
+    .panel-body{
+        padding: 0px;
+    }
+    .panel-group {
+    margin-bottom: 0px;
+    .panel{
+            border-radius: 0px;
+    }
+}
+  h5{ font-weight: 400;} 
+  
+}
+.faq-content .panel-default > .panel-heading{
+    color: white;
+    background: #76c04f;
+    padding: 3px 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.faq-questions{
+    background: rgba(240, 240, 240, 0.46);
+    padding: 10px;
+    font-size: 15px;
+    h4{
+     color: black;
+    }
+}
+.down-arrow{
+    font-size: 25px;
+   &:before {
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+}
+}
