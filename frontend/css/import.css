@@ -9837,6 +9837,38 @@ sup {
   bottom: 0;
   left: 100px; }
 
+.faq-content {
+  margin: 50px 0; }
+  .faq-content .panel-body {
+    padding: 0px; }
+  .faq-content .panel-group {
+    margin-bottom: 0px; }
+    .faq-content .panel-group .panel {
+      border-radius: 0px; }
+  .faq-content h5 {
+    font-weight: 400; }
+
+.faq-content .panel-default > .panel-heading {
+  color: white;
+  background: #76c04f;
+  padding: 3px 10px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px; }
+
+.faq-questions {
+  background: rgba(240, 240, 240, 0.46);
+  padding: 10px;
+  font-size: 15px; }
+  .faq-questions h4 {
+    color: black; }
+
+.down-arrow {
+  font-size: 25px; }
+  .down-arrow:before {
+    position: relative;
+    right: 5px;
+    bottom: 5px; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
