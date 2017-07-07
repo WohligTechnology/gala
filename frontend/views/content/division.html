@@ -11,7 +11,7 @@
     <section class="types-list text-center">
         <div class="container">
             <ul class="list-inline types">
-                <li ng-repeat="s in subcategory"><a href="">{{s.name}}</a></li>
+                <li ng-repeat="s in subcategory"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>
             </ul>
         </div>
     </section>
@@ -20,12 +20,12 @@
             <!--ng-style="{'background-image':'url(' +s.bgImg + ')'}"-->
             <div class="container">
                 <div class="text-center product relative">
-                    <div class="hands1">
+                    <!--<div class="hands1">
                         <img src="img/product/hand7.png" class="img-responsive" alt="product">
                     </div>
                     <div class="hands2">
                         <img src="img/product/hand10.png" class="img-responsive" alt="product">
-                    </div>
+                    </div>-->
                     <div class="row" ng-repeat="s2 in subcategoryBig">
                         <!--//for 3 grid-->
                         <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">

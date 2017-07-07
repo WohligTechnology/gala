@@ -433,7 +433,7 @@ h5 {
 
 .door-img {
     width: auto;
-    height: 315px;
+    height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -523,9 +523,10 @@ h5 {
     }
     .door {
         @extend .relative;
-        transition: all ease 6s;
+        transition: all ease 300ms;
         .door-info {
             width: 60%;
+             transition: all ease 300ms;
             @include position(absolute,
             50% null null 50%);
             transform: translate(-50%, -50%);

@@ -76,8 +76,19 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             templateUrl: "views/modal/welcome.html"
         });
     };
+       $scope.$on('$viewContentLoaded', function () {
+            //  $scope.firstTime="";
+            if (_.isEmpty($.jStorage.get('firstTime'))) {
+                $.jStorage.set('firstTime', {
+                    value: true
+                });
+                // $scope.firstTime=$.jStorage.get('firstTime');
+              
+                $scope.openModal();
+            }
+        });
 
-    $scope.openModal();
+    // $scope.openModal();
 })
 
 .controller('DivisionCtrl', function ($scope, $stateParams, TemplateService, NavigationService, $timeout) {

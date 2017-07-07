@@ -9468,7 +9468,7 @@ h5 {
 
 .door-img {
   width: auto;
-  height: 315px;
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -9531,9 +9531,10 @@ h5 {
   .main-list .img5 {
     background-image: url("../img/about/7.jpg"); }
   .main-list .door {
-    transition: all ease 6s; }
+    transition: all ease 300ms; }
     .main-list .door .door-info {
       width: 60%;
+      transition: all ease 300ms;
       position: absolute;
       top: 50%;
       left: 50%;
