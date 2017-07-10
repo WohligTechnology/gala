@@ -9837,6 +9837,13 @@ sup {
   bottom: 0;
   left: 100px; }
 
+.bg-faq-banner {
+  background: url("../img/faq/faq.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh !important; }
+
 .faq-content {
   margin: 50px 0; }
   .faq-content .panel-body {
