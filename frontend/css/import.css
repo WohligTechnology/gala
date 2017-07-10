@@ -9856,8 +9856,8 @@ sup {
     font-weight: 400; }
 
 .faq-content .panel-default > .panel-heading {
-  color: white;
-  background: #76c04f;
+  color: black;
+  background: rgba(171, 171, 172, 0.97);
   padding: 3px 10px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px; }
