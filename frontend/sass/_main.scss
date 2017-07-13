@@ -32,7 +32,7 @@ img.loading {
 
 img {
     opacity: 0;
-    transition: all 300ms ease;
+    @include transition(all 300ms ease);
 }
 
 img.doneLoading {
@@ -51,7 +51,7 @@ a,
 .btn,
 [ui-sref] {
     cursor: pointer;
-    transition: all ease 300ms;
+    @include transition(all ease 300ms);
 }
 
 //footer//
@@ -125,11 +125,11 @@ footer {
 }
 
 header {
-    transition: all 300ms ease;
+    @include transition(all 300ms ease);
 }
 
 .nav-up {
-    transform: translateY(-100%);
+    @include transform(translateY(-100%));
 }
 
 //mixins//
@@ -523,13 +523,13 @@ h5 {
     }
     .door {
         @extend .relative;
-        transition: all ease 300ms;
+        @include transition(all ease 300ms);
         .door-info {
             width: 60%;
-             transition: all ease 300ms;
+             @include transition(all ease 300ms);
             @include position(absolute,
             50% null null 50%);
-            transform: translate(-50%, -50%);
+             @include transform(translate(-50%, -50%));
             background-color: rgba(255, 255, 255, 0.59);
         }
         .overlay {
@@ -678,7 +678,7 @@ h5 {
         background-color: $brand-white;
     }
     .offers {
-        transform: translate(-50%, -50%);
+        @include transform(translate(-50%, -50%));
         @include position(absolute,
         10% null null 20%);
     }
@@ -794,7 +794,7 @@ sup {
             color: #fff !important;
             font-weight: 600;
             text-transform: uppercase;
-            transition: all 800ms ease;
+            @include transition(all 800ms ease);
             &:hover {
                 color: $brand-green !important;
             }
