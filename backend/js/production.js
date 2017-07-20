@@ -51497,11 +51497,11 @@ var uploadurl = imgurl;
 myApp.factory('NavigationService', function ($http) {
 
     var navigation = [
-        // {
-        //     name: "Users",
-        //     classis: "active",
-        //     sref: "#!/page/viewUser//"
-        // },
+        {
+            name: "Users",
+            classis: "active",
+            sref: "#!/page/viewUser//"
+        },
         {
             name: "HomeBanner",
             classis: "active",
