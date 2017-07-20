@@ -31,5 +31,23 @@ schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyCategory', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company"));
-var model = {};
+var model = {
+    getAllCategoriesOfCompany: function (data, callback) {
+        CompanyCategory.find({
+            _id: data._id
+        }).lean().exec(function (err, found) {
+            if (err) {
+                console.log("**** inside getCategoryWithCompany of CompanyCategoryjs ******", err);
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                callback(null, found);
+            }
+
+        });
+    }
+};
+
+
 module.exports = _.assign(module.exports, exports, model);
