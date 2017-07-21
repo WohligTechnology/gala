@@ -4,16 +4,16 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
         NavigationService.callApi("HomeBanner/search", function (data) {
-            console.log("BannerData", data.data.data.results);
+            // console.log("BannerData", data.data.data.results);
             $scope.banner = data.data.data.results;
-            console.log("resultsData", $scope.banner);
+            // console.log("resultsData", $scope.banner);
         });
         var data = {};
         data.page = 1;
         NavigationService.callApiWithData("Company/search", data, function (data) {
-            console.log("BannerData", data.data.data.results);
+            console.log("comapnyData", data);
             $scope.company = data.data.data.results;
-            console.log("resultsData", $scope.company);
+            console.log("comapnyData", $scope.company);
 
             $scope.companyData = _.chunk($scope.company, 3);
 
@@ -54,855 +54,897 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         // $scope.openModal();
     })
 
-    .controller('DivisionCtrl', function ($scope, $stateParams, TemplateService, NavigationService, $timeout) {
+    .controller('DivisionCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/division.html");
         TemplateService.title = "Division"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
 
-
-
-        var categoryId = {
+        // $scope.category = $stateParams.category;
+        // console.log("cat", $scope.category);
+        $scope.company = {
             _id: $stateParams.category
         };
+        // $scope.category = $stateParams.category;
+
+        // console.log("state param value is", $scope.category);
 
 
-        NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", categoryId, function (data) {
-            console.log("companyCategory", data.data.data.results);
-            $scope.companyCategory = data.data.data.results;
-            console.log("companyCategory", $scope.companyCategory);
+        NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
+            console.log("*****companyCategory******", data);
+            $scope.companyCategory = data.data.data;
+            console.log("*****companyCategory******", $scope.companyCategory);
+            $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         });
+        NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
+            console.log("*****CompnayBanner******", data);
+            $scope.banner = data.data.data;
+            console.log("*****CompnayBanner******", $scope.banner);
 
-        console.log("cat", $scope.category);
+        });
         //world//
-        $scope.subcategoryAll = [{
-                names: "uro veener world",
-                name: " Exclusive veener",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "uroveenerworld"
-            }, {
-                names: "uro veener world",
-                name: " Designer Laminates",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "uroveenerworld"
-            }, {
-                names: "uro veener world",
-                name: "Alabaster & MDF",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "uroveenerworld"
-            }, {
-                names: "uro veener world",
-                name: "Designer Charcoal",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "uroveenerworld"
-            }, {
-                names: "uro veener world",
-                name: " Panels & Acrylam",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "uroveenerworld"
-            },
-            {
-                names: "wood & mouldings",
-                name: "Wooden Flooring",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/6.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            },
-            {
-                names: "wood & mouldings",
-                name: " Exterior Cladding",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            },
-            {
-                names: "wood & mouldings",
-                name: " Plywood",
-                bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-                smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
-                bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-                category: "woodmouldings"
-            }, {
-                names: "wood & mouldings",
-                name: " Decking",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            }, {
-                names: "wood & mouldings",
-                name: " Wallpaper",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            }, {
-                names: "wood & mouldings",
-                name: "Dupont Corian",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            },
-            {
-                names: "wood & mouldings",
-                name: "Door",
-                bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-                smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
-                bgImg: "img/divisions/bg/WoodMouldings.jpg",
-                category: "woodmouldings"
-            },
-            {
-                names: "bath world",
-                name: "Flooring Tiles",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/FlooringTiles.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            }, {
-                names: "bath world",
-                name: "Wall Tiles",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/WallTiles.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            }, {
-                names: "bath world",
-                name: "CP Fittings",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/CPFittings.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            }, {
-                names: "bath world",
-                name: "Sanitary ware",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/Sanitaryware.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            }, {
-                names: "bath world",
-                name: "Faucets",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/Faucets.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            }, {
-                names: "bath world",
-                name: "Kitchen Sinks",
-                bannerImg: "img/divisions/banner/Bathworld.jpg",
-                smallerImg: "img/divisions/categories/BathWorld/KitchenSinks.jpg",
-                bgImg: "img/divisions/bg/Bathworld.jpg",
-                category: "bathworld"
-            },
-            {
-                names: "gala hardware worlds",
-                name: "Designer Hardware",
-                bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-                smallerImg: "img/divisions/categories/GalaHardwareWorld/DesignerHardware.jpg",
-                bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-                category: "galahardwareworlds"
-            }, {
-                names: "gala hardware worlds",
-                name: "Cabinet Handles & Locks",
-                bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-                smallerImg: "img/divisions/categories/GalaHardwareWorld/CabinetHandlesLocks.jpg",
-                bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-                category: "galahardwareworlds"
-            }, {
-                names: "gala hardware worlds",
-                name: "SS Railings",
-                bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-                smallerImg: "img/divisions/categories/GalaHardwareWorld/SSRailings.jpg",
-                bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-                category: "galahardwareworlds"
-            }, {
-                names: "gala hardware worlds",
-                name: "Glass Fittings",
-                bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-                smallerImg: "img/divisions/categories/GalaHardwareWorld/GlassFittings.jpg",
-                bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-                category: "galahardwareworlds"
-            }, {
-                names: "gala hardware worlds",
-                name: "Bathroom  Accessoires",
-                bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-                smallerImg: "img/divisions/categories/GalaHardwareWorld/BathroomAcce.jpg",
-                bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-                category: "galahardwareworlds"
-            },
-            {
-                names: "gala stone worlds",
-                name: "Odyssey carvings",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/OdysseyCollection.jpg",
-                category: "galastoneworlds"
-            }, {
-                names: "gala stone worlds",
-                name: "Flex Stone Cladding",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/FlexStoneCollection.jpg",
-                category: "galastoneworlds"
-            }, {
-                names: "gala stone worlds",
-                name: "ORVI Stone Surfaces",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/ORVICollection.jpg",
-                category: "galastoneworlds"
-            }, {
-                names: "gala stone worlds",
-                name: "Stone Metal Fusion",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/MetalSeriesCollection.jpg",
-                category: "galastoneworlds"
-            }, {
-                names: "gala stone worlds",
-                name: "Natural Stone Cladding",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/NaturalStoneCladdingCollection.jpg",
-                category: "galastoneworlds"
-            },
-            {
-                names: "gala stone worlds",
-                name: "Stone Décor",
-                bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-                bgImg: "img/divisions/bg/Galastoneworld.jpg",
-                smallerImg: "img/divisions/categories/GalaStoneWorld/ExclusiveTempleCollection.jpg",
-                category: "galastoneworlds"
-            },
-            //  {
-            //     names: "gala stone worlds",
-            //     name: "Wash Basin and Pebbles Collection",
-            //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            //     smallerImg: "img/divisions/categories/GalaStoneWorld/WashBasinPebblesCollection.jpg",
-            //     category: "galastoneworlds"
-            // },
-            {
-                names: "gala furniture worlds",
-                name: "Luxury Sofas",
-                bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-                bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-                smallerImg: "img/divisions/categories/GalaFurnitureWorld/LuxurySofas.jpg",
-                category: "galafurnitureworlds"
-            },
-            {
-                names: "gala furniture worlds",
-                name: "Dining Tables",
-                bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-                bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-                smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
-                category: "galafurnitureworlds"
-            },
-            {
-                names: "gala furniture worlds",
-                name: "Living Collection",
-                bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-                bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-                smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
-                category: "galafurnitureworlds"
-            }, {
-                names: "gala furniture worlds",
-                name: "Recliner",
-                bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-                bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-                smallerImg: "img/divisions/categories/GalaFurnitureWorld/ReclinerSofas.jpg",
-                category: "galafurnitureworlds"
-            },
-            {
-                names: "gala furniture worlds",
-                name: "Artefacts & Carpets",
-                bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-                bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-                smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
-                category: "galafurnitureworlds"
-            },
+        // $scope.subcategoryAll = [{
+        //         names: "uro veener world",
+        //         name: " Exclusive veener",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "uroveenerworld"
+        //     }, {
+        //         names: "uro veener world",
+        //         name: " Designer Laminates",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "uroveenerworld"
+        //     }, {
+        //         names: "uro veener world",
+        //         name: "Alabaster & MDF",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "uroveenerworld"
+        //     }, {
+        //         names: "uro veener world",
+        //         name: "Designer Charcoal",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "uroveenerworld"
+        //     }, {
+        //         names: "uro veener world",
+        //         name: " Panels & Acrylam",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "uroveenerworld"
+        //     },
+        //     {
+        //         names: "wood & mouldings",
+        //         name: "Wooden Flooring",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/6.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     },
+        //     {
+        //         names: "wood & mouldings",
+        //         name: " Exterior Cladding",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     },
+        //     {
+        //         names: "wood & mouldings",
+        //         name: " Plywood",
+        //         bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //         smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
+        //         bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //         category: "woodmouldings"
+        //     }, {
+        //         names: "wood & mouldings",
+        //         name: " Decking",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     }, {
+        //         names: "wood & mouldings",
+        //         name: " Wallpaper",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     }, {
+        //         names: "wood & mouldings",
+        //         name: "Dupont Corian",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     },
+        //     {
+        //         names: "wood & mouldings",
+        //         name: "Door",
+        //         bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //         smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
+        //         bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //         category: "woodmouldings"
+        //     },
+        //     {
+        //         names: "bath world",
+        //         name: "Flooring Tiles",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/FlooringTiles.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     }, {
+        //         names: "bath world",
+        //         name: "Wall Tiles",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/WallTiles.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     }, {
+        //         names: "bath world",
+        //         name: "CP Fittings",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/CPFittings.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     }, {
+        //         names: "bath world",
+        //         name: "Sanitary ware",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/Sanitaryware.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     }, {
+        //         names: "bath world",
+        //         name: "Faucets",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/Faucets.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     }, {
+        //         names: "bath world",
+        //         name: "Kitchen Sinks",
+        //         bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //         smallerImg: "img/divisions/categories/BathWorld/KitchenSinks.jpg",
+        //         bgImg: "img/divisions/bg/Bathworld.jpg",
+        //         category: "bathworld"
+        //     },
+        //     {
+        //         names: "gala hardware worlds",
+        //         name: "Designer Hardware",
+        //         bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaHardwareWorld/DesignerHardware.jpg",
+        //         bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //         category: "galahardwareworlds"
+        //     }, {
+        //         names: "gala hardware worlds",
+        //         name: "Cabinet Handles & Locks",
+        //         bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaHardwareWorld/CabinetHandlesLocks.jpg",
+        //         bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //         category: "galahardwareworlds"
+        //     }, {
+        //         names: "gala hardware worlds",
+        //         name: "SS Railings",
+        //         bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaHardwareWorld/SSRailings.jpg",
+        //         bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //         category: "galahardwareworlds"
+        //     }, {
+        //         names: "gala hardware worlds",
+        //         name: "Glass Fittings",
+        //         bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaHardwareWorld/GlassFittings.jpg",
+        //         bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //         category: "galahardwareworlds"
+        //     }, {
+        //         names: "gala hardware worlds",
+        //         name: "Bathroom  Accessoires",
+        //         bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaHardwareWorld/BathroomAcce.jpg",
+        //         bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //         category: "galahardwareworlds"
+        //     },
+        //     {
+        //         names: "gala stone worlds",
+        //         name: "Odyssey carvings",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/OdysseyCollection.jpg",
+        //         category: "galastoneworlds"
+        //     }, {
+        //         names: "gala stone worlds",
+        //         name: "Flex Stone Cladding",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/FlexStoneCollection.jpg",
+        //         category: "galastoneworlds"
+        //     }, {
+        //         names: "gala stone worlds",
+        //         name: "ORVI Stone Surfaces",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/ORVICollection.jpg",
+        //         category: "galastoneworlds"
+        //     }, {
+        //         names: "gala stone worlds",
+        //         name: "Stone Metal Fusion",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/MetalSeriesCollection.jpg",
+        //         category: "galastoneworlds"
+        //     }, {
+        //         names: "gala stone worlds",
+        //         name: "Natural Stone Cladding",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/NaturalStoneCladdingCollection.jpg",
+        //         category: "galastoneworlds"
+        //     },
+        //     {
+        //         names: "gala stone worlds",
+        //         name: "Stone Décor",
+        //         bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //         bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //         smallerImg: "img/divisions/categories/GalaStoneWorld/ExclusiveTempleCollection.jpg",
+        //         category: "galastoneworlds"
+        //     },
+        //  {
+        //     names: "gala stone worlds",
+        //     name: "Wash Basin and Pebbles Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/WashBasinPebblesCollection.jpg",
+        //     category: "galastoneworlds"
+        // },
+        // {
+        //     names: "gala furniture worlds",
+        //     name: "Luxury Sofas",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/LuxurySofas.jpg",
+        //     category: "galafurnitureworlds"
+        // },
+        // {
+        //     names: "gala furniture worlds",
+        //     name: "Dining Tables",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
+        //     category: "galafurnitureworlds"
+        // },
+        // {
+        //     names: "gala furniture worlds",
+        //     name: "Living Collection",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Recliner",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/ReclinerSofas.jpg",
+        //     category: "galafurnitureworlds"
+        // },
+        // {
+        //     names: "gala furniture worlds",
+        //     name: "Artefacts & Carpets",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
+        //     category: "galafurnitureworlds"
+        // },
 
-            //  {
-            //     names: "gala furniture worlds",
-            //     name: "Fabric Sofas",
-            //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/Fabric Sofas.jpg",
-            //     category: "galafurnitureworlds"
-            // },
-            //  {
-            //     names: "gala furniture worlds",
-            //     name: "Out Door",
-            //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/OutDoor.jpg",
-            //     category: "galafurnitureworlds"
-            // },
-            {
-                names: "euro lighting world",
-                name: "Decorative Light Fixtures",
-                bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-                bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-                smallerImg: "img/divisions/categories/EuroLightingWorld/LightFixtures.jpg",
-                category: "eurolightingworld"
-            },
-            {
-                names: "euro lighting world",
-                name: "Designer Ceiling Fans",
-                bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-                bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-                smallerImg: "img/divisions/categories/EuroLightingWorld/CeilingFans.jpg",
-                category: "eurolightingworld"
-            },
-            //  {
-            //     names: "euro lighting world",
-            //     name: "Decoratives",
-            //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            //     smallerImg: "img/divisions/categories/EuroLightingWorld/Decoratives.jpg",
-            //     category: "eurolightingworld"
-            // }, {
-            //     names: "euro lighting world",
-            //     name: "Designer Lights",
-            //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            //     smallerImg: "img/divisions/categories/EuroLightingWorld/DesignerLights.jpg",
-            //     category: "eurolightingworld"
-            // }, 
-            {
-                names: "gala drapes world",
-                name: "Curtains",
-                bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-                bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-                smallerImg: "img/divisions/categories/GalaCurtainWorld/Curtains.jpg",
-                category: "galadrapesworld"
-            },
-            {
-                names: "gala drapes world",
-                name: "Blinds",
-                bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-                bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-                smallerImg: "img/divisions/categories/GalaCurtainWorld/Blinds.jpg",
-                category: "galadrapesworld"
-            },
-            {
-                names: "gala drapes world",
-                name: "Upholstery",
-                bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-                bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-                smallerImg: "img/divisions/categories/GalaCurtainWorld/Upholstery.jpg",
-                category: "galadrapesworld"
-            }, {
-                names: "gala drapes world",
-                name: "Mattress",
-                bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-                bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-                smallerImg: "img/divisions/categories/GalaCurtainWorld/Mattress.jpg",
-                category: "galadrapesworld"
-            }, {
-                names: "gala drapes world",
-                name: "Home Linen & Accessories",
-                bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-                bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-                smallerImg: "img/divisions/categories/GalaCurtainWorld/HomeLinenAccessories.jpg",
-                category: "galadrapesworld"
-            },
-            // {
-            //     names: "gala drapes world",
-            //     name: "Carpets Door mats and Runners",
-            //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            //     smallerImg: "img/divisions/categories/GalaCurtainWorld/CarpetsDoormatsRunners.jpg",
-            //     category: "galadrapesworld"
-            // }, 
-            {
-                names: "gala kitchen world",
-                name: "Kitchen & Wardrobe Accessories",
-                bannerImg: "img/",
-                bgImg: "img/",
-                smallerImg: "img/divisions/categories/GalaKitchenWorld/KitchenWardrobeAcce.jpg",
-                category: "galakitchenworld"
-            },
-            {
-                names: "gala kitchen world",
-                name: "Appliances",
-                bannerImg: "img/",
-                bgImg: "img/",
-                smallerImg: "img/divisions/categories/GalaKitchenWorld/Appliances.jpg",
-                category: "galakitchenworld"
-            },
-            {
-                names: "gala kitchen world",
-                name: "Hobs & Chimneys",
-                bannerImg: "img/",
-                bgImg: "img/",
-                smallerImg: "img/divisions/categories/GalaKitchenWorld/HobsChimneys.jpg",
-                category: "galakitchenworld"
-            }, {
-                names: "gala kitchen world",
-                name: " Sliding Fittings",
-                bannerImg: "img/",
-                bgImg: "img/",
-                smallerImg: "img/divisions/categories/GalaKitchenWorld/SlidingFittings.jpg",
-                category: "galakitchenworld"
-            },
-            {
-                names: "mahavir corporation (India)",
-                name: "Aluminum Composite Panels",
-                bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
-                bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
-                smallerImg: "img/divisions/categories/MahaveerCorporation/AluminumCompositePanels.jpg",
-                category: "mahavircorporation"
-            }, {
-                names: "mahavir corporation (India)",
-                name: "Interior & Exterior Grade",
-                bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
-                bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
-                smallerImg: "img/divisions/categories/MahaveerCorporation/1.jpg",
-                category: "mahavircorporation"
-            }
-        ];
-        $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
-            return o.category == $scope.category;
-        });
-        //chunk//
-        $scope.subcategoryBig = _.chunk($scope.subcategory, 3);
-        console.log("$scope.subcategory ", $scope.subcategory);
+        //  {
+        //     names: "gala furniture worlds",
+        //     name: "Fabric Sofas",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/Fabric Sofas.jpg",
+        //     category: "galafurnitureworlds"
+        // },
+        //  {
+        //     names: "gala furniture worlds",
+        //     name: "Out Door",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/OutDoor.jpg",
+        //     category: "galafurnitureworlds"
+        // },
+        // {
+        //     names: "euro lighting world",
+        //     name: "Decorative Light Fixtures",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/LightFixtures.jpg",
+        //     category: "eurolightingworld"
+        // },
+        // {
+        //     names: "euro lighting world",
+        //     name: "Designer Ceiling Fans",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/CeilingFans.jpg",
+        //     category: "eurolightingworld"
+        // },
+        //  {
+        //     names: "euro lighting world",
+        //     name: "Decoratives",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/Decoratives.jpg",
+        //     category: "eurolightingworld"
+        // }, {
+        //     names: "euro lighting world",
+        //     name: "Designer Lights",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/DesignerLights.jpg",
+        //     category: "eurolightingworld"
+        // }, 
+        // {
+        //     names: "gala drapes world",
+        //     name: "Curtains",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Curtains.jpg",
+        //     category: "galadrapesworld"
+        // },
+        // {
+        //     names: "gala drapes world",
+        //     name: "Blinds",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Blinds.jpg",
+        //     category: "galadrapesworld"
+        // },
+        // {
+        //     names: "gala drapes world",
+        //     name: "Upholstery",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Upholstery.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Mattress",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Mattress.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Home Linen & Accessories",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/HomeLinenAccessories.jpg",
+        //     category: "galadrapesworld"
+        // },
+        // {
+        //     names: "gala drapes world",
+        //     name: "Carpets Door mats and Runners",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/CarpetsDoormatsRunners.jpg",
+        //     category: "galadrapesworld"
+        // }, 
+        //         {
+        //             names: "gala kitchen world",
+        //             name: "Kitchen & Wardrobe Accessories",
+        //             bannerImg: "img/",
+        //             bgImg: "img/",
+        //             smallerImg: "img/divisions/categories/GalaKitchenWorld/KitchenWardrobeAcce.jpg",
+        //             category: "galakitchenworld"
+        //         },
+        //         {
+        //             names: "gala kitchen world",
+        //             name: "Appliances",
+        //             bannerImg: "img/",
+        //             bgImg: "img/",
+        //             smallerImg: "img/divisions/categories/GalaKitchenWorld/Appliances.jpg",
+        //             category: "galakitchenworld"
+        //         },
+        //         {
+        //             names: "gala kitchen world",
+        //             name: "Hobs & Chimneys",
+        //             bannerImg: "img/",
+        //             bgImg: "img/",
+        //             smallerImg: "img/divisions/categories/GalaKitchenWorld/HobsChimneys.jpg",
+        //             category: "galakitchenworld"
+        //         }, {
+        //             names: "gala kitchen world",
+        //             name: " Sliding Fittings",
+        //             bannerImg: "img/",
+        //             bgImg: "img/",
+        //             smallerImg: "img/divisions/categories/GalaKitchenWorld/SlidingFittings.jpg",
+        //             category: "galakitchenworld"
+        //         },
+        //         {
+        //             names: "mahavir corporation (India)",
+        //             name: "Aluminum Composite Panels",
+        //             bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
+        //             bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
+        //             smallerImg: "img/divisions/categories/MahaveerCorporation/AluminumCompositePanels.jpg",
+        //             category: "mahavircorporation"
+        //         }, {
+        //             names: "mahavir corporation (India)",
+        //             name: "Interior & Exterior Grade",
+        //             bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
+        //             bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
+        //             smallerImg: "img/divisions/categories/MahaveerCorporation/1.jpg",
+        //             category: "mahavircorporation"
+        //         }
+        //     ];
+        //     $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
+        //         return o.category == $scope.category;
+        //     });
+        //     //chunk//
+        //     $scope.subcategoryBig = _.chunk($scope.subcategory, 3);
+        //     console.log("$scope.subcategory ", $scope.subcategory);
     })
 
-    .controller('Division1Ctrl', function ($scope, $stateParams, TemplateService, NavigationService, $timeout) {
+    .controller('Division1Ctrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/division1.html");
         TemplateService.title = "Division1"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
+        $scope.product = {
+            _id: $stateParams.product
+        };
+        // $scope.category = $stateParams.category;
 
-        //chapo
-        $scope.divisioncategory = $stateParams.divisioncategory;
-        console.log("cats", $scope.divisioncategory);
-        //world//
-        $scope.subcategoryAll = [{
-            names: "uro veener world",
-            name: "Alabaster & MDF",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "uro veener world",
-            name: "Designer Charcoal",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "uro veener world",
-            name: " Designer Laminates",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "uro veener world",
-            name: " Exclusive veener",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "uro veener world",
-            name: " Panels & Acrylam",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "uro veener world",
-            name: " Plywood",
-            bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
-            smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
-            bgImg: "img/divisions/bg/Uroveneerworld.jpg",
-            category: "uroveenerworld"
-        }, {
-            names: "wood & mouldings",
-            name: "Door",
-            namings: "Bamboo flooring",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/Bambooflooring.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "wood & mouldings",
-            name: "Dupont Corian",
-            namings: "Engineered Flooring",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/EngineeredFlooring.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "wood & mouldings",
-            name: " Exterior Cladding",
-            namings: "Exterior Deck Tile",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/ExteriorDeckTile.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "wood & mouldings",
-            name: " Wallpaper",
-            namings: "KAINDL Veneer Flooring",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/KAINDLVeneerFlooring.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "wood & mouldings",
-            name: " Decking",
-            namings: "Laminate Flooring",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/LaminateFlooring.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "wood & mouldings",
-            name: " ",
-            namings: "Solid Wood Flooring",
-            bannerImg: "img/divisions/banner/WoodMouldings.jpg",
-            smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/SolidWoodFlooring.jpg",
-            smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
-            bgImg: "img/divisions/bg/WoodMouldings.jpg",
-            category: "woodmouldings"
-        }, {
-            names: "bath world",
-            name: "CP Fittings",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/CPFittings.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "bath world",
-            name: "Faucets",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/Faucets.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "bath world",
-            name: "Flooring Tiles",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/FlooringTiles.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "bath world",
-            name: "Kitchen Sinks",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/KitchenSinks.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "bath world",
-            name: "Sanitary ware",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/Sanitaryware.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "bath world",
-            name: "Wall Tiles",
-            bannerImg: "img/divisions/banner/Bathworld.jpg",
-            smallerImg: "img/divisions/categories/BathWorld/WallTiles.jpg",
-            bgImg: "img/divisions/bg/Bathworld.jpg",
-            category: "bathworld"
-        }, {
-            names: "gala hardware worlds",
-            name: "Bathroom Acce",
-            bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-            smallerImg: "img/divisions/categories/GalaHardwareWorld/BathroomAcce.jpg",
-            bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-            category: "galahardwareworlds"
-        }, {
-            names: "gala hardware worlds",
-            name: "Cabinet Handles & Locks",
-            bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-            smallerImg: "img/divisions/categories/GalaHardwareWorld/CabinetHandlesLocks.jpg",
-            bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-            category: "galahardwareworlds"
-        }, {
-            names: "gala hardware worlds",
-            name: "Designer Hardware",
-            bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-            smallerImg: "img/divisions/categories/GalaHardwareWorld/DesignerHardware.jpg",
-            bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-            category: "galahardwareworlds"
-        }, {
-            names: "gala hardware worlds",
-            name: "Glass Fittings",
-            bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-            smallerImg: "img/divisions/categories/GalaHardwareWorld/GlassFittings.jpg",
-            bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-            category: "galahardwareworlds"
-        }, {
-            names: "gala hardware worlds",
-            name: "SS Railings",
-            bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
-            smallerImg: "img/divisions/categories/GalaHardwareWorld/SSRailings.jpg",
-            bgImg: "img/divisions/bg/Galahardwareworld.jpg",
-            category: "galahardwareworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Exclusive Temple Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/ExclusiveTempleCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Flex Stone Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/FlexStoneCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Metal Series Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/MetalSeriesCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Natural Stone Cladding Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/NaturalStoneCladdingCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Odyssey Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/OdysseyCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "ORVI Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/ORVICollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala stone worlds",
-            name: "Wash Basin and Pebbles Collection",
-            bannerImg: "img/divisions/banner/Galastoneworld.jpg",
-            bgImg: "img/divisions/bg/Galastoneworld.jpg",
-            smallerImg: "img/divisions/categories/GalaStoneWorld/WashBasinPebblesCollection.jpg",
-            category: "galastoneworlds"
-        }, {
-            names: "gala furniture worlds",
-            name: "Accessories & Carpets",
-            namings: "",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
-            smallersImg: "img/product/12.jpg",
-            category: "galafurnitureworlds",
-            inner: "Accessories"
-        }, {
-            names: "gala furniture worlds",
-            name: "Coffee Table",
-            namings: "",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
-            smallersImg: "img/product/22.jpg",
-            category: "galafurnitureworlds",
-            inner: "Coffee"
-        }, {
-            names: "gala furniture worlds",
-            name: "Dining Tables",
-            namings: "",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
-            smallersImg: "img/product/32.jpg",
-            category: "galafurnitureworlds"
-        }, {
-            names: "gala furniture worlds",
-            name: "Fabric Sofas",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/Fabric Sofas.jpg",
-            category: "galafurnitureworlds"
-        }, {
-            names: "gala furniture worlds",
-            name: "Luxury Sofas",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/LuxurySofas.jpg",
-            category: "galafurnitureworlds"
-        }, {
-            names: "gala furniture worlds",
-            name: "Out Door",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/OutDoor.jpg",
-            category: "galafurnitureworlds"
-        }, {
-            names: "gala furniture worlds",
-            name: "Recliner Sofas",
-            bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
-            bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
-            smallerImg: "img/divisions/categories/GalaFurnitureWorld/ReclinerSofas.jpg",
-            category: "galafurnitureworlds"
-        }, {
-            names: "euro lighting world",
-            name: "Ceiling Fans",
-            bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            smallerImg: "img/divisions/categories/EuroLightingWorld/CeilingFans.jpg",
-            category: "eurolightingworld"
-        }, {
-            names: "euro lighting world",
-            name: "Decoratives",
-            bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            smallerImg: "img/divisions/categories/EuroLightingWorld/Decoratives.jpg",
-            category: "eurolightingworld"
-        }, {
-            names: "euro lighting world",
-            name: "Designer Lights",
-            bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            smallerImg: "img/divisions/categories/EuroLightingWorld/DesignerLights.jpg",
-            category: "eurolightingworld"
-        }, {
-            names: "euro lighting world",
-            name: "Light Fixtures",
-            bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
-            bgImg: "img/divisions/bg/Eurolightingworld.jpg",
-            smallerImg: "img/divisions/categories/EuroLightingWorld/LightFixtures.jpg",
-            category: "eurolightingworld"
-        }, {
-            names: "gala drapes world",
-            name: "Blinds",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/Blinds.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala drapes world",
-            name: "Carpets Door mats and Runners",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/CarpetsDoormatsRunners.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala drapes world",
-            name: "Curtains",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/Curtains.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala drapes world",
-            name: "Home Linen & Accessories",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/HomeLinenAccessories.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala drapes world",
-            name: "Mattress",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/Mattress.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala drapes world",
-            name: "Upholstery",
-            bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
-            bgImg: "img/divisions/bg/Galacurtainworld.jpg",
-            smallerImg: "img/divisions/categories/GalaCurtainWorld/Upholstery.jpg",
-            category: "galadrapesworld"
-        }, {
-            names: "gala kitchen world",
-            name: "Appliances",
-            bannerImg: "img/",
-            bgImg: "img/",
-            smallerImg: "img/divisions/categories/GalaKitchenWorld/Appliances.jpg",
-            category: "galakitchenworld"
-        }, {
-            names: "gala kitchen world",
-            name: "Hobs & Chimneys",
-            bannerImg: "img/",
-            bgImg: "img/",
-            smallerImg: "img/divisions/categories/GalaKitchenWorld/HobsChimneys.jpg",
-            category: "galakitchenworld"
-        }, {
-            names: "gala kitchen world",
-            name: " Kitchen & Wardrobe Acce",
-            bannerImg: "img/",
-            bgImg: "img/",
-            smallerImg: "img/divisions/categories/GalaKitchenWorld/KitchenWardrobeAcce.jpg",
-            category: "galakitchenworld"
-        }, {
-            names: "gala kitchen world",
-            name: " Sliding Fittings",
-            bannerImg: "img/",
-            bgImg: "img/",
-            smallerImg: "img/divisions/categories/GalaKitchenWorld/SlidingFittings.jpg",
-            category: "galakitchenworld"
-        }, {
-            names: "mahavir corporation (India)",
-            name: "Aluminum Composite Panels",
-            bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
-            bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
-            smallerImg: "img/divisions/categories/MahaveerCorporation/AluminumCompositePanels.jpg",
-            category: "mahavircorporation"
-        }];
 
-        $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
-            return o.category == $scope.divisioncategory;
+
+        NavigationService.callApiWithData("CompanyProduct/getAllProductWithCategory", $scope.product, function (data) {
+            console.log("*****product******", data);
+            $scope.companyproduct = data.data.data;
+            console.log("*****product******", $scope.companyproduct);
+            $scope.companyproductdata = _.chunk($scope.companyproduct, 3);
+            console.log("*****product******", $scope.companyproductdata);
+            console.log("*****chunk product******", companyproductdata);
         });
+
+        NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
+            console.log("*****companyCategory******", data);
+            $scope.companyCategory = data.data.data;
+            console.log("*****companyCategory******", $scope.companyCategory);
+            $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+        });
+        //chapo
+        // $scope.divisioncategory = $stateParams.divisioncategory;
+        // console.log("cats", $scope.divisioncategory);
+        //world//
+        // $scope.subcategoryAll = [{
+        //     names: "uro veener world",
+        //     name: "Alabaster & MDF",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/AlabasterMDF.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "uro veener world",
+        //     name: "Designer Charcoal",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerCharcoal.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "uro veener world",
+        //     name: " Designer Laminates",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/Exclusiveveener.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "uro veener world",
+        //     name: " Exclusive veener",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/PanelsAcrylam.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "uro veener world",
+        //     name: " Panels & Acrylam",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/DesignerLaminates.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "uro veener world",
+        //     name: " Plywood",
+        //     bannerImg: "img/divisions/banner/Uroveneerworld.jpg",
+        //     smallerImg: "img/divisions/categories/UroVeneerWorld/Plywood.jpg",
+        //     bgImg: "img/divisions/bg/Uroveneerworld.jpg",
+        //     category: "uroveenerworld"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: "Door",
+        //     namings: "Bamboo flooring",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/Bambooflooring.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/1.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: "Dupont Corian",
+        //     namings: "Engineered Flooring",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/EngineeredFlooring.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/2.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: " Exterior Cladding",
+        //     namings: "Exterior Deck Tile",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/ExteriorDeckTile.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/3.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: " Wallpaper",
+        //     namings: "KAINDL Veneer Flooring",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/KAINDLVeneerFlooring.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/4.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: " Decking",
+        //     namings: "Laminate Flooring",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/LaminateFlooring.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "wood & mouldings",
+        //     name: " ",
+        //     namings: "Solid Wood Flooring",
+        //     bannerImg: "img/divisions/banner/WoodMouldings.jpg",
+        //     smallersImg: "img/divisions/categories/WoodMouldings/EuroFlooring/SolidWoodFlooring.jpg",
+        //     smallerImg: "img/divisions/categories/WoodMouldings/5.jpg",
+        //     bgImg: "img/divisions/bg/WoodMouldings.jpg",
+        //     category: "woodmouldings"
+        // }, {
+        //     names: "bath world",
+        //     name: "CP Fittings",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/CPFittings.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "bath world",
+        //     name: "Faucets",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/Faucets.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "bath world",
+        //     name: "Flooring Tiles",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/FlooringTiles.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "bath world",
+        //     name: "Kitchen Sinks",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/KitchenSinks.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "bath world",
+        //     name: "Sanitary ware",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/Sanitaryware.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "bath world",
+        //     name: "Wall Tiles",
+        //     bannerImg: "img/divisions/banner/Bathworld.jpg",
+        //     smallerImg: "img/divisions/categories/BathWorld/WallTiles.jpg",
+        //     bgImg: "img/divisions/bg/Bathworld.jpg",
+        //     category: "bathworld"
+        // }, {
+        //     names: "gala hardware worlds",
+        //     name: "Bathroom Acce",
+        //     bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaHardwareWorld/BathroomAcce.jpg",
+        //     bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //     category: "galahardwareworlds"
+        // }, {
+        //     names: "gala hardware worlds",
+        //     name: "Cabinet Handles & Locks",
+        //     bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaHardwareWorld/CabinetHandlesLocks.jpg",
+        //     bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //     category: "galahardwareworlds"
+        // }, {
+        //     names: "gala hardware worlds",
+        //     name: "Designer Hardware",
+        //     bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaHardwareWorld/DesignerHardware.jpg",
+        //     bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //     category: "galahardwareworlds"
+        // }, {
+        //     names: "gala hardware worlds",
+        //     name: "Glass Fittings",
+        //     bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaHardwareWorld/GlassFittings.jpg",
+        //     bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //     category: "galahardwareworlds"
+        // }, {
+        //     names: "gala hardware worlds",
+        //     name: "SS Railings",
+        //     bannerImg: "img/divisions/banner/Galahardwareworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaHardwareWorld/SSRailings.jpg",
+        //     bgImg: "img/divisions/bg/Galahardwareworld.jpg",
+        //     category: "galahardwareworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Exclusive Temple Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/ExclusiveTempleCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Flex Stone Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/FlexStoneCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Metal Series Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/MetalSeriesCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Natural Stone Cladding Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/NaturalStoneCladdingCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Odyssey Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/OdysseyCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "ORVI Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/ORVICollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala stone worlds",
+        //     name: "Wash Basin and Pebbles Collection",
+        //     bannerImg: "img/divisions/banner/Galastoneworld.jpg",
+        //     bgImg: "img/divisions/bg/Galastoneworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaStoneWorld/WashBasinPebblesCollection.jpg",
+        //     category: "galastoneworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Accessories & Carpets",
+        //     namings: "",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/AccessoriesCarpets.jpg",
+        //     smallersImg: "img/product/12.jpg",
+        //     category: "galafurnitureworlds",
+        //     inner: "Accessories"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Coffee Table",
+        //     namings: "",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/CoffeeTable.jpg",
+        //     smallersImg: "img/product/22.jpg",
+        //     category: "galafurnitureworlds",
+        //     inner: "Coffee"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Dining Tables",
+        //     namings: "",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/DiningTables.jpg",
+        //     smallersImg: "img/product/32.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Fabric Sofas",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/Fabric Sofas.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Luxury Sofas",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/LuxurySofas.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Out Door",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/OutDoor.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "gala furniture worlds",
+        //     name: "Recliner Sofas",
+        //     bannerImg: "img/divisions/banner/GalaFurnitureworld.jpg",
+        //     bgImg: "img/divisions/bg/GalaFurnitureworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaFurnitureWorld/ReclinerSofas.jpg",
+        //     category: "galafurnitureworlds"
+        // }, {
+        //     names: "euro lighting world",
+        //     name: "Ceiling Fans",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/CeilingFans.jpg",
+        //     category: "eurolightingworld"
+        // }, {
+        //     names: "euro lighting world",
+        //     name: "Decoratives",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/Decoratives.jpg",
+        //     category: "eurolightingworld"
+        // }, {
+        //     names: "euro lighting world",
+        //     name: "Designer Lights",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/DesignerLights.jpg",
+        //     category: "eurolightingworld"
+        // }, {
+        //     names: "euro lighting world",
+        //     name: "Light Fixtures",
+        //     bannerImg: "img/divisions/banner/Eurolightingworld.jpg",
+        //     bgImg: "img/divisions/bg/Eurolightingworld.jpg",
+        //     smallerImg: "img/divisions/categories/EuroLightingWorld/LightFixtures.jpg",
+        //     category: "eurolightingworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Blinds",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Blinds.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Carpets Door mats and Runners",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/CarpetsDoormatsRunners.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Curtains",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Curtains.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Home Linen & Accessories",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/HomeLinenAccessories.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Mattress",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Mattress.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala drapes world",
+        //     name: "Upholstery",
+        //     bannerImg: "img/divisions/banner/Galacurtainworld.jpg",
+        //     bgImg: "img/divisions/bg/Galacurtainworld.jpg",
+        //     smallerImg: "img/divisions/categories/GalaCurtainWorld/Upholstery.jpg",
+        //     category: "galadrapesworld"
+        // }, {
+        //     names: "gala kitchen world",
+        //     name: "Appliances",
+        //     bannerImg: "img/",
+        //     bgImg: "img/",
+        //     smallerImg: "img/divisions/categories/GalaKitchenWorld/Appliances.jpg",
+        //     category: "galakitchenworld"
+        // }, {
+        //     names: "gala kitchen world",
+        //     name: "Hobs & Chimneys",
+        //     bannerImg: "img/",
+        //     bgImg: "img/",
+        //     smallerImg: "img/divisions/categories/GalaKitchenWorld/HobsChimneys.jpg",
+        //     category: "galakitchenworld"
+        // }, {
+        //     names: "gala kitchen world",
+        //     name: " Kitchen & Wardrobe Acce",
+        //     bannerImg: "img/",
+        //     bgImg: "img/",
+        //     smallerImg: "img/divisions/categories/GalaKitchenWorld/KitchenWardrobeAcce.jpg",
+        //     category: "galakitchenworld"
+        // }, {
+        //     names: "gala kitchen world",
+        //     name: " Sliding Fittings",
+        //     bannerImg: "img/",
+        //     bgImg: "img/",
+        //     smallerImg: "img/divisions/categories/GalaKitchenWorld/SlidingFittings.jpg",
+        //     category: "galakitchenworld"
+        // }, {
+        //     names: "mahavir corporation (India)",
+        //     name: "Aluminum Composite Panels",
+        //     bannerImg: "img/divisions/banner/Mahaveercorporation.jpg",
+        //     bgImg: "img/divisions/bg/Mahaveercorporation.jpg",
+        //     smallerImg: "img/divisions/categories/MahaveerCorporation/AluminumCompositePanels.jpg",
+        //     category: "mahavircorporation"
+        // }];
+
+        // $scope.subcategory = _.filter($scope.subcategoryAll, function (o) {
+        //     return o.category == $scope.divisioncategory;
+        // });
         //chunk//
-        $scope.division1 = _.chunk($scope.subcategory, 3);
-        console.log("$scope.subcategory ", $scope.division1);
+        // $scope.division1 = _.chunk($scope.subcategory, 3);
+        // console.log("$scope.subcategory ", $scope.division1);
 
         //chapo
     })
 
 
-    .controller('GalleryCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+    .controller('GalleryCtrl', function ($stateParams, $scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/gallery.html");
         TemplateService.title = "Gallery"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
-        $scope.mySlidess = [
-            '../img/product/2.jpg',
-            '../img/product/3.jpg',
-            '../img/product/4.jpg',
-            '../img/product/5.jpg',
-            '../img/product/6.jpg',
-            '../img/product/7.jpg'
-        ];
+        // $scope.mySlidess = [
+        //     '../img/product/2.jpg',
+        //     '../img/product/3.jpg',
+        //     '../img/product/4.jpg',
+        //     '../img/product/5.jpg',
+        //     '../img/product/6.jpg',
+        //     '../img/product/7.jpg'
+        // ];
+        $scope.productId = {
+            _id: $stateParams.productId
+        };
+        console.log("state param value is", $scope.productId);
+        // $rootScope.company = $stateParams.category;
+
+        NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
+            console.log("*****ComapanyProduct Details******", data);
+            $scope.productId = data.data.data;
+            $scope.productIdimage = data.data.data.images;
+            console.log("*****productIdimage Details******", $scope.productIdimage);
+            // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+        });
 
     })
     .controller('FAQCtrl', function ($scope, TemplateService, NavigationService, $timeout) {

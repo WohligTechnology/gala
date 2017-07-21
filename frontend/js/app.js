@@ -29,16 +29,17 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'DivisionCtrl'
         })
         .state('divisions', {
-            url: "/divisions/:divisioncategory/:inner",
+            url: "/divisions/:category/:product",
+            // url: "/divisions/:product",
             templateUrl: tempateURL,
             controller: 'Division1Ctrl'
         })
         .state('gallery', {
-            url: "/gallery",
+            url: "/gallery/:productId",
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'
         })
-         .state('faq', {
+        .state('faq', {
             url: "/faq",
             templateUrl: tempateURL,
             controller: 'FAQCtrl'

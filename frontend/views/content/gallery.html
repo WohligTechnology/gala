@@ -13,40 +13,37 @@
                         <!--<div class="hand1">
                             <img src="img/product/hand7.png" class="img-responsive" alt="product">
                         </div>-->
-                        <img src="img/product/1.jpg" class="img-responsive" alt="product">
+                        <img ng-src="{{productId.images[0].image | serverimage}}" class="img-responsive" class="img-full">
+
+                        <!--<img src="img/product/1.jpg" class="img-responsive" alt="product">-->
                         <!--<div class="hand2">
                             <img src="img/product/hand10.png" class="img-responsive" alt="product">
                         </div>-->
                     </figure>
                     <div class="flexy  hidden-sm hidden-xs">
-                        <flex-slider slide="s in mySlidess" item-width="130" item-margin="20" animation="slide" slideshow="true" animationLoop="true"
-                            prev-text="" next-text="">
+                        <flex-slider slide="s in productIdimage track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
+                            animationLoop="true" prev-text="" next-text="">
                             <li>
-                                <img ng-src="{{s}}">
+                                <img ng-src="{{s.image | serverimage}}">
                             </li>
                         </flex-slider>
                     </div>
                     <!--//-->
                     <div class="flexy visible-xs hidden-md visible-sm">
-                        <flex-slider slide="s in mySlidess" item-width="80" item-margin="10" animation="slide" slideshow="true" animationLoop="true"
-                            prev-text="" next-text="">
+                        <flex-slider slide="s in productIdimage track by $index" item-width="80" item-margin="10" animation="slide" slideshow="true"
+                            animationLoop="true" prev-text="" next-text="">
                             <li>
-                                <img ng-src="{{s}}">
+                                <img ng-src="{{s.image | serverimage}}">
                             </li>
                         </flex-slider>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="product-inform ">
-                        <h3 class="text-capitalize">DOOR </h3>
+                        <h3 class="text-capitalize">{{productId.name}} </h3>
                         <div class="space-tb">
                             <h5>Product Description </h5>
-                            <p>Century Ply brings you a new and improved version of sainik ply, to use a phrase, promises to
-                                stand longer and stronger in the face of all adversity.,It is termite 8, borer resistant,weather
-                                resistant and moisture resistant, thanks to being chemically treated and bonded with melaminefortified
-                                Urea Formaldehyde. It also has the ability to withstand heavy loads. The all-new Sainik ply
-                                is being launch across markets within India with a price tag which is eminently competitive.
-                                it is indeed the most economical purchase in the category for our customers. </p>
+                            <p>{{productId.description}} </p>
                             <div class="social-share">
                                 <p class="text-capitalize">share:</p>
                                 <ul class="list-inline">

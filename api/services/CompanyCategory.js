@@ -30,11 +30,12 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyCategory', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "order", "asc"));
 var model = {
     getAllCategoriesOfCompany: function (data, callback) {
+        console.log("data: ", data);
         CompanyCategory.find({
-            _id: data._id
+            company: mongoose.Types.ObjectId(data._id)
         }).lean().exec(function (err, found) {
             if (err) {
                 console.log("**** inside getCategoryWithCompany of CompanyCategoryjs ******", err);

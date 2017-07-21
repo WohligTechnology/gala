@@ -1,9 +1,13 @@
 <div class="division">
-    <section class="bg-division bg-divisions relative" ng-style="{'background-image':'url(' +subcategory[0].bannerImg + ')'}">
-        <!--<div class="overlay"></div>-->
-        <!--<div class="container">
-            <h2 class="text-uppercase">{{subcategory[0].names}}</h2>
-        </div>-->
+    <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
+
+        <div class="overlay"></div>
+        <div class="container">
+            <!--<div class="heart">
+                <img src="img/product/heart.png" class="img-responsive" alt="heart">
+            </div>-->
+            <!--<h2 class="text-uppercase">{{subcategory[0].names}}</h2>-->
+        </div>
     </section>
     <div class="division-info">
         <div class="container-fluid">
@@ -13,7 +17,8 @@
                         <h3>CATEGORIES</h3>
                         <!--<h4 class="text-capitalize ">door</h4>-->
                         <ul>
-                            <li ng-repeat="s in subcategory"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>
+                            <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
+                            <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({product:category._id})">{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
                             <li><a href="#">Decking </a></li>
                             <li><a href="#">Wallpaper</a></li>
@@ -34,12 +39,12 @@
                         <div class="handss2">
                             <img src="img/product/hand8.png" class="img-responsive" alt="product">
                         </div>-->
-                        <div class="row" ng-repeat="s1 in division1">
-                            <div class="col-md-4" ng-repeat="s in s1">
-                                <div class="door" ui-sref="gallery">
-                                    <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallersImg + ')'}"></div>
-                                    <div class="door-info" ng-if="s.namings">
-                                        <p class="text-uppercase">{{s.namings}}</p>
+                        <div class="row" ng-repeat="row in companyproductdata">
+                            <div class="col-md-4" ng-repeat="product in row">
+                                <div class="door" ui-sref="gallery({productId:product._id})">
+                                    <div class="door-img img1" style="background: url('{{product.images[0].image | serverimage}}')"></div>
+                                    <div class="door-info" ng-if="product.name">
+                                        <p class="text-uppercase">{{product.name}}</p>
                                     </div>
                                 </div>
                             </div>

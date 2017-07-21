@@ -1,5 +1,6 @@
 <div class="division about">
-    <section class="bg-division relative" ng-style="{'background-image':'url(' +subcategory[0].bannerImg + ')'}">
+    <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
+
         <div class="overlay"></div>
         <div class="container">
             <!--<div class="heart">
@@ -10,10 +11,10 @@
     </section>
     <section class="types-list text-center">
         <div class="container">
-            <ul class="list-inline types">
-                <li ng-repeat="s in subcategory"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>
+            <ul class="list-inline types">{{company._id}}
+
+                <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({category:company._id,product:category._id})">{{category.name}}</a></li>
             </ul>
-        </div>
     </section>
     <div class="bg-changes">
         <div class="division-info main-list" ng-style="{'background-image':'url(' +subcategory[0].bgImg + ')'}">
@@ -26,10 +27,22 @@
                     <div class="hands2">
                         <img src="img/product/hand10.png" class="img-responsive" alt="product">
                     </div>-->
-                    <div class="row" ng-repeat="s2 in subcategoryBig">
+                    <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
                         <!--//for 3 grid-->
-                        <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
-                            <div class="door" ui-sref="divisions({divisioncategory:s.category,inner:s.name})">
+                        <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
+                            <div class="door" ui-sref="divisions({product:s._id})">
+                                <!--<div class="door">-->
+                                <div class="overlay"></div>
+                                <div class="door-img img1" style="background: url('{{s1.banner | serverimage}}')"></div>
+                                <div class="door-info">
+                                    <p class="text-uppercase">{{s.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//for 2 grid-->
+                        <div class="col-md-2" ng-if="s2.length==1"></div>
+                        <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==2">
+                            <div class="door" ui-sref="divisions({product:s._id})">
                                 <div class="overlay"></div>
                                 <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                                 <div class="door-info">
@@ -37,11 +50,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!--//for 3 grid-->
+
                         <!--//for 1 grid-->
                         <div class="col-md-4" ng-if="s2.length==1"></div>
-                        <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
-                            <div class="door" ui-sref="divisions({divisioncategory:s.category,inner:s.name})">
+                        <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
+                            <div class="door" ui-sref="divisions({product:s._id})">
                                 <div class="overlay"></div>
                                 <div class="door-img img1" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
                                 <div class="door-info">
@@ -49,24 +62,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4" ng-if="s2.length==1"></div>
+
+                        <!--<div class="col-md-4" ng-if="s2.length==1"></div>-->
                         <!--//for 1 grid-->
                         <!--//for 2 grid-->
-                        <div class="col-md-2" ng-if="s2.length==2"></div>
-                        <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
-                            <div class="door" ui-sref="divisions({divisioncategory:s.category,inner:s.name})">
-                                <div class="overlay"></div>
-                                <div class="door-img img4" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">{{s.name}}</p>
+                        <!--<div class="col-md-2" ng-if="s2.length==2"></div>-->
+                        <!--<div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2 track by $index">
+                                <div class="door" ui-sref="divisions({product:s._id})">
+                                    <div class="overlay"></div>
+                                    <div class="door-img img4" ng-style="{'background-image':'url(' +s.smallerImg + ')'}"></div>
+                                    <div class="door-info">
+                                        <p class="text-uppercase">{{s.name}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2" ng-if="s2.length==2"></div>
+                            </div>-->
+                        <!--<div class="col-md-2" ng-if="s2.length==2"></div>-->
                         <!--//for 2 grid-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>

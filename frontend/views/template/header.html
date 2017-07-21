@@ -26,10 +26,10 @@
                     <li> <a>division </a>
                         <ul class="dropdown-menu">
                             <li class="rows-flex margin0 padding0">
-                                <div class="cols-flex" ng-repeat="cat in division" ui-sref="division({category:cat.id})">
-                                    <a>{{cat.name}}</a>
+                                <div class="cols-flex" ng-repeat="cat in company">
+                                    <a ui-sref="division({category:cat._id})">{{cat.name}}</a>
                                 </div>
-                                 <!--<div class="cols-flex">
+                                <!--<div class="cols-flex">
                                     <a ui-sref="division({category:s1.id})">uro veener world</a>
                                 </div>
                                 <div class="cols-flex">
