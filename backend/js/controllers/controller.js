@@ -1,6 +1,7 @@
 var globalfunction = {};
 myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
+        console.log("Dashboard ctrl");
         $scope.template = TemplateService.changecontent("dashboard");
         $scope.menutitle = NavigationService.makeactive("Dashboard");
         TemplateService.title = $scope.menutitle;
