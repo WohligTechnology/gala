@@ -48,7 +48,7 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyProduct', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory", "order", "asc"));
 var model = {
     getCompanyOfCategory: function (data, callback) {
         CompanyCategory.findOne({
@@ -81,6 +81,7 @@ var model = {
 
         });
     },
+
 
     getOneProductDetails: function (data, callback) {
         console.log("data inside productDetail : ", data);

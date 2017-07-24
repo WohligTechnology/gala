@@ -24,6 +24,7 @@ var controller = {
             })
         }
     },
+
     getOneProductDetails: function (req, res) {
         if (req.body) {
             CompanyProduct.getOneProductDetails(req.body, res.callback);

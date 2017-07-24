@@ -12,6 +12,9 @@ var schema = new Schema({
         type: Number,
         required: true
     },
+    image: {
+        type: String,
+    },
     company: {
         type: Schema.Types.ObjectId,
         ref: 'Company',

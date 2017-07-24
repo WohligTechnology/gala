@@ -35,7 +35,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'Division1Ctrl'
         })
         .state('gallery', {
-            url: "/gallery/:productId",
+            url: "/gallery/:category/:productId/",
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'
         })

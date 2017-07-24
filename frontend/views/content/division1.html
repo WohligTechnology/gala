@@ -1,6 +1,5 @@
 <div class="division">
     <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
-
         <div class="overlay"></div>
         <div class="container">
             <!--<div class="heart">
@@ -41,7 +40,7 @@
                         </div>-->
                         <div class="row" ng-repeat="row in companyproductdata">
                             <div class="col-md-4" ng-repeat="product in row">
-                                <div class="door" ui-sref="gallery({productId:product._id})">
+                                <div class="door" ui-sref="gallery({category:company._id,productId:product._id})">
                                     <div class="door-img img1" style="background: url('{{product.images[0].image | serverimage}}')"></div>
                                     <div class="door-info" ng-if="product.name">
                                         <p class="text-uppercase">{{product.name}}</p>
