@@ -24,6 +24,15 @@
             "url": ""
         },
         {
+            "name": "Backeground Image",
+            "type": "image",
+            "tableRef": "backgroundImage",
+            "placeholder": "Enter backgroundImage",
+            "id": "backgroundImage",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
             "name": "BackgroundBanner",
             "type": "image",
             "tableRef": "backgroundBanner",

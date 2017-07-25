@@ -8,6 +8,9 @@ var schema = new Schema({
     backgroundBanner: {
         type: String,
     },
+    backgroundImage: {
+        type: String,
+    },
     order: {
         type: Number,
     }

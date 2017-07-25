@@ -33,6 +33,15 @@
             "url": ""
         },
         {
+            "name": "Backeground Image",
+            "type": "image",
+            "tableRef": "backgroundImage",
+            "placeholder": "Enter backgroundImage",
+            "id": "backgroundImage",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",
