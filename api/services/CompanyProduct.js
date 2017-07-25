@@ -17,7 +17,11 @@ var schema = new Schema({
         required: true
     },
     images: [{
-        image: {
+        bigImage: {
+            type: String,
+            required: true
+        },
+        smallImage: {
             type: String,
             required: true
         }

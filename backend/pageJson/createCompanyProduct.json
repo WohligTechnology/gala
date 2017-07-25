@@ -36,18 +36,32 @@
         "tableRef": "images",
         "validation": ["required", "trim", ""],
         "field": [{
-            "name": "Image",
-            "type": "image",
-            "tableRef": "image",
-            "tableValue": "image",
-            "placeholder": "Enter image",
-            "id": "productimage",
-            "option": "single",
-            "validation": ["", "trim", ""],
-            "onView": true,
-            "view": true,
-            "url": ""
-        }]
+                "name": "Big Image",
+                "type": "image",
+                "tableRef": "bigImage",
+                "tableValue": "bigImage",
+                "placeholder": "Enter Big Image",
+                "id": "bigImage",
+                "option": "single",
+                "validation": ["required", "trim", ""],
+                "onView": true,
+                "view": true,
+                "url": ""
+            },
+            {
+                "name": "Small Image",
+                "type": "image",
+                "tableRef": "smallImage",
+                "tableValue": "smallImage",
+                "placeholder": "Enter Small Image",
+                "id": "smallImage",
+                "option": "single",
+                "validation": ["required", "trim", ""],
+                "onView": true,
+                "view": true,
+                "url": ""
+            }
+        ]
     }, {
         "name": "Company Category",
         "type": "tags",
