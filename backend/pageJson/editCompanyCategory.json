@@ -21,7 +21,9 @@
             "placeholder": "Enter Banner",
             "id": "image",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "Order",

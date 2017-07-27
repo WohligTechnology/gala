@@ -21,7 +21,9 @@
             "placeholder": "Enter Banner",
             "id": "banner",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "BackgroundBanner",
@@ -30,16 +32,20 @@
             "placeholder": "Enter BackgroundBanner",
             "id": "backgroundBanner",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
-            "name": "Backeground Image",
+            "name": "Background Image",
             "type": "image",
             "tableRef": "backgroundImage",
             "placeholder": "Enter backgroundImage",
             "id": "backgroundImage",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "Order",

@@ -1,6 +1,9 @@
+// URLSlugs = require('mongoose-url-slugs');
 var schema = new Schema({
     name: {
         type: String,
+        required: true,
+        unique: true
     },
     banner: {
         type: String,
@@ -15,7 +18,9 @@ var schema = new Schema({
         type: Number,
     }
 });
-
+// schema.plugin(URLSlugs('name'), {
+//     update: true
+// });
 schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
@@ -27,6 +32,7 @@ var model = {
         console.log("data inside product: ", data);
         Company.findOne({
             _id: mongoose.Types.ObjectId(data._id)
+            // "myslug": data.myslug
         }).exec(function (err, found) {
             console.log("Found: ", found);
             if (err) {

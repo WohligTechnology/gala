@@ -48,14 +48,7 @@ var schema = new Schema({
         type: String,
         default: ""
     },
-    otp: {
-        type: String,
-        default: ""
-    },
-    accessToken: {
-        type: [String],
-        index: true
-    },
+
     googleAccessToken: String,
     googleRefreshToken: String,
     oauthLogin: {
