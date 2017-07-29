@@ -90,6 +90,7 @@ global["uid"] = require('rand-token').uid;
 global["request"] = require('request');
 global["fs"] = require('fs');
 global["json2xls"] = require('json2xls');
+global["md5"] = require('md5');
 global["xlsx"] = require('node-xlsx').default;
 global["URLSlugs"] = require('mongoose-url-slugs');
 // global["pdf"] = require('html-pdf');

@@ -1,7 +1,6 @@
 var globalfunction = {};
 myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
         //Used to name the .html file
-        console.log("Dashboard ctrl");
         $scope.template = TemplateService.changecontent("dashboard");
         $scope.menutitle = NavigationService.makeactive("Dashboard");
         TemplateService.title = $scope.menutitle;
@@ -506,13 +505,18 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             if (!$scope.formData[$scope.type.tableRef]) {
                 $scope.formData[$scope.type.tableRef] = []
             }
-            $scope.formData[$scope.type.tableRef].push(data);
+            if ($scope.json.json.pageType == 'create') {
+                $scope.formData[$scope.type.tableRef].push(data);
+            }
+            $scope.model = $scope.formData[$scope.type.tableRef];
+            console.log("$scope.type.type: ", $scope.model);
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/modal/modal.html',
                 size: 'lg',
                 scope: $scope
             });
+
             $scope.close = function (value) {
                 callback(value);
                 modalInstance.close("cancel");

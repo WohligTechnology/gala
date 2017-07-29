@@ -27,6 +27,7 @@ myApp.directive('imageonload', function () {
 });
 
 
+
 myApp.directive('uploadImage', function ($http, $filter, $timeout) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
@@ -143,7 +144,6 @@ myApp.directive('uploadImage', function ($http, $filter, $timeout) {
         }
     };
 });
-
 
 
 myApp.directive('onlyDigits', function () {
@@ -437,6 +437,10 @@ myApp.directive('viewField', function ($http, $filter) {
             if (!$scope.type.type) {
                 $scope.type.type = "text";
             }
+            $scope.$watch('value', function (newVal, oldVal) {
+                console.log("viewField watch: ", newVal, oldVal);
+                $scope.value = newVal;
+            });
             $scope.form = {};
             $scope.objectDepth = function () {
                 if (_.isObjectLike($scope.storeObj)) {
@@ -456,6 +460,8 @@ myApp.directive('viewField', function ($http, $filter) {
 
             } else {
                 $scope.form.model = $scope.value[$scope.type.tableRef];
+                console.log("$scope.form.model", $scope.form.model);
+
             }
 
             $scope.template = "views/viewField/" + $scope.type.type + ".html";

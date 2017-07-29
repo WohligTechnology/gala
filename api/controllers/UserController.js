@@ -1,5 +1,11 @@
 module.exports = _.cloneDeep(require("sails-wohlig-controller"));
 var controller = {
+    userLogin: function (req, res) {
+        User.userLogin(req.body, res.callback);
+    },
+    registerAppuser: function (req, res) {
+        User.registerAppuser(req.body, res.callback);
+    },
     loginFacebook: function (req, res) {
         passport.authenticate('facebook', {
             scope: ['public_profile', 'user_friends', 'email'],
@@ -18,13 +24,7 @@ var controller = {
             failureRedirect: '/'
         }, res.socialLogin)(req, res);
     },
-    profile: function (req, res) {
-        if (req.body && req.body.accessToken) {
-            User.profile(req.body, res.callback);
-        } else {
-            res.callback("Please provide Valid AccessToken", null);
-        }
-    },
+
     pdf: function (req, res) {
 
         var html = fs.readFileSync('./views/pdf/demo.ejs', 'utf8');

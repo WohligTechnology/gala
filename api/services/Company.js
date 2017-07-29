@@ -18,9 +18,10 @@ var schema = new Schema({
         type: Number,
     }
 });
-// schema.plugin(URLSlugs('name'), {
-//     update: true
-// });
+// schema.plugin(URLSlugs('name', {
+//     field: 'myslug'
+// }));
+
 schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);

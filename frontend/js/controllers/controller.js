@@ -11,9 +11,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         var data = {};
         data.page = 1;
         NavigationService.callApiWithData("Company/search", data, function (data) {
-            console.log("comapnyData", data);
+            // console.log("comapnyData", data);
             $scope.company = data.data.data.results;
-            console.log("comapnyData", $scope.company);
+            // console.log("comapnyData", $scope.company);
 
             $scope.companyData = _.chunk($scope.company, 3);
 
@@ -71,9 +71,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
         NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
-            console.log("*****companyCategory******", data);
+            // console.log("*****companyCategory******", data);
             $scope.companyCategory = data.data.data;
-            console.log("*****companyCategory******", $scope.companyCategory);
+            // console.log("*****companyCategory******", $scope.companyCategory);
             $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         });
         NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
@@ -98,24 +98,24 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             _id: $stateParams.category
         };
         NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-            console.log("*****CompnayBanner******", data);
+            // console.log("*****CompnayBanner******", data);
             $scope.banner = data.data.data;
-            console.log("*****CompnayBanner******", $scope.banner);
+            // console.log("*****CompnayBanner******", $scope.banner);
 
         });
         NavigationService.callApiWithData("CompanyProduct/getAllProductWithCategory", $scope.product, function (data) {
-            console.log("*****product******", data);
+            // console.log("*****product******", data);
             $scope.companyproduct = data.data.data;
-            console.log("*****product******", $scope.companyproduct);
+            // console.log("*****product******", $scope.companyproduct);
             $scope.companyproductdata = _.chunk($scope.companyproduct, 3);
-            console.log("*****product******", $scope.companyproductdata);
-            console.log("*****chunk product******", companyproductdata);
+            // console.log("*****product******", $scope.companyproductdata);
+            // console.log("*****chunk product******", companyproductdata);
         });
 
         NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
-            console.log("*****companyCategory******", data);
+            // console.log("*****companyCategory******", data);
             $scope.companyCategory = data.data.data;
-            console.log("*****companyCategory******", $scope.companyCategory);
+            // console.log("*****companyCategory******", $scope.companyCategory);
             $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         });
     })
@@ -139,9 +139,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         console.log("state param value is", $scope.productId);
         // $rootScope.company = $stateParams.category;
         NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-            console.log("*****companyName******", data);
+            // console.log("*****companyName******", data);
             $scope.companyName = data.data.data;
-            console.log("*****companyName******", $scope.banner);
+            // console.log("*****companyName******", $scope.banner);
 
         });
         NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
@@ -149,7 +149,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.productId = data.data.data;
             $scope.productIdimage = data.data.data.images;
             $scope.bigImage = $scope.productId.images[0].bigImage;
-            console.log("*****productIdimage Details******", $scope.productIdimage);
+            // console.log("*****productIdimage Details******", $scope.productIdimage);
             // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         });
         $scope.changeBigImage = function (bigImage) {

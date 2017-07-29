@@ -20,7 +20,7 @@
             "tableRef": "banner",
             "placeholder": "Enter Banner",
             "id": "banner",
-            "validation": ["required", "trim", "unique"],
+            "validation": ["", "trim", "unique"],
             "url": "",
             "onView": true,
             "view": true
@@ -31,7 +31,7 @@
             "tableRef": "backgroundBanner",
             "placeholder": "Enter BackgroundBanner",
             "id": "backgroundBanner",
-            "validation": ["required", "trim", "unique"],
+            "validation": ["", "trim", "unique"],
             "url": "",
             "onView": true,
             "view": true
@@ -53,7 +53,7 @@
             "tableRef": "order",
             "placeholder": "Enter order",
             "id": "order",
-            "validation": ["required", "trim", "unique"],
+            "validation": ["", "trim", "unique"],
             "url": ""
         }
     ],

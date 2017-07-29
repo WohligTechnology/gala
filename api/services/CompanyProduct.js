@@ -1,12 +1,7 @@
 var schema = new Schema({
     name: {
         type: String,
-        required: true,
-        unique: true,
-        uniqueCaseInsensitive: true,
-        // excel: {
-        //     name: Name
-        // }
+
     },
     description: {
         type: String,
@@ -14,16 +9,15 @@ var schema = new Schema({
     },
     order: {
         type: Number,
-        required: true
+
     },
     images: [{
         bigImage: {
             type: String,
-            required: true
+
         },
         smallImage: {
             type: String,
-            required: true
         }
     }],
     companyCategory: {
@@ -52,7 +46,7 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyProduct', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory", "order", "asc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory", "createdAt", "desc"));
 var model = {
     getCompanyOfCategory: function (data, callback) {
         CompanyCategory.findOne({
@@ -72,6 +66,8 @@ var model = {
         console.log("data inside product: ", data);
         CompanyProduct.find({
             companyCategory: mongoose.Types.ObjectId(data._id)
+        }).sort({
+            'order': 1
         }).lean().exec(function (err, found) {
             console.log("Found: ", found);
             if (err) {
