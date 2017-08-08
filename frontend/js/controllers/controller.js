@@ -62,8 +62,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         TemplateService.social = "views/template/social.html";
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             // console.log("BannerData", data.data.data.results);
-            $scope.companyproduct = data.data.data;
-            $scope.companyData = _.chunk($scope.companyproduct, 3);
+            $scope.allproduct = data.data.data;
+            $scope.allproductData = _.chunk($scope.companyproduct, 3);
         });
 
 
