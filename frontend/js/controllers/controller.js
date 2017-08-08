@@ -55,17 +55,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     })
 
 
-  .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
+    .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/allProduct.html");
         TemplateService.title = "Product"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
-  NavigationService.callApi("HomeBanner/search", function (data) {
+        NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             // console.log("BannerData", data.data.data.results);
-            $scope.banner = data.data.data.results;
-            // console.log("resultsData", $scope.banner);
+            $scope.companyproduct = data.data.data;
+
+            console.log("result/sData", $scope.companyproduct);
         });
-   
+
 
     })
 
