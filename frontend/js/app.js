@@ -48,6 +48,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             url: "/form",
             templateUrl: tempateURL,
             controller: 'FormCtrl'
+        })
+             .state('allProduct', {
+            url: "/allProduct",
+            templateUrl: tempateURL,
+            controller: 'allProductCtrl'
         });
     $urlRouterProvider.otherwise("/");
     $locationProvider.html5Mode(isproduction);

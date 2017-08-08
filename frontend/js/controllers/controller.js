@@ -54,6 +54,21 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         // $scope.openModal();
     })
 
+
+  .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.getHTML("content/allProduct.html");
+        TemplateService.title = "Product"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        TemplateService.social = "views/template/social.html";
+  NavigationService.callApi("HomeBanner/search", function (data) {
+            // console.log("BannerData", data.data.data.results);
+            $scope.banner = data.data.data.results;
+            // console.log("resultsData", $scope.banner);
+        });
+   
+
+    })
+
     .controller('DivisionCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/division.html");
         TemplateService.title = "Division"; //This is the Title of the Website
