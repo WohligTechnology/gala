@@ -29,6 +29,20 @@ module.exports = mongoose.model('Company', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, null, null, "order", "asc"));
 var model = {
+    getAllCompany: function (data, callback) {
+        Company.find({}).exec(function (err, found) {
+            console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                console.log("found in getAllCompany", found);
+                callback(null, found);
+            }
+
+        });
+    },
     getCompanyBanner: function (data, callback) {
         console.log("data inside product: ", data);
         Company.findOne({

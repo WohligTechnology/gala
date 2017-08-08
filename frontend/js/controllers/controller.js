@@ -3,17 +3,17 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
-        NavigationService.callApi("HomeBanner/search", function (data) {
-            // console.log("BannerData", data.data.data.results);
-            $scope.banner = data.data.data.results;
+        NavigationService.callApi("HomeBanner/getAllBanner", function (data) {
+            console.log("BannerData", data.data.data);
+            $scope.banner = data.data.data;
             // console.log("resultsData", $scope.banner);
         });
         var data = {};
         data.page = 1;
-        NavigationService.callApiWithData("Company/search", data, function (data) {
+        NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
             // console.log("comapnyData", data);
-            $scope.company = data.data.data.results;
-            // console.log("comapnyData", $scope.company);
+            $scope.company = data.data.data;
+            console.log("comapnyData", $scope.company);
 
             $scope.companyData = _.chunk($scope.company, 3);
 

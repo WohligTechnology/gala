@@ -49,18 +49,19 @@ module.exports = mongoose.model('CompanyProduct', schema);
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory", "createdAt", "desc"));
 var model = {
     getAllProduct: function (data, callback) {
-        CompanyProduct.find({}).exec(function (err, found) {
-            console.log("Found: ", found);
-            if (err) {
-                callback(err, null);
-            } else if (_.isEmpty(found)) {
-                callback(null, "noDataound");
-            } else {
-                console.log("found in getAllProduct", found);
-                callback(null, found);
-            }
+        CompanyProduct.find({}).deepPopulate('companyCategory')
+            .exec(function (err, found) {
+                console.log("Found: ", found);
+                if (err) {
+                    callback(err, null);
+                } else if (_.isEmpty(found)) {
+                    callback(null, "noDataound");
+                } else {
+                    console.log("found in getAllProduct", found);
+                    callback(null, found);
+                }
 
-        });
+            });
     },
     getCompanyOfCategory: function (data, callback) {
         CompanyCategory.findOne({

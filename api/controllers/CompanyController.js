@@ -1,5 +1,17 @@
 module.exports = _.cloneDeep(require("sails-wohlig-controller"));
 var controller = {
+    getAllCompany: function (req, res) {
+        if (req.body) {
+            Company.getAllCompany(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            })
+        }
+    },
     getCompanyBanner: function (req, res) {
         if (req.body) {
             Company.getCompanyBanner(req.body, res.callback);
