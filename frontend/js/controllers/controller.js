@@ -63,8 +63,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             // console.log("BannerData", data.data.data.results);
             $scope.companyproduct = data.data.data;
-
-            console.log("result/sData", $scope.companyproduct);
+            $scope.companyData = _.chunk($scope.companyproduct, 3);
         });
 
 
