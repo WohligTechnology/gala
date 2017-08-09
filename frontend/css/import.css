@@ -9766,10 +9766,16 @@ h5 {
   background-color: #fff; }
 
 .main-banner .offers {
+<<<<<<< HEAD
+=======
   -webkit-transform: translate(-50%, -50%);
+<<<<<<< HEAD
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+=======
+>>>>>>> c5ffd80de188f2fd85be066c0041eb3eb907407f
+>>>>>>> b292f6be04657ff6de7a0c94c315ee7f9e41a04e
   transform: translate(-50%, -50%);
   position: absolute;
   top: 10%;
