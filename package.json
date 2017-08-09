@@ -28,7 +28,7 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sass": "^1.2.1",
     "grunt-sync": "0.2.4",
-    "include-all": "~0.1.6",
+    "include-all": "^0.1.6",
     "install": "^0.8.1",
     "jimp": "^0.2.27",
     "json2xls": "^0.1.2",
