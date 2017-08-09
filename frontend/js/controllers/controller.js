@@ -61,9 +61,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
-            // console.log("BannerData", data.data.data.results);
+            console.log("getallproduct", data.data.data);
             $scope.allproduct = data.data.data;
-            $scope.allproductData = _.chunk($scope.companyproduct, 3);
+            $scope.allproductData = _.chunk($scope.allproduct, 3);
         });
 
 
@@ -177,36 +177,85 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.template = TemplateService.getHTML("content/showroom.html");
         TemplateService.title = "Showroom"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
+        NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
+            $scope.ProductDetails = data.data.data;
+            console.log("kem cho", $scope.ProductDetails);
+
+            $scope.ProductDetails = data.data.data;
+            console.log("kem cho", $scope.ProductDetails);
+            if ($scope.ProductDetails.length != 0) {
+                $scope.bigImage = $scope.ProductDetails[0].images[0].bigImage;
+                console.log("kem cho", $scope.bigImage);
+                $scope.name = $scope.ProductDetails[0].name;
+                console.log("NAME", $scope.name);
+
+            } else {
+                console.log("######");
+            }
+
+
+            // console.log("****getallproduct********", data.data.data);
+            // $scope.productId = data.data.data;
+            // $scope.productIdimage = data.data.data.description;
+            // console.log("****", $scope.productIdimage);
+            // $scope.bigImage = $scope.productId.images[0].bigImage;
+            // console.log("hello", $scope.bigImage);
+            // });
+            // NavigationService.callApiWithData("CompanyProduct/getAllProduct", function (data) {
+            //     console.log("***$$**getAllProduct Details*$$$4*****", data);
+            //     $scope.productId = data.data.data;
+            //     $scope.productIdimage = data.data.data.images;
+            //     $scope.bigImage = $scope.productId.images[0].bigImage;
+
+            // });
+            $scope.changeBigImage = function (bigImage, name) {
+                $scope.bigImage = bigImage;
+                $scope.name = name;
+                console.log("info", $scope.name, $scope.bigImage);
+            };
+        });
+        // NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
+        //     console.log("*****ComapanyProduct Details******", data.data.data);
+        //     $scope.productId = data.data.data;
+        //     $scope.productIdimage = data.data.data.images;
+        //     $scope.bigImage = $scope.productId.images[0].bigImage;
+
+        // });
+        // $scope.changeBigImage = function (bigImage) {
+        //     $scope.bigImage = bigImage;
+        // };
+        $scope.product = {};
+        $scope.bigImage = {};
+        $scope.name = {};
+
         // TemplateService.social = "views/template/social.html";
-        $scope.bigImage = "";
-        $scope.productId = {
-            _id: $stateParams.productId
-        };
-        $scope.company = {
-            _id: $stateParams.category
-        };
+
+        // $scope.bigImage = "";
+        // $scope.productId = {
+        //     _id: $stateParams.productId
+        // };
+        // $scope.company = {
+        //     _id: $stateParams.category
+        // };
 
 
 
-        console.log("state param value is", $scope.productId);
-        // $rootScope.company = $stateParams.category;
-        NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-            // console.log("*****companyName******", data);
-            $scope.companyName = data.data.data;
-            // console.log("*****companyName******", $scope.banner);
+        // console.log("state param value is", $scope.productId);
+        // // $rootScope.company = $stateParams.category;
+        // NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
+        //     // console.log("*****companyName******", data);
+        //     $scope.companyName = data.data.data;
+        //     // console.log("*****companyName******", $scope.banner);
 
-        });
-        NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
-            console.log("*****ComapanyProduct Details******", data);
-            $scope.productId = data.data.data;
-            $scope.productIdimage = data.data.data.images;
-            $scope.bigImage = $scope.productId.images[0].bigImage;
-            // console.log("*****productIdimage Details******", $scope.productIdimage);
-            // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
-        });
-        $scope.changeBigImage = function (bigImage) {
-            $scope.bigImage = bigImage;
-        }
+
+
+        // $scope.product = {};
+        // $scope.bigImage = {};
+        // $scope.name = {};
+
+
+
+
     })
 
     .controller('FAQCtrl', function ($scope, TemplateService, NavigationService, $timeout) {

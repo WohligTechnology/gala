@@ -23,10 +23,11 @@
                     </figure>
 
                     <div class="flexy  hidden-sm hidden-xs">
-                        <flex-slider slide="s in productIdimage track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
+                        <flex-slider slide="s in ProductDetails track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
-                            <li ng-click="changeBigImage(s.bigImage)">
-                                <img ng-src="{{s.smallImage | serverimage}}">
+                            <li ng-click="changeBigImage(s.images[0].bigImage, s.name)">
+                                <!--<li ng-click="changeBigImage(s.bigImage, s.name)">-->
+                                <img ng-src="{{s.images[0].smallImage | serverimage}}">
                             </li>
                         </flex-slider>
                     </div>
@@ -34,7 +35,7 @@
                     <div class="flexy visible-xs hidden-md visible-sm">
                         <flex-slider slide="s in productIdimage track by $index" item-width="80" item-margin="10" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
-                            <li ng-click="changeBigImage(s.bigImage)">
+                            <li ng-click="changeBigImage(s.images[0].bigImage, s.name)">
                                 <img ng-src="{{s.smallImage | serverimage}}">
                             </li>
                         </flex-slider>
@@ -42,10 +43,10 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="product-inform ">
-                        <h3 class="text-capitalize">{{productId.name}} </h3>
-                        <div class="space-tb">
+                        <h3 class="text-capitalize">{{name}} </h3>
+                        <!--<div class="space-tb">
                             <h5>Product Description </h5>
-                            <p>{{productId.description}} </p>
+                            <p>{{ProductDetails.description}} </p>
                             <div class="social-share">
                                 <p class="text-capitalize">share:</p>
                                 <ul class="list-inline">
@@ -54,9 +55,9 @@
                                     <li><a href="" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
-                    <button class="btn btn-success text-capitalize">enquire now</button>
+                    <!--<button class="btn btn-success text-capitalize">enquire now</button>-->
                 </div>
             </div>
             <div class="ok">
