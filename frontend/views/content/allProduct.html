@@ -1,0 +1,47 @@
+<div class="main-banner">
+    <section class="listings">
+        <div class="container">
+            <h1 class="text-capitalize text-right ">Products</h1>
+            <div class="about-info">
+                <div class="text-center product">
+                    <div class="row" ng-repeat="s in allproductData">
+
+                        <!--//for grid 3-->
+                        <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==3">
+                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
+                                <div class="door-img img1" style="background: url('{{company.images[0].bigImage | serverimage}}')"></div>
+                                <div class="door-info" ng-if="company.name">
+                                    <p class="text-capitalize">{{company.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//for grid 3-->
+                        <!--//for grid 1-->
+                        <div class="col-md-4" ng-if="s.length==1"></div>
+                        <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==1">
+                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
+                                <div class="door-img img1" style="background: url('{{company.images[0].bigImage | serverimage}}')"></div>
+                                <div class="door-info" ng-if="company.name">
+                                    <p class="text-capitalize">{{company.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" ng-if="s.length==1"></div>
+                        <!--//for grid 1-->
+                        <!--//for grid 2-->
+                        <div class="col-md-2" ng-if="s.length==2"></div>
+                        <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==2">
+                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
+                                <div class="door-img img1" style="background: url('{{company.banner | serverimage}}')"></div>
+                                <div class="door-info" ng-if="company.name">
+                                    <p class="text-capitalize">{{company.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" ng-if="s.length==2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -32,7 +32,7 @@ img.loading {
 
 img {
     opacity: 0;
-    transition: all 300ms ease;
+    @include transition(all 300ms ease);
 }
 
 img.doneLoading {
@@ -51,7 +51,7 @@ a,
 .btn,
 [ui-sref] {
     cursor: pointer;
-    transition: all ease 300ms;
+    @include transition(all ease 300ms);
 }
 
 //footer//
@@ -125,11 +125,11 @@ footer {
 }
 
 header {
-    transition: all 300ms ease;
+    @include transition(all 300ms ease);
 }
 
 .nav-up {
-    transform: translateY(-100%);
+    @include transform(translateY(-100%));
 }
 
 //mixins//
@@ -403,11 +403,10 @@ h5 {
 
 .bg-division,
 .bg-divisions {
-    height: 60vh;
-    background-image: url("../img/division/banner.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    height: 60vh!important; // background-image: url("../img/division/banner.jpg");
+    background-repeat: no-repeat!important;
+    background-position: center!important;
+    background-size: cover!important;
     h2 {
         @include position(absolute,
         50% null null 50%);
@@ -433,7 +432,7 @@ h5 {
 
 .door-img {
     width: auto;
-    height: 315px;
+    height: 150px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -523,12 +522,14 @@ h5 {
     }
     .door {
         @extend .relative;
-        transition: all ease 6s;
+        @include transition(all ease 300ms);
         .door-info {
             width: 60%;
+            @include transition(all ease 300ms);
             @include position(absolute,
             50% null null 50%);
-            transform: translate(-50%, -50%);
+            @include transform(translate(-50%,
+            -50%));
             background-color: rgba(255, 255, 255, 0.59);
         }
         .overlay {
@@ -605,8 +606,7 @@ h5 {
     }
     .img1 {
         background-image: url("../img/homenew/1.jpg");
-    }
-    // .img2 {
+    } // .img2 {
     //     background-image: url("../img/homenew/2.jpg");
     // }
     // .img3 {
@@ -677,7 +677,8 @@ h5 {
         background-color: $brand-white;
     }
     .offers {
-        transform: translate(-50%, -50%);
+        @include transform(translate(-50%,
+        -50%));
         @include position(absolute,
         10% null null 20%);
     }
@@ -686,8 +687,7 @@ h5 {
 .creativity {
     @include position(absolute,
     28% null null 50px);
-    @include fontsize(18px);
-    // font-family: "Savoye";
+    @include fontsize(18px); // font-family: "Savoye";
     font-style: italic;
     color: $brand-white;
     line-height: 35px;
@@ -793,7 +793,7 @@ sup {
             color: #fff !important;
             font-weight: 600;
             text-transform: uppercase;
-            transition: all 800ms ease;
+            @include transition(all 800ms ease);
             &:hover {
                 color: $brand-green !important;
             }
@@ -819,7 +819,7 @@ sup {
 }
 
 .logos {
-    padding: 0 20% !important;
+    padding: 0 18% !important;
 }
 
 .hand1,
@@ -888,4 +888,67 @@ sup {
     auto);
     @include position(absolute,
     null null 0 100px);
+}
+
+//scss for FAQ
+//scss for FAQ
+.bg-faq-banner {
+    background: url("../img/faq/faq.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh !important;
+}
+
+.faq-content {
+    margin: 50px 0;
+    .panel-body {
+        padding: 0px;
+    }
+    .panel-group {
+        margin-bottom: 5px;
+        .panel {
+            border-radius: 0px;
+            border-color: black;
+        }
+        a:hover,
+        a:focus {
+            color: black;
+        }
+    }
+    h5 {
+        font-weight: 400;
+    }
+}
+
+.faq-content .panel-default>.panel-heading {
+    color: black;
+    background: white;
+    padding: 3px 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-color: black;
+    border-bottom: 1px;
+}
+
+.faq-questions {
+    background: white;
+    padding: 10px;
+    font-size: 15px;
+    h4 {
+        color: black;
+    }
+}
+
+.question-list {
+    border-top: 1px solid black;
+}
+
+.down-arrow {
+    font-size: 25px;
+    &:before {
+        position: relative;
+        right: 5px;
+        bottom: 5px;
+    }
 }

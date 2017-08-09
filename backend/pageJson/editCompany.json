@@ -20,8 +20,10 @@
             "tableRef": "banner",
             "placeholder": "Enter Banner",
             "id": "banner",
-            "validation": ["required", "trim", "unique"],
-            "url": ""
+            "validation": ["", "trim", "unique"],
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "BackgroundBanner",
@@ -29,8 +31,21 @@
             "tableRef": "backgroundBanner",
             "placeholder": "Enter BackgroundBanner",
             "id": "backgroundBanner",
+            "validation": ["", "trim", "unique"],
+            "url": "",
+            "onView": true,
+            "view": true
+        },
+        {
+            "name": "Background Image",
+            "type": "image",
+            "tableRef": "backgroundImage",
+            "placeholder": "Enter backgroundImage",
+            "id": "backgroundImage",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "Order",
@@ -38,7 +53,7 @@
             "tableRef": "order",
             "placeholder": "Enter order",
             "id": "order",
-            "validation": ["required", "trim", "unique"],
+            "validation": ["", "trim", "unique"],
             "url": ""
         }
     ],

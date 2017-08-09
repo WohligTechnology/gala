@@ -9329,6 +9329,7 @@ header {
   transition: all 300ms ease; }
 
 .nav-up {
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%); }
 
 @font-face {
@@ -9552,11 +9553,10 @@ h5 {
 
 .bg-division,
 .bg-divisions {
-  height: 60vh;
-  background-image: url("../img/division/banner.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
+  height: 60vh !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important; }
   .bg-division h2,
   .bg-divisions h2 {
     position: absolute;
@@ -9582,7 +9582,7 @@ h5 {
 
 .door-img {
   width: auto;
-  height: 315px;
+  height: 150px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -9645,12 +9645,14 @@ h5 {
   .main-list .img5 {
     background-image: url("../img/about/7.jpg"); }
   .main-list .door {
-    transition: all ease 6s; }
+    transition: all ease 300ms; }
     .main-list .door .door-info {
       width: 60%;
+      transition: all ease 300ms;
       position: absolute;
       top: 50%;
       left: 50%;
+      -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       background-color: rgba(255, 255, 255, 0.59); }
     .main-list .door .overlay {
@@ -9748,6 +9750,10 @@ h5 {
   background-color: #fff; }
 
 .main-banner .offers {
+<<<<<<< HEAD
+=======
+  -webkit-transform: translate(-50%, -50%);
+>>>>>>> c5ffd80de188f2fd85be066c0041eb3eb907407f
   transform: translate(-50%, -50%);
   position: absolute;
   top: 10%;
@@ -9879,7 +9885,7 @@ sup {
     color: #777; }
 
 .logos {
-  padding: 0 20% !important; }
+  padding: 0 18% !important; }
 
 .hand1,
 .hand2,
@@ -9947,6 +9953,54 @@ sup {
   position: absolute;
   bottom: 0;
   left: 100px; }
+
+.bg-faq-banner {
+  background: url("../img/faq/faq.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh !important; }
+
+.faq-content {
+  margin: 50px 0; }
+  .faq-content .panel-body {
+    padding: 0px; }
+  .faq-content .panel-group {
+    margin-bottom: 5px; }
+    .faq-content .panel-group .panel {
+      border-radius: 0px;
+      border-color: black; }
+    .faq-content .panel-group a:hover,
+    .faq-content .panel-group a:focus {
+      color: black; }
+  .faq-content h5 {
+    font-weight: 400; }
+
+.faq-content .panel-default > .panel-heading {
+  color: black;
+  background: white;
+  padding: 3px 10px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-color: black;
+  border-bottom: 1px; }
+
+.faq-questions {
+  background: white;
+  padding: 10px;
+  font-size: 15px; }
+  .faq-questions h4 {
+    color: black; }
+
+.question-list {
+  border-top: 1px solid black; }
+
+.down-arrow {
+  font-size: 25px; }
+  .down-arrow:before {
+    position: relative;
+    right: 5px;
+    bottom: 5px; }
 
 #fancybox-loading,
 .fancybox-close,

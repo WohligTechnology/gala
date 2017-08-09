@@ -64,6 +64,7 @@ module.exports.globals = {
 
 // Mongoose Globals
 global["mongoose"] = require('mongoose');
+global["ObjectId"] = mongoose.Types.ObjectId;
 global["deepPopulate"] = require('mongoose-deep-populate')(mongoose);
 global["uniqueValidator"] = require('mongoose-unique-validator');
 global["timestamps"] = require('mongoose-timestamp');
@@ -89,7 +90,9 @@ global["uid"] = require('rand-token').uid;
 global["request"] = require('request');
 global["fs"] = require('fs');
 global["json2xls"] = require('json2xls');
+global["md5"] = require('md5');
 global["xlsx"] = require('node-xlsx').default;
+global["URLSlugs"] = require('mongoose-url-slugs');
 // global["pdf"] = require('html-pdf');
 
 // passport Globals

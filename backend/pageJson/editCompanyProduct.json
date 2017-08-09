@@ -47,24 +47,30 @@
             "name": "Images",
             "type": "box",
             "tableRef": "images",
-            "validation": [
-                "required",
-                "trim",
-                ""
-            ],
+            "validation": ["required", "trim", ""],
             "field": [{
-                "name": "Image",
-                "type": "image",
-                "tableRef": "image",
-                "tableValue": "image",
-                "placeholder": "Enter image",
-                "id": "productimage",
-                "option": "single",
-                "validation": ["", "trim", ""],
-                "onView": true,
-                "view": true,
-                "url": ""
-            }]
+                    "name": "Big Image",
+                    "type": "image",
+                    "tableRef": "bigImage",
+                    "placeholder": "Enter Big Image",
+                    "id": "bigImage",
+                    "validation": ["", "trim", ""],
+                    "onView": true,
+                    "view": true,
+                    "url": ""
+                },
+                {
+                    "name": "Small Image",
+                    "type": "image",
+                    "tableRef": "smallImage",
+                    "placeholder": "Enter Small Image",
+                    "id": "smallImage",
+                    "validation": ["", "trim", ""],
+                    "onView": true,
+                    "view": true,
+                    "url": ""
+                }
+            ]
         },
         {
             "name": "Enquiry",

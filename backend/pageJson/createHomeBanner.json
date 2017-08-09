@@ -12,7 +12,9 @@
             "placeholder": "Upload image",
             "id": "image",
             "validation": ["required"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true,
         },
         {
             "name": "Order",
