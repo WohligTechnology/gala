@@ -39,6 +39,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'
         })
+
+        .state('showroom', {
+            url: "/showroom",
+            templateUrl: tempateURL,
+            controller: 'ShowroomCtrl'
+        })
+
         .state('faq', {
             url: "/faq",
             templateUrl: tempateURL,
@@ -49,7 +56,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'FormCtrl'
         })
-             .state('allProduct', {
+        .state('allProduct', {
             url: "/allProduct",
             templateUrl: tempateURL,
             controller: 'allProductCtrl'

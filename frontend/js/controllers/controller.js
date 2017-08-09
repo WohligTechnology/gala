@@ -172,6 +172,43 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         }
 
     })
+
+    .controller('ShowroomCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+        $scope.template = TemplateService.getHTML("content/showroom.html");
+        TemplateService.title = "Showroom"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        // TemplateService.social = "views/template/social.html";
+        $scope.bigImage = "";
+        $scope.productId = {
+            _id: $stateParams.productId
+        };
+        $scope.company = {
+            _id: $stateParams.category
+        };
+
+
+
+        console.log("state param value is", $scope.productId);
+        // $rootScope.company = $stateParams.category;
+        NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
+            // console.log("*****companyName******", data);
+            $scope.companyName = data.data.data;
+            // console.log("*****companyName******", $scope.banner);
+
+        });
+        NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
+            console.log("*****ComapanyProduct Details******", data);
+            $scope.productId = data.data.data;
+            $scope.productIdimage = data.data.data.images;
+            $scope.bigImage = $scope.productId.images[0].bigImage;
+            // console.log("*****productIdimage Details******", $scope.productIdimage);
+            // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+        });
+        $scope.changeBigImage = function (bigImage) {
+            $scope.bigImage = bigImage;
+        }
+    })
+
     .controller('FAQCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService.getHTML("content/faq.html");
         TemplateService.title = "Faq"; //This is the Title of the Website
