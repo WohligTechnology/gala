@@ -18,6 +18,7 @@
             "name": "Image",
             "type": "image",
             "tableRef": "image",
+            "size": "330 × 150px",
             "placeholder": "Enter Banner",
             "id": "image",
             "validation": ["required", "trim", "unique"],

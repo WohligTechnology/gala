@@ -9,12 +9,13 @@
             "name": "Image",
             "type": "image",
             "tableRef": "image",
+            "size": "1536 × 713px",
             "placeholder": "Upload image",
             "id": "image",
             "validation": ["required"],
             "url": "",
             "onView": true,
-            "view": true,
+            "view": true
         },
         {
             "name": "Order",
