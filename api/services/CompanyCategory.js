@@ -39,7 +39,7 @@ var model = {
         console.log("data: ", data);
         CompanyCategory.find({
             company: mongoose.Types.ObjectId(data._id)
-        }).lean().exec(function (err, found) {
+        }).deepPopulate('company').lean().exec(function (err, found) {
             if (err) {
                 console.log("**** inside getCategoryWithCompany of CompanyCategoryjs ******", err);
                 callback(err, null);

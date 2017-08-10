@@ -39,6 +39,9 @@ schema.plugin(deepPopulate, {
     Populate: {
         'companyCategory': {
             select: ''
+        },
+        'companyCategory.company': {
+            select: ''
         }
     }
 });
@@ -46,10 +49,10 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyProduct', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory", "companyCategory", "createdAt", "desc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company", "createdAt", "desc"));
 var model = {
     getAllProduct: function (data, callback) {
-        CompanyProduct.find({}).deepPopulate('companyCategory')
+        CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
             .exec(function (err, found) {
                 console.log("Found: ", found);
                 if (err) {

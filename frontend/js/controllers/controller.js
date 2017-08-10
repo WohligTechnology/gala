@@ -60,6 +60,28 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         TemplateService.title = "Product"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.social = "views/template/social.html";
+        $scope.product = {
+            _id: $stateParams.product
+        };
+        // $scope.category = $stateParams.category;
+        $scope.company = {
+            _id: $stateParams.category
+        };
+        NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
+            // console.log("*****CompnayBanner******", data);
+            $scope.banner = data.data.data;
+            // console.log("*****CompnayBanner******", $scope.banner);
+
+        });
+
+
+        NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
+            // console.log("*****companyCategory******", data);
+            $scope.companyCategory = data.data.data;
+            // console.log("*****companyCategory******", $scope.companyCategory);
+            $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+        });
+
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             console.log("getallproduct", data.data.data);
             $scope.allproduct = data.data.data;
@@ -151,7 +173,47 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 
-        console.log("state param value is", $scope.productId);
+        console.log("state param value is******8", $scope.productId, $scope.company);
+        // $rootScope.company = $stateParams.category;
+        NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
+            // console.log("*****companyName******", data);
+            $scope.companyName = data.data.data;
+            console.log("*****companyName******", $scope.companyName);
+
+        });
+        NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
+            console.log("*****ComapanyProduct Details******", data);
+            $scope.productId = data.data.data;
+            $scope.productIdimage = data.data.data.images;
+            $scope.bigImage = $scope.productId.images[0].bigImage;
+            console.log("*****productIdimage Details******", $scope.productId);
+            // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+        });
+        $scope.changeBigImage = function (bigImage) {
+            $scope.bigImage = bigImage;
+        }
+
+    })
+
+    .controller('ShowroomCtrl', function ($scope, TemplateService, apiService, NavigationService, $stateParams, $timeout) {
+        $scope.template = TemplateService.getHTML("content/showroom.html");
+        TemplateService.title = "Showroom"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+
+
+
+
+        // $scope.productId = {
+        //     _id: $stateParams.productId
+        // };
+        // $scope.company = {
+        //     _id: $stateParams.category
+        // };
+
+
+
+        // console.log("state param value is", $scope.productId);
+
         // $rootScope.company = $stateParams.category;
         NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
             // console.log("*****companyName******", data);
@@ -164,19 +226,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.productId = data.data.data;
             $scope.productIdimage = data.data.data.images;
             $scope.bigImage = $scope.productId.images[0].bigImage;
-            // console.log("*****productIdimage Details******", $scope.productIdimage);
-            // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+
         });
-        $scope.changeBigImage = function (bigImage) {
-            $scope.bigImage = bigImage;
-        }
 
-    })
-
-    .controller('ShowroomCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-        $scope.template = TemplateService.getHTML("content/showroom.html");
-        TemplateService.title = "Showroom"; //This is the Title of the Website
-        $scope.navigation = NavigationService.getNavigation();
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             $scope.ProductDetails = data.data.data;
             console.log("kem cho", $scope.ProductDetails);
@@ -187,7 +239,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 $scope.bigImage = $scope.ProductDetails[0].images[0].bigImage;
                 console.log("kem cho", $scope.bigImage);
                 $scope.name = $scope.ProductDetails[0].name;
-                console.log("NAME", $scope.name);
+                $scope.backgroundImage = $scope.ProductDetails[0].companyCategory.company.backgroundImage;
+                console.log("NAME", $scope.productId);
 
             } else {
                 console.log("######");
@@ -208,10 +261,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             //     $scope.bigImage = $scope.productId.images[0].bigImage;
 
             // });
-            $scope.changeBigImage = function (bigImage, name) {
+            $scope.changeBigImage = function (bigImage, name, backgroundImage) {
                 $scope.bigImage = bigImage;
                 $scope.name = name;
-                console.log("info", $scope.name, $scope.bigImage);
+                $scope.backgroundImage = backgroundImage;
+                console.log("info", $scope.productId, $scope.bigImage);
+
             };
         });
         // NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {

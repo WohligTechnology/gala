@@ -1,14 +1,29 @@
 <div class="gallery division">
-    <section class="bg-division bg-divisions relative" style="background: url('{{companyName.backgroundImage | serverimage}}')">
+    <section class="bg-division bg-divisions relative" style="background: url('/img/home/2.jpg')">
         <div class="overlay"></div>
         <div class="container">
-            <h2 class="text-uppercase">{{companyName.name}}</h2>
+            <h2 class="text-uppercase">SHOWROOM</h2>
         </div>
     </section>
     <div class="container">
         <div class="products-info relative">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="product-inform ">
+                <h3 class="text-capitalize text-center pad-10">{{name}} </h3>
+                <!--<div class="space-tb">
+                            <h5>Product Description </h5>
+                            <p>{{ProductDetails.description}} </p>
+                            <div class="social-share">
+                                <p class="text-capitalize">share:</p>
+                                <ul class="list-inline">
+                                    <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>-->
+            </div>
+            <div class="row text-center">
+                <div class="col-md-9 col-sm-9 col-xs-12 text-center">
 
                     <figure class="relative">
                         <!--<div class="hand1">
@@ -21,6 +36,8 @@
                             <img src="img/product/hand10.png" class="img-responsive" alt="product">
                         </div>-->
                     </figure>
+
+
 
                     <div class="flexy  hidden-sm hidden-xs">
                         <flex-slider slide="s in ProductDetails track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
@@ -42,21 +59,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-inform ">
-                        <h3 class="text-capitalize">{{name}} </h3>
-                        <!--<div class="space-tb">
-                            <h5>Product Description </h5>
-                            <p>{{ProductDetails.description}} </p>
-                            <div class="social-share">
-                                <p class="text-capitalize">share:</p>
-                                <ul class="list-inline">
-                                    <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>-->
-                    </div>
+
                     <!--<button class="btn btn-success text-capitalize">enquire now</button>-->
                 </div>
             </div>

@@ -8,9 +8,9 @@
 
                         <!--//for grid 3-->
                         <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==3">
-                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
+                            <div class="door margin0" ui-sref="gallery({category:company.companyCategory.company._id ,productId:company._id})">
                                 <div class="door-img img1" style="background: url('{{company.images[0].bigImage | serverimage}}')"></div>
-                                <div class="door-info" ng-if="company.name">
+                                <div class="door-info" ng-if="company.name">{{category}} {{productId}}
                                     <p class="text-capitalize">{{company.name}}</p>
                                 </div>
                             </div>
@@ -19,7 +19,7 @@
                         <!--//for grid 1-->
                         <div class="col-md-4" ng-if="s.length==1"></div>
                         <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==1">
-                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
+                            <div class="door margin0" ui-sref="gallery({category:company.companyCategory.company._id ,productId:company._id})">
                                 <div class="door-img img1" style="background: url('{{company.images[0].bigImage | serverimage}}')"></div>
                                 <div class="door-info" ng-if="company.name">
                                     <p class="text-capitalize">{{company.name}}</p>
@@ -31,14 +31,14 @@
                         <!--//for grid 2-->
                         <div class="col-md-2" ng-if="s.length==2"></div>
                         <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==2">
-                            <div class="door margin0" ui-sref="gallery({category:company._id,productId:company._id})">
-                                <div class="door-img img1" style="background: url('{{company.banner | serverimage}}')"></div>
-                                <div class="door-info" ng-if="company.name">
-                                    <p class="text-capitalize">{{company.name}}</p>
+                            <div class="door margin0" ui-sref="gallery({category:company.companyCategory.company._id ,productId:company._id})">
+                                <div class="door-img img1 " style="background: url( '{{company.banner | serverimage}}') "></div>
+                                <div class="door-info " ng-if="company.name ">
+                                    <p class="text-capitalize ">{{company.name}}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2" ng-if="s.length==2"></div>
+                        <div class="col-md-2 " ng-if="s.length==2 "></div>
                     </div>
                 </div>
             </div>
