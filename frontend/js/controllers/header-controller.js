@@ -14,7 +14,7 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
     NavigationService.callApiWithData("Company/search", data, function (data) {
         // console.log("comapnyData******", data);
         $scope.company = data.data.data.results;
-        // console.log("*****in header", $scope.company);
+         console.log("*****in header", $scope.company);
 
     });
 
@@ -24,6 +24,20 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
 
 
     });
+
+    NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
+            console.log("getallproduct", data.data.data);
+            $scope.allproduct = data.data.data;
+            console.log("heyyproduct",$scope.allproduct)
+            // $scope.allproductData = _.chunk($scope.allproduct, 3);
+        });
+
+        NavigationService.callApi("company/globalSearch", function (data) {
+            console.log("search", data.data.data);
+            $scope.search = data.data.data;
+            console.log("search",$scope.search)
+            // $scope.allproductData = _.chunk($scope.allproduct, 3);
+        });
     // $scope.division = [{
     //     name: "uro veener world",
     //     id: "uroveenerworld",

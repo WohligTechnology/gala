@@ -1,11 +1,26 @@
 <div class="division about">
     <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
-
-        <div class="overlay"></div>
         <div class="container">
+            <div class="img-boy">
+                <img ng-if="banner.name=='BATH WORLD'" src="img/division/Bath world-mascot.png" alt="">
+                <img ng-if="banner.name=='Euro Lighting World'" src="img/division/Euro lighting world-mascot.png" alt="">
+                <img ng-if="banner.name=='Gala Curtain World'" src="img/division/Gala curtain world-mascot.png" alt="">
+                <img ng-if="banner.name=='Gala Furniture World'" src="img/division/Gala Furniture world-mascot.png" alt="">
+                <img ng-if="banner.name=='Gala Hardware World'" src="img/division/Gala hardware world-mascot.png" alt="">
+                <img ng-if="banner.name=='Gala Kitchen World'" src="img/division/Gala kitchen world-mascot.png" alt="">
+                <img ng-if="banner.name=='Gala Stone World'" src="img/division/Gala stone world-mascot.png" alt="">
+                <img ng-if="banner.name=='Mahaveer Corporation (India)'" src="img/division/Mahaveer corporation (india).png" alt="">
+                <img ng-if="banner.name=='Uro Veneer World'" src="img/division/Uro veneer world-mascot.png" alt="">
+                <img ng-if="banner.name=='Wood & Mouldings'" src="img/division/Wood & Mouldings-mascot.png" alt="">
+            </div>
+
+
+
+            <div class="overlay"></div>
+
             <!--<div class="heart">
-                <img src="img/product/heart.png" class="img-responsive" alt="heart">
-            </div>-->
+                    <img src="img/product/heart.png" class="img-responsive" alt="heart">
+                </div>-->
             <!--<h2 class="text-uppercase">{{subcategory[0].names}}</h2>-->
         </div>
     </section>
@@ -15,59 +30,63 @@
 
                 <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({category:company._id,product:category._id})">{{category.name}}</a></li>
             </ul>
+        </div>
     </section>
     <div class="bg-changes">
         <div class="division-info main-list" style="background: url('{{banner.backgroundImage | serverimage}}')">
             <!--ng-style="{'background-image':'url(' +s.bgImg + ')'}"-->
-            <div class="container">
-                <div class="text-center product relative">
-                    <!--<div class="hands1">
-                        <img src="img/product/hand7.png" class="img-responsive" alt="product">
-                    </div>
-                    <div class="hands2">
-                        <img src="img/product/hand10.png" class="img-responsive" alt="product">
-                    </div>-->
-                    <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
-                        <!--//for 3 grid-->
-                        <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
-                            <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
-                                <div class="overlay"></div>
-                                <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">{{s.name}}</p>
+            <div>
+                <div class="container">
+                    <div class="text-center product relative">
+                        <!--<div class="hands1">
+                            <img src="img/product/hand7.png" class="img-responsive" alt="product">
+                        </div>
+                        <div class="hands2">
+                            <img src="img/product/hand10.png" class="img-responsive" alt="product">
+                        </div>-->
+                        <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
+                            <!--//for 3 grid-->
+                            <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
+                                <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
+                                    <div class="overlay"></div>
+                                    <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                    <div class="door-info">
+                                        <p class="text-uppercase">{{s.name}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--//for 3 grid-->
-                        <!--//for 1 grid-->
-                        <div class="col-md-4" ng-if="s2.length==1"></div>
-                        <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
-                            <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
-                                <div class="overlay"></div>
-                                <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">{{s.name}}</p>
+                            <!--//for 3 grid-->
+                            <!--//for 1 grid-->
+                            <div class="col-md-4" ng-if="s2.length==1"></div>
+                            <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
+                                <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
+                                    <div class="overlay"></div>
+                                    <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                    <div class="door-info">
+                                        <p class="text-uppercase">{{s.name}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4" ng-if="s2.length==1"></div>
-                        <!--//for 1 grid-->
-                        <!--//for 2 grid-->
-                        <div class="col-md-2" ng-if="s2.length==2"></div>
-                        <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
-                            <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
-                                <div class="overlay"></div>
-                                <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
-                                <div class="door-info">
-                                    <p class="text-uppercase">{{s.name}}</p>
+                            <div class="col-md-4" ng-if="s2.length==1"></div>
+                            <!--//for 1 grid-->
+                            <!--//for 2 grid-->
+                            <div class="col-md-2" ng-if="s2.length==2"></div>
+                            <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
+                                <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
+                                    <div class="overlay"></div>
+                                    <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
+                                    <div class="door-info">
+                                        <p class="text-uppercase">{{s.name}}</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-2" ng-if="s2.length==2"></div>
+                            <!--//for 2 grid-->
                         </div>
-                        <div class="col-md-2" ng-if="s2.length==2"></div>
-                        <!--//for 2 grid-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
+</div>

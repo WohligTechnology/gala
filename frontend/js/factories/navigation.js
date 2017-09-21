@@ -80,12 +80,12 @@ myApp.factory('NavigationService', function ($http) {
             anchor: "contact",
             subnav: []
         }
-        // , {
-        //     name: "Form",
-        //     classis: "active",
-        //     anchor: "form",
-        //     subnav: []
-        // }
+        , {
+            name: "Form",
+            classis: "active",
+            anchor: "form",
+            subnav: []
+        }
     ];
 
     return {

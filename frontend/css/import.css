@@ -9332,7 +9332,6 @@ h5 {
   width: 23%; }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.31);
   position: absolute;
   top: 0;
   right: 0;
@@ -9494,9 +9493,9 @@ h5 {
   height: 40vh !important; }
 
 .types {
-  padding: 40px 0 30px; }
+  padding: 35px 0 30px; }
   .types li {
-    padding: 0 20px; }
+    padding: 0 15px; }
     .types li:after {
       content: "";
       border-right: 1px solid #76c04f;
@@ -9508,7 +9507,7 @@ h5 {
   .types li:last-child:after {
     border-right: transparent; }
   .types a {
-    font-size: 22px; }
+    font-size: 20px; }
     .types a:hover {
       color: #76c04f; }
 
@@ -9767,7 +9766,7 @@ sup {
     color: #777; }
 
 .logos {
-  padding: 0 18% !important; }
+  padding: 0 4% !important; }
 
 .hand1,
 .hand2,
@@ -9886,6 +9885,27 @@ sup {
 
 .pad-10 {
   padding: 10px !important; }
+
+.search {
+  border-bottom: 1px solid #ccc !important;
+  border: none; }
+  .search:focus {
+    outline: none; }
+
+.products-li {
+  list-style-type: circle !important;
+  text-align: left;
+  padding-left: 5px;
+  font-size: 18px; }
+
+.text-left {
+  text-align: left; }
+
+.img-boy {
+  position: absolute;
+  left: 7%;
+  bottom: 0;
+  width: 100%; }
 
 #fancybox-loading,
 .fancybox-close,

@@ -71,7 +71,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             // console.log("*****CompnayBanner******", data);
             $scope.banner = data.data.data;
             // console.log("*****CompnayBanner******", $scope.banner);
-
         });
 
 
@@ -85,7 +84,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
             console.log("getallproduct", data.data.data);
             $scope.allproduct = data.data.data;
-            $scope.allproductData = _.chunk($scope.allproduct, 3);
+            
+            console.log("showchunk",$scope.allproduct);
+            $scope.data=[];
+            $scope.data=_.groupBy($scope.allproduct, 'companyCategory.company.name');
+          
+            console.log("$scope.------",$scope.data);
+            var keys=_.keysIn($scope.data);
+            console.log(_.keysIn($scope.data));
+           $scope.companyName=_.chunk(keys,3);
+           console.log($scope.companyName);
+            $scope.allproductData = _.chunk($scope.data, 3);
+            console.log("$chunck.------",$scope.allproductData);
         });
 
 
