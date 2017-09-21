@@ -50,6 +50,33 @@ var model = {
             }
 
         });
+    },
+
+
+    //To search company category by its name
+    searchCompanyCategory: function (data, callback) {
+        var trimText = data.searchText.trim();
+        var search = new RegExp('^' + trimText);
+
+        var queryString = {
+            name: {
+                $regex: search,
+                $options: "i"
+            }
+        }
+
+        CompanyCategory.find(queryString).limit(5).exec(function (error, companyCategoryFound) {
+            if (error || companyCategoryFound == undefined) {
+                console.log("CompanyCategory >>> searchCompanyCategory >>> find  >>> error >>> ", error);
+                callback(error, null);
+            } else {
+                if (!_.isEmpty(companyCategoryFound)) {
+                    callback(null, companyCategoryFound);
+                } else {
+                    callback(null, []);
+                }
+            }
+        });
     }
 };
 
