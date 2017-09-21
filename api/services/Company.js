@@ -60,6 +60,32 @@ var model = {
             }
 
         });
+    },
+
+    //To search company by its name
+    searchCompany: function (data, callback) {
+        var trimText = data.searchText.trim();
+        var search = new RegExp('^' + trimText);
+
+        var queryString = {
+            name: {
+                $regex: search,
+                $options: "i"
+            }
+        }
+
+        Company.find(queryString).limit(5).exec(function (error, companyFound) {
+            if (error || companyFound == undefined) {
+                console.log("Company >>> searchCompany >>> find  >>> error >>> ", error);
+                callback(error, null);
+            } else {
+                if (!_.isEmpty(companyFound)) {
+                    callback(null, companyFound);
+                } else {
+                    callback(null, []);
+                }
+            }
+        });
     }
 };
 module.exports = _.assign(module.exports, exports, model);

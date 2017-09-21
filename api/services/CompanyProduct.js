@@ -118,6 +118,32 @@ var model = {
             }
 
         });
+    },
+
+    //To search company products by its name
+    searchCompanyProducts: function (data, callback) {
+        var trimText = data.searchText.trim();
+        var search = new RegExp('^' + trimText);
+
+        var queryString = {
+            name: {
+                $regex: search,
+                $options: "i"
+            }
+        }
+
+        CompanyProduct.find(queryString).limit(5).exec(function (error, companyProductFound) {
+            if (error || companyProductFound == undefined) {
+                console.log("CompanyProduct >>> searchCompanyProducts >>> find  >>> error >>> ", error);
+                callback(error, null);
+            } else {
+                if (!_.isEmpty(companyProductFound)) {
+                    callback(null, companyProductFound);
+                } else {
+                    callback(null, []);
+                }
+            }
+        });
     }
 };
 module.exports = _.assign(module.exports, exports, model);
