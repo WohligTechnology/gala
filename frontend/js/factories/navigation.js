@@ -94,6 +94,7 @@ myApp.factory('NavigationService', function ($http) {
         },
         callApiWithData: function (url, data, callback) {
             $http.post(adminurl + url, data).then(function (data) {
+                console.log(data);
                 callback(data);
             });
         },

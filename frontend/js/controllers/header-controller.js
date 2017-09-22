@@ -10,6 +10,7 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
         _id: $stateParams.category
     };
     var data = {};
+    $scope.searchText = {};
     data.page = 1;
     NavigationService.callApiWithData("Company/search", data, function (data) {
         // console.log("comapnyData******", data);
@@ -31,13 +32,42 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
             console.log("heyyproduct",$scope.allproduct)
             // $scope.allproductData = _.chunk($scope.allproduct, 3);
         });
+        
+        $scope.search = function (value) {
+            
+            // var length = 0;
+            console.log($scope.searchText.searchText.length)
+            $scope.companyCategory = [];
+            $scope.company1 = [];
+            $scope.companyProduct = [];
+            $scope.isText = true;
+            console.log("searchvalue",value)
+            if (value.searchText != "") {
+                console.log("searchvalue1",value)
+                NavigationService.callApiWithData("Company/globalSearch",value, function (data) {
+                    console.log("increment",length)
+                    // if(length==$scope.searchText.searchText.length){
+                    console.log("searchvalue2",value,data)
+                    if (data.data.value) {
+                        console.log("Event data", data.data);
+                        $scope.companyCategory = data.data.data.companyCategory;
+                        $scope.company1 = data.data.data.company;
+                        $scope.companyProduct = data.data.data.companyProduct;
+                        console.log($scope.companyCategory ,$scope.company ,$scope.companyProduct );
+                    } else {
+                        console.log("Event data false");
+                    }
+                // else{
+                //     console.log("not working")
+                // }
+                });
+                
+            }
+        };
 
-        NavigationService.callApi("company/globalSearch", function (data) {
-            console.log("search", data.data.data);
-            $scope.search = data.data.data;
-            console.log("search",$scope.search)
-            // $scope.allproductData = _.chunk($scope.allproduct, 3);
-        });
+        
+    
+       
     // $scope.division = [{
     //     name: "uro veener world",
     //     id: "uroveenerworld",

@@ -980,3 +980,79 @@ text-align: left;
     width: 100%;
 
 }    
+
+
+.search-holder {
+    width: 70%;
+    float: right;
+    position: relative;
+}
+
+
+.search-suggest {
+position: absolute;
+top: 50px;
+right: 0;
+width: 50%;
+background-color: white;
+box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.25);
+z-index: 3;
+max-height: 350px;
+overflow-y: auto;
+ul {
+    margin: 0;
+    +ul {
+        margin-top: 3px;
+    }
+}
+li {
+    padding: 0px!important;
+    position: relative;
+    line-height: 30px;
+    &.ct-name {
+        padding-bottom: 3px;
+        span {
+            text-transform: uppercase;
+            display: block;
+            border-bottom: 1px solid #505050;
+            padding: 0 0 3px !important;
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+    }
+    &.search-item {
+        // padding: 8px 10px;
+        // padding-left: 44px;
+        display: block;
+        cursor: pointer;
+        &:hover {
+            p {
+                text-decoration: underline;
+            }
+        }
+    }
+    p {
+        margin: 0;
+    }
+    .left-space {
+        height: 26px;
+        width: 26px;
+        text-align: center;
+        line-height: 26px;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+        vertical-align: middle;
+        border-radius: 2px;
+        overflow: hidden;
+        position: absolute;
+        left: 10px;
+        top: 4px;
+        font-size: 18px;
+        &.rounded {
+            border-radius: 100%;
+        }
+    }
+}
+}
