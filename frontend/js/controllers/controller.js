@@ -36,7 +36,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 scope: $scope,
                 size: 'xl',
                 windowClass: 'eddy-modal',
-                templateUrl: "views/modal/welcome.html"
+                // templateUrl: "views/modal/welcome.html"
             });
         };
         $scope.$on('$viewContentLoaded', function () {
