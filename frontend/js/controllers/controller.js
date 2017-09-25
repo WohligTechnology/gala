@@ -155,7 +155,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.companyproduct = data.data.data;
             // console.log("*****product******", $scope.companyproduct);
             $scope.companyproductdata = _.chunk($scope.companyproduct, 3);
-            // console.log("*****product******", $scope.companyproductdata);
+            console.log("*****product******", $scope.companyproductdata);
             // console.log("*****chunk product******", companyproductdata);
         });
 

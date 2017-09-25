@@ -9965,6 +9965,9 @@ sup {
       .search-suggest li .left-space.rounded {
         border-radius: 100%; }
 
+.pcolor {
+  color: black !important; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
