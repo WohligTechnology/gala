@@ -23,9 +23,9 @@
                                         <div class="row"><div ng-repeat="value in companyName"   ng-if="value.length==1">
                                             <div class="col-md-4" ng-repeat="val in value" >
                                                     
-                                                            <div class="door   margin0"   ui-sref="gallery({category:company.companyCategory.company._id ,productId:company._id})">
-                                                                <h2 class="text-left" >{{val}}</h2>
-                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name">
+                                                            <div class="door   margin0"   >
+                                                                <h2 class="text-left"  ui-sref="division({category:data[val][0].companyCategory.company._id})">{{val}}</h2>
+                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name" ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
                                                                     <li class="products-li">{{company.name}}</li>
                                                                 </ul>
                                                             </div>
@@ -42,9 +42,9 @@
                                         <div class="row"><div ng-repeat="value in companyName"   ng-if="value.length==2">
                                             <div class="col-md-4" ng-repeat="val in value" >
                                                     
-                                                            <div class="door   margin0"   ui-sref="gallery({category:company.companyCategory.company._id ,productId:company._id})">
-                                                                <h2 class="text-left" >{{val}}</h2>
-                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name">
+                                                            <div class="door   margin0" >
+                                                                <h2 class="text-left"  ui-sref="division({category:data[val][0].companyCategory.company._id})">{{val}}</h2>
+                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name" ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
                                                                     <li class="products-li">{{company.name}}</li>
                                                                 </ul>
                                                             </div>

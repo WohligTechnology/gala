@@ -30,7 +30,7 @@ myApp.filter('myFilter', function () {
                 }
 
             } else {
-                return "img/D-SMALL.jpg";
+                return ;
             }
         };
     });
