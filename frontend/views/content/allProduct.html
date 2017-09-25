@@ -12,9 +12,51 @@
                                     
                                             <div class="door   margin0"  >
                                                 <h2 class="text-left"  ui-sref="division({category:data[val][0].companyCategory.company._id})">{{val}}</h2>
-                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name"  ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
+                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name != 'SOLID WOOD' && company.name !='ENGINEERED' && company.name !='LAMINATED FLOORING' && company.name !='EXOTIC BAMBOO' && company.name !='KAINDL VENEER' && company.name !='EXTERIOR DECK TILE'"  ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
                                                     <li class="products-li">{{company.name}}</li>
                                                 </ul>
+                                                <a href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">  
+                                                <ul class="" ng-if="company.name=='SOLID WOOD'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
+                                            <a href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130">  
+                                                <ul class="" ng-if="company.name=='LAMINATED FLOORING'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
+                                            <a href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021">  
+                                                <ul class="" ng-if="company.name=='ENGINEERED'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
+                                            <a href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328">  
+                                                <ul class="" ng-if="company.name=='EXOTIC BAMBOO'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
+                                            <a href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9">  
+                                                <ul class="" ng-if="company.name=='KAINDL VENEER'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
+                                            <a href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7">  
+                                                <ul class="" ng-if="company.name=='EXTERIOR DECK TILE'" ng-repeat="company in data[val]" >
+                                                          
+                                                    <li class="pcolor products-li">{{company.name}}</li>
+                                                  
+                                                </ul>
+                                            </a> 
                                             </div>
                                         </div></div>
                                     </div>
@@ -25,9 +67,51 @@
                                                     
                                                             <div class="door   margin0"   >
                                                                 <h2 class="text-left"  ui-sref="division({category:data[val][0].companyCategory.company._id})">{{val}}</h2>
-                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name" ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
+                                                                <ul class="" ng-repeat="company in data[val]"  ng-if="company.name != 'SOLID WOOD' && company.name !='ENGINEERED' && company.name !='LAMINATED FLOORING' && company.name !='EXOTIC BAMBOO' && company.name !='KAINDL VENEER' && company.name !='EXTERIOR DECK TILE'" ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
                                                                     <li class="products-li">{{company.name}}</li>
                                                                 </ul>
+                                                                <a href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">  
+                                                                    <ul class="" ng-if="company.name=='SOLID WOOD'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130">  
+                                                                    <ul class="" ng-if="company.name=='LAMINATED FLOORING'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021">  
+                                                                    <ul class="" ng-if="company.name=='ENGINEERED'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328">  
+                                                                    <ul class="" ng-if="company.name=='EXOTIC BAMBOO'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9">  
+                                                                    <ul class="" ng-if="company.name=='KAINDL VENEER'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7">  
+                                                                    <ul class="" ng-if="company.name=='EXTERIOR DECK TILE'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
                                                             </div>
                                                         </div></div></div>
                                         <div class="col-md-4" ng-if="value.length==1"></div>
@@ -44,9 +128,51 @@
                                                     
                                                             <div class="door   margin0" >
                                                                 <h2 class="text-left"  ui-sref="division({category:data[val][0].companyCategory.company._id})">{{val}}</h2>
-                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name" ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
+                                                                <ul class="" ng-repeat="company in data[val]" ng-if="company.name != 'SOLID WOOD' && company.name !='ENGINEERED' && company.name !='LAMINATED FLOORING' && company.name !='EXOTIC BAMBOO' && company.name !='KAINDL VENEER' && company.name !='EXTERIOR DECK TILE'"  ui-sref="gallery({category:data[val][0].companyCategory.company._id ,productId:company._id})">
                                                                     <li class="products-li">{{company.name}}</li>
                                                                 </ul>
+                                                                <a href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">  
+                                                                    <ul class="" ng-if="company.name=='SOLID WOOD'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130">  
+                                                                    <ul class="" ng-if="company.name=='LAMINATED FLOORING'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021">  
+                                                                    <ul class="" ng-if="company.name=='ENGINEERED'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328">  
+                                                                    <ul class="" ng-if="company.name=='EXOTIC BAMBOO'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9">  
+                                                                    <ul class="" ng-if="company.name=='KAINDL VENEER'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
+                                                                <a href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7">  
+                                                                    <ul class="" ng-if="company.name=='EXTERIOR DECK TILE'" ng-repeat="company in data[val]" >
+                                                                              
+                                                                        <li class="pcolor products-li">{{company.name}}</li>
+                                                                      
+                                                                    </ul>
+                                                                </a> 
                                                             </div>
                                                         </div></div></div>
                                         <!-- <div class="col-md-2 " ng-if="s.length==2 "></div> -->
