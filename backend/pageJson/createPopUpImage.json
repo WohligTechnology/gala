@@ -1,0 +1,40 @@
+{
+    "title": "Create PopUpImage",
+    "name": "PopUpImage",
+    "jsonPage": "viewPopUpImage",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": [""],
+    "fields": [{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "placeholder": "Upload image",
+        "id": "image",
+        "view": true,
+        "validation": ["required", "trim"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submit",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPopUpImage"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPopUpImage"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "PopUpImage/save"
+    }
+}
