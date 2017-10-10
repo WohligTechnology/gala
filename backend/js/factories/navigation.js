@@ -41,7 +41,7 @@ myApp.factory('NavigationService', function ($http) {
             icon: "phone"
         },
         {
-            name: "Contact Us",
+            name: "Pop Up Image",
             classis: "active",
             sref: "#!/page/viewPopUpImage//",
             icon: "phone"
