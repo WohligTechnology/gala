@@ -212,10 +212,6 @@ companyProductAggregate: function (data, callback) {
         //  {
         //     $count:"records",
         // },
-    
-//  {
-        //     $count:"records",
-        // },
 
 
         {
