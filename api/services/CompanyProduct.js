@@ -1,3 +1,4 @@
+var objectId = require("mongodb").ObjectID;
 var schema = new Schema({
     name: {
         type: String,
@@ -144,6 +145,105 @@ var model = {
                 }
             }
         });
-    }
+    },
+
+    // companyProductAggregate: function (data, callback) {
+    //     var page = 1;
+    //     if (data.page) {
+    //         page = data.page
+    //     }
+    //     var pagestartfrom = (page - 1) * 10;
+    //     CompanyProduct.aggregate([{
+    //         $lookup: {
+    //             "from": "companycategories",
+    //             "localField": "companyCategory",
+    //             "foreignField": "_id",
+    //             "as": "companyCategory"
+    //         }
+    //     }, {
+    //         $unwind: {
+    //             path: "$companyCategory",
+    //         }
+    //     }, {
+    //         $match: {
+    //             "companyCategory.company": objectId(data.company)
+    //         }
+    //     }, {
+    //         $skip: parseInt(pagestartfrom)
+    //     }, {
+    //         $limit: 10
+    //     }], function (err, res) {
+    //         if (err) {
+    //             callback(err, null);
+    //         } else {
+    //             console.log("In Res", res)
+    //             callback(null, res);
+    //         }
+    //     })
+
+    // },
+
+
+
+companyProductAggregate: function (data, callback) {
+        var page = 1;
+        if (data.page) {
+            page = data.page
+        }
+        
+        var pagestartfrom = (page - 1) * 10;
+        CompanyProduct.aggregate([{
+            $lookup: {
+                "from": "companycategories",
+                "localField": "companyCategory",
+                "foreignField": "_id",
+                "as": "companyCategory"
+            }
+        }, {
+            $unwind: {
+                path: "$companyCategory",
+            }
+        }, {
+            $match: {
+                "companyCategory.company": objectId(data.company)
+            }
+        }, 
+
+        //  {
+        //     $count:"records",
+        // },
+
+
+        {
+            $skip: parseInt(pagestartfrom)
+        }, 
+
+        {
+            $limit: 10
+        },
+
+       
+        
+        
+        
+        ], function (err, res) {
+            if (err) {
+                callback(err, null);
+            } else {
+                console.log("In Res", res)
+                callback(null, res);
+            }
+        })
+
+    },
+
+
+
+
+
+
+
+
+
 };
 module.exports = _.assign(module.exports, exports, model);
