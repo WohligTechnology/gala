@@ -1,100 +1,132 @@
  @media (max-width: $screen-xs-max) {
      // Mobile
-
      //common//
-     h1{
+     h1 {
          font-size: 40px;
      }
-
-     h2{
+     h2 {
          font-size: 26px;
      }
+     .row-flex {
+         @include display(block);
+     }
+     .col-flex {
+         width: 100%;
+     }
+     //common//
+     //header
+     .dropdown-menu {
+         border-top: 3px solid #6AB751;
+         padding: 14px 20px;
+         background-color: rgba(48, 48, 48, 0.9);
+         top: 73% !important;
+         min-width: 300px;
+         a {
+             font-size: 11px;
+         }
+     }
+     .cols-flex {
+         width: 50%;
+     }
+     //about us
+     .para-color p {
+         margin-top: 10px;
+         font-size: 14px;
+     }
+     .about-us {
+         padding: 25px 0px 30px;
+     }
+     //contact
 
-.row-flex{
-    @include display(block);
+     .mar-t {
+    margin-top: 5px;
 }
-
-.col-flex{
-    width: 100%;
-}
-
-  //common//
-
-  //home//
-.abouts {
-    margin: 10px 0;
-    background-color: #76c04f;
-    background-image:none;
-}
-.about-info {
-    width: auto;
-    padding: 20px 10px;
-}
-
-.main-banner .offers {
-    left: 35%;
-}
-
-.about-data {
-    margin-top: 180px;
-}
-
-.about-img{
-      @include display(none);
-}
-
-.eddy-modal img {
-    height: 50vh;
-}
-
-.flexslides .flex-control-nav {
-    bottom: 0px;
-}
-
-//home//
-
-//nav//
-
-.navbar-collapse{
-    float: none !important;
-    text-align: center;
-}
-
-footer {
-    .pull-right,p{
-  float: none !important;
-        text-align: center;
-    }
-      
-   
-}
-
-//nav//
-
-//division,gallery,about//
-.aside{
-    min-height: 250px;
-}
-
-.product-inform{
-    margin-top: 20px;
-}
-
-.creativity{
-    font-size: 26px;
-}
-
-.types {
-    padding: 20px;
-}
-
-.types a {
-    font-size: 18px;
-}
-
-.bg-division, .bg-divisions{
-    height: 40vh;
-}
-//division//
-
+     //home//
+     .abouts {
+         margin: 10px 0;
+         background-color: #76c04f;
+         background-image: none;
+     }
+     .about-info {
+         width: auto;
+         padding: 20px 10px;
+     }
+     .main-banner .offers {
+         left: 35%;
+     }
+     .about-data {
+         margin-top: 136px;
+     }
+     .about-img {
+         @include display(none);
+     }
+     .eddy-modal img {
+         height: 50vh;
+     }
+     .flexslides .flex-control-nav {
+         bottom: 0px;
+     }
+     //home//
+     //nav//
+     .navbar-collapse {
+         float: none !important;
+         text-align: center;
+     }
+     footer {
+         .pull-right,
+         p {
+             float: none !important;
+             text-align: center;
+         }
+     }
+     //nav//
+     //division,gallery,about//
+     .aside {
+         min-height: 250px;
+     }
+     .product-inform {
+         margin-top: 20px;
+     }
+     .creativity {
+         font-size: 16px;
+         top: 21%;
+        left: 68px
+     }
+     .types {
+         padding: 20px;
+     }
+     .types a {
+         font-size: 18px;
+     }
+     .bg-division,
+     .bg-divisions {
+         height: 40vh;
+     }
+     //division//
+     //category
+     .thumb {
+         width: 100px;
+         height: auto;
+         position: absolute;
+         /* bottom: -10px; */
+         top: 60px;
+         left: 15px;
+     }
+     .bg-color {
+         .content-padd {
+             padding: 10px 0px 0px 0px;
+         }
+     }
+     .img-boy {
+         position: absolute;
+         left: 0%;
+         bottom: 0;
+         width: 95% !important;
+     }
+     .navbar-brand {
+         margin-left: 12px !important;
+     }
+      .mar-l{
+         margin-left: 0px;
+     }
  }

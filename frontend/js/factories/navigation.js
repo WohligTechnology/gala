@@ -10,7 +10,7 @@ myApp.factory('NavigationService', function ($http) {
         }, {
             name: "ABOUT US",
             classis: "active",
-            anchor: "about",
+            anchor: "aboutUs",
             subnav: []
         }, {
             name: "DIVISION",

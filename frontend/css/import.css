@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.3
+ * jQuery FlexSlider v2.6.4
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -9968,6 +9968,48 @@ sup {
 .pcolor {
   color: black !important; }
 
+.gcolor {
+  color: #79797d; }
+
+.about-us {
+  color: #79797d;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 70px 0px 30px; }
+
+.about-main-head {
+  font-size: 19px;
+  color: #79797d;
+  font-weight: 500; }
+
+.para-color p {
+  color: #79797d;
+  font-size: 16px;
+  text-align: justify; }
+
+.content-padd {
+  padding: 10px 40px; }
+
+.chairman {
+  color: #79797d;
+  padding: 40px 0px 20px; }
+
+.w235 {
+  width: 235px; }
+
+.bg-color {
+  background-color: #f9f9f9; }
+  .bg-color h4 {
+    color: #666;
+    font-weight: 600; }
+  .bg-color label {
+    color: #666;
+    font-weight: 600; }
+
+.mar-t {
+  margin-top: 43px; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
@@ -10009,6 +10051,10 @@ sup {
   background-image: url(../img/prev.png); }
 
 @media (max-width: 991px) {
+  .navs li {
+    padding: 7px; }
+  .navs li a {
+    font-size: 11px; }
   .about-img {
     position: absolute;
     top: 69px;
@@ -10017,7 +10063,7 @@ sup {
     height: auto; }
   .about-info {
     width: 80%;
-    padding: 160px 170px 60px 170px; }
+    padding: 53px 180px 60px 20px; }
   .abouts {
     margin: 60px 0;
     background-image: linear-gradient(to right, #76c04f 80%, white 20%); }
@@ -10036,7 +10082,16 @@ sup {
   .social-info {
     padding: 20px; }
   .products-info {
-    padding: 20px 0; } }
+    padding: 20px 0; }
+  .creativity {
+    top: 25%;
+    left: 19px;
+    font-size: 15px; }
+  .para-color p {
+    margin-top: 10px;
+    font-size: 14px; }
+  .mar-l {
+    margin-left: 50px; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -10050,6 +10105,23 @@ sup {
     display: block; }
   .col-flex {
     width: 100%; }
+  .dropdown-menu {
+    border-top: 3px solid #6AB751;
+    padding: 14px 20px;
+    background-color: rgba(48, 48, 48, 0.9);
+    top: 73% !important;
+    min-width: 300px; }
+    .dropdown-menu a {
+      font-size: 11px; }
+  .cols-flex {
+    width: 50%; }
+  .para-color p {
+    margin-top: 10px;
+    font-size: 14px; }
+  .about-us {
+    padding: 25px 0px 30px; }
+  .mar-t {
+    margin-top: 5px; }
   .abouts {
     margin: 10px 0;
     background-color: #76c04f;
@@ -10060,7 +10132,7 @@ sup {
   .main-banner .offers {
     left: 35%; }
   .about-data {
-    margin-top: 180px; }
+    margin-top: 136px; }
   .about-img {
     -webkit-display: none;
     -moz-display: none;
@@ -10073,7 +10145,8 @@ sup {
   .navbar-collapse {
     float: none !important;
     text-align: center; }
-  footer .pull-right, footer p {
+  footer .pull-right,
+  footer p {
     float: none !important;
     text-align: center; }
   .aside {
@@ -10081,10 +10154,31 @@ sup {
   .product-inform {
     margin-top: 20px; }
   .creativity {
-    font-size: 26px; }
+    font-size: 16px;
+    top: 21%;
+    left: 68px; }
   .types {
     padding: 20px; }
   .types a {
     font-size: 18px; }
-  .bg-division, .bg-divisions {
-    height: 40vh; } }
+  .bg-division,
+  .bg-divisions {
+    height: 40vh; }
+  .thumb {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    /* bottom: -10px; */
+    top: 60px;
+    left: 15px; }
+  .bg-color .content-padd {
+    padding: 10px 0px 0px 0px; }
+  .img-boy {
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    width: 95% !important; }
+  .navbar-brand {
+    margin-left: 12px !important; }
+  .mar-l {
+    margin-left: 0px; } }

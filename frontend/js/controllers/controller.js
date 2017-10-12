@@ -331,6 +331,24 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     })
 
+    // start of aboutUs
+       .controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.getHTML("content/aboutUs.html");
+        TemplateService.title = "AboutUs"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        
+
+    })
+     // start of contact
+       .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+        $scope.template = TemplateService.getHTML("content/contact.html");
+        TemplateService.title = "Contact"; //This is the Title of the Website
+        $scope.navigation = NavigationService.getNavigation();
+        
+
+    })
+
+
     //Example API Controller
     .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
         apiService.getDemo($scope.formData, function (data) {

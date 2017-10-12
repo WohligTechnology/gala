@@ -1,5 +1,5 @@
-<header hide-on-scrol class="hidden-lg">
-    <nav class="navbar navbar-default navbar-fixed-top">
+<header hide-on-scrol class="hidden-lg hidden-sm">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
@@ -11,20 +11,63 @@
                 <a class="navbar-brand text-center" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
             </div>
             <div class="collapse navbar-collapse pull-right" id="nav-collapse">
-                <div ng-include="template.menu" class="template menu"></div>
+                <!--<div ng-include="template.menu" class="template menu"></div>-->
+                <ul class="nav navbar-nav text-center">
+                    <li> <a ui-sref="home">home</a></li>
+                    <li> <a ui-sref="aboutUs">about us</a> </li>
+                    <li> <a href="allProduct">product</a></li>
+                    <li> <a>division </a>
+                        <ul class="dropdown-menu">
+                            <li class="rows-flex margin0 padding0">
+                                <div class="cols-flex" ng-repeat="cat in company">
+                                    <a ui-sref="division({category:cat._id})" ng-if="cat.name!='Euro Flooring'">{{cat.name}}</a>
+                                    <a href="http://euroflooring.co.in/" ng-if="cat.name=='Euro Flooring'">{{cat.name}}</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li class="logos">
+                        <a class="navbar-brand text-center" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+                    </li>-->
+                    <li> <a href="showroom">showroom</a> </li>
+                    <li> <a ui-sref="contact">contact</a> </li>
+                    <li> <a href="faq">faq</a> </li>
+                    <input type="text" class=" search" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword" placeholder="Search...">
+                    <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
+                        <ul class="list-unstyled">
+                            <!-- <li class="ct-name"><span> Company Category</span></li> -->
+                            <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
+                                <!-- <span class="left-space rounded" style="background-image: url({{(item.profilePic|uploadpath) ||'frontend/img/img-placeholder.png'}})"></span> -->
+                                <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled" ng-repeat="item in company1">
+                            <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
+                                <p class="text-wrapper">{{item.name}}</p>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <!-- <li class="ct-name"><span>Company Product</span></li> -->
+                            <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
+                                <!-- <span class="left-space"><i class="fa fa-tag"></i></span> -->
+                                <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
             </div>
         </div>
     </nav>
 </header>
-<header hide-on-scrol class="hidden-xs visible-lg">
+<header hide-on-scrol class="hidden-xs visible-lg visible-sm hidden-md ">
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl">
         <div class="container">
             <div class="navbar">
                 <ul class="navs text-center">
                     <li> <a ui-sref="home">home</a></li>
-                    <li> <a>about us</a> </li>
-                    <li> <a href="allProduct">product</a> 
-                    <!-- <ul class="dropdown-menu">
+                    <li> <a ui-sref="aboutUs">about us</a> </li>
+                    <li> <a href="allProduct">product</a>
+                        <!-- <ul class="dropdown-menu">
                             <li class="rows-flex margin0 padding0">
                                 <div class="cols-flex" ng-repeat="prod in allproduct">
                                     <a ui-sref="divisions({category:prod.companyCategory.company._id,product:prod._id})">{{prod.name}}</a>
@@ -33,7 +76,6 @@
                             </li>
                         </ul> -->
                     </li>
-
                     <!--<div class="cols-flex">
                                     <a ui-sref="division({category:s1.id})">uro veener world</a>
                                 </div>
@@ -76,66 +118,63 @@
                     <!--<div class="col-md-3" ng-repeat="submenu in menu.subnav" ui-sref-active="active">
            <a ui-serf="{{submenu.anchor}}" ng-if="submenu.anchor">{{submenu.name}}</a>
         </div>-->
-            <li> <a>division </a>
+                    <li> <a>division </a>
                         <ul class="dropdown-menu">
                             <li class="rows-flex margin0 padding0">
+                                   
                                 <div class="cols-flex" ng-repeat="cat in company">
-                                    <a ui-sref="division({category:cat._id})" ng-if="cat.name!='Euro Flooring'" >{{cat.name}}</a>
-                                    <a href="http://euroflooring.co.in/" ng-if="cat.name=='Euro Flooring'" >{{cat.name}}</a>
+                                    <a ui-sref="division({category:cat._id})" ng-if="cat.name!='Euro Flooring'">{{cat.name}}</a>
+                                    <a href="http://euroflooring.co.in/" ng-if="cat.name=='Euro Flooring'">{{cat.name}}</a>
                                 </div>
                                 <!-- <div ng-if="cat.name==Euro Flooring">
                                     <href="http://euroflooring.co.in/"></href>    
                                 </div> -->
-                                
                             </li>
                         </ul>
                     </li>
                     <li class="logos">
                         <a class="navbar-brand text-center" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
                     </li>
-                
                     <li> <a href="showroom">showroom</a> </li>
-                    <li> <a href="#">contact</a> </li>
+                    <li> <a ui-sref="contact">contact</a> </li>
                     <li> <a href="faq">faq</a> </li>
-                    
-                            <input type="text" class=" search" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword" placeholder="Search...">
-                            <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
-                                <ul class="list-unstyled">
-                                    <!-- <li class="ct-name"><span> Company Category</span></li> -->
-                                    <li class="search-item"   ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                        <!-- <span class="left-space rounded" style="background-image: url({{(item.profilePic|uploadpath) ||'frontend/img/img-placeholder.png'}})"></span> -->
-                                        <p class="text-wrapper"  ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
-                                    </li>
-                                    <!-- <li class="search-item" ng-if="companyCategory.length == 0">
+                    <input type="text" class=" search" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword" placeholder="Search...">
+                    <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
+                        <ul class="list-unstyled">
+                            <!-- <li class="ct-name"><span> Company Category</span></li> -->
+                            <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
+                                <!-- <span class="left-space rounded" style="background-image: url({{(item.profilePic|uploadpath) ||'frontend/img/img-placeholder.png'}})"></span> -->
+                                <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
+                            </li>
+                            <!-- <li class="search-item" ng-if="companyCategory.length == 0">
                                         <span class="left-space rounded"><i class="fa fa-ban"></i></span>
                                         <p class="text-wrapper">No match found</p>
                                     </li> -->
-                                </ul>
-                                <ul class="list-unstyled" ng-repeat="item in company1">
-                                    <!-- <li class="ct-name"><span>Company</span></li> -->
-                                    <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
-                                        <!-- <span class="left-space" style="background-image: url({{(item.articleImage|uploadpath) ||'frontend/img/article/article-thumb.jpg'}})"></span> -->
-                                        <p class="text-wrapper"  >{{item.name}}</p>
-                                    </li>
-                                    <!-- <li class="search-item" ng-if="company1.length == 0">
+                        </ul>
+                        <ul class="list-unstyled" ng-repeat="item in company1">
+                            <!-- <li class="ct-name"><span>Company</span></li> -->
+                            <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
+                                <!-- <span class="left-space" style="background-image: url({{(item.articleImage|uploadpath) ||'frontend/img/article/article-thumb.jpg'}})"></span> -->
+                                <p class="text-wrapper">{{item.name}}</p>
+                            </li>
+                            <!-- <li class="search-item" ng-if="company1.length == 0">
                                         <span class="left-space rounded"><i class="fa fa-ban"></i></span>
                                         <p class="text-wrapper">No match found</p>
                                     </li> -->
-                                </ul>
-                                <ul class="list-unstyled">
-                                    <!-- <li class="ct-name"><span>Company Product</span></li> -->
-                                    <li class="search-item"  ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
-                                        <!-- <span class="left-space"><i class="fa fa-tag"></i></span> -->
-                                        <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
-                                    </li>
-                                    <!-- <li class="search-item" ng-if="companyProduct.length == 0">
+                        </ul>
+                        <ul class="list-unstyled">
+                            <!-- <li class="ct-name"><span>Company Product</span></li> -->
+                            <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
+                                <!-- <span class="left-space"><i class="fa fa-tag"></i></span> -->
+                                <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
+                            </li>
+                            <!-- <li class="search-item" ng-if="companyProduct.length == 0">
                                         <span class="left-space rounded"><i class="fa fa-ban"></i></span>
                                         <p class="text-wrapper">No match found</p>
                                     </li> -->
-                                </ul>
-                            </div>
-                        
-                     <!-- <li> <input type="text" placeholder="SEARCH.." class="search"> 
+                        </ul>
+                    </div>
+                    <!-- <li> <input type="text" placeholder="SEARCH.." class="search"> 
                     </li> -->
                 </ul>
             </div>
