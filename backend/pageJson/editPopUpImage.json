@@ -1,0 +1,46 @@
+{
+    "title": "Edit PopUpImage",
+    "name": "PopUpImage",
+    "jsonPage": "viewPopUpImage",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Image(900 x 1277px)",
+        "type": "image",
+        "tableRef": "image",
+        "placeholder": "Upload image",
+        "id": "image",
+        "view": true,
+        "validation": ["required", "trim"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submit",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPopUpImage"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPopUpImage"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "PopUpImage/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "PopUpImage/getOne",
+        "params": "_id"
+    }
+
+}

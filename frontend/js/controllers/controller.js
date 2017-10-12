@@ -8,6 +8,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.banner = data.data.data;
             // console.log("resultsData", $scope.banner);
         });
+
+        var imagePopup = null;
+        $scope.openpopup = function () {
+            imagePopup = $uibModal.open({
+                templateUrl: "frontend/views/popupmodal.html",
+                // template: "<h1>hiiiiiiiiiiiiippp</h1>",
+                size: "md",
+                scope: $scope
+
+            });
+        };
+
         var data = {};
         data.page = 1;
         NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
@@ -29,16 +41,31 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("This is a button Click");
         };
 
+        $scope.closepopup = function () {
+            $.jStorage.set('popNot', false);
+            imagePopup.close();
+        };
 
         $scope.openModal = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
                 scope: $scope,
-                size: 'xl',
-                windowClass: 'eddy-modal',
-                // templateUrl: "views/modal/welcome.html"
+                size: 'md',
+                // windowClass: 'eddy-modal',
+                templateUrl: "views/popupmodal.html"
             });
         };
+
+        function getPopUpImage() {
+            NavigationService.callApiWithData("PopUpImage/search",data,function (data) {
+                $scope.openpopup();
+                    $scope.popUpImage = data.data.data.results[0].image;
+                    console.log("PopImage", $scope.popUpImage);
+            });
+        }
+
+        getPopUpImage();
+        // $scope.openModal();
         $scope.$on('$viewContentLoaded', function () {
             //  $scope.firstTime="";
             if (_.isEmpty($.jStorage.get('firstTime'))) {

@@ -1061,6 +1061,7 @@ li {
 color: black!important;
 }
 
+
 //***********css given by kishori**********//
 //start of about
 .gcolor{
@@ -1110,4 +1111,26 @@ color: black!important;
 }
 .mar-t{
     margin-top: 43px;
+}
+.website-pop {
+    .load-pop {
+        width: 100%;
+        background-color: transparent;
+        .close {
+            @include square(25px);
+            border-radius: 100%;
+            line-height: 20px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: -10px!important;
+            left: 0px!important;
+            background: black;
+            text-align: center;
+            i {
+                color: white!important;
+                font-size: 14px;
+            }
+        }
+    }
+
 }
