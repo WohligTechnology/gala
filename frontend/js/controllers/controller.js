@@ -52,7 +52,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 scope: $scope,
                 size: 'md',
                 // windowClass: 'eddy-modal',
-                templateUrl: "/views/popupmodal.html"
+                templateUrl: "views/popupmodal.html"
             });
         };
 
