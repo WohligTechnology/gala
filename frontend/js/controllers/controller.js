@@ -57,9 +57,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         };
 
         function getPopUpImage() {
-            NavigationService.callApiWithData("Company/getAllCompany",data,function (data) {
+            NavigationService.callApiWithData("PopUpImage/search",data,function (data) {
                 $scope.openpopup();
-                    $scope.popUpImage = data.data.data;
+                    $scope.popUpImage = data.data.data.results[0].image;
                     console.log("PopImage", $scope.popUpImage);
             });
         }
