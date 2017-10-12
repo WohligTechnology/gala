@@ -51,8 +51,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 animation: true,
                 scope: $scope,
                 size: 'md',
-                windowClass: 'eddy-modal',
-                templateUrl: "/frontend/views/popupmodal.html"
+                // windowClass: 'eddy-modal',
+                templateUrl: "frontend/views/popupmodal.html"
             });
         };
 
