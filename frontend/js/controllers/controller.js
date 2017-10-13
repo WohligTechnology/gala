@@ -124,41 +124,41 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         console.log("$chunck.------", $scope.allproductData);
     });
 
-    $scope.cat = [{
-        "name": "bathworld",
-        "product": [{
-                "img": "img/Faucets.jpg"
-            }, {
-                "img": "img/Faucets.jpg"
-            }, {
-                "img": "img/Faucets.jpg"
-            }, {
-                "img": "img/Faucets.jpg"
-            },
-             {
-                "img": "img/Faucets.jpg"
-            } ]
-    }, {
-        "name": "bathworld",
-        "product": [
-            {
-                "img": "img/p.jpg"
-            },
-              {
-                "img": "img/p.jpg"
-            },
-              {
-                "img": "img/p.jpg"
-            },
-              {
-                "img": "img/p.jpg"
-            },
-              {
-                "img": "img/p.jpg"
-            }
-        ]
+    // $scope.cat = [{
+    //     "name": "bathworld",
+    //     "product": [{
+    //             "img": "img/Faucets.jpg"
+    //         }, {
+    //             "img": "img/Faucets.jpg"
+    //         }, {
+    //             "img": "img/Faucets.jpg"
+    //         }, {
+    //             "img": "img/Faucets.jpg"
+    //         },
+    //          {
+    //             "img": "img/Faucets.jpg"
+    //         } ]
+    // }, {
+    //     "name": "bathworld",
+    //     "product": [
+    //         {
+    //             "img": "img/p.jpg"
+    //         },
+    //           {
+    //             "img": "img/p.jpg"
+    //         },
+    //           {
+    //             "img": "img/p.jpg"
+    //         },
+    //           {
+    //             "img": "img/p.jpg"
+    //         },
+    //           {
+    //             "img": "img/p.jpg"
+    //         }
+    //     ]
 
-    }]
+    // }]
 })
 
 .controller('DivisionCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
