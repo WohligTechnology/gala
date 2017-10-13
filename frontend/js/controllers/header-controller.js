@@ -9,6 +9,7 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
     $scope.category = {
         _id: $stateParams.category
     };
+//    $scope.categoryName = $stateParams.categoryName;
     var data = {};
     $scope.searchText = {};
     data.page = 1;

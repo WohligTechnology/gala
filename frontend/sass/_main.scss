@@ -1095,6 +1095,9 @@ color: black!important;
 }
 .w235{
     width:235px;
+    a{
+      color:#76c04f;
+    }
 
 }
 .bg-color{
@@ -1133,4 +1136,15 @@ color: black!important;
         }
     }
 
+}
+.category-name{
+    margin: 10% 33%;
+    h1{
+        color: #fff;
+        font-weight: 900;
+        text-shadow: 3px 3px  #b4afab;
+    }
+}
+.padd{
+    padding: 10px 0px;
 }

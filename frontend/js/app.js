@@ -22,7 +22,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'HomeCtrl'
         })
         .state('division', {
-            url: "/division/:category",
+            url: "/division/:category/:categoryName",
             templateUrl: tempateURL,
             controller: 'DivisionCtrl'
         })
@@ -65,7 +65,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'FormCtrl'
         })
         .state('allProduct', {
-            url: "/allProduct",
+            url: "/category",
             templateUrl: tempateURL,
             controller: 'allProductCtrl'
         });

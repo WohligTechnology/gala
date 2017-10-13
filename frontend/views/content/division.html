@@ -13,7 +13,11 @@
                 <img ng-if="banner.name=='Uro Veneer World'" src="img/division/Uro veneer world-mascot.png" alt="">
                 <img ng-if="banner.name=='Wood & Mouldings'" src="img/division/Wood & Mouldings-mascot.png" alt="">
             </div>
-            <div class="overlay"></div>
+            <div class="overlay">
+            </div>
+            <div class="category-name">
+                <h1 class="text-center">{{categoryName}}</h1>
+            </div>
             <!--<div class="heart">
                     <img src="img/product/heart.png" class="img-responsive" alt="heart">
                 </div>-->
@@ -23,7 +27,6 @@
     <section class="types-list text-center">
         <div class="container">
             <ul class="list-inline types">
-
                 <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({category:company._id,product:category._id})">{{category.name}}</a></li>
             </ul>
         </div>
@@ -84,5 +87,4 @@
             </div>
         </div>
     </div>
-
 </div>
