@@ -4,15 +4,15 @@
             <h1 class="text-capitalize text-center ">Category</h1>
             <div class="about-info">
                 <div class=" product">
-                    <div class="row" ng-repeat="cate in cat">
+                    <div class="row" ng-repeat="(key,val) in data">
                         <div class="col-md-12">
                             <div class="padd">
-                                <h3>{{cate.name}}</h3>
+                                <h3>{{key}}</h3>
                             </div>
                         </div>
-                        <div class="col-md-4" ng-repeat="p in cate.product">
+                        <div class="col-md-4" ng-repeat="p in val">
                             <div class="padd">
-                                <img src="{{p.img}}">
+                                <img src="{{p.img | serverimage}}">
                             </div>
                         </div>
                     </div>
