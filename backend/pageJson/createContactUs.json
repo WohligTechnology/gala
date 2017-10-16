@@ -24,14 +24,24 @@
             "view": true,
             "validation": ["required"],
             "url": ""
-        }, {
-            "name": "Email",
-            "type": "email",
-            "tableRef": "email",
-            "id": "email",
-            "placeholder": "Enter Email",
+        },
+        {
+            "name": "Product Name",
+            "type": "text",
+            "tableRef": "productName",
+            "id": "productName",
+            "placeholder": "Enter product Name",
             "view": true,
             "validation": ["required"],
+            "url": ""
+        }, {
+            "name": "Image",
+            "type": "image",
+            "tableRef": "image",
+            "placeholder": "Upload image",
+            "id": "image",
+            "view": true,
+            "validation": ["required", "trim"],
             "url": ""
         }, {
             "name": "Contact Number",
