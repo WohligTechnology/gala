@@ -11,13 +11,13 @@
                             </div>
                         </div>
                         <div class="col-md-4" ng-repeat="p in val">
-                            <div class="padd">
+                            <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
                                 <div class="door">
                                     <div class="overlay"></div>
-                                    <!--<img src="{{p.image | serverimage}}">-->
-                                    <img src="img/Faucets.jpg" class="img-responsive">
+                                    <img src="{{p.image | serverimage}}">
+                                    <!-- <img src="img/Faucets.jpg" class="img-responsive"> -->
                                     <div class="door-info">
-                                        <p class="text-uppercase text-center">Bath World</p>
+                                        <p class="text-uppercase text-center">{{p.name}}</p>
                                     </div>
                                 </div>
                             </div>
