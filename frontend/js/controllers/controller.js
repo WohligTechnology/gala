@@ -127,7 +127,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
  NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
         // console.log("*****companyCategory******", data);
         $scope.getAllCategory = data.data.data;
-        console.log("*****companyCategory******", $scope.getAllCategory);
+        console.log("*****getAllCategory******", $scope.getAllCategory);
         // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
     });
 
@@ -147,7 +147,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 "img": "img/Faucets.jpg"
             } ]
     }, {
-        "name": "bathworld",
+        "name": "bathworld2",
         "product": [
             {
                 "img": "img/p.jpg"
