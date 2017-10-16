@@ -5,12 +5,12 @@
             <div class="about-info">
                 <div class="product cat-list">
                     <div class="row" ng-repeat="(key,val) in data">
-                        <div class="col-md-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="padd">
                                 <h3>{{key}}</h3>
                             </div>
                         </div>
-                        <div class="col-md-4" ng-repeat="p in val">
+                        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="p in val">
                             <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
                                 <div class="door">
                                     <div class="overlay"></div>
