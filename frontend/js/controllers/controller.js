@@ -94,18 +94,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         _id: $stateParams.category
     };
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-        // console.log("*****CompnayBanner******", data);
+       
         $scope.banner = data.data.data;
-        // console.log("*****CompnayBanner******", $scope.banner);
+       
     });
 
 
-    NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
-        // console.log("*****companyCategory******", data);
-        $scope.companyCategory = data.data.data;
-        // console.log("*****companyCategory******", $scope.companyCategory);
-        $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
-    });
+    // NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
+    //     // console.log("*****companyCategory******", data);
+    //     $scope.companyCategory = data.data.data;
+    //     // console.log("*****companyCategory******", $scope.companyCategory);
+    //     $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+    // });
 
     NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
         console.log("getallproduct", data.data.data);
@@ -127,7 +127,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
  NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
         // console.log("*****companyCategory******", data);
         $scope.getAllCategory = data.data.data;
-        console.log("*****companyCategory******", $scope.getAllCategory);
+        console.log("*****getAllCategory******", $scope.getAllCategory);
+        $scope.data = _.groupBy($scope.getAllCategory, 'company.name');
+        console.log("getAllCategorygroupby", $scope.data)
         // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
     });
 
@@ -239,7 +241,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 .controller('GalleryCtrl', function ($stateParams, $scope, TemplateService, NavigationService, $timeout, $uibModal) {
-   
+
     $scope.template = TemplateService.getHTML("content/gallery.html");
     TemplateService.title = "Gallery"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
@@ -271,7 +273,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     }
 
     // enquire modal start
-     $scope.enquire = function () {
+
+      $scope.enquire = function () {
+
         enquireModal = $uibModal.open({
             templateUrl: "frontend/views/modal/enquire.html",
             size: "md",
