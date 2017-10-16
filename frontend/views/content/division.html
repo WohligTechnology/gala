@@ -45,7 +45,7 @@
                         </div>-->
                         <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
                             <!--//for 3 grid-->
-                            <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==3">
+                            <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
                                 <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
                                     <div class="overlay"></div>
                                     <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
@@ -57,7 +57,7 @@
                             <!--//for 3 grid-->
                             <!--//for 1 grid-->
                             <div class="col-md-4" ng-if="s2.length==1"></div>
-                            <div class="col-md-4" ng-repeat="s in s2" ng-if="s2.length==1">
+                            <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
                                 <div class="door" ui-sref="divisions({category:company._id,product:s._id})">
                                     <div class="overlay"></div>
                                     <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>

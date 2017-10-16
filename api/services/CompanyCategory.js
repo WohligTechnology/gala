@@ -35,8 +35,8 @@ module.exports = mongoose.model('CompanyCategory', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "order", "asc"));
 var model = {
-        getAllCategory: function (data, callback) {
-        CompanyCategory.find({}).exec(function (err, found) {
+    getAllCategory: function (data, callback) {
+        CompanyCategory.find({}).deepPopulate('company').exec(function (err, found) {
             console.log("Found: ", found);
             if (err) {
                 callback(err, null);
