@@ -124,6 +124,14 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         console.log("$chunck.------", $scope.allproductData);
     });
 
+ NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
+        // console.log("*****companyCategory******", data);
+        $scope.getAllCategory = data.data.data;
+        console.log("*****companyCategory******", $scope.getAllCategory);
+        // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+    });
+
+
     // $scope.cat = [{
     //     "name": "bathworld",
     //     "product": [{
