@@ -12,7 +12,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     $scope.openpopup = function () {
         imagePopup = $uibModal.open({
-            templateUrl: "frontend/views/popupmodal.html",
+            templateUrl: "views/popupmodal.html",
             size: "md",
             scope: $scope
         });
@@ -188,7 +188,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.enquire = function () {
 
         enquireModal = $uibModal.open({
-            templateUrl: "frontend/views/modal/enquire.html",
+            templateUrl: "views/modal/enquire.html",
             size: "md",
             scope: $scope
         });
