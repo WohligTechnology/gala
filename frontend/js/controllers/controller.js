@@ -153,7 +153,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 })
 
 
-.controller('GalleryCtrl', function ($stateParams, $scope, TemplateService, NavigationService, $timeout, $uibModal) {
+.controller('GalleryCtrl', function ($stateParams, $state,$scope, TemplateService, NavigationService, $timeout, $uibModal) {
 
     $scope.template = TemplateService.getHTML("content/gallery.html");
     TemplateService.title = "Gallery"; //This is the Title of the Website
@@ -194,19 +194,29 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
     };
 
-    $scope.closepopup = function () {
-        $.jStorage.set('popNot', false);
-        enquireModal.close();
-    };
+  $scope.closepopup = function () {
+            $.jStorage.set('popNot', false);
+            enquireModal.close();
+            $state.reload()
+        };
 
-    $scope.saveEnquiry = function (detail) {
-        detail.productName = $scope.productId.name;
-        detail.image = $scope.bigImage;
-        console.log("insid saveEnquiry function", detail);
-        NavigationService.callApiWithData("ContactUs/save", detail, function (data) {
+        $scope.saveEnquiry = function (detail) {
+            detail.productName = $scope.productId.name;
+            detail.image = $scope.bigImage;
+            console.log("insid saveEnquiry function", detail);
+            NavigationService.callApiWithData("ContactUs/save", detail, function (data) {
+                console.log("after submiting form", data.data.value)
 
-        });
-    }
+                $scope.submitmsg = data.data;
+                detail.firstName = "";
+                detail.lastName = "";
+                detail.contactNumber = "";
+                detail.message = "";
+                detail.productName = "";
+                detail.image = "";
+               
+ })
+ }
 })
 
 .controller('ShowroomCtrl', function ($scope, TemplateService, apiService, NavigationService, $stateParams, $timeout) {

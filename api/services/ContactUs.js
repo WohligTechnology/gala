@@ -15,8 +15,7 @@ var schema = new Schema({
 
     },
     contactNumber: {
-        type: Number,
-        unique: true
+        type: Number
     },
     message: {
         type: String,
