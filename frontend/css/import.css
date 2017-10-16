@@ -10055,6 +10055,23 @@ sup {
   padding: 10px 0;
   box-shadow: 2px 2px 2px #ccc; }
 
+.contact-heading {
+  color: #a6a5a5;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 5px; }
+
+.contact-details {
+  padding: 25px 5px; }
+  .contact-details .control-label {
+    color: #a6a5a5; }
+
+.border {
+  border: 1px solid black; }
+  .border .close {
+    font-size: 19px !important;
+    color: #000; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
