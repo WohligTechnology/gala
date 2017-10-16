@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="text-capitalize text-center ">Category</h1>
             <div class="about-info">
-                <div class=" product">
+                <div class="product cat-list">
                     <div class="row" ng-repeat="(key,val) in data">
                         <div class="col-md-12">
                             <div class="padd">
@@ -12,13 +12,14 @@
                         </div>
                         <div class="col-md-4" ng-repeat="p in val">
                             <div class="padd">
-                                <div class="relative"> 
-                                <img src="{{p.image | serverimage}}">
-                                <div class="door-info">
-                                        <p class="text-uppercase">Bath World</p>
+                                <div class="door">
+                                    <div class="overlay"></div>
+                                    <!--<img src="{{p.image | serverimage}}">-->
+                                    <img src="img/Faucets.jpg" class="img-responsive">
+                                    <div class="door-info">
+                                        <p class="text-uppercase text-center">Bath World</p>
                                     </div>
-                                    </div>
-
+                                </div>
                             </div>
                         </div>
                     </div>
