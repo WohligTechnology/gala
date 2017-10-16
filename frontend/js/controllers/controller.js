@@ -107,22 +107,22 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     //     $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
     // });
 
-    NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
-        console.log("getallproduct", data.data.data);
-        $scope.allproduct = data.data.data;
+    // NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
+    //     console.log("getallproduct", data.data.data);
+    //     $scope.allproduct = data.data.data;
 
-        console.log("showchunk", $scope.allproduct);
-        $scope.data = [];
-        $scope.data = _.groupBy($scope.allproduct, 'companyCategory.company.name');
+    //     console.log("showchunk", $scope.allproduct);
+    //     $scope.data = [];
+    //     $scope.data = _.groupBy($scope.allproduct, 'companyCategory.company.name');
 
-        console.log("$scope.------", $scope.data);
-        var keys = _.keysIn($scope.data);
-        console.log(_.keysIn($scope.data));
-        $scope.companyName = _.chunk(keys, 3);
-        console.log($scope.companyName);
-        $scope.allproductData = _.chunk($scope.data, 3);
-        console.log("$chunck.------", $scope.allproductData);
-    });
+    //     console.log("$scope.------", $scope.data);
+    //     var keys = _.keysIn($scope.data);
+    //     console.log(_.keysIn($scope.data));
+    //     $scope.companyName = _.chunk(keys, 3);
+    //     console.log($scope.companyName);
+    //     $scope.allproductData = _.chunk($scope.data, 3);
+    //     console.log("$chunck.------", $scope.allproductData);
+    // });
 
  NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
         // console.log("*****companyCategory******", data);

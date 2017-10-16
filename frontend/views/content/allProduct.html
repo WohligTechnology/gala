@@ -12,7 +12,13 @@
                         </div>
                         <div class="col-md-4" ng-repeat="p in val">
                             <div class="padd">
-                                <img src="{{p.img | serverimage}}">
+                                <div class="relative"> 
+                                <img src="{{p.image | serverimage}}">
+                                <div class="door-info">
+                                        <p class="text-uppercase">Bath World</p>
+                                    </div>
+                                    </div>
+
                             </div>
                         </div>
                     </div>

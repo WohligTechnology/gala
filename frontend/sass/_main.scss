@@ -1148,3 +1148,19 @@ color: black!important;
 .padd{
     padding: 10px 0px;
 }
+.door-info{
+    width: 60%;
+    -webkit-transition: all ease 300ms;
+    -o-transition: all ease 300ms;
+    transition: all ease 300ms;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.59);
+}
+.door-info {
+    padding: 10px 0;
+    box-shadow: 2px 2px 2px #ccc;
+}
