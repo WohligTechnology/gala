@@ -238,40 +238,52 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 })
 
 
-.controller('GalleryCtrl', function ($stateParams, $scope, TemplateService, NavigationService, $timeout) {
+.controller('GalleryCtrl', function ($stateParams, $scope, TemplateService, NavigationService, $timeout, $uibModal) {
+   
     $scope.template = TemplateService.getHTML("content/gallery.html");
     TemplateService.title = "Gallery"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
     $scope.bigImage = "";
+   
     $scope.productId = {
         _id: $stateParams.productId
     };
     $scope.company = {
         _id: $stateParams.category
     };
-
-
-
-    console.log("state param value is******8", $scope.productId, $scope.company);
+   
     // $rootScope.company = $stateParams.category;
+   
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-        // console.log("*****companyName******", data);
-        $scope.companyName = data.data.data;
-        console.log("*****companyName******", $scope.companyName);
-
+       $scope.companyName = data.data.data;
     });
+
     NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
-        console.log("*****ComapanyProduct Details******", data);
-        $scope.productId = data.data.data;
+       $scope.productId = data.data.data;
         $scope.productIdimage = data.data.data.images;
         $scope.bigImage = $scope.productId.images[0].bigImage;
-        console.log("*****productIdimage Details******", $scope.productId);
-        // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+       // $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
     });
+
     $scope.changeBigImage = function (bigImage) {
         $scope.bigImage = bigImage;
     }
+
+    // enquire modal start
+     $scope.enquire = function () {
+        enquireModal = $uibModal.open({
+            templateUrl: "frontend/views/modal/enquire.html",
+            size: "md",
+            scope: $scope
+
+        });
+    };
+
+  $scope.closepopup = function () {
+        $.jStorage.set('popNot', false);
+        enquireModal.close();
+    };
 
 })
 

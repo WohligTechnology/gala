@@ -1148,3 +1148,25 @@ color: black!important;
 .padd{
     padding: 10px 0px;
 }
+
+//gallery 
+.contact-heading{
+    color:$brand-grey;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 5px;
+
+}
+.contact-details{
+        padding: 25px 5px;
+    .control-label{
+   color:$brand-grey;
+    }
+}
+.border{
+    border: 1px solid black;
+    .close{
+            font-size: 19px !important;
+            color: #000;
+    }
+}
