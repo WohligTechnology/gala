@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.3
+ * jQuery FlexSlider v2.6.4
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -3369,7 +3369,6 @@ html[xmlns] .flexslider .slides {
   background: linear-gradient(to bottom, #dcdcdc, #efefef); }
 
 /****** Please Import Libraries Above This!!!!!! ******/
-/* Bootstrap Variables Goes Here */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -9247,7 +9246,7 @@ ul {
 li {
   list-style-type: none; }
 
-.relative, .mail-tel li:first-child, .types li, .main-list .door, .abouts, .listings {
+.relative, .mail-tel li:first-child, .types li, .main-list .door, .abouts, .listings, .cat-list .door {
   position: relative; }
 
 .padding0 {
@@ -10032,7 +10031,7 @@ sup {
       font-size: 14px; }
 
 .category-name {
-  margin: 10% 33%; }
+  margin: 15% 0%; }
   .category-name h1 {
     color: #fff;
     font-weight: 900;
@@ -10040,20 +10039,6 @@ sup {
 
 .padd {
   padding: 10px 0px; }
-
-.door-info {
-  width: 60%;
-  transition: all ease 300ms;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.59); }
-
-.door-info {
-  padding: 10px 0;
-  box-shadow: 2px 2px 2px #ccc; }
 
 .contact-heading {
   color: #a6a5a5;
@@ -10071,6 +10056,35 @@ sup {
   .border .close {
     font-size: 19px !important;
     color: #000; }
+
+.cat-list .door {
+  transition: all ease 300ms; }
+  .cat-list .door .door-info {
+    width: 60%;
+    transition: all ease 300ms;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.59); }
+  .cat-list .door .overlay {
+    background-color: transparent; }
+  .cat-list .door:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.31);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  .cat-list .door:hover .door-info {
+    background-color: transparent;
+    box-shadow: none; }
+    .cat-list .door:hover .door-info p {
+      color: #fff; }
+
+.thanku p {
+  font-size: 20px; }
 
 #fancybox-loading,
 .fancybox-close,

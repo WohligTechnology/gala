@@ -35,10 +35,9 @@ myApp.factory('NavigationService', function ($http) {
             classis: "active",
             sref: "#!/page/viewCompanyProduct//",
         }, {
-            name: "Contact Us",
+            name: "Enquiry Request",
             classis: "active",
             sref: "#!/page/viewContactUs//",
-            icon: "phone"
         },
         {
             name: "Pop Up Image",
