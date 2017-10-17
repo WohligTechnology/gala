@@ -6,6 +6,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     NavigationService.callApi("HomeBanner/getAllBanner", function (data) {
         $scope.banner = data.data.data;
+        $(".loading-img").css("display", "none");
+
     });
 
     var imagePopup = null;
@@ -56,6 +58,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
             $scope.openpopup();
             $scope.popUpImage = data.data.data.results[0].image;
+
         });
     }
 

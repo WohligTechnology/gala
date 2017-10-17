@@ -1213,3 +1213,19 @@ color: black!important;
 .mar-t5{
     margin-top: 5px;
 }
+.loading-img {
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: fixed;
+    background: rgba(43, 54, 67, 0.36);
+    z-index: 2000;
+img{
+    position: absolute;
+    left: 44%;
+    top: 50%;
+}
+}
+.loading-img {
+       display: block;
+   }
