@@ -214,7 +214,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 detail.message = "";
                 detail.productName = "";
                 detail.image = "";
-               
+                $timeout(function () {
+                    $scope.closepopup()
+                    }, 1000);
  })
  }
 })
