@@ -1,7 +1,7 @@
 myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     $scope.template = TemplateService.getHTML("content/home.html");
-    
-    $scope.loaded=false;
+
+    $scope.loaded = false;
     TemplateService.title = "Home"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
@@ -9,7 +9,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     NavigationService.callApi("HomeBanner/getAllBanner", function (data) {
         $scope.banner = data.data.data;
         console.log("above loader");
-        $scope.loaded=true;
+        $scope.loaded = true;
     });
 
     var imagePopup = null;
@@ -28,9 +28,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.company = data.data.data;
         console.log("comapnyData", $scope.company);
         $scope.companyData = _.chunk($scope.company, 3);
-        
-
-    });
+  });
 
     var abc = _.times(100, function (n) {
         return n;
@@ -58,9 +56,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     function getPopUpImage() {
         NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-            $scope.openpopup();
-            $scope.popUpImage = data.data.data.results[0].image;
-            
+           $scope.popUpImage = data.data.data.results[0].image;
+
         });
     }
 
@@ -72,7 +69,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $.jStorage.set('firstTime', {
                 value: true
             });
-            $scope.openModal();
+            $scope.openpopup();
         }
     });
 })
@@ -81,7 +78,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.getHTML("content/allProduct.html");
     TemplateService.title = "Product"; //This is the Title of the Website
-    $scope.loaded=false;
+    $scope.loaded = false;
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
     $scope.product = {
@@ -101,7 +98,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $scope.getAllCategory = data.data.data;
         $scope.data = _.groupBy($scope.getAllCategory, 'company.name');
-        $scope.loaded=true;
+        $scope.loaded = true;
     });
 })
 
@@ -110,7 +107,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     TemplateService.title = "Division"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
-    $scope.loaded=false;
+    $scope.loaded = false;
     $scope.company = {
         _id: $stateParams.category
     };
@@ -124,7 +121,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
         $scope.banner = data.data.data;
-        $scope.loaded=true;
+        $scope.loaded = true;
     });
 
 })
@@ -133,7 +130,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.template = TemplateService.getHTML("content/division1.html");
     TemplateService.title = "Division1"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
-    $scope.loaded=false;
+    $scope.loaded = false;
     TemplateService.social = "views/template/social.html";
     $scope.product = {
         _id: $stateParams.product
@@ -145,31 +142,31 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
         $scope.banner = data.data.data;
-        $scope.loaded=true;
+        $scope.loaded = true;
     });
 
     NavigationService.callApiWithData("CompanyProduct/getAllProductWithCategory", $scope.product, function (data) {
         $scope.companyproduct = data.data.data;
         $scope.companyproductdata = _.chunk($scope.companyproduct, 3);
-        $scope.loaded=true;
+        $scope.loaded = true;
     });
 
     NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
 
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
-        $scope.loaded=true;
+        $scope.loaded = true;
 
     });
 })
 
 
-.controller('GalleryCtrl', function ($stateParams, $state,$scope, TemplateService, NavigationService, $timeout, $uibModal) {
+.controller('GalleryCtrl', function ($stateParams, $state, $scope, TemplateService, NavigationService, $timeout, $uibModal) {
 
     $scope.template = TemplateService.getHTML("content/gallery.html");
     TemplateService.title = "Gallery"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
-    $scope.loaded=false;
+    $scope.loaded = false;
     TemplateService.social = "views/template/social.html";
     $scope.bigImage = "";
 
@@ -188,7 +185,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.productId = data.data.data;
         $scope.productIdimage = data.data.data.images;
         $scope.bigImage = $scope.productId.images[0].bigImage;
-        $scope.loaded=true;
+        $scope.loaded = true;
 
     });
 
@@ -207,31 +204,31 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
     };
 
-  $scope.closepopup = function () {
-            $.jStorage.set('popNot', false);
-            enquireModal.close();
-            $state.reload()
-        };
+    $scope.closepopup = function () {
+        $.jStorage.set('popNot', false);
+        enquireModal.close();
+        $state.reload()
+    };
 
-        $scope.saveEnquiry = function (detail) {
-            detail.productName = $scope.productId.name;
-            detail.image = $scope.bigImage;
-            console.log("insid saveEnquiry function", detail);
-            NavigationService.callApiWithData("ContactUs/save", detail, function (data) {
-                console.log("after submiting form", data.data.value)
+    $scope.saveEnquiry = function (detail) {
+        detail.productName = $scope.productId.name;
+        detail.image = $scope.bigImage;
+        console.log("insid saveEnquiry function", detail);
+        NavigationService.callApiWithData("ContactUs/save", detail, function (data) {
+            console.log("after submiting form", data.data.value)
 
-                $scope.submitmsg = data.data;
-                detail.firstName = "";
-                detail.lastName = "";
-                detail.contactNumber = "";
-                detail.message = "";
-                detail.productName = "";
-                detail.image = "";
-                $timeout(function () {
-                    $scope.closepopup()
-                    }, 1000);
- })
- }
+            $scope.submitmsg = data.data;
+            detail.firstName = "";
+            detail.lastName = "";
+            detail.contactNumber = "";
+            detail.message = "";
+            detail.productName = "";
+            detail.image = "";
+            $timeout(function () {
+                $scope.closepopup()
+            }, 1000);
+        })
+    }
 })
 
 .controller('ShowroomCtrl', function ($scope, TemplateService, apiService, NavigationService, $stateParams, $timeout) {
@@ -300,7 +297,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 .controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.getHTML("content/contact.html");
     TemplateService.title = "Contact"; //This is the Title of the Website
-  
+
     $scope.navigation = NavigationService.getNavigation();
 
 
