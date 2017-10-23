@@ -35,9 +35,7 @@
                     <input type="text" class=" search" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword" placeholder="Search...">
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
-                            <!-- <li class="ct-name"><span> Company Category</span></li> -->
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <!-- <span class="left-space rounded" style="background-image: url({{(item.profilePic|uploadpath) ||'frontend/img/img-placeholder.png'}})"></span> -->
                                 <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
                             </li>
                         </ul>
@@ -47,9 +45,7 @@
                             </li>
                         </ul>
                         <ul class="list-unstyled">
-                            <!-- <li class="ct-name"><span>Company Product</span></li> -->
                             <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
-                                <!-- <span class="left-space"><i class="fa fa-tag"></i></span> -->
                                 <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
                             </li>
                         </ul>
@@ -59,7 +55,7 @@
         </div>
     </nav>
 </header>
-<header hide-on-scrol class="hidden-xs visible-lg visible-sm hidden-md ">
+<header hide-on-scrol class="hidden-xs visible-lg visible-sm visible-md ">
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl">
         <div class="container">
             <div class="navbar">
@@ -76,52 +72,9 @@
                             </li>
                         </ul> -->
                     </li>
-                    <!--<div class="cols-flex">
-                                    <a ui-sref="division({category:s1.id})">uro veener world</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="#">Wood & Mouldings</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Mahaveer Corporation</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Euro Ceramic World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Euro Hardware World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Euro Flooring(p) LTD</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Euro Lighting World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Bath World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">vridhi Woods</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Drapes World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Hafele & Blum</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Stone World</a>
-                                </div>
-                                <div class="cols-flex">
-                                    <a href="">Gala Furniture World</a>
-                                </div>-->
-                    <!--<div class="col-md-3" ng-repeat="submenu in menu.subnav" ui-sref-active="active">
-           <a ui-serf="{{submenu.anchor}}" ng-if="submenu.anchor">{{submenu.name}}</a>
-        </div>-->
                     <li> <a>division </a>
                         <ul class="dropdown-menu">
                             <li class="rows-flex margin0 padding0">
-                                   
                                 <div class="cols-flex" ng-repeat="cat in company">
                                     <a ui-sref="division({category:cat._id,categoryName:cat.name})" ng-if="cat.name!='Euro Flooring'">{{cat.name}}</a>
                                     <a href="http://euroflooring.co.in/" ng-if="cat.name=='Euro Flooring'">{{cat.name}}</a>
@@ -141,41 +94,21 @@
                     <input type="text" class=" search" ng-model="searchText.searchText" ng-change="search(searchText)" name="keyword" placeholder="Search...">
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
-                            <!-- <li class="ct-name"><span> Company Category</span></li> -->
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <!-- <span class="left-space rounded" style="background-image: url({{(item.profilePic|uploadpath) ||'frontend/img/img-placeholder.png'}})"></span> -->
                                 <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
                             </li>
-                            <!-- <li class="search-item" ng-if="companyCategory.length == 0">
-                                        <span class="left-space rounded"><i class="fa fa-ban"></i></span>
-                                        <p class="text-wrapper">No match found</p>
-                                    </li> -->
                         </ul>
                         <ul class="list-unstyled" ng-repeat="item in company1">
-                            <!-- <li class="ct-name"><span>Company</span></li> -->
                             <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
-                                <!-- <span class="left-space" style="background-image: url({{(item.articleImage|uploadpath) ||'frontend/img/article/article-thumb.jpg'}})"></span> -->
                                 <p class="text-wrapper">{{item.name}}</p>
                             </li>
-                            <!-- <li class="search-item" ng-if="company1.length == 0">
-                                        <span class="left-space rounded"><i class="fa fa-ban"></i></span>
-                                        <p class="text-wrapper">No match found</p>
-                                    </li> -->
                         </ul>
                         <ul class="list-unstyled">
-                            <!-- <li class="ct-name"><span>Company Product</span></li> -->
                             <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
-                                <!-- <span class="left-space"><i class="fa fa-tag"></i></span> -->
                                 <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
                             </li>
-                            <!-- <li class="search-item" ng-if="companyProduct.length == 0">
-                                        <span class="left-space rounded"><i class="fa fa-ban"></i></span>
-                                        <p class="text-wrapper">No match found</p>
-                                    </li> -->
                         </ul>
                     </div>
-                    <!-- <li> <input type="text" placeholder="SEARCH.." class="search"> 
-                    </li> -->
                 </ul>
             </div>
         </div>
