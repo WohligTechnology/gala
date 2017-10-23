@@ -1,5 +1,5 @@
 <div class="main-banner ">
-    <div class="relative flexslides">
+    <div class="relative flexslides homeslider">
         <flex-slider flex-slide="s in banner track by $index" class="mt10" prev-text="" next-text="">
             <li>
                 <img ng-src="{{s.image | serverimage}}" class="img-full">
@@ -81,7 +81,7 @@
         </div>
     </section>
 </div>
-  <div class="loading-img">
+   <div class="loading-img" ng-hide="loaded">
 
-        <img src="img/loading.gif" class="img-responsive">
-    </div>
+        <img src="img/loading.gif" class="img-responsive"> 
+     </div>

@@ -637,6 +637,9 @@ h5 {
 }
 
 //flexslider//
+.homeslider .flex-control-nav{
+    bottom:150px !important;
+}
 .flexslides {
     .flex-direction-nav {
         @include display(none);
@@ -1217,15 +1220,16 @@ color: black!important;
     width: 100%;
     top: 0;
     height: 100%;
+    display: block;
     position: fixed;
     background: rgba(43, 54, 67, 0.36);
     z-index: 2000;
 img{
     position: absolute;
-    left: 44%;
     top: 50%;
+    left: 50%;
 }
 }
-.loading-img {
-       display: block;
-   }
+// .loading-img {
+//      
+//    }
