@@ -749,7 +749,7 @@ h5 {
 .flexy {
     margin-top: 30px;
     .flexslider {
-        margin: 0;
+        margin: 0!important;
     }
     .flex-control-nav {
         @include display(none);

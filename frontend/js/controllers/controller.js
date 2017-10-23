@@ -58,7 +58,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         function getPopUpImage() {
             NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-               
+
                 $scope.popUpImage = data.data.data.results[0].image;
 
             });
