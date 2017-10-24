@@ -642,8 +642,10 @@ h5 {
 }
 
 //flexslider//
-.homeslider .flex-control-nav {
-    bottom: 150px !important;
+
+.homeslider .flex-control-nav{
+    bottom:60px !important;
+
 }
 
 .flexslides {
@@ -767,7 +769,7 @@ h5 {
 .flexy {
     margin-top: 30px;
     .flexslider {
-        margin: 0;
+        margin: 0!important;
     }
     .flex-control-nav {
         @include display(none);

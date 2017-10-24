@@ -31,10 +31,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     });
 
+
     var abc = _.times(100, function (n) {
         return n;
     });
 
+        function getPopUpImage() {
+            NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
+
+                $scope.popUpImage = data.data.data.results[0].image;
+
+            })
+        }
     var i = 0;
     $scope.buttonClick = function () {
         i++;
@@ -86,6 +94,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     
 
 })
+        
 
 
 .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
