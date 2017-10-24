@@ -10201,7 +10201,11 @@ sup {
     margin-top: 10px;
     font-size: 14px; }
   .mar-l {
-    margin-left: 50px; } }
+    margin-left: 50px; }
+  .search {
+    font-size: 11px; }
+  .search-suggest li p {
+    font-size: 11px; } }
 
 @media (max-width: 767px) {
   h1 {
