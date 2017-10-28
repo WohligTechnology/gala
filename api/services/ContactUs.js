@@ -7,14 +7,15 @@ var schema = new Schema({
         type: String,
         required: true
     },
-    email: {
+    image: {
+        type: String
+    },
+    productName: {
         type: String,
-        validate: validators.isEmail(),
-        unique: true
+
     },
     contactNumber: {
-        type: Number,
-        unique: true
+        type: Number
     },
     message: {
         type: String,

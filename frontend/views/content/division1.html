@@ -17,7 +17,7 @@
                         <!--<h4 class="text-capitalize ">door</h4>-->
                         <ul>
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
-                            <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({product:category._id})">{{category.name}}</a></li>
+                            <li ng-repeat="category in companyCategory track by $index"><a ui-sref="divisions({product:category._id})" ui-sref-active="active" >{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
                             <li><a href="#">Decking </a></li>
                             <li><a href="#">Wallpaper</a></li>
@@ -51,7 +51,6 @@
                                         <a  href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">
                                     <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                     <div class="door-info" >
-                                           
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
@@ -152,3 +151,7 @@
         </div>
     </div>
 </div>
+<div class="loading-img" ng-hide="loaded">
+        
+                <img src="img/loading.gif" class="img-responsive"> 
+             </div>

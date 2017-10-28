@@ -1,54 +1,46 @@
 <div class="gallery division">
-    <section class="bg-division bg-divisions relative" style="background: url('/img/home/2.jpg')">
+    <!--<section class="bg-division bg-divisions relative" style="background: url('/img/home/2.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <h2 class="text-uppercase">SHOWROOM</h2>
         </div>
-    </section>
+    </section>-->
+    <div>
+        <img src="img/5.jpg" class="img-responsive">
+    </div>
     <div class="container">
-        <div class="products-info relative">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <!--<div class="products-info relative">
             <div class="product-inform ">
                 <h3 class="text-capitalize text-center pad-10">{{name}} </h3>
-                <!--<div class="space-tb">
-                            <h5>Product Description </h5>
-                            <p>{{ProductDetails.description}} </p>
-                            <div class="social-share">
-                                <p class="text-capitalize">share:</p>
-                                <ul class="list-inline">
-                                    <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>-->
             </div>
             <div class="row text-center">
+                <div class="container">
+                    <div class="products-info relative">
+                        <div class="product-inform ">…
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="ok">
+                            <img src="img/product/ok.png" class="img-responsive" alt="ok">
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-9 col-sm-9 col-xs-12 text-center">
-
                     <figure class="relative">
-                        <!--<div class="hand1">
-                            <img src="img/product/hand7.png" class="img-responsive" alt="product">
-                        </div>-->
                         <img ng-src="{{bigImage | serverimage}}" class="img-responsive" class="img-full">
-
-                        <!--<img src="img/product/1.jpg" class="img-responsive" alt="product">-->
-                        <!--<div class="hand2">
-                            <img src="img/product/hand10.png" class="img-responsive" alt="product">
-                        </div>-->
                     </figure>
-
-
-
                     <div class="flexy  hidden-sm hidden-xs">
                         <flex-slider slide="s in ProductDetails track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
                             <li ng-click="changeBigImage(s.images[0].bigImage, s.name)">
-                                <!--<li ng-click="changeBigImage(s.bigImage, s.name)">-->
                                 <img ng-src="{{s.images[0].smallImage | serverimage}}">
                             </li>
                         </flex-slider>
                     </div>
-                    <!--//-->
                     <div class="flexy visible-xs hidden-md visible-sm">
                         <flex-slider slide="s in productIdimage track by $index" item-width="80" item-margin="10" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
@@ -59,13 +51,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
-
-                    <!--<button class="btn btn-success text-capitalize">enquire now</button>-->
                 </div>
             </div>
             <div class="ok">
                 <img src="img/product/ok.png" class="img-responsive" alt="ok">
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

@@ -14,9 +14,10 @@
             "isSort": "",
             "tableRef": "lastName"
         }, {
-            "name": "Email",
+            "name": "Image",
             "isSort": "",
-            "tableRef": "email"
+            "tableRef": "image",
+            "type": "image"
         }, {
             "name": "Contact Number",
             "isSort": "",
@@ -49,13 +50,7 @@
             "value": "_id"
         }
     }],
-    "button": [{
-        "name": "Create",
-        "icon": "plus",
-        "class": "btn-success",
-        "type": "page",
-        "action": "createContactUs"
-    }],
+    "button": [],
     "apiCall": {
         "url": "ContactUs/search",
         "params": "_id"

@@ -6,7 +6,7 @@
     "pageType": "create",
     "urlFields": [""],
     "fields": [{
-        "name": "Image",
+        "name": "Image(900 x 1277px)",
         "type": "image",
         "tableRef": "image",
         "placeholder": "Upload image",

@@ -9,7 +9,7 @@
             "name": "Image",
             "type": "image",
             "tableRef": "image",
-            "size": "1536 × 713px",
+            "size": "1536 × 613px",
             "placeholder": "Upload image",
             "id": "image",
             "validation": ["required"],
