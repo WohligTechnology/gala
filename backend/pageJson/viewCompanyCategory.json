@@ -4,6 +4,7 @@
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
+    "filter":"categoryFilter",
     "fields": [{
             "name": "Name",
             "isSort": "",

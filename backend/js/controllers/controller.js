@@ -175,8 +175,6 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
 
 
 
-
-
         $scope.listview = false;
         $scope.showCreate = false;
         $scope.typeselect = "";
@@ -280,7 +278,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
 
     })
 
-    .controller('ViewCtrl', function ($scope, TemplateService, NavigationService, JsonService, $timeout, $state, $stateParams) {
+    .controller('ViewCtrl', function ($scope, TemplateService, NavigationService, JsonService, $timeout, $state, $stateParams, $uibModal) {
         $scope.json = JsonService;
         $scope.template = TemplateService;
         var i = 0;
@@ -295,7 +293,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         };
         if ($stateParams.keyword) {
             $scope.search.keyword = $stateParams.keyword;
-        }
+        };
         $scope.changePage = function (page) {
             var goTo = "page";
             if ($scope.search.keyword) {
@@ -308,26 +306,137 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             });
         };
 
-        $scope.getAllItems = function (keywordChange) {
-            $scope.totalItems = undefined;
-            if (keywordChange) {
-                $scope.currentPage = 1;
-            }
-            NavigationService.search($scope.json.json.apiCall.url, {
-                    page: $scope.currentPage,
-                    keyword: $scope.search.keyword
-                }, ++i,
-                function (data, ini) {
-                    if (ini == i) {
-                        $scope.items = data.data.results;
-                        $scope.totalItems = data.data.total;
-                        $scope.maxRow = data.data.options.count;
-                    }
+        $scope.clearFilter = function () {
+            console.log("close")
+            console.log($stateParams.keyword);
+            if (!_.isEmpty($stateParams.keyword)) {
+                $state.go("page", {
+                    id: $stateParams.id,
+                    page: $stateParams.page,
+                    keyword: ""
                 });
+            } else {
+                $state.reload();
+            }
         };
+
+        $scope.closeFilter = function () {
+            console.log("close")
+            $scope.modalInstance.close();
+        };
+
+
+        if ($stateParams.page && !isNaN(parseInt($stateParams.page))) {
+            $scope.currentPage = $stateParams.page;
+        } else {
+            $scope.currentPage = 1;
+        };
+        $scope.adminUrl = adminurl;
+
+        $scope.search = {
+            keyword: ""
+        };
+        if ($stateParams.keyword) {
+            $scope.search = JSON.parse($stateParams.keyword);
+        }
+        $scope.changePage = function (page) {
+            var goTo = "page";
+            if ($scope.search.keyword) {
+                goTo = "page";
+            }
+            $state.go(goTo, {
+                id: $stateParams.id,
+                page: page,
+                keyword: JSON.stringify($scope.search)
+            });
+        };
+
+
+    //     $scope.getAllItems = function (keywordChange) {
+    //         console.log("in getAllItems")
+    //         console.log("keywordChange",keywordChange)
+    //         $scope.totalItems = undefined;
+    //         if (keywordChange) {
+    //             $scope.currentPage = 1;
+    //         }
+    //         var filters = _.cloneDeep($scope.search);
+    //   delete filters.keyword;
+    //         NavigationService.search($scope.json.json.apiCall.url, {
+    //                 page: $scope.currentPage,
+    //       keyword: $scope.search.keyword,
+    //       filter: filters
+    //             }, ++i,
+    //             function (data, ini) {
+    //                 console.log("in search");
+    //                 if (ini == i) {
+    //                     console.log("ini is i");
+    //                     $scope.items = data.data.results;
+    //                     $scope.totalItems = data.data.total;
+    //                     $scope.maxRow = data.data.options.count;
+    //                 }
+    //                 else {
+    //           toastr.error("No Data Found ");
+    //         }
+    //             });
+    //     };
+
+
+$scope.getAllItems = function (keywordChange) {
+      console.log("searchh-----", keywordChange);
+      $scope.totalItems = undefined;
+      if (keywordChange) {
+        $scope.currentPage = 1;
+      }
+      var filters = _.cloneDeep($scope.search);
+      delete filters.keyword;
+      console.log($scope.json.json.apiCall.url)
+      NavigationService.search($scope.json.json.apiCall.url, {
+          page: $scope.currentPage,
+          keyword: $scope.search.keyword,
+          filter: filters
+        }, ++i,
+        function (data, ini) {
+          if (ini == i) {
+            if (data.value == true) {
+              $scope.items = data.data.results;
+              $scope.totalItems = data.data.total;
+              $scope.maxRow = data.data.options.count;
+            } else {
+              toastr.error("No Data Found ");
+            }
+          }
+        });
+    };
+
+
         JsonService.refreshView = $scope.getAllItems;
         $scope.getAllItems();
 
+        $scope.showFilter = function () {
+            console.log("Filter Clicked");
+            $scope.modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'views/filters/' + $scope.json.json.filter + '.html',
+                size: 'lg',
+                scope: $scope
+            });
+        };
+
+console.log($stateParams.id);
+
+        if($stateParams.id == 'viewCompanyProduct'){
+            NavigationService.CompanyProductSearch(function(data){
+               console.log('...............',data); 
+               $scope.allProduct = data.data.results;
+            });
+        };
+
+        if($stateParams.id == 'viewCompanyCategory'){
+            NavigationService.CompanyCategorySearch(function(data){
+               console.log('...............',data); 
+               $scope.allCategory = data.data.results;
+            });
+        };
     })
 
     .controller('DetailCtrl', function ($scope, TemplateService, NavigationService, JsonService, $timeout, $state, $stateParams, toastr) {
@@ -1170,4 +1279,82 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             }
             //  $rootScope.$apply();
         };
-    });
+    })
+
+    .controller('categoryFilterCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("categoryFilter");
+        $scope.menutitle = NavigationService.makeactive("Category Filter");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+
+        $scope.getAllItems = function (category) {
+            console.log("in getAllItems", category);
+
+            NavigationService.CompanyCategorySearch("CompanyCategory/getCategoryByOrder", category, function (data) {
+                $scope.tableData = data.data;
+                console.log("inside category filter ctrl:", data.data);
+            });
+        };
+
+    })
+
+
+    .controller('productFilterCtrl', function ($scope, TemplateService, NavigationService, $timeout, $stateParams, $state, toastr) {
+        //Used to name the .html file
+        $scope.template = TemplateService.changecontent("productFilter");
+        $scope.menutitle = NavigationService.makeactive("Product Filter");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+
+        // $scope.getAllItems = function (product) {
+        //     console.log("in getAllItems", product);
+
+        //     NavigationService.CompanyProductSearch("CompanyProduct/getProductByOrder", product, function (data) {
+        //         $scope.tableData = data.data;
+        //         console.log("inside product filter ctrl:", data.data);
+        //     });
+        // };
+
+        $scope.allOrders = [{
+            value: 1
+        }, {
+            value: 2
+        }, {
+            value: 3
+        }, {
+            value: 4
+        }, {
+            value: 5
+        }, {
+            value: 6
+        }, {
+            value: 7
+        }, {
+            value: 8
+        }, {
+            value: 9
+        }, {
+            value: 10
+        }];
+
+
+
+        $scope.getAllItems = function (order) {
+            console.log("in getAllItems", order);
+
+            NavigationService.apiCall("CompanyProduct/getProductByOrder", month, function (data) {
+                console.log("inside contest ctrl:", data.data.name);
+                $scope.tableData = data.data;
+                console.log("inside contest ctrl*****:", data.data);
+            });
+
+        };
+
+
+
+
+    })

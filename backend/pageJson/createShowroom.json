@@ -1,0 +1,71 @@
+{
+    "title": "create Showroom",
+    "name": "Showroom",
+    "jsonPage": "viewShowroom",
+    "description": "",
+    "pageType": "create",
+    "urlFields": ["Showroom"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Showroom ",
+            "id": "name",
+            "validation": ["required"],
+            "url": ""
+        },
+        {
+            "name": "Link",
+            "type": "text",
+            "tableRef": "link",
+            "placeholder": "Enter Link ",
+            "id": "link",
+            "validation": ["required"],
+            "url": ""
+        },
+        {
+            "name": "Thumbnail",
+            "type": "image",
+            "tableRef": "thumbnail",
+            "size": "1536 × 713px",
+            "placeholder": "Upload thumbnail",
+            "id": "thumbnail",
+            "validation": ["required"],
+            "url": "",
+            "onView": true,
+            "view": true
+        },
+        
+        {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter Order",
+            "id": "order",
+            "validation": ["required"],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitShowroom",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewShowroom"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewShowroom"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Showroom/save"
+    }
+}

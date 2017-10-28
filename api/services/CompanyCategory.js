@@ -65,8 +65,6 @@ var model = {
 
         });
     },
-
-
     //To search company category by its name
     searchCompanyCategory: function (data, callback) {
         var trimText = data.searchText.trim();
@@ -91,8 +89,80 @@ var model = {
                 }
             }
         });
-    }
+    },
+
+
+getCategoryByOrder: function (data, callback) {
+        CompanyCategory.find(
+            {
+                order: data.order
+            }
+        ).exec(function (err, found) {
+
+            if (err) {
+
+                callback(err, null);
+            } else {
+
+                if (found) {
+                    console.log("Found", found);
+                    callback(null, found);
+                } else {
+                    callback(null, {
+                        message: "No Data Found"
+                    });
+                }
+            }
+        })
+    },
+
+    search:function (data, callback){
+       if (data.count) {
+           console.log("in search")
+           var maxCount = data.count;
+       } else {
+           var maxCount = Config.maxRow;
+       }
+       var maxRow = maxCount
+       var page = 1;
+       if (data.page) {
+           page = data.page;
+       }
+       var field = data.field;
+       var options = {
+           field: data.field,
+           filters: {
+               keyword: {
+                   fields: ['name'],
+                   term: data.keyword
+               }
+           },
+           sort: {
+               desc: 'createdAt'
+           },
+           start: (page - 1) * maxRow,
+           count: maxRow
+       };
+       CompanyCategory.find({
+
+           
+
+       }).deepPopulate('company')
+           .order(options)
+           .keyword(options)
+           .page(options,
+               function (err, found) {
+                   console.log("In find error");
+                   if (err) {
+                       callback(err, null);
+                   } else if (found) {
+                       callback(null, found);
+                   } else {
+                       callback("Invalid data", null);
+                   }
+               });
+
+},
+
 };
-
-
 module.exports = _.assign(module.exports, exports, model);

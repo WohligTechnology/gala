@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Category</label>
+            <select name="" ng-model="search.name" class="form-control" ng-options="category.name for category in allCategory track by category.name">
+            </select>
+            <div class="text-center">
+                <button class="btn btn-success" ng-click="getAllItems(search)">Go</button>
+                <button class="btn btn-danger" ng-click="clearFilter()">Clear</button>
+                <button class="btn btn-danger" ng-click="closeFilter()">Cancel</button>
+            </div>
+            </br>
+        </div>
+    </div>
+</div>

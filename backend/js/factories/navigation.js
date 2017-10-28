@@ -34,7 +34,13 @@ myApp.factory('NavigationService', function ($http) {
             name: "Company Product",
             classis: "active",
             sref: "#!/page/viewCompanyProduct//",
-        }, {
+        },
+        {
+            name: "Showroom",
+            classis: "active",
+            sref: "#!/page/viewShowroom//"
+        },
+         {
             name: "Contact Us",
             classis: "active",
             sref: "#!/page/viewContactUs//",
@@ -150,6 +156,42 @@ myApp.factory('NavigationService', function ($http) {
             });
 
         },
+
+
+// CompanyCategorySearch: function (formData, i, callback) {
+//         $http.post(adminurl + 'CompanyCategory/search', formData).then(function (data) {
+//           data = data.data;
+//           // console.log("data-----------------------------", data);
+//           callback(data, i);
+//         });
+//       },
+
+
+api: function (url, formData, callback) {
+            $http.post(adminurl + url, formData).then(function (data) {
+                data = data.data;
+                callback(data);
+            });
+        },
+
+
+CompanyCategorySearch: function (callback) {
+        $http.post(adminurl + 'CompanyCategory/search').then(function (data) {
+          data = data.data;
+          console.log("data-----------------------------", data);
+          callback(data);
+        });
+      },
+
+
+
+CompanyProductSearch: function (callback) {
+        $http.post(adminurl + 'CompanyProduct/search').then(function (data) {
+          data = data.data;
+          console.log("data-----------------------------", data);
+          callback(data);
+        });
+      },
 
     };
 });
