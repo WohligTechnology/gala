@@ -352,7 +352,7 @@ search:function (data, callback){
            start: (page - 1) * maxRow,
            count: maxRow
        };
-       console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
+    //    console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
        console.log("sssssssssssss",data);
        
        var match={};
