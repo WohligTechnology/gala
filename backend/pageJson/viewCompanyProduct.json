@@ -58,6 +58,6 @@
     }],
     "apiCall": {
         "url": "CompanyProduct/search",
-        "params": "_id"
+        "params": "company"
     }
 }

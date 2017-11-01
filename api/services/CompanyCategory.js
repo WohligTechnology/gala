@@ -118,7 +118,6 @@ getCategoryByOrder: function (data, callback) {
 
     search:function (data, callback){
        if (data.count) {
-           console.log("in search")
            var maxCount = data.count;
        } else {
            var maxCount = Config.maxRow;
@@ -143,19 +142,28 @@ getCategoryByOrder: function (data, callback) {
            start: (page - 1) * maxRow,
            count: maxRow
        };
-       CompanyCategory.find({
-
-           
-
-       }).deepPopulate('company')
+       console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
+       console.log("sssssssssssss",data);
+       
+       var match={};
+       if(!_.isEmpty(data.filter)){
+                      match={company: data.filter.company}
+                      
+       }else{
+                  match={}
+                  
+       }
+       console.log("match---",match);
+       CompanyCategory.find(match)
            .order(options)
            .keyword(options)
            .page(options,
                function (err, found) {
-                   console.log("In find error");
+                  
                    if (err) {
                        callback(err, null);
                    } else if (found) {
+                       console.log("found",found);
                        callback(null, found);
                    } else {
                        callback("Invalid data", null);

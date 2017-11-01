@@ -26,6 +26,12 @@ var schema = new Schema({
         ref: 'CompanyCategory',
         index: true
     },
+     company: {
+        type: Schema.Types.ObjectId,
+        ref: 'Company',
+        index: true
+    },//filter
+
     enquiry: [{
         subject: {
             type: String
@@ -41,8 +47,11 @@ schema.plugin(deepPopulate, {
         'companyCategory': {
             select: ''
         },
-        'companyCategory.company': {
-            select: ''
+        // 'companyCategory.company': {
+        //     select: ''
+        // },
+        'company': {
+            select: '_id name'
         }
     }
 });
@@ -50,7 +59,12 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyProduct', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company", "createdAt", "desc"));
+// var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company","company", "company","createdAt", "desc"));
+
+
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,"company", "company","createdAt", "desc"));
+
+
 var model = {
     getAllProduct: function (data, callback) {
         CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
@@ -260,9 +274,60 @@ var model = {
 
 
 
-    search:function (data, callback){
+//     search:function (data, callback){
+//        if (data.count) {
+//            var maxCount = data.count;
+//        } else {
+//            var maxCount = Config.maxRow;
+//        }
+//        var maxRow = maxCount
+//        var page = 1;
+//        if (data.page) {
+//            page = data.page;
+//        }
+//        var field = data.field;
+//        var options = {
+//            field: data.field,
+//            filters: {
+//                keyword: {
+//                    fields: ['name'],
+//                    term: data.keyword
+//                }
+//            },
+//            sort: {
+//                desc: 'createdAt'
+//            },
+//            start: (page - 1) * maxRow,
+//            count: maxRow
+//        };
+//        var match={};
+//        if(data.company){
+//            console.log("if");
+//                       match={company: data.company}
+//        }else{
+//            console.log("else");
+//                   match={}
+//        }
+//        console.log("match---",match);
+//        CompanyProduct.find(match)
+//            .order(options)
+//            .keyword(options)
+//            .page(options,
+//                function (err, found) {
+                  
+//                    if (err) {
+//                        callback(err, null);
+//                    } else if (found) {
+//                        callback(null, found);
+//                    } else {
+//                        callback("Invalid data", null);
+//                    }
+//                });
+
+// },
+
+search:function (data, callback){
        if (data.count) {
-           console.log("in search")
            var maxCount = data.count;
        } else {
            var maxCount = Config.maxRow;
@@ -287,66 +352,34 @@ var model = {
            start: (page - 1) * maxRow,
            count: maxRow
        };
-       console.log("data...........",data)
-       CompanyProduct.find({
-
-        //    if(data){
-        //        name: data.nameID
-        //     }
-           
-    nameID: data.name
-
-       }).deepPopulate('companyCategory')
+       console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
+       console.log("sssssssssssss",data);
+       
+       var match={};
+       if(!_.isEmpty(data.filter)){
+                      match={company: data.filter.company}
+                      
+       }else{
+                  match={}
+                  
+       }
+       console.log("match---",match);
+       CompanyProduct.find(match)
            .order(options)
            .keyword(options)
            .page(options,
                function (err, found) {
+                  
                    if (err) {
                        callback(err, null);
                    } else if (found) {
+                       console.log("found",found);
                        callback(null, found);
                    } else {
                        callback("Invalid data", null);
                    }
                });
 
-},
-
-    // companyProductAggregate: function (data, callback) {
-    //         var page = 1;
-    //         if (data.page) {
-    //             page = data.page
-    //         }
-    //         var pagestartfrom = (page - 1) * 10;
-    //         CompanyProduct.aggregate([{
-    //             $lookup: {
-    //                 "from": "companycategories",
-    //                 "localField": "companyCategory",
-    //                 "foreignField": "_id",
-    //                 "as": "companyCategory"
-    //             }
-    //         }, {
-    //             $unwind: {
-    //                 path: "$companyCategory",
-    //             }
-    //         }, {
-    //             $match: {
-    //                 "companyCategory.company": objectId(data.company)
-    //             }
-    //         },{
-    //             $skip: parseInt(pagestartfrom)
-    //         }, {
-    //             $limit: 10
-    //         }], function (err, res) {
-    //             if (err) {
-    //                 callback(err, null);
-    //             } else {
-    //                 console.log("In Res", res)
-    //                 callback(null, res);
-    //             }
-    //         })
-    //     }, 
-
-
+}
 };
 module.exports = _.assign(module.exports, exports, model);
