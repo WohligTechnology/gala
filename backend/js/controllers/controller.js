@@ -382,14 +382,13 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
 
 
 $scope.getAllItems = function (keywordChange) {
-      console.log("searchh-----", keywordChange);
+      console.log("searchh--------", keywordChange);
       $scope.totalItems = undefined;
       if (keywordChange) {
         $scope.currentPage = 1;
       }
       var filters = _.cloneDeep($scope.search);
       delete filters.keyword;
-      console.log($scope.json.json.apiCall.url)
       NavigationService.search($scope.json.json.apiCall.url, {
           page: $scope.currentPage,
           keyword: $scope.search.keyword,
@@ -431,8 +430,9 @@ console.log($stateParams.id);
             });
         };
 
+
         if($stateParams.id == 'viewCompanyCategory'){
-            NavigationService.CompanyCategorySearch(function(data){
+            NavigationService.companySearch(function(data){
                console.log('...............',data); 
                $scope.allCategory = data.data.results;
             });

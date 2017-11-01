@@ -53,6 +53,6 @@
     }],
     "apiCall": {
         "url": "CompanyCategory/search",
-        "params": "_id"
+        "params": "company"
     }
 }

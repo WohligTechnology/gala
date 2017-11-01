@@ -1,7 +1,7 @@
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <div class="col-md-12">
-            <label for="">Product</label>
+            <label for="">Company</label>
            
            
             <select name="" ng-model="search.name" class="form-control" ng-options="product.name for product in allProduct track by product.name">
@@ -15,5 +15,49 @@
             </div>
             </br>
         </div>
+    </div>
+</div>-->
+
+
+
+
+<!--<div class="container-fluid pro-fil1">
+    <h3>Filters</h3>
+    <div class="row">
+        <div class="mutiple-addition">
+            <h6>Company</h6>
+            <multiple-select my-enter name="Select Company" required ng-model="search.companyId" ng-name="search.companyId1" api="companySearch"></multiple-select>
+        </div>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success" ng-click="getAllItems(search)">Go</button>
+            <button class="btn btn-danger" ng-click="clearFilter()">Clear</button>
+            <button class="btn btn-danger" ng-click="closeFilter()">Cancel</button>
+        </div>
+    </div>
+
+</div>-->
+
+
+
+
+<div class="container pro-fil1">
+    <div class="hei300">
+    <h3>Filters</h3>
+    <div class="row">
+        <div class="col-md-9">
+        <div class="mutiple-addition">
+            <h6>Company</h6>
+            <multiple-select my-enter name="Select Company" required ng-model="search.company" ng-name="search.companyName"
+                api="companySearch"></multiple-select>
+        </div>
+        <br>
+        <div class="text-center mt-96">
+            <button class="btn btn-success" ng-click="getAllItems(search)">Go</button>
+            <button class="btn btn-danger" ng-click="clearFilter()">Clear</button>
+            <button class="btn btn-danger" ng-click="closeFilter()">Cancel</button>
+        </div>
+    </div>
+    </div>
     </div>
 </div>

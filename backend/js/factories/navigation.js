@@ -173,6 +173,16 @@ api: function (url, formData, callback) {
                 callback(data);
             });
         },
+        
+//for filter//
+
+companySearch: function (data, formData, i, callback, four) {
+            $http.post(adminurl + 'company/search', formData).then(function (data) {
+                data = data.data;
+                // console.log("data-----------------------------", data);
+                callback(data, i);
+            });
+        },
 
 
 CompanyCategorySearch: function (callback) {

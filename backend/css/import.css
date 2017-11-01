@@ -32745,6 +32745,12 @@ body {
   font-size: 12px;
   line-height: 120%; }
 
+.hei300 {
+  height: 300px; }
+
+.mt-96 {
+  margin-top: 96px; }
+
 /* Start writing sass here */
 #fancybox-loading, .fancybox-close, .fancybox-next span, .fancybox-prev span {
   background-image: url(../img/fancybox_sprite.png); }
