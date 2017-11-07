@@ -92,12 +92,10 @@ var model = {
     },
 
 
-getCategoryByOrder: function (data, callback) {
-        CompanyCategory.find(
-            {
-                order: data.order
-            }
-        ).exec(function (err, found) {
+    getCategoryByOrder: function (data, callback) {
+        CompanyCategory.find({
+            order: data.order
+        }).exec(function (err, found) {
 
             if (err) {
 
@@ -116,61 +114,63 @@ getCategoryByOrder: function (data, callback) {
         })
     },
 
-    search:function (data, callback){
-       if (data.count) {
-           var maxCount = data.count;
-       } else {
-           var maxCount = Config.maxRow;
-       }
-       var maxRow = maxCount
-       var page = 1;
-       if (data.page) {
-           page = data.page;
-       }
-       var field = data.field;
-       var options = {
-           field: data.field,
-           filters: {
-               keyword: {
-                   fields: ['name'],
-                   term: data.keyword
-               }
-           },
-           sort: {
-               desc: 'createdAt'
-           },
-           start: (page - 1) * maxRow,
-           count: maxRow
-       };
-    //    console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
-       console.log("sssssssssssss",data);
-       
-       var match={};
-       if(!_.isEmpty(data.filter)){
-                      match={company: data.filter.company}
-                      
-       }else{
-                  match={}
-                  
-       }
-       console.log("match---",match);
-       CompanyCategory.find(match)
-           .order(options)
-           .keyword(options)
-           .page(options,
-               function (err, found) {
-                  
-                   if (err) {
-                       callback(err, null);
-                   } else if (found) {
-                       console.log("found",found);
-                       callback(null, found);
-                   } else {
-                       callback("Invalid data", null);
-                   }
-               });
+    search: function (data, callback) {
+        if (data.count) {
+            var maxCount = data.count;
+        } else {
+            var maxCount = Config.maxRow;
+        }
+        var maxRow = maxCount
+        var page = 1;
+        if (data.page) {
+            page = data.page;
+        }
+        var field = data.field;
+        var options = {
+            field: data.field,
+            filters: {
+                keyword: {
+                    fields: ['name'],
+                    term: data.keyword
+                }
+            },
+            sort: {
+                desc: 'createdAt'
+            },
+            start: (page - 1) * maxRow,
+            count: maxRow
+        };
+        //    console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
+        console.log("sssssssssssss", data);
 
-},
+        var match = {};
+        if (!_.isEmpty(data.filter)) {
+            match = {
+                company: data.filter.company
+            }
+
+        } else {
+            match = {}
+
+        }
+        console.log("match---", match);
+        CompanyCategory.find(match)
+            .order(options)
+            .keyword(options)
+            .page(options,
+                function (err, found) {
+
+                    if (err) {
+                        callback(err, null);
+                    } else if (found) {
+                        console.log("found", found);
+                        callback(null, found);
+                    } else {
+                        callback("Invalid data", null);
+                    }
+                });
+
+    },
 
 };
 module.exports = _.assign(module.exports, exports, model);

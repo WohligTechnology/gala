@@ -42,7 +42,10 @@ var controller = {
 
 
     search: function (req, res) {
-        console.log(req.user);
+        if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
+            req.body.filter.company = req.user.acessLevel.company;
+        }
+
         if (req.body) {
             CompanyCategory.search(req.body, res.callback);
         } else {
