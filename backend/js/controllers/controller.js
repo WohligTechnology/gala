@@ -11,7 +11,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         if ($.jStorage.get("accessToken")) {
 
         } else {
-            // $state.go("login");
+            $state.go("login");
         }
     })
 
@@ -352,60 +352,60 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         };
 
 
-    //     $scope.getAllItems = function (keywordChange) {
-    //         console.log("in getAllItems")
-    //         console.log("keywordChange",keywordChange)
-    //         $scope.totalItems = undefined;
-    //         if (keywordChange) {
-    //             $scope.currentPage = 1;
-    //         }
-    //         var filters = _.cloneDeep($scope.search);
-    //   delete filters.keyword;
-    //         NavigationService.search($scope.json.json.apiCall.url, {
-    //                 page: $scope.currentPage,
-    //       keyword: $scope.search.keyword,
-    //       filter: filters
-    //             }, ++i,
-    //             function (data, ini) {
-    //                 console.log("in search");
-    //                 if (ini == i) {
-    //                     console.log("ini is i");
-    //                     $scope.items = data.data.results;
-    //                     $scope.totalItems = data.data.total;
-    //                     $scope.maxRow = data.data.options.count;
-    //                 }
-    //                 else {
-    //           toastr.error("No Data Found ");
-    //         }
-    //             });
-    //     };
+        //     $scope.getAllItems = function (keywordChange) {
+        //         console.log("in getAllItems")
+        //         console.log("keywordChange",keywordChange)
+        //         $scope.totalItems = undefined;
+        //         if (keywordChange) {
+        //             $scope.currentPage = 1;
+        //         }
+        //         var filters = _.cloneDeep($scope.search);
+        //   delete filters.keyword;
+        //         NavigationService.search($scope.json.json.apiCall.url, {
+        //                 page: $scope.currentPage,
+        //       keyword: $scope.search.keyword,
+        //       filter: filters
+        //             }, ++i,
+        //             function (data, ini) {
+        //                 console.log("in search");
+        //                 if (ini == i) {
+        //                     console.log("ini is i");
+        //                     $scope.items = data.data.results;
+        //                     $scope.totalItems = data.data.total;
+        //                     $scope.maxRow = data.data.options.count;
+        //                 }
+        //                 else {
+        //           toastr.error("No Data Found ");
+        //         }
+        //             });
+        //     };
 
 
-$scope.getAllItems = function (keywordChange) {
-      console.log("searchh--------", keywordChange);
-      $scope.totalItems = undefined;
-      if (keywordChange) {
-        $scope.currentPage = 1;
-      }
-      var filters = _.cloneDeep($scope.search);
-      delete filters.keyword;
-      NavigationService.search($scope.json.json.apiCall.url, {
-          page: $scope.currentPage,
-          keyword: $scope.search.keyword,
-          filter: filters
-        }, ++i,
-        function (data, ini) {
-          if (ini == i) {
-            if (data.value == true) {
-              $scope.items = data.data.results;
-              $scope.totalItems = data.data.total;
-              $scope.maxRow = data.data.options.count;
-            } else {
-              toastr.error("No Data Found ");
+        $scope.getAllItems = function (keywordChange) {
+            console.log("searchh--------", keywordChange);
+            $scope.totalItems = undefined;
+            if (keywordChange) {
+                $scope.currentPage = 1;
             }
-          }
-        });
-    };
+            var filters = _.cloneDeep($scope.search);
+            delete filters.keyword;
+            NavigationService.search($scope.json.json.apiCall.url, {
+                    page: $scope.currentPage,
+                    keyword: $scope.search.keyword,
+                    filter: filters
+                }, ++i,
+                function (data, ini) {
+                    if (ini == i) {
+                        if (data.value == true) {
+                            $scope.items = data.data.results;
+                            $scope.totalItems = data.data.total;
+                            $scope.maxRow = data.data.options.count;
+                        } else {
+                            toastr.error("No Data Found ");
+                        }
+                    }
+                });
+        };
 
 
         JsonService.refreshView = $scope.getAllItems;
@@ -421,22 +421,22 @@ $scope.getAllItems = function (keywordChange) {
             });
         };
 
-console.log($stateParams.id);
+        console.log($stateParams.id);
 
-        if($stateParams.id == 'viewCompanyProduct'){
-            NavigationService.CompanyProductSearch(function(data){
-               console.log('...............',data); 
-               $scope.allProduct = data.data.results;
-            });
-        };
+        // if ($stateParams.id == 'viewCompanyProduct') {
+        //     NavigationService.CompanyProductSearch(function (data) {
+        //         console.log('...............', data);
+        //         $scope.allProduct = data.data.results;
+        //     });
+        // };
 
 
-        if($stateParams.id == 'viewCompanyCategory'){
-            NavigationService.companySearch(function(data){
-               console.log('...............',data); 
-               $scope.allCategory = data.data.results;
-            });
-        };
+        // if ($stateParams.id == 'viewCompanyCategory') {
+        //     NavigationService.companySearch(function (data) {
+        //         console.log('...............', data);
+        //         $scope.allCategory = data.data.results;
+        //     });
+        // };
     })
 
     .controller('DetailCtrl', function ($scope, TemplateService, NavigationService, JsonService, $timeout, $state, $stateParams, toastr) {
@@ -670,7 +670,7 @@ console.log($stateParams.id);
         TemplateService.title = $scope.menutitle;
         $scope.template = TemplateService;
         $scope.currentHost = window.location.origin;
-        Console.log("stateParams1",stateParams.id)
+
         if ($stateParams.id) {
             if ($stateParams.id === "AccessNotAvailable") {
                 toastr.error("You do not have access for the Backend.");
@@ -686,15 +686,6 @@ console.log($stateParams.id);
         } else {
             NavigationService.removeAccessToken();
         };
-
-//for User Login//
-// $scope.userData = data.data;
-// console.log("userdata",$scope.userData);
-//  if (!_.isEmpty($scope.userData)) {
-//             $scope.User = {};
-//             $scope.User.company = $scope.userData.company;
-//             $.jStorage.set("User", $scope.User);
-//           }
     })
 
     .controller('CountryCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, toastr) {
@@ -1261,12 +1252,12 @@ console.log($stateParams.id);
         };
     })
 
-    .controller('headerctrl', function ($scope, TemplateService, $uibModal) {
+    .controller('headerctrl', function ($scope, TemplateService, $uibModal, NavigationService) {
         $scope.template = TemplateService;
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $(window).scrollTop(0);
         });
-
+        NavigationService.profile(function () {});
     })
 
     .controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {

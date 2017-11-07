@@ -1,6 +1,6 @@
 module.exports = _.cloneDeep(require("sails-wohlig-controller"));
 var controller = {
-userLogin: function (req, res) {
+    userLogin: function (req, res) {
         if (req.body) {
             User.userLogin(req.body, res.callback);
         } else {
@@ -12,7 +12,13 @@ userLogin: function (req, res) {
             })
         }
     },
-
+    profile: function (req, res) {
+        if (req.body && req.body.accessToken) {
+            User.profile(req.body, res.callback);
+        } else {
+            res.callback("Please provide Valid AccessToken", null);
+        }
+    },
 
 
     registerAppuser: function (req, res) {
@@ -100,8 +106,8 @@ userLogin: function (req, res) {
             res.callback("Access Denied for Database Backup");
         }
     },
-    
-findUserByCompany: function (req, res) {
+
+    findUserByCompany: function (req, res) {
         if (req.body) {
             User.findUserByCompany(req.body, res.callback);
         } else {
@@ -115,8 +121,7 @@ findUserByCompany: function (req, res) {
     },
 
 
-
-findAllUsers: function (req, res) {
+    findAllUsers: function (req, res) {
         if (req.body) {
             User.findAllUsers(req.body, res.callback);
         } else {

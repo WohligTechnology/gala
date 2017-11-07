@@ -1,6 +1,6 @@
 module.exports = _.cloneDeep(require("sails-wohlig-controller"));
 var controller = {
-  getAllCategory: function (req, res) {
+    getAllCategory: function (req, res) {
         if (req.body) {
             CompanyCategory.getAllCategory(req.body, res.callback);
         } else {
@@ -26,7 +26,7 @@ var controller = {
         }
     },
 
-getCategoryByOrder: function (req, res) {
+    getCategoryByOrder: function (req, res) {
         // console.log(req.body);
         if (req.body) {
             CompanyCategory.getCategoryByOrder(req.body, res.callback);
@@ -36,12 +36,15 @@ getCategoryByOrder: function (req, res) {
                 data: {
 
                 }
-            })
+            });
         }
     },
 
 
     search: function (req, res) {
+        if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
+            req.body.filter.company = data.filter.company;
+        }
         if (req.body) {
             CompanyCategory.search(req.body, res.callback);
         } else {

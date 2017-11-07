@@ -88,7 +88,7 @@ var model = {
     },
 
 
-findOneCompany: function (data, callback) {
+    findOneCompany: function (data, callback) {
         Company.findOne({
             _id: data._id
         }).deepPopulate("").exec(function (err, found) {

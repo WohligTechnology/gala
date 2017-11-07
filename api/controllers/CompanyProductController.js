@@ -76,8 +76,36 @@ getProductByOrder: function (req, res) {
                 }
             })
         }
-    }
+    },
+
+
+
+search: function (req, res) {
+        if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
+            req.body.filter.company = data.filter.company;
+        }
+
+        if (req.body) {
+            CompanyProduct.search(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            });
+        }
+    },
+
+
+
 
 };
+
+
+
+
+
+
 
 module.exports = _.assign(module.exports, controller);
