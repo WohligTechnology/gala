@@ -10,20 +10,24 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
     var navigation = [{
             name: "Users",
             classis: "active",
-            sref: "#!/page/viewUser//"
+            sref: "#!/page/viewUser//",
+            onlyAdmin: true
         },
         {
             name: "HomeBanner",
             classis: "active",
-            sref: "#!/page/viewHomeBanner//"
+            sref: "#!/page/viewHomeBanner//",
+            onlyAdmin: true
         }, {
             name: "Config",
             classis: "active",
-            sref: "#!/page/viewConfig//"
+            sref: "#!/page/viewConfig//",
+            onlyAdmin: true
         }, {
             name: "Company",
             classis: "active",
             sref: "#!/page/viewCompany//",
+            onlyAdmin: true
 
         }, {
             name: "Company Category",
@@ -39,18 +43,21 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
         {
             name: "Showroom",
             classis: "active",
-            sref: "#!/page/viewShowroom//"
+            sref: "#!/page/viewShowroom//",
+            onlyAdmin: true
         },
         {
             name: "Enquiry Request",
             classis: "active",
-            sref: "#!/page/viewContactUs//"
+            sref: "#!/page/viewContactUs//",
+            onlyAdmin: true
         },
         {
             name: "Pop Up Image",
             classis: "active",
             sref: "#!/page/viewPopUpImage//",
-            icon: "phone"
+            icon: "phone",
+            onlyAdmin: true
         }
     ];
 
@@ -93,7 +100,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             }
             return menuname;
         },
-
         search: function (url, formData, i, callback) {
             formData._accessToken = $.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {
@@ -114,11 +120,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
 
             });
         },
-
-
-
-
-
         apiCall: function (url, formData, callback) {
             formData._accessToken = $.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {
@@ -126,7 +127,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
                 callback(data);
             });
         },
-
         searchCall: function (url, formData, i, callback) {
             formData._accessToken = $.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {
@@ -134,7 +134,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
                 callback(data, i);
             });
         },
-
         getOneCountry: function (id, callback) {
             $http.post(adminurl + 'country/getOne', {
                 _id: id
@@ -143,7 +142,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
                 callback(data);
             });
         },
-
         getLatLng: function (address, i, callback) {
             $http({
                 url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4",
@@ -163,8 +161,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
 
             });
         },
-
-
         // CompanyCategorySearch: function (formData, i, callback) {
         //         $http.post(adminurl + 'CompanyCategory/search', formData).then(function (data) {
         //           data = data.data;
