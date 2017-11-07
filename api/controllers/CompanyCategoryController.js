@@ -43,7 +43,7 @@ var controller = {
 
     search: function (req, res) {
         console.log("req.user.company",req.user);
-        if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
+        if (req.user.accessLevel == "Company" && req.user.company) {
             req.body.filter.company = req.user.company;
         }
         if (req.body) {
