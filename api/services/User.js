@@ -104,6 +104,23 @@ var model = {
             }
         });
     },
+    profile: function (data, callback, getGoogle) {
+        var str = "name email photo mobile accessLevel";
+        if (getGoogle) {
+            str += " googleAccessToken googleRefreshToken";
+        }
+        User.findOne({
+            accessToken: data.accessToken
+        }, str).exec(function (err, data) {
+            if (err) {
+                callback(err);
+            } else if (data) {
+                callback(null, data);
+            } else {
+                callback("No Data Found", data);
+            }
+        });
+    },
     userLogin: function (userData, callback) {
         User.findOne({
             email: userData.email,
