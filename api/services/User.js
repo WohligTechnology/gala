@@ -45,6 +45,10 @@ var schema = new Schema({
         type: String,
         default: ""
     },
+    accessToken: {
+        type: [String],
+        index: true
+    },
 
     googleAccessToken: String,
     googleRefreshToken: String,
@@ -61,7 +65,7 @@ var schema = new Schema({
         enum: ['User', 'Admin']
     },
 
-company: {
+    company: {
         type: Schema.Types.ObjectId,
         ref: 'Company',
         index: true
@@ -189,7 +193,7 @@ var model = {
 
 
 
-findUserByCompany: function (data, callback) {
+    findUserByCompany: function (data, callback) {
         var maxRow = Config.maxRow;
         var page = 1;
         if (data.page) {
@@ -211,8 +215,8 @@ findUserByCompany: function (data, callback) {
             count: maxRow
         };
         User.find({
-            company:data.company
-        }).sort({
+                company: data.company
+            }).sort({
                 createdAt: -1
             })
             .order(options)
@@ -230,53 +234,53 @@ findUserByCompany: function (data, callback) {
                 });
     },
 
-search:function (data, callback){
-       if (data.count) {
-           var maxCount = data.count;
-       } else {
-           var maxCount = Config.maxRow;
-       }
-       var maxRow = maxCount
-       var page = 1;
-       if (data.page) {
-           page = data.page;
-       }
-       var field = data.field;
-       var options = {
-           field: data.field,
-           filters: {
-               keyword: {
-                   fields: ['name'],
-                   term: data.keyword
-               }
-           },
-           sort: {
-               desc: 'createdAt'
-           },
-           start: (page - 1) * maxRow,
-           count: maxRow
-       };
-       console.log("data",data);
-       User.find()
-           .order(options)
-           .keyword(options)
-           .page(options,
-               function (err, found) {
-                  
-                   if (err) {
-                       callback(err, null);
-                   } else if (found) {
-                       console.log("found",found);
-                       callback(null, found);
-                   } else {
-                       callback("Invalid data", null);
-                   }
-               });
+    search: function (data, callback) {
+        if (data.count) {
+            var maxCount = data.count;
+        } else {
+            var maxCount = Config.maxRow;
+        }
+        var maxRow = maxCount
+        var page = 1;
+        if (data.page) {
+            page = data.page;
+        }
+        var field = data.field;
+        var options = {
+            field: data.field,
+            filters: {
+                keyword: {
+                    fields: ['name'],
+                    term: data.keyword
+                }
+            },
+            sort: {
+                desc: 'createdAt'
+            },
+            start: (page - 1) * maxRow,
+            count: maxRow
+        };
+        console.log("data", data);
+        User.find()
+            .order(options)
+            .keyword(options)
+            .page(options,
+                function (err, found) {
 
-},
+                    if (err) {
+                        callback(err, null);
+                    } else if (found) {
+                        console.log("found", found);
+                        callback(null, found);
+                    } else {
+                        callback("Invalid data", null);
+                    }
+                });
+
+    },
 
 
-findAllUser: function (data, callback) {
+    findAllUser: function (data, callback) {
 
         User.find({
             _id: data._idfindAllUser
