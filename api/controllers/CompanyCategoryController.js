@@ -42,8 +42,9 @@ var controller = {
 
 
     search: function (req, res) {
+        console.log("req.user.company",req.user);
         if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
-            req.body.filter.company = data.filter.company;
+            req.body.filter.company = req.user.company;
         }
         if (req.body) {
             CompanyCategory.search(req.body, res.callback);
@@ -56,9 +57,6 @@ var controller = {
             });
         }
     },
-
-
-
 };
 
 module.exports = _.assign(module.exports, controller);

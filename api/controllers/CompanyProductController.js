@@ -81,10 +81,10 @@ getProductByOrder: function (req, res) {
 
 
 search: function (req, res) {
+    console.log("req.user.company",req.user.company)
         if (req.user.accessLevel == "Company" && req.user.acessLevel.company) {
-            req.body.filter.company = data.filter.company;
+            req.body.filter.company = req.user.company;
         }
-
         if (req.body) {
             CompanyProduct.search(req.body, res.callback);
         } else {
@@ -96,8 +96,6 @@ search: function (req, res) {
             });
         }
     },
-
-
 
 
 };
