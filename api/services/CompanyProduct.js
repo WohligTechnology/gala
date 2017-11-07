@@ -62,7 +62,7 @@ module.exports = mongoose.model('CompanyProduct', schema);
 // var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company","company", "company","createdAt", "desc"));
 
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema,"company", "company","createdAt", "desc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,"company", "company","companyCategory" ,"companyCategory","createdAt", "desc"));
 
 
 var model = {
@@ -248,8 +248,6 @@ var model = {
 
     },
 
-
-
     getProductByOrder: function (data, callback) {
         CompanyProduct.find({
             order: data.order
@@ -271,9 +269,6 @@ var model = {
             }
         })
     },
-
-
-
 //     search:function (data, callback){
 //        if (data.count) {
 //            var maxCount = data.count;
@@ -352,7 +347,7 @@ search:function (data, callback){
            start: (page - 1) * maxRow,
            count: maxRow
        };
-    //    console.log("\\\\\\\\\\\\\\\\\\",data.filter.company);
+ 
        console.log("sssssssssssss",data);
        
        var match={};
@@ -369,7 +364,6 @@ search:function (data, callback){
            .keyword(options)
            .page(options,
                function (err, found) {
-                  
                    if (err) {
                        callback(err, null);
                    } else if (found) {

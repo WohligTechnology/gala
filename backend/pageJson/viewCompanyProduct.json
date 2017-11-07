@@ -25,6 +25,13 @@
             "tableRef": "companyCategory",
             "field": "name"
 
+        },
+         {
+            "name": "Company",
+            "isSort": "",
+            "tableRef": "company",
+            "type": "text",
+            "field": "name"
         }
     ],
     "action": [{

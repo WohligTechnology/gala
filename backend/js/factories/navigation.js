@@ -114,13 +114,15 @@ myApp.factory('NavigationService', function ($http) {
         },
 
         apiCall: function (url, formData, callback) {
+            formData._accessToken=$.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {
                 data = data.data;
                 callback(data);
-
             });
         },
+
         searchCall: function (url, formData, i, callback) {
+            formData._accessToken=$.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {
                 data = data.data;
                 callback(data, i);
@@ -133,9 +135,9 @@ myApp.factory('NavigationService', function ($http) {
             }).then(function (data) {
                 data = data.data;
                 callback(data);
-
             });
         },
+        
         getLatLng: function (address, i, callback) {
             $http({
                 url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4",
@@ -154,7 +156,6 @@ myApp.factory('NavigationService', function ($http) {
                 callback(data);
 
             });
-
         },
 
 
@@ -194,12 +195,26 @@ CompanyCategorySearch: function (callback) {
       },
 
 
-
 CompanyProductSearch: function (callback) {
         $http.post(adminurl + 'CompanyProduct/search').then(function (data) {
           data = data.data;
           console.log("data-----------------------------", data);
           callback(data);
+        });
+      },
+
+
+forLogin: function (url, formData, callback) {
+        $http.post(adminurl + url, formData).then(function (data) {
+          data = data.data;
+          callback(data);
+        });
+      },
+
+userSearch: function (formData, i, callback) {
+        $http.post(adminurl + 'User/findAllUsers', formData).then(function (data) {
+          data = data.data;
+          callback(data, i);
         });
       },
 

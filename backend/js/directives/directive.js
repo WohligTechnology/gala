@@ -438,7 +438,7 @@ myApp.directive('viewField', function ($http, $filter) {
                 $scope.type.type = "text";
             }
             $scope.$watch('value', function (newVal, oldVal) {
-                console.log("viewField watch: ", newVal, oldVal);
+                // console.log("viewField watch: ", newVal, oldVal);
                 $scope.value = newVal;
             });
             $scope.form = {};

@@ -670,6 +670,7 @@ console.log($stateParams.id);
         TemplateService.title = $scope.menutitle;
         $scope.template = TemplateService;
         $scope.currentHost = window.location.origin;
+        Console.log("stateParams1",stateParams.id)
         if ($stateParams.id) {
             if ($stateParams.id === "AccessNotAvailable") {
                 toastr.error("You do not have access for the Backend.");
@@ -684,8 +685,16 @@ console.log($stateParams.id);
             }
         } else {
             NavigationService.removeAccessToken();
-        }
+        };
 
+//for User Login//
+// $scope.userData = data.data;
+// console.log("userdata",$scope.userData);
+//  if (!_.isEmpty($scope.userData)) {
+//             $scope.User = {};
+//             $scope.User.company = $scope.userData.company;
+//             $.jStorage.set("User", $scope.User);
+//           }
     })
 
     .controller('CountryCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state, $stateParams, toastr) {
@@ -1310,15 +1319,6 @@ console.log($stateParams.id);
         $scope.navigation = NavigationService.getnav();
 
 
-        // $scope.getAllItems = function (product) {
-        //     console.log("in getAllItems", product);
-
-        //     NavigationService.CompanyProductSearch("CompanyProduct/getProductByOrder", product, function (data) {
-        //         $scope.tableData = data.data;
-        //         console.log("inside product filter ctrl:", data.data);
-        //     });
-        // };
-
         $scope.allOrders = [{
             value: 1
         }, {
@@ -1353,8 +1353,4 @@ console.log($stateParams.id);
             });
 
         };
-
-
-
-
     })
