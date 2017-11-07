@@ -114,6 +114,8 @@ findUserByCompany: function (req, res) {
         }
     },
 
+
+
 findAllUsers: function (req, res) {
         if (req.body) {
             User.findAllUsers(req.body, res.callback);

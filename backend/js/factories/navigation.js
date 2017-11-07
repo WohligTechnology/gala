@@ -113,6 +113,10 @@ myApp.factory('NavigationService', function ($http) {
             });
         },
 
+
+
+        
+
         apiCall: function (url, formData, callback) {
             formData._accessToken=$.jStorage.get("accessToken");
             $http.post(adminurl + url, formData).then(function (data) {

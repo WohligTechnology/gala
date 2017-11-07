@@ -9691,6 +9691,15 @@ h5 {
       .main-list .door:hover .door-info p {
         color: #fff; }
 
+.color {
+  font-weight: 900; }
+
+.color-red {
+  color: #ff3a40; }
+
+.font-size {
+  font-size: 50px; }
+
 .abouts {
   margin: 60px 0;
   background-image: linear-gradient(to right, #76c04f 60%, white 40%); }
@@ -9791,15 +9800,15 @@ h5 {
   -moz-font-size: 18px;
   -ms-font-size: 18px;
   font-size: 18px;
-  font-style: italic;
   color: #fff;
   line-height: 35px;
   text-transform: capitalize; }
 
 .view-more a {
   color: #333333;
-  font-weight: 600;
-  padding: 5px 20px; }
+  font-weight: 900;
+  padding: 5px 20px;
+  font-size: 20px; }
   .view-more a:hover {
     color: #000;
     text-decoration: underline; }
