@@ -13,6 +13,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     var imagePopup = null;
     $scope.openpopup = function () {
+        console.log("openpopfnstr")
         imagePopup = $uibModal.open({
             templateUrl: "views/popupmodal.html",
             size: "md",
@@ -20,7 +21,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
         alert("popup")
         NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-        
+            console.log("openpopfnend")
             $scope.popUpImage = data.data.data.results[0].image;
             console.log("popupnotcoming",$scope.popUpImage)
            
@@ -77,6 +78,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 value: true
             });
             $scope.openpopup();
+            console.log("openpop")
         }
     });
  
