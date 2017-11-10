@@ -1,5 +1,5 @@
 myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
-   
+    console.log("openpoptop")
     $scope.template = TemplateService.getHTML("content/home.html");
     $scope.loaded = false;
     TemplateService.title = "Home"; //This is the Title of the Website
