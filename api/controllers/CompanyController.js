@@ -69,7 +69,25 @@ var controller = {
                 res.callback(null, searchResult);
             }
         })
-    }
+    },
+
+
+findOneCompany: function (req, res) {
+        if (req.body) {
+            Company.findOneCompany(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            });
+        }
+    },
+
+
+
+
 
 };
 module.exports = _.assign(module.exports, controller);

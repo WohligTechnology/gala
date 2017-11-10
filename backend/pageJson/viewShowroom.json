@@ -1,7 +1,6 @@
 {
-
-    "title": "View Company Product",
-    "description": "List of Company Products",
+    "title": "Showroom",
+    "description": "List of Showrooms",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -9,28 +8,22 @@
             "name": "Name",
             "isSort": "",
             "tableRef": "name"
-        }, {
-            "name": "Description",
-            "isSort": "",
-            "tableRef": "description"
-        }, {
+        },
+        {
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
         },
         {
-            "name": "Company Category",
+            "name": "Link",
             "isSort": "",
-            "tableRef": "companyCategory",
-            "field": "name"
-
+            "tableRef": "link"
         },
-         {
-            "name": "Company",
+        {
+            "name": "Thumbnail",
             "isSort": "",
-            "tableRef": "company",
-            "type": "text",
-            "field": "name"
+            "tableRef": "thumbnail",
+            "type": "image"
         }
     ],
     "action": [{
@@ -38,7 +31,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editCompanyProduct",
+        "action": "editShowroom",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -47,9 +40,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete CompanyProduct",
-        "content": "Are you sure you want to delete Company Product?",
-        "api": "CompanyProduct/delete",
+        "title": "Delete Showroom",
+        "content": "Are you sure you want to delete Showroom?",
+        "api": "Showroom/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -60,10 +53,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createCompanyProduct"
+        "action": "createShowroom"
     }],
     "apiCall": {
-        "url": "CompanyProduct/search",
-        "params": "company"
+        "url": "Showroom/search",
+        "params": "_id"
     }
 }

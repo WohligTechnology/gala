@@ -26,6 +26,12 @@ var schema = new Schema({
         ref: 'CompanyCategory',
         index: true
     },
+    company: {
+        type: Schema.Types.ObjectId,
+        ref: 'Company',
+        index: true
+    }, //filter
+
     enquiry: [{
         subject: {
             type: String
@@ -41,8 +47,11 @@ schema.plugin(deepPopulate, {
         'companyCategory': {
             select: ''
         },
-        'companyCategory.company': {
-            select: ''
+        // 'companyCategory.company': {
+        //     select: ''
+        // },
+        'company': {
+            select: '_id name'
         }
     }
 });
@@ -50,7 +59,12 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('CompanyProduct', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company", "createdAt", "desc"));
+// var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company","company", "company","createdAt", "desc"));
+
+
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "companyCategory", "companyCategory", "createdAt", "desc"));
+
+
 var model = {
     getAllProduct: function (data, callback) {
         CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
@@ -101,7 +115,6 @@ var model = {
         });
     },
 
-
     getOneProductDetails: function (data, callback) {
         console.log("data inside productDetail : ", data);
         CompanyProduct.findOne({
@@ -147,103 +160,222 @@ var model = {
         });
     },
 
-    // companyProductAggregate: function (data, callback) {
-    //     var page = 1;
-    //     if (data.page) {
-    //         page = data.page
-    //     }
-    //     var pagestartfrom = (page - 1) * 10;
-    //     CompanyProduct.aggregate([{
-    //         $lookup: {
-    //             "from": "companycategories",
-    //             "localField": "companyCategory",
-    //             "foreignField": "_id",
-    //             "as": "companyCategory"
-    //         }
-    //     }, {
-    //         $unwind: {
-    //             path: "$companyCategory",
-    //         }
-    //     }, {
-    //         $match: {
-    //             "companyCategory.company": objectId(data.company)
-    //         }
-    //     }, {
-    //         $skip: parseInt(pagestartfrom)
-    //     }, {
-    //         $limit: 10
-    //     }], function (err, res) {
-    //         if (err) {
-    //             callback(err, null);
-    //         } else {
-    //             console.log("In Res", res)
-    //             callback(null, res);
-    //         }
-    //     })
-
-    // },
-
-
-
-companyProductAggregate: function (data, callback) {
+    companyProductAggregate: function (data, callback) {
         var page = 1;
         if (data.page) {
             page = data.page
         }
-        
         var pagestartfrom = (page - 1) * 10;
-        CompanyProduct.aggregate([{
-            $lookup: {
-                "from": "companycategories",
-                "localField": "companyCategory",
-                "foreignField": "_id",
-                "as": "companyCategory"
-            }
-        }, {
-            $unwind: {
-                path: "$companyCategory",
-            }
-        }, {
-            $match: {
-                "companyCategory.company": objectId(data.company)
-            }
-        }, 
 
-        //  {
-        //     $count:"records",
-        // },
+        async.parallel({
+                results: function (callback) {
+                    CompanyProduct.aggregate([{
+                        $lookup: {
+                            "from": "companycategories",
+                            "localField": "companyCategory",
+                            "foreignField": "_id",
+                            "as": "companyCategory"
+                        }
+                    }, {
+                        $unwind: {
+                            path: "$companyCategory",
+                        }
+                    }, {
+                        $match: {
+                            "companyCategory.company": objectId(data.company)
+                        }
+                    }, {
+                        $skip: parseInt(pagestartfrom)
+                    }, {
+                        $limit: 10
+                    }], function (err, res) {
+                        if (err) {
+                            callback(err, null);
+                        } else {
+                            callback(null, res);
+                        }
+                    })
+                },
+                total: function (callback) {
+                    CompanyProduct.aggregate([{
+                            $lookup: {
+                                "from": "companycategories",
+                                "localField": "companyCategory",
+                                "foreignField": "_id",
+                                "as": "companyCategory"
+                            }
+                        }, {
+                            $unwind: {
+                                path: "$companyCategory",
+                            }
+                        }, {
+                            $match: {
+                                "companyCategory.company": objectId(data.company)
+                            }
+                        },
+                        {
+                            $group: {
+                                _id: null,
+                                count: {
+                                    $sum: 1
+                                }
+                            }
+                        }, {
+                            $project: {
+                                "_id": 1,
+                                "count": 1
+                            }
+                        }
+                    ], function (err, res) {
+                        if (err) {
+                            callback(err, null);
+                        } else {
 
+                            callback(null, res);
+                        }
+                    })
+                }
+            },
+            function (err, res) {
+                if (err) {
+                    callback(err, null);
+                } else {
 
-        {
-            $skip: parseInt(pagestartfrom)
-        }, 
-
-        {
-            $limit: 10
-        },
-
-       
-        
-        
-        
-        ], function (err, res) {
-            if (err) {
-                callback(err, null);
-            } else {
-                console.log("In Res", res)
-                callback(null, res);
-            }
-        })
+                    console.log("In Res", res);
+                    callback(null, res);
+                }
+            });
 
     },
 
+    getProductByOrder: function (data, callback) {
+        CompanyProduct.find({
+            order: data.order
+        }).exec(function (err, found) {
 
+            if (err) {
 
+                callback(err, null);
+            } else {
 
+                if (found) {
+                    console.log("Found", found);
+                    callback(null, found);
+                } else {
+                    callback(null, {
+                        message: "No Data Found"
+                    });
+                }
+            }
+        })
+    },
+    //     search:function (data, callback){
+    //        if (data.count) {
+    //            var maxCount = data.count;
+    //        } else {
+    //            var maxCount = Config.maxRow;
+    //        }
+    //        var maxRow = maxCount
+    //        var page = 1;
+    //        if (data.page) {
+    //            page = data.page;
+    //        }
+    //        var field = data.field;
+    //        var options = {
+    //            field: data.field,
+    //            filters: {
+    //                keyword: {
+    //                    fields: ['name'],
+    //                    term: data.keyword
+    //                }
+    //            },
+    //            sort: {
+    //                desc: 'createdAt'
+    //            },
+    //            start: (page - 1) * maxRow,
+    //            count: maxRow
+    //        };
+    //        var match={};
+    //        if(data.company){
+    //            console.log("if");
+    //                       match={company: data.company}
+    //        }else{
+    //            console.log("else");
+    //                   match={}
+    //        }
+    //        console.log("match---",match);
+    //        CompanyProduct.find(match)
+    //            .order(options)
+    //            .keyword(options)
+    //            .page(options,
+    //                function (err, found) {
 
+    //                    if (err) {
+    //                        callback(err, null);
+    //                    } else if (found) {
+    //                        callback(null, found);
+    //                    } else {
+    //                        callback("Invalid data", null);
+    //                    }
+    //                });
 
+    // },
 
+    search: function (data, callback) {
+        if (data.count) {
+            var maxCount = data.count;
+        } else {
+            var maxCount = Config.maxRow;
+        }
+        var maxRow = maxCount
+        var page = 1;
+        if (data.page) {
+            page = data.page;
+        }
+        var field = data.field;
+        var options = {
+            field: data.field,
+            filters: {
+                keyword: {
+                    fields: ['name'],
+                    term: data.keyword
+                }
+            },
+            sort: {
+                desc: 'createdAt'
+            },
+            start: (page - 1) * maxRow,
+            count: maxRow
+        };
 
+        console.log("sssssssssssss", data);
 
+        var match = {};
+        if (!_.isEmpty(data.filter)) {
+            match = {
+                company: data.filter.company
+            }
+
+        } else {
+            match = {}
+
+        }
+        console.log("match---", match);
+        CompanyProduct.find(match)
+            .order(options)
+            .keyword(options)
+            .page(options,
+                function (err, found) {
+                    if (err) {
+                        callback(err, null);
+                    } else if (found) {
+                        console.log("found", found);
+                        callback(null, found);
+                    } else {
+                        callback("Invalid data", null);
+                    }
+                });
+
+    }
 };
 module.exports = _.assign(module.exports, exports, model);

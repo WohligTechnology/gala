@@ -12,6 +12,7 @@ var controller = {
             })
         }
     },
+    
     getAllProductWithCategory: function (req, res) {
         if (req.body) {
             CompanyProduct.getAllProductWithCategory(req.body, res.callback);
@@ -24,6 +25,7 @@ var controller = {
             })
         }
     },
+
     getCompanyOfCategory: function (req, res) {
         if (req.body) {
             CompanyProduct.getCompanyOfCategory(req.body, res.callback);
@@ -49,6 +51,7 @@ var controller = {
             })
         }
     },
+
     companyProductAggregate: function (req, res) {
         if (req.body) {
             CompanyProduct.companyProductAggregate(req.body, res.callback);
@@ -61,6 +64,46 @@ var controller = {
             })
         }
     },
+getProductByOrder: function (req, res) {
+        // console.log(req.body);
+        if (req.body) {
+            CompanyProduct.getProductByOrder(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+
+                }
+            })
+        }
+    },
+
+
+
+search: function (req, res) {
+    console.log("req.user.company",req.user.company)
+        if (req.user.accessLevel == "Company" && req.user.company) {
+            req.body.filter.company = req.user.company;
+        }
+        if (req.body) {
+            CompanyProduct.search(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            });
+        }
+    },
+
+
 };
+
+
+
+
+
+
 
 module.exports = _.assign(module.exports, controller);

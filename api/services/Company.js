@@ -58,7 +58,6 @@ var model = {
             } else {
                 callback(null, found);
             }
-
         });
     },
 
@@ -86,6 +85,24 @@ var model = {
                 }
             }
         });
-    }
+    },
+
+
+    findOneCompany: function (data, callback) {
+        Company.findOne({
+            _id: data._id
+        }).deepPopulate("").exec(function (err, found) {
+            if (err) {
+                console.log('**** error at findOneCompany of Company.js ****', err);
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, 'noDataFound');
+            } else {
+                callback(null, found);
+            }
+        });
+    },
+
+
 };
 module.exports = _.assign(module.exports, exports, model);
