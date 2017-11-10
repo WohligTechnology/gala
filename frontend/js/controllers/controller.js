@@ -1,5 +1,5 @@
 myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
-
+   
     $scope.template = TemplateService.getHTML("content/home.html");
     $scope.loaded = false;
     TemplateService.title = "Home"; //This is the Title of the Website
@@ -17,19 +17,21 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             templateUrl: "views/popupmodal.html",
             size: "md",
             scope: $scope
+            
         });
+        NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
+            
+                    $scope.company = data.data.data;
+            
+                    $scope.companyData = _.chunk($scope.company, 3);
+            
+            
+                });
     };
 
     var data = {};
     data.page = 1;
-    NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
-
-        $scope.company = data.data.data;
-
-        $scope.companyData = _.chunk($scope.company, 3);
-
-
-    });
+   
 
 
     var abc = _.times(100, function (n) {
