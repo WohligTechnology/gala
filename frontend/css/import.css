@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.4
+ * jQuery FlexSlider v2.6.3
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -9349,8 +9349,8 @@ h5 {
     font-weight: 900; }
 
 .types-list .active {
-  color: #000;
-  font-weight: 900; }
+  color: #000 !important;
+  font-weight: 900 !important; }
 
 .myclass {
   color: #000 !important;
@@ -10119,6 +10119,65 @@ sup {
     position: absolute;
     top: 50%;
     left: 50%; }
+
+.our-client {
+  background-color: #76c04f; }
+  .our-client .client-title {
+    padding: 10% 10% 5%;
+    position: relative; }
+    .our-client .client-title .img-holder {
+      position: relative;
+      height: 250px;
+      width: 300px;
+      padding-left: 60px; }
+    .our-client .client-title .title {
+      position: absolute;
+      left: 0;
+      top: 12%; }
+      .our-client .client-title .title h1 {
+        font-weight: bold; }
+      .our-client .client-title .title .head1 {
+        color: #fff;
+        margin-bottom: 0; }
+      .our-client .client-title .title .head2 {
+        margin-top: 10px;
+        color: white;
+        margin-top: 0; }
+    .our-client .client-title .our-img {
+      position: absolute;
+      left: 0;
+      bottom: 22%;
+      width: 290px; }
+  .our-client .content-slider {
+    padding: 5% 10% 0;
+    position: relative; }
+    .our-client .content-slider .flexslider {
+      background-color: transparent;
+      color: #fff; }
+    .our-client .content-slider p {
+      text-align: justify;
+      position: relative; }
+      .our-client .content-slider p .quote-left {
+        position: absolute;
+        top: -20px;
+        left: -35px;
+        width: 25px; }
+      .our-client .content-slider p .quote-right {
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+        width: 25px; }
+    .our-client .content-slider .flex-control-nav {
+      z-index: 222;
+      bottom: -100px; }
+      .our-client .content-slider .flex-control-nav a {
+        background-color: #8E9092; }
+      .our-client .content-slider .flex-control-nav .flex-active {
+        background-color: #fff; }
+    .our-client .content-slider .client-img {
+      position: absolute;
+      right: 0;
+      width: 500px; }
 
 #fancybox-loading,
 .fancybox-close,

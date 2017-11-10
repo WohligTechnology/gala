@@ -36,13 +36,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         return n;
     });
 
-        function getPopUpImage() {
-            NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-
-                $scope.popUpImage = data.data.data.results[0].image;
-
-            })
-        }
+        
     var i = 0;
     $scope.buttonClick = function () {
         i++;
@@ -50,24 +44,26 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     };
 
     $scope.closepopup = function () {
-        $.jStorage.set('popNot', false);
+        // $.jStorage.set('firstTime', false);
         imagePopup.close();
     };
 
-    $scope.openModal = function () {
-        var modalInstance = $uibModal.open({
-            animation: true,
-            scope: $scope,
-            size: 'md',
-            templateUrl: "views/popupmodal.html"
-        });
-    };
+    // $scope.openModal = function () {
+    //     var modalInstance = $uibModal.open({
+    //         animation: true,
+    //         scope: $scope,
+    //         size: 'md',
+    //         templateUrl: "views/popupmodal.html"
+    //     });
+    // };
 
     function getPopUpImage() {
         NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-
+        
             $scope.popUpImage = data.data.data.results[0].image;
-
+            console.log("popupnotcoming",$scope.popUpImage)
+           
+         
         });
     }
 
@@ -308,7 +304,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     $scope.navigation = NavigationService.getNavigation();
 })
 
-
+.controller('GroupActivitiesCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+    var data = {}
+    $scope.template = TemplateService.getHTML("content/groupActivities.html");
+    NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
+        
+                $scope.company = data.data.data;
+        
+                $scope.companyData = _.chunk($scope.company, 3);
+        
+        
+            });
+})
 //Example API Controller
 
 .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {

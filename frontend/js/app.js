@@ -38,6 +38,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'GalleryCtrl'
         })
 
+        .state('groupActivities', {
+            url: "/groupActivities",
+            templateUrl: tempateURL,
+            controller: 'GroupActivitiesCtrl'
+        })
+
         .state('showroom', {
             url: "/showroom",
             templateUrl: tempateURL,
