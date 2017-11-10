@@ -67,7 +67,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
     }
 
-    getPopUpImage
+    getPopUpImage();
 
     $scope.$on('$viewContentLoaded', function () {
         if (_.isEmpty($.jStorage.get('firstTime'))) {
