@@ -57,7 +57,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     //     });
     // };
 
-    function getPopUpImage() {
+    // function getPopUpImage() {
         alert("popup")
         NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
         
@@ -66,9 +66,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
            
          
         });
-    }
+    // }
 
-    getPopUpImage();
+    
 
     $scope.$on('$viewContentLoaded', function () {
         if (_.isEmpty($.jStorage.get('firstTime'))) {
