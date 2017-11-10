@@ -1,5 +1,5 @@
 myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
-    console.log("openpoptop")
+
     $scope.template = TemplateService.getHTML("content/home.html");
     $scope.loaded = false;
     TemplateService.title = "Home"; //This is the Title of the Website
@@ -13,19 +13,10 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
     var imagePopup = null;
     $scope.openpopup = function () {
-        console.log("openpopfnstr")
         imagePopup = $uibModal.open({
             templateUrl: "views/popupmodal.html",
             size: "md",
             scope: $scope
-        });
-        alert("popup")
-        NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
-            console.log("openpopfnend")
-            $scope.popUpImage = data.data.data.results[0].image;
-            console.log("popupnotcoming",$scope.popUpImage)
-           
-         
         });
     };
 
@@ -66,11 +57,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     //     });
     // };
 
-    // function getPopUpImage() {
-   
-    // }
+    function getPopUpImage() {
+      
+        NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
+        
+            $scope.popUpImage = data.data.data.results[0].image;
+            console.log("popupnotcoming",$scope.popUpImage)
+           
+         
+        });
+    }
 
-    
+    getPopUpImage();
 
     $scope.$on('$viewContentLoaded', function () {
         if (_.isEmpty($.jStorage.get('firstTime'))) {
@@ -78,7 +76,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 value: true
             });
             $scope.openpopup();
-            console.log("openpop")
         }
     });
  
