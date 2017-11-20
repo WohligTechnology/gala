@@ -51,6 +51,18 @@
             "view": true
         },
         {
+            "name": "Category Image",
+            "type": "image",
+            "tableRef": "categoryImage",
+            "size": "1600 × 990px",
+            "placeholder": "Enter categoryImage",
+            "id": "categoryImage",
+            "validation": ["required", "trim", "unique"],
+            "url": "",
+            "onView": true,
+            "view": true
+        },
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",
@@ -58,6 +70,23 @@
             "id": "order",
             "validation": ["", "trim", "unique"],
             "url": ""
+        }, {
+            "name": "Brands",
+            "type": "box",
+            "tableRef": "brands",
+            "validation": ["required", "trim", ""],
+            "field": [{
+                "name": "Brand Image",
+                "type": "image",
+                "tableRef": "brandImage",
+                "size": "750× 458px",
+                "placeholder": "Enter brandImage",
+                "id": "brandImage",
+                "validation": ["", "trim", ""],
+                "url": "",
+                "onView": true,
+                "view": true
+            }]
         }
     ],
     "action": [{

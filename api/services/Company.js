@@ -14,9 +14,17 @@ var schema = new Schema({
     backgroundImage: {
         type: String,
     },
+    categoryImage: {
+        type: String,
+    },
     order: {
         type: Number,
-    }
+    },
+    brands: [{
+        brandImage: {
+            type: String
+        }
+    }]
 });
 // schema.plugin(URLSlugs('name', {
 //     field: 'myslug'
@@ -42,6 +50,31 @@ var model = {
             }
 
         });
+    },
+    getAllCompanyWithCategory: function (data, callback) {
+        console.log("Inside getAllCompanyWithCategory service", data);
+
+        Company.aggregate([{
+            $lookup: {
+                "from": "companycategories",
+                "localField": "_id",
+                "foreignField": "company",
+                "as": "categories"
+            }
+        }, {
+            $sort: {
+                order: 1
+            }
+        }], function (err, result) {
+            if (err) {
+                callback(err);
+            } else {
+                console.log("last result", result); // OUTPUT OK
+                callback(null, result);
+            }
+        });
+
+
     },
     getCompanyBanner: function (data, callback) {
         console.log("data inside product: ", data);
