@@ -28,7 +28,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     });
 
 
-    NavigationService.callApi("Company/getAllCompanyWithCategory", function (data) {
+    NavigationService.callApiWithData("Company/getAllCompanyWithCategory", data, function (data) {
         $scope.companyCategoryBrands = data.data.data;
         console.log('companyCategoryBrands&&&&',$scope.companyCategoryBrands)
         // $scope.companyData = _.chunk($scope.company, 3);

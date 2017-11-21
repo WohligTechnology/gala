@@ -85,17 +85,17 @@
             <h1 class="text-capitalize">Group Products</h1>
             <div class="about-info">
                 <div class="product cat-list">
-                    <div class="row" >
+                    <div class="row" ng-repeat="CompCat in companyCategoryBrands">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="padd" >
-                                <h3>Bath World</h3>
+                                <h3>{{CompCat.name}}</h3>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
                                 <div class="door">
                                     <div class="overlay"></div>
-                                    <img src="img/home/Bath world.jpg" class="img-responsive"> -->
+                                    <img src="{{CompCat.categoryImage | serverimage}}" class="img-responsive"> -->
                                     <!-- <div class="door-info">
                                         <p class="text-uppercase text-center">{{p.name}}</p>
                                     </div> -->
@@ -105,66 +105,16 @@
                         <section class="types-list text-center">
                             <div class="container">
                                 <ul class="list-inline types">
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">CP Fittings</a>
-                                    </li>
-                                    <li >
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Faucets</a>
-                                    </li>
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Flooring Tiles</a>
-                                    </li>
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Kitchen Sinks</a>
+                                    <li ng-repeat="catarr in CompCat.categories">
+                                        <a  ui-sref="divisions({category:company._id,product:category._id})">{{catarr.name}}</a>
                                     </li>
                                 </ul>
                             </div>
                         </section>
                     </div>
-                    <div class="row" >
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="padd" >
-                                <h3>Euro Lightning World</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
-                                <div class="door">
-                                    <div class="overlay"></div>
-                                    <img src="img/home/Euro lighting world.jpg" class="img-responsive"> -->
-                                    <!-- <div class="door-info">
-                                        <p class="text-uppercase text-center">{{p.name}}</p>
-                                    </div> -->
-                                <!-- </div>
-                            </div>
-                        </div>
-                        <section class="types-list text-center">
-                            <div class="container">
-                                <ul class="list-inline types">
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Ceiling Fans</a>
-                                    </li>
-                                    <li >
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Decoratives</a>
-                                    </li>
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Designer Lights</a>
-                                    </li>
-                                    <li>
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">Light Fixtures</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="view-more text-right">
-                <p><a ui-sref="allProduct">View More</a></p>
-            </div> -->
-        <!-- </div>
-    </section>
-    <section class="listings">
+                  
+    </section> -->
+    <!-- <section class="listings">
     <div class="our-client">
             <div class="container-fluid">
                 <div class="row">
@@ -193,7 +143,7 @@
                 </div>
             </div>
         </div>
-        </section> -->
+        </section>  -->
     <section class="abouts ">
         <div class="container">
             <h1 class="text-capitalize offers whitey">about us</h1>
