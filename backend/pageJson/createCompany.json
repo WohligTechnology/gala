@@ -45,6 +45,16 @@
             "url": ""
         },
         {
+            "name": "Category Image",
+            "type": "image",
+            "tableRef": "categoryImage",
+            "size": "1296 × 296px",
+            "placeholder": "Enter Category Image",
+            "id": "categoryImage",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",
