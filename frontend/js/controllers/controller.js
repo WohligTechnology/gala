@@ -23,14 +23,16 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     var data = {};
     data.page = 1;
     NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
-
         $scope.company = data.data.data;
-
         $scope.companyData = _.chunk($scope.company, 3);
-
-
     });
 
+
+    NavigationService.callApi("Company/getAllCompanyWithCategory", function (data) {
+        $scope.companyCategoryBrands = data.data.data;
+        console.log('companyCategoryBrands&&&&',$scope.companyCategoryBrands)
+        // $scope.companyData = _.chunk($scope.company, 3);
+    });
 
     var abc = _.times(100, function (n) {
         return n;
