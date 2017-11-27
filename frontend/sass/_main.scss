@@ -423,10 +423,13 @@ h5 {
         letter-spacing: 10px;
     }
 }
-
+.door-shadow{
+    box-shadow: 5px 5px 1px #ccc !important;
+}
 .door {
     @include margin(10px);
     cursor: pointer;
+   
     // box-shadow: 0px 5px 25px #0000;
     .door-info {
         @include padding(10px 0);
@@ -688,10 +691,14 @@ h5 {
 }
 
 //flexslider
+.Groupact{
+    float: right;
+}
 .main-banner {
     .listings {
         h1 {
             color: $brand-red;
+            font-size: 55px;
         }
         .about-info {
             @include padding(10px 0 0 0);
@@ -815,6 +822,7 @@ sup {
     width: 1300px;
 }
 
+
 .dropdown-menu {
     border-top: 3px solid #6AB751;
     padding: 15px 10px;
@@ -845,7 +853,7 @@ sup {
 
 .navs {
     li {
-        padding: 20px;
+        padding: 16px;
         display: inline-block;
         vertical-align: middle;
         text-transform: uppercase;
@@ -856,7 +864,7 @@ sup {
 }
 
 .logos {
-    padding: 0 4% !important;
+    padding: 0 2% !important;
 }
 
 .hand1,

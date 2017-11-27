@@ -9584,6 +9584,9 @@ h5 {
     color: #fff;
     letter-spacing: 10px; }
 
+.door-shadow {
+  box-shadow: 5px 5px 1px #ccc !important; }
+
 .door {
   margin: 10px;
   cursor: pointer; }
@@ -9773,8 +9776,12 @@ h5 {
 .flexslider {
   border: none; }
 
+.Groupact {
+  float: right; }
+
 .main-banner .listings h1 {
-  color: #ff3a40; }
+  color: #ff3a40;
+  font-size: 55px; }
 
 .main-banner .listings .about-info {
   padding: 10px 0 0; }
@@ -9920,7 +9927,7 @@ sup {
   margin-bottom: 0; }
 
 .navs li {
-  padding: 20px;
+  padding: 16px;
   display: inline-block;
   vertical-align: middle;
   text-transform: uppercase; }
@@ -9928,7 +9935,7 @@ sup {
     color: #777; }
 
 .logos {
-  padding: 0 4% !important; }
+  padding: 0 2% !important; }
 
 .hand1,
 .hand2,

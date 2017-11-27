@@ -6,24 +6,24 @@
             </li>
         </flex-slider>
     </div>
-    <section class="listings">
+    <!-- <section class="listings">
         <div class="container">
             <h1 class="text-capitalize font-size">Group Activities</h1>
             <div class="about-info">
                 <div class="text-center product">
-                    <div class="row" ng-repeat="s in companyData">
+                    <div class="row" ng-repeat="s in companyData"> -->
                         <!--//for grid 3-->
-                        <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==3">
+                        <!-- <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==3">
                             <div class="door margin0" ui-sref="division({category:company._id,categoryName:company.name})">
                                 <div class="door-img img1" style="background: url('{{company.banner | serverimage}}')"></div>
                                 <div class="door-info" ng-if="company.name">
                                     <p class="text-capitalize">{{company.name}}</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--//for grid 3-->
                         <!--//for grid 1-->
-                        <div class="col-md-4" ng-if="s.length==1"></div>
+                        <!-- <div class="col-md-4" ng-if="s.length==1"></div>
                         <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==1">
                             <div class="door margin0" ui-sref="division({category:company._id})">
                                 <div class="door-img img1" style="background: url('{{company.banner | serverimage}}')"></div>
@@ -32,10 +32,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4" ng-if="s.length==1"></div>
+                        <div class="col-md-4" ng-if="s.length==1"></div> -->
                         <!--//for grid 1-->
                         <!--//for grid 2-->
-                        <div class="col-md-2" ng-if="s.length==2"></div>
+                        <!-- <div class="col-md-2" ng-if="s.length==2"></div>
                         <div class="col-md-4" ng-repeat="company in s" ng-if="s.length==2">
                             <div class="door margin0" ui-sref="division({category:company._id})">
                                 <div class="door-img img1" style="background: url('{{company.banner | serverimage}}')"></div>
@@ -49,8 +49,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="listings">
+    </section> -->
+    <!-- <section class="listings">
         <div class="container">
             <h1 class="text-capitalize font-size">Category</h1>
             <div class="about-info">
@@ -79,42 +79,43 @@
                 <p><a ui-sref="allProduct">View More Categories</a></p>
             </div>
         </div>
-    </section>
-    <!-- <section class="listings">
+    </section> -->
+    <section class="listings">
         <div class="container">
+            <h1 class="Groupact" ui-sref="groupActivities">Group Activities</h1>
             <h1 class="text-capitalize">Group Products</h1>
             <div class="about-info">
                 <div class="product cat-list">
                     <div class="row" ng-repeat="CompCat in companyCategoryBrands">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id})">
                             <div class="padd" >
                                 <h3>{{CompCat.name}}</h3>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
-                                <div class="door">
+                            <div class="padd" >
+                                <div class="door" >
                                     <div class="overlay"></div>
-                                    <img src="{{CompCat.categoryImage | serverimage}}" class="img-responsive"> -->
+                                    <img src="{{CompCat.categoryImage | serverimage}}" class="img-responsive">
                                     <!-- <div class="door-info">
                                         <p class="text-uppercase text-center">{{p.name}}</p>
                                     </div> -->
-                                <!-- </div>
+                                </div>
                             </div>
                         </div>
                         <section class="types-list text-center">
                             <div class="container">
                                 <ul class="list-inline types">
-                                    <li ng-repeat="catarr in CompCat.categories">
-                                        <a  ui-sref="divisions({category:company._id,product:category._id})">{{catarr.name}}</a>
+                                    <li ng-repeat="catarr in CompCat.categories"  ui-sref="divisions({category:CompCat._id,product:catarr._id})">
+                                        <a >{{catarr.name}}</a>
                                     </li>
                                 </ul>
                             </div>
                         </section>
                     </div>
                   
-    </section> -->
-    <!-- <section class="listings">
+    </section>
+    <section class="listings">
     <div class="our-client">
             <div class="container-fluid">
                 <div class="row">
@@ -128,22 +129,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-10 pad-rem">
-                        <div class="content-slider">
-                            <div class="row pad-tb15" >
-                                <div class="col-md-2" >
-                                    <img src="img/home/client1.png" class="img-responsive" alt="">
-                                </div>
-                                <div class="col-md-2" >
-                                        <img src="img/home/client2.png" class="img-responsive" alt="">
-                                    </div>
+                    
+                        
+                                <div class="col-md-10" >
+                                       
+                                                <div class="content-slider">
+                                                    <div class="row pad-tb15 " >
+                                                        <div class="col-md-2" ng-repeat="brand in brands">
+                                                            <img src="{{brand.brandImage | serverimage}}" class="img-responsive" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        
+                               
+                               
                             </div>
-                        </div>
-                    </div>
+                        
+                        
+               
+                    
+                    
                 </div>
             </div>
         </div>
-        </section>  -->
+        </section> 
     <section class="abouts ">
         <div class="container">
             <h1 class="text-capitalize offers whitey">about us</h1>

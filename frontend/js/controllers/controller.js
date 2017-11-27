@@ -27,11 +27,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.companyData = _.chunk($scope.company, 3);
     });
 
-
+$scope.brands=[]
     NavigationService.callApiWithData("Company/getAllCompanyWithCategory", data, function (data) {
         $scope.companyCategoryBrands = data.data.data;
+        // $scope.Brandchunks = _.chunk($scope.companyCategoryBrands, 4);
         console.log('companyCategoryBrands&&&&',$scope.companyCategoryBrands)
-        // $scope.companyData = _.chunk($scope.company, 3);
+        _.forEach($scope.companyCategoryBrands, function(value) {
+            _.forEach(value.brands, function(value){
+                console.log('hellomoto',value);
+                $scope.brands.push(value)
+            });
+            console.log('hellimagebrand',$scope.brands);
+          });
     });
 
     var abc = _.times(100, function (n) {
@@ -137,6 +144,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
+      
     });
 
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
