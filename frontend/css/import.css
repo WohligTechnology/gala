@@ -9351,7 +9351,7 @@ h5 {
   -ms-flex: 1;
   flex: 1;
   display: inline-block;
-  width: 28%; }
+  width: 32%; }
 
 .overlay {
   position: absolute;
@@ -9799,15 +9799,16 @@ sup {
 
 .dropdown-menu {
   border-top: 3px solid #6AB751;
-  padding: 15px 10px;
+  padding: 15px 0px;
   background-color: rgba(48, 48, 48, 0.9);
   top: 95% !important;
   min-width: 965px; }
   .dropdown-menu li {
-    padding: 10px 0 !important;
-    display: inline-block; }
+    padding: 10px 0px !important;
+    display: inline-block;
+    font-size: 13px; }
     .dropdown-menu li a {
-      padding: 13px 5px;
+      padding: 13px 13px;
       display: inline-block;
       color: #fff !important;
       font-weight: 600;
