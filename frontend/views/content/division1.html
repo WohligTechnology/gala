@@ -44,16 +44,19 @@
                                         <div class="bg-shadow" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                     <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                         </div>
+                                                                                
                                     <div class="door-info" ng-if="product.name">
                                         <p class="text-uppercase">{{product.name}}</p>
                                     </div>
                                 </div>
                                
+                                
                                 <div class="door" ng-if="product.name=='SOLID WOOD'">
                                         <a  href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">
                                             <div class="bg-shadow" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                             </div>
+                                            <h3 class="text-center" ng-if="product.images[0].bigImage=='' && product.images[0].bigImage==null && !product.images[0].bigImage">No Products Available Right Now.</h3>                                            
                                             <div class="door-info" >
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
@@ -116,6 +119,7 @@
                                 </div>
                             </div>
                         </div>
+                        <h3 class="text-center" ng-if="companyproduct=='noDataound'">No Products Available Right Now.</h3>
                             <!--<div class="col-flex">
                                 <div class="door" ui-sref="gallery">
                                     <div class="door-img img2"></div>
