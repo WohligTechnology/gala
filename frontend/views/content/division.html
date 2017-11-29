@@ -1,4 +1,4 @@
-<div class="division about">
+<div class="division about bg-img">
     <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
         <div class="container">
             <div class="img-boy">
@@ -38,7 +38,9 @@
                             <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id})">
                                     <div class="overlay"></div>
+                                    <div class="bg-shadow">
                                     <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                    </div>
                                     <div class="door-info">
                                         <p class="text-uppercase">{{s.name}}</p>
                                     </div>
@@ -48,7 +50,9 @@
                             <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id})">
                                     <div class="overlay"></div>
+                                    <div class="bg-shadow">
                                     <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                    </div>
                                     <div class="door-info">
                                         <p class="text-uppercase">{{s.name}}</p>
                                     </div>
@@ -59,7 +63,9 @@
                             <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id})">
                                     <div class="overlay"></div>
+                                    <div class="bg-shadow">
                                     <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
+                                </div>
                                     <div class="door-info">
                                         <p class="text-uppercase">{{s.name}}</p>
                                     </div>

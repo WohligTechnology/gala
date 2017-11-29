@@ -124,7 +124,10 @@ $scope.brands=[]
 
     NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
         $scope.getAllCategory = data.data.data;
-        $scope.data = _.groupBy($scope.getAllCategory, 'company.name');
+        $scope.data1 = _.orderBy($scope.getAllCategory, ['company.order'], ['asc', 'desc'])
+        console.log( 'orderby',$scope.data1)
+        $scope.data = _.groupBy($scope.data1, 'company.name');
+        console.log( $scope.data)
         $scope.loaded = true;
     });
 })

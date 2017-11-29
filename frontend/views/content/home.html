@@ -1,4 +1,4 @@
-<div class="main-banner ">
+<div class="main-banner bg-img">
     <div class="relative flexslides homeslider">
         <flex-slider flex-slide="s in banner track by $index" class="mt10" prev-text="" next-text="">
             <li>
@@ -82,11 +82,11 @@
     </section> -->
     <section class="listings">
         <div class="container">
-            <h1 class="Groupact" ui-sref="groupActivities">Group Activities</h1>
+            <button class="btn btn-success Groupact" ui-sref="aboutUs">About Gala group</button>
             <h1 class="text-capitalize">Group Products</h1>
             <div class="about-info">
                 <div class="product cat-list">
-                    <div class="row" ng-repeat="CompCat in companyCategoryBrands">
+                    <div class="row" ng-repeat="CompCat in companyCategoryBrands | orderBy:'order'">
                         <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id})">
                             <div class="padd" >
                                 <h3>{{CompCat.name}}</h3>
@@ -94,10 +94,13 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="padd" >
-                                <div class="door" >
+                               
+                                <div class="door " >
                                     <div class="overlay"></div>
-                                    <img src="{{CompCat.categoryImage | serverimage}}" class="img-responsive">
+                                    
+                                    <div class="bg-shadow"><img src="{{CompCat.categoryImage | serverimage}}" class="img-responsive"></div>
                                     <!-- <div class="door-info">
+                                        
                                         <p class="text-uppercase text-center">{{p.name}}</p>
                                     </div> -->
                                 </div>
@@ -112,6 +115,8 @@
                                 </ul>
                             </div>
                         </section>
+                    </div>
+                    </div>
                     </div>
                   
     </section>

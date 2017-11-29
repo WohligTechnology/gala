@@ -34,6 +34,17 @@ img {
     @include transition(all 300ms ease);
 }
 
+.bg-shadow{
+    background: black!important;
+    img{
+        opacity: 0.5!important;
+    }
+    div{
+        opacity: 0.5!important;
+    }
+}
+
+
 img.doneLoading {
     opacity: 1;
 }
@@ -195,6 +206,26 @@ li {
 
 .division {
     margin-top: -70px;
+}
+
+.chairmansImg{
+    width: 56%;
+    margin: 0 auto;
+}
+
+.bg-img{
+background-image: url("../img/galaweb backgroundNew.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.bg-col{
+    background: white!important;
+}
+
+.bg-trans{
+background: transparent;
 }
 
 .bg-grey {
@@ -434,6 +465,7 @@ h5 {
     .door-info {
         @include padding(10px 0);
         box-shadow: 2px 2px 2px #ccc;
+        background: white;
         p {
             margin: 0;
             font-size: 18px;
@@ -578,11 +610,15 @@ h5 {
 .abouts {
     @extend .relative;
     margin: 60px 0;
-    background-image: linear-gradient(to right, $brand-green 60%, white 40%)
+    background-image: linear-gradient(to right, $brand-green 60%, white 40%);
 }
 
 .about-info {
     padding: 100px 680px 230px 0px;
+}
+
+.aboutGala{
+    padding: 10px 0px 100px 0px;
 }
 
 .about-img {
@@ -620,7 +656,7 @@ h5 {
 
 .listings {
     @extend .relative;
-    background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
+    // background-image: linear-gradient(to right, white 25%, $brand-lgrey 25%);
     .about-info {
         width: auto;
         padding: 100px 0px 100px 0px;
@@ -688,11 +724,14 @@ h5 {
 
 .flexslider {
     border: none;
+    background: transparent;
 }
 
 //flexslider
 .Groupact{
     float: right;
+    font-size: 30px;
+    margin-top: 20px;
 }
 .main-banner {
     .listings {
