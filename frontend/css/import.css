@@ -9351,7 +9351,7 @@ h5 {
   -ms-flex: 1;
   flex: 1;
   display: inline-block;
-  width: 32%; }
+  width: 33%; }
 
 .overlay {
   position: absolute;
@@ -9808,7 +9808,7 @@ sup {
     display: inline-block;
     font-size: 13px; }
     .dropdown-menu li a {
-      padding: 13px 10px;
+      padding: 13px 13px;
       display: inline-block;
       color: #fff !important;
       font-weight: 600;
