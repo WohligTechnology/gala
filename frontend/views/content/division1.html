@@ -41,7 +41,7 @@
                         <div class="row" ng-repeat="row in companyproductdata">
                             <div class="col-md-4" ng-repeat="product in row">
                                 <div class="door" ng-if="product.name != 'SOLID WOOD' && product.name !='ENGINEERED' && product.name !='LAMINATED FLOORING' && product.name !='EXOTIC BAMBOO' && product.name !='KAINDL VENEER' && product.name !='EXTERIOR DECK TILE'" ui-sref="gallery({category:company._id,productId:product._id})">
-                                        <div class="bg-shadow" ng-if="product.images[0].bigImage=='' && product.images[0].bigImage==null && !product.images[0].bigImage">
+                                        <div class="bg-shadow">
                                     <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                         </div>
                                     <div class="door-info" ng-if="product.name">
