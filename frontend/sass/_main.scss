@@ -216,7 +216,7 @@ li {
 }
 
 .bg-img{
-background-image: url("../img/galaweb backgroundNew.jpg");
+background-image: url("../img/home/gala web background.jpg");
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -268,6 +268,16 @@ h5 {
     @include flex(1);
     display: block;
     width: 50%;
+}
+
+.mar-top30{
+    margin-top: 30px;
+}
+
+.aboutcon{
+    p{
+        margin: 15px 0px!important;
+    }
 }
 
 .rows-flex {
@@ -457,7 +467,7 @@ h5 {
     }
 }
 .door-shadow{
-    box-shadow: 5px 5px 1px #ccc !important;
+    box-shadow: 7px 6px 1px #ccc !important;
 }
 .door {
     @include margin(10px);
@@ -520,7 +530,7 @@ h5 {
         @include padding(0 15px 0 15px);
         &:after {
             content: "";
-            border-right: 1px solid $brand-green;
+            border-right: 1px solid $brand-red;
             @include size(5px,
             20px);
             @include position(absolute,
@@ -613,6 +623,7 @@ h5 {
     @extend .relative;
     margin: 60px 0;
     background-image: linear-gradient(to right, $brand-green 60%, white 40%);
+    opacity: 0.9;
 }
 
 .about-info {
@@ -732,15 +743,24 @@ h5 {
 //flexslider
 .Groupact{
     float: right;
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 24px;
+    margin-top: 0px;
+    &:hover {
+        color: $brand-red;
+    }
 }
 .main-banner {
     .listings {
         h1 {
             color: $brand-red;
-            font-size: 55px;
+            font-size: 30px;
+            font-weight: 600;
         }
+        // h3 {
+        //     color: $brand-red;
+        //     font-size: 24px;
+        //     font-weight: 600;
+        // }
         .about-info {
             @include padding(10px 0 0 0);
         }
@@ -758,7 +778,7 @@ h5 {
 
 .creativity {
     @include position(absolute,
-    28% null null 50px);
+    28% null null 14%);
     @include fontsize(18px); // font-family: "Savoye";
     // font-style: italic;
     color: $brand-white;
@@ -1302,6 +1322,7 @@ sup {
 .thanku {
     p {
         font-size: 20px;
+        color: $brand-red;
     }
 }
 
@@ -1325,7 +1346,7 @@ sup {
 }
 
 .our-client {
-    background-color: $brand-green;
+    background-color: white;
     .client-title {
         padding: 10% 10% 5%;
         position: relative;
@@ -1343,12 +1364,12 @@ sup {
                 font-weight: bold;
             }
             .head1 {
-                color: #fff;
+                color: $brand-green;
                 margin-bottom: 0;
             }
             .head2 {
                 margin-top: 10px;
-                color: white;
+                color: $brand-green;
                 margin-top: 0;
             }
         }
@@ -1364,7 +1385,7 @@ sup {
         margin:15px 0px;
     }
     .content-slider {
-        padding: 3% 10% 0;
+        padding: 3% 3% 0;
         position: relative;
         .flexslider {
             background-color: transparent;

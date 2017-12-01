@@ -9272,7 +9272,7 @@ li {
   margin: 0 auto; }
 
 .bg-img {
-  background-image: url("../img/galaweb backgroundNew.jpg");
+  background-image: url("../img/home/gala web background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -9337,6 +9337,12 @@ h5 {
   flex: 1;
   display: block;
   width: 50%; }
+
+.mar-top30 {
+  margin-top: 30px; }
+
+.aboutcon p {
+  margin: 15px 0px !important; }
 
 .rows-flex {
   -webkit-display: flex;
@@ -9486,7 +9492,7 @@ h5 {
     letter-spacing: 10px; }
 
 .door-shadow {
-  box-shadow: 5px 5px 1px #ccc !important; }
+  box-shadow: 7px 6px 1px #ccc !important; }
 
 .door {
   margin: 10px;
@@ -9533,7 +9539,7 @@ h5 {
     padding: 0 15px; }
     .types li:after {
       content: "";
-      border-right: 1px solid #76c04f;
+      border-right: 1px solid #ff3a40;
       width: 5px;
       height: 20px;
       position: absolute;
@@ -9600,7 +9606,8 @@ h5 {
 
 .abouts {
   margin: 60px 0;
-  background-image: linear-gradient(to right, #76c04f 60%, white 40%); }
+  background-image: linear-gradient(to right, #76c04f 60%, white 40%);
+  opacity: 0.9; }
 
 .about-info {
   padding: 100px 680px 230px 0px; }
@@ -9676,12 +9683,15 @@ h5 {
 
 .Groupact {
   float: right;
-  font-size: 30px;
-  margin-top: 20px; }
+  font-size: 24px;
+  margin-top: 0px; }
+  .Groupact:hover {
+    color: #ff3a40; }
 
 .main-banner .listings h1 {
   color: #ff3a40;
-  font-size: 55px; }
+  font-size: 30px;
+  font-weight: 600; }
 
 .main-banner .listings .about-info {
   padding: 10px 0 0; }
@@ -9699,7 +9709,7 @@ h5 {
 .creativity {
   position: absolute;
   top: 28%;
-  left: 50px;
+  left: 14%;
   -webkit-font-size: 18px;
   -moz-font-size: 18px;
   -ms-font-size: 18px;
@@ -9970,7 +9980,7 @@ sup {
   position: absolute;
   left: 7%;
   bottom: 0;
-  width: 100%; }
+  width: 30%; }
 
 .search-holder {
   width: 70%;
@@ -10150,7 +10160,8 @@ sup {
       color: #fff; }
 
 .thanku p {
-  font-size: 20px; }
+  font-size: 20px;
+  color: #ff3a40; }
 
 .mar-t5 {
   margin-top: 5px; }
@@ -10169,7 +10180,7 @@ sup {
     left: 50%; }
 
 .our-client {
-  background-color: #76c04f; }
+  background-color: white; }
   .our-client .client-title {
     padding: 10% 10% 5%;
     position: relative; }
@@ -10185,11 +10196,11 @@ sup {
       .our-client .client-title .title h1 {
         font-weight: bold; }
       .our-client .client-title .title .head1 {
-        color: #fff;
+        color: #76c04f;
         margin-bottom: 0; }
       .our-client .client-title .title .head2 {
         margin-top: 10px;
-        color: white;
+        color: #76c04f;
         margin-top: 0; }
     .our-client .client-title .our-img {
       position: absolute;
@@ -10199,7 +10210,7 @@ sup {
   .our-client .marginb10 {
     margin: 15px 0px; }
   .our-client .content-slider {
-    padding: 3% 10% 0;
+    padding: 3% 3% 0;
     position: relative; }
     .our-client .content-slider .flexslider {
       background-color: transparent;
@@ -10285,7 +10296,7 @@ sup {
     padding: 53px 180px 60px 20px; }
   .abouts {
     margin: 60px 0;
-    background-image: linear-gradient(to right, #76c04f 80%, white 20%); }
+    background-image: linear-gradient(to right, #76c04f 55%, white 20%); }
   .types li {
     padding: 0 13px; }
   .aside {

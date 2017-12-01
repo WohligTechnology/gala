@@ -145,6 +145,9 @@ $scope.brands=[]
     $scope.categoryName = $stateParams.categoryName;
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
+        console.log("companybrands",data)
+        $scope.companyBrands = data.data.data[0].company.brands;
+console.log("hellobrands",$scope.companyBrands)
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
       
@@ -316,6 +319,22 @@ $scope.brands=[]
     $scope.template = TemplateService.getHTML("content/contact.html");
     TemplateService.title = "Contact"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
+    $scope.saveEnquiry = function (detail) {
+        // detail.productName = $scope.productId.name;
+        // detail.image = $scope.bigImage;
+
+        NavigationService.callApiWithData("ContactUs/save", detail, function (data) {
+            $scope.submitmsg = data.data;
+            console.log("submit",$scope.submitmsg)
+            detail.firstName = "";
+            detail.lastName = "";
+            detail.contactNumber = "";
+            detail.message = "";
+            // detail.productName = "";
+            // detail.image = "";
+           
+        })
+    }
 })
 
 .controller('GroupActivitiesCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
