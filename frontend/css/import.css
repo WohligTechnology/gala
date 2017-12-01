@@ -9477,7 +9477,7 @@ h5 {
 
 .bg-division,
 .bg-divisions {
-  height: 60vh !important;
+  height: 40vh !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important; }
@@ -9610,7 +9610,7 @@ h5 {
   opacity: 0.9; }
 
 .about-info {
-  padding: 100px 680px 230px 0px; }
+  padding: 100px 680px 105px 0px; }
 
 .aboutGala {
   padding: 10px 0px 100px 0px; }
@@ -9686,7 +9686,7 @@ h5 {
   font-size: 24px;
   margin-top: 0px; }
   .Groupact:hover {
-    color: #ff3a40; }
+    background: #ff3a40; }
 
 .main-banner .listings h1 {
   color: #ff3a40;
@@ -10179,6 +10179,12 @@ sup {
     top: 50%;
     left: 50%; }
 
+.brands {
+  color: #76c04f !important;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 15px 30px; }
+
 .our-client {
   background-color: white; }
   .our-client .client-title {
@@ -10210,7 +10216,7 @@ sup {
   .our-client .marginb10 {
     margin: 15px 0px; }
   .our-client .content-slider {
-    padding: 3% 3% 0;
+    padding: 3% 1% 0;
     position: relative; }
     .our-client .content-slider .flexslider {
       background-color: transparent;

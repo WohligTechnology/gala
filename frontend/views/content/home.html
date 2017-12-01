@@ -82,17 +82,17 @@
     </section> -->
     <section class="listings">
         <div class="container">
-            <button class="btn btn-success Groupact" ui-sref="aboutUs">About Gala group</button>
-            <h1 class="text-capitalize">Group Products</h1>
+            <button class="btn btn-success Groupact" ui-sref="aboutUs">ABOUT GALA GROUP</button>
+            <h1 class="text-capitalize">GROUP PRODUCTS</h1>
             <div class="about-info">
                 <div class="product cat-list">
                     <div class="row" ng-repeat="CompCat in companyCategoryBrands | orderBy:'order'">
-                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id})">
+                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
                             <div class="padd" >
                                 <h3>{{CompCat.name}}</h3>
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
                             <div class="padd" >
                                
                                 <div class=" door-shadow" >
@@ -121,10 +121,14 @@
                   
     </section>
     <section class="listings">
+            <h1 class="text-capitalize brands">OUR BRANDS</h1>
+                    
     <div class="our-client">
+           
             <div class="container-fluid">
+                    
                 <div class="row">
-                    <div class="col-md-1 pad-rem">
+                    <!-- <div class="col-md-2 pad-rem">
                         <div class="client-title">
                             <div class="img-holder">
                                 <div class="title">
@@ -133,14 +137,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                         
-                                <div class="col-md-11" >
+                                <div class="col-md-12" >
                                        
                                                 <div class="content-slider">
                                                     <div class="row pad-tb15 " >
-                                                        <div class="col-md-2" ng-repeat="brand in brands">
+                                                        <div class="col-md-1" ng-repeat="brand in brands">
                                                             <img  src="{{brand.brandImage | serverimage}}" class="img-responsive marginb10" alt="">
                                                         </div>
                                                     </div>

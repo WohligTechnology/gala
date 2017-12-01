@@ -176,17 +176,19 @@ console.log("hellobrands",$scope.companyBrands)
 
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
         $scope.banner = data.data.data;
+        console.log("companyNAme",$scope.banner)
         $scope.loaded = true;
     });
 
     NavigationService.callApiWithData("CompanyProduct/getAllProductWithCategory", $scope.product, function (data) {
         $scope.companyproduct = data.data.data;
+        console.log("companyNAme",$scope.companyproduct)
         $scope.companyproductdata = _.chunk($scope.companyproduct, 3);
         $scope.loaded = true;
     });
 
     NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
-
+        console.log("companyNAme",$scope.companyCategory)
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         $scope.loaded = true;
