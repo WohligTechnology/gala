@@ -453,7 +453,9 @@ h5 {
 
 .bg-division,
 .bg-divisions {
-    height: 40vh!important; // background-image: url("../img/division/banner.jpg");
+    // height: 40vh!important; 
+    height:auto; 
+    // background-image: url("../img/division/banner.jpg");
     background-repeat: no-repeat!important;
     background-position: center!important;
     background-size: cover!important;
