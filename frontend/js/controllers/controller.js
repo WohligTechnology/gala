@@ -177,6 +177,7 @@ console.log("hellobrands",$scope.companyBrands)
     NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
         $scope.banner = data.data.data;
         console.log("companyNAme",$scope.banner)
+        $scope.bannerName = $scope.banner.name.split('/')
         $scope.loaded = true;
     });
 
