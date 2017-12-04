@@ -206,7 +206,6 @@ li {
 
 .division {
     margin-top: -70px;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -457,7 +456,6 @@ h5 {
     height:auto; 
     // background-image: url("../img/division/banner.jpg");
     background-repeat: no-repeat!important;
-    background-position: center!important;
     background-size: cover!important;
     h2 {
         @include position(absolute,
