@@ -210,7 +210,7 @@ li {
 }
 
 .chairmansImg{
-    width: 66%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -641,13 +641,17 @@ h5 {
 
 .about-img {
     @include position(absolute,
-    55px null null 55%);
+    55px null null 54%);
     @include size (590px,
     auto);
 }
 
 .about-data {
     margin-top: 25%;
+}
+
+.padtb15{
+    padding: 15px 0px;
 }
 
 .eddy-modal {
@@ -778,6 +782,7 @@ h5 {
         // -50%));
         @include position(absolute,
         0% null null 0%);
+        font-size: 40px;
     }
 }
 
@@ -1207,9 +1212,13 @@ sup {
 
 .chairman {
     color: #79797d;
-    padding: 40px 0px 20px;
+    padding: 15px 0px 15px;
 }
 
+.ourProgress {
+    color: #79797d;
+    padding: 15px 0px 15px;
+}
 .w235 {
     width: 235px;
     a {

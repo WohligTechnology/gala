@@ -9267,7 +9267,7 @@ li {
   overflow-x: hidden; }
 
 .chairmansImg {
-  width: 66%;
+  width: 75%;
   margin: 0 auto; }
 
 .bg-img {
@@ -9627,12 +9627,15 @@ h5 {
 .about-img {
   position: absolute;
   top: 55px;
-  left: 55%;
+  left: 54%;
   width: 590px;
   height: auto; }
 
 .about-data {
   margin-top: 25%; }
+
+.padtb15 {
+  padding: 15px 0px; }
 
 .eddy-modal .modal-dialog {
   width: 100%;
@@ -9711,7 +9714,8 @@ h5 {
 .main-banner .offers {
   position: absolute;
   top: 0%;
-  left: 0%; }
+  left: 0%;
+  font-size: 40px; }
 
 .creativity {
   position: absolute;
@@ -10075,7 +10079,11 @@ sup {
 
 .chairman {
   color: #79797d;
-  padding: 40px 0px 20px; }
+  padding: 15px 0px 15px; }
+
+.ourProgress {
+  color: #79797d;
+  padding: 15px 0px 15px; }
 
 .w235 {
   width: 235px; }

@@ -15,7 +15,7 @@
                     <div class="bg-grey aside types-list text-center">
                         <h3 class="h3comName" ng-repeat="name in bannerName track by $index">{{name}}<span ng-if="$index>=0 && $index<bannerName.length-1"> /</span></h3>
                         <!--<h4 class="text-capitalize ">door</h4>-->
-                        <ul>
+                        <ul class="padtb15">
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
                             <li ng-repeat="category in companyCategory track by $index"><a  ui-sref-active="active" ui-sref="divisions({product:category._id})" >{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
