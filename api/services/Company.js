@@ -24,7 +24,8 @@ var schema = new Schema({
         brandImage: {
             type: String
         }
-    }]
+    }],
+    aboutCompData:String
 });
 // schema.plugin(URLSlugs('name', {
 //     field: 'myslug'

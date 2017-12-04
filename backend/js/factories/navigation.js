@@ -58,6 +58,12 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             sref: "#!/page/viewPopUpImage//",
             icon: "phone",
             onlyAdmin: true
+        },
+        {
+            name: "Brands Home Page",
+            classis: "active",
+            sref: "#!/page/viewBrandsHomeImage//",
+            onlyAdmin: true
         }
     ];
 

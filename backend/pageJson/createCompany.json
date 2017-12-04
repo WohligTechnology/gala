@@ -55,6 +55,14 @@
             "url": ""
         },
         {
+            "name": "About Company",
+            "type": "wysiwyg",
+            "tableRef": "aboutCompData",
+            "placeholder": "Enter data",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",

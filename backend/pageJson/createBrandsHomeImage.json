@@ -1,0 +1,42 @@
+{
+    "title": "Create Brands Home Page",
+    "name": "Brands Home Image",
+    "jsonPage": "viewBrandsHomeImage",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["BrandsHomeImage"],
+    "fields": [
+        {
+            "name": "Brands Image",
+            "type": "image",
+            "size": "1296 × 296px",
+            "tableRef": "brandImage",
+            "placeholder": "Enter Image",
+            "id": "image",
+            "validation": ["required", "trim", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitCompany",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBrandsHomeImage"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBrandsHomeImage"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "BrandsHomeImage/save"
+    }
+}
