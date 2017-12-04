@@ -1,0 +1,48 @@
+{
+    "title": "Brands Home Page",
+    "description": "List of Brands Home Image",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [
+        {
+            "name": "Image",
+            "isSort": "",
+            "tableRef": "brandImage",
+            "type": "image"
+        }   
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editBrandsHomeImage",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete BrandsHomeImage",
+        "content": "Are you sure you want to delete BrandsHomeImage?",
+        "api": "BrandsHomeImage/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createBrandsHomeImage"
+    }],
+    "apiCall": {
+        "url": "BrandsHomeImage/search",
+        "params": "_id"
+    }
+}
