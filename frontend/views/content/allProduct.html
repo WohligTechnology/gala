@@ -1,32 +1,35 @@
-<div class="main-banner bg-img">
-    <section class="listings">
-        <div class="container">
-            <h1 class="text-capitalize text-center ">PRODUCTS</h1>
-            <div class="about-info">
-                <div class="product cat-list">
-                    <div class="row" ng-repeat="(key,val) in data ">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="padd">
-                                <h3>{{key}}</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="p in val | orderBy:'order'">
-                            <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
-                                <div class="door door-shadow">
-                                    <div class="overlay"></div>
-                                   <img src="{{p.image | serverimage}}" class="img-responsive">
-                                    <div class="door-info">
-                                        <p class="text-uppercase text-center">{{p.name}}</p>
+<div class="paddingProducts">
+        <div class="main-banner bg-img ">
+                <section class="listings">
+                    <div class="container">
+                        <h1 class="text-capitalize text-center ">PRODUCTS</h1>
+                        <div class="about-info">
+                            <div class="product cat-list">
+                                <div class="row" ng-repeat="(key,val) in data ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="padd">
+                                            <h3>{{key}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="p in val | orderBy:'order'">
+                                        <div class="padd" ui-sref="divisions({category:p.company._id,product:p._id})">
+                                            <div class="door door-shadow">
+                                                <div class="overlay"></div>
+                                               <img src="{{p.image | serverimage}}" class="img-responsive">
+                                                <div class="door-info">
+                                                    <p class="text-uppercase text-center">{{p.name}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
-    </section>
 </div>
+
 <div class="loading-img" ng-hide="loaded">
 
     <img src="img/loading.gif" class="img-responsive">

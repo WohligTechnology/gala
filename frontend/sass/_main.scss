@@ -18,7 +18,7 @@ $brand-tumblr:#529ECC !default;
 @import "other/font-fix";
 body {
     font-family: "Avenir";
-    padding-top: 79px;
+    padding-top: 70px;
 }
 
 
@@ -207,6 +207,10 @@ li {
 .division {
     margin-top: -70px;
     overflow-x: hidden;
+}
+
+.paddingProducts{
+    padding-top: 9px!important;
 }
 
 .chairmansImg{
@@ -1265,7 +1269,7 @@ sup {
 }
 
 .category-name {
-    margin: 30% 0%;
+    margin: 45% 0%;
     h1 {
         color: #fff;
         font-weight: 900;
@@ -1364,6 +1368,7 @@ sup {
 .h3comName{
     padding:10px 0px 5px 0px!important;
     font-weight: 900;
+    font-size: 23px!important;
 }
 
 .brands{
