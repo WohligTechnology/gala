@@ -71,7 +71,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'FormCtrl'
         })
         .state('allProduct', {
-            url: "/category",
+            url: "/products",
             templateUrl: tempateURL,
             controller: 'allProductCtrl'
         });

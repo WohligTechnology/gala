@@ -5,7 +5,7 @@
             <!--<div class="heart">
                 <img src="img/product/heart.png" class="img-responsive" alt="heart">
             </div>-->
-            <div class="category-name text-center"><h1 ng-repeat="name in bannerName track by $index">{{name}}<span ng-if="$index>=0 && $index<bannerName.length-1"> /</span></h1></div>
+            <div class="category-name text-center"></div>
         </div>
     </section>
     <div class="division-info bg-img">
@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-3  padding0">
                     <div class="bg-grey aside types-list text-center">
-                        <h3>CATEGORIES</h3>
+                        <h3 class="h3comName" ng-repeat="name in bannerName track by $index">{{name}}<span ng-if="$index>=0 && $index<bannerName.length-1"> /</span></h3>
                         <!--<h4 class="text-capitalize ">door</h4>-->
                         <ul>
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
