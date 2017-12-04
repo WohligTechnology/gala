@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.4
+ * jQuery FlexSlider v2.6.3
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -9264,7 +9264,6 @@ li {
 
 .division {
   margin-top: -70px;
-  overflow-y: scroll;
   overflow-x: hidden; }
 
 .chairmansImg {
@@ -9359,6 +9358,17 @@ h5 {
   -ms-flex: 1;
   flex: 1;
   display: inline-block;
+  width: 33%; }
+
+.divflex {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 33%; }
 
 .overlay {
@@ -9479,7 +9489,6 @@ h5 {
 .bg-divisions {
   height: auto;
   background-repeat: no-repeat !important;
-  background-position: center !important;
   background-size: cover !important; }
   .bg-division h2,
   .bg-divisions h2 {

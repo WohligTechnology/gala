@@ -290,6 +290,11 @@ h5 {
     width: 33%;
 }
 
+.divflex{
+    @include flex(1);
+    display: inline-flex;
+    width: 33%;
+}
 .overlay {
     @include position(absolute,
     0 0 0 0);

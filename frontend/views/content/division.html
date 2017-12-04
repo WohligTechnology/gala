@@ -16,7 +16,7 @@
             <div class="overlay">
             </div>
             <div class="category-name text-center">
-                <h1>{{categoryName}}</h1>
+                <h1 ng-repeat="name in categoryName track by $index">{{name}}<span ng-if="$index>=0 && $index<categoryName.length-1"> /</span></h1>
             </div>
         </div>
     </section>
@@ -81,7 +81,7 @@
                 <div class="our-client ">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-1 pad-rem">
+                                <div class="col-md-2 pad-rem">
                                     <div class="client-title">
                                         <div class="img-holder">
                                             <div class="title">

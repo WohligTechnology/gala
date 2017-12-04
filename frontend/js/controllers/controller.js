@@ -142,7 +142,7 @@ $scope.brands=[]
         _id: $stateParams.category
     };
 
-    $scope.categoryName = $stateParams.categoryName;
+    $scope.categoryName = $stateParams.categoryName.split('/');
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
         console.log("companybrands",data)
