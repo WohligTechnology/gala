@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.3
+ * jQuery FlexSlider v2.6.4
  * http://www.woothemes.com/flexslider/
  *
  * Copyright 2012 WooThemes
@@ -9132,6 +9132,7 @@ button.close {
   src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 body {
+  overflow-x: hidden;
   font-family: "Avenir";
   padding-top: 70px; }
 
@@ -9667,7 +9668,7 @@ h5 {
   background-image: url("../img/homenew/1.jpg"); }
 
 .homeslider .flex-control-nav {
-  bottom: 60px !important; }
+  bottom: 15px !important; }
 
 .flexslides .flex-direction-nav {
   -webkit-display: none;
@@ -10125,7 +10126,7 @@ sup {
       font-size: 14px; }
 
 .category-name {
-  margin: 45% 0%; }
+  margin: 40% 0%; }
   .category-name h1 {
     color: #fff;
     font-weight: 900;
@@ -10390,9 +10391,7 @@ sup {
     background-image: none; }
   .about-info {
     width: auto;
-    padding: 20px 10px; }
-  .main-banner .offers {
-    left: 35%; }
+    padding: 150px 10px; }
   .about-data {
     margin-top: 136px; }
   .about-img {
@@ -10417,8 +10416,8 @@ sup {
     margin-top: 20px; }
   .creativity {
     font-size: 16px;
-    top: 21%;
-    left: 68px; }
+    top: 7%;
+    left: 5px; }
   .types {
     padding: 20px; }
   .types a {
@@ -10443,4 +10442,16 @@ sup {
   .navbar-brand {
     margin-left: 12px !important; }
   .mar-l {
-    margin-left: 0px; } }
+    margin-left: 0px; }
+  .top-space {
+    margin-top: 80px; }
+  .bg-faq-banner {
+    margin-top: 80px;
+    height: 10vh !important; }
+  .nav li a {
+    text-transform: uppercase; }
+  .Groupact {
+    float: none;
+    margin-bottom: 20px; }
+  .chairman, .ourProgress {
+    text-align: center; } }

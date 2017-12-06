@@ -17,6 +17,7 @@ $brand-tumblr:#529ECC !default;
 
 @import "other/font-fix";
 body {
+    overflow-x: hidden;
     font-family: "Avenir";
     padding-top: 70px;
 }
@@ -721,7 +722,7 @@ h5 {
 //flexslider//
 
 .homeslider .flex-control-nav{
-    bottom:60px !important;
+    bottom:15px !important;
 
 }
 
