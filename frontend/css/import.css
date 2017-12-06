@@ -9346,6 +9346,9 @@ h5 {
 .aboutcon p {
   margin: 15px 0px !important; }
 
+.aboutcon b, .aboutcon strong {
+  font-family: "AvenirBold"; }
+
 .rows-flex {
   -webkit-display: flex;
   -moz-display: flex;
@@ -9618,21 +9621,23 @@ h5 {
 
 .abouts {
   margin: 60px 0px 15px 0;
-  background-image: linear-gradient(to right, #76c04f 60%, white 40%);
+  background-image: linear-gradient(to right, #76c04f 56%, white 40%);
   opacity: 0.9; }
 
 .about-info {
-  padding: 15% 680px 100px 0px; }
+  padding: 10% 680px 40px 0px; }
 
 .aboutGala {
   padding: 10px 0px 100px 0px; }
 
 .about-img {
   position: absolute;
-  top: 55px;
-  left: 54%;
-  width: 590px;
-  height: auto; }
+  top: 51%;
+  left: 90%;
+  width: 700px;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 .about-data {
   margin-top: 25%; }
@@ -9718,11 +9723,11 @@ h5 {
   position: absolute;
   top: 0%;
   left: 0%;
-  font-size: 40px; }
+  font-size: 30px; }
 
 .creativity {
   position: absolute;
-  top: 15%;
+  top: 11%;
   left: 0%;
   -webkit-font-size: 18px;
   -moz-font-size: 18px;
@@ -10125,7 +10130,7 @@ sup {
       font-size: 14px; }
 
 .category-name {
-  margin: 45% 0%; }
+  margin: 31% 0%; }
   .category-name h1 {
     color: #fff;
     font-weight: 900;

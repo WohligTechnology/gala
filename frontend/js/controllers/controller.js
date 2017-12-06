@@ -11,6 +11,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.loaded = true;
     });
 
+    NavigationService.callApi("BrandsHomeImage/search", function (data) {
+        $scope.brandImage = data.data.data.results[0];
+        console.log("brandImage",$scope.brandImage)
+        $scope.loaded = true;
+    });
+
     var imagePopup = null;
     $scope.openpopup = function () {
         imagePopup = $uibModal.open({
@@ -310,10 +316,20 @@ console.log("hellobrands",$scope.companyBrands)
 })
 
 
-.controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService, $timeout, $sce) {
     $scope.template = TemplateService.getHTML("content/aboutUs.html");
     TemplateService.title = "AboutUs"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
+
+    NavigationService.callApi("company/search", function (data) {
+        $scope.aboutUs = data.data.data.results;
+        // _.each($scope.aboutUs,function(value){
+        //     value.content = $sce.trustAsHtml(value.aboutCompData)
+        // })
+        console.log("aboutUsData",$scope.aboutUs)
+        $scope.loaded = true;
+    });
+
 })
 
 // start of contact

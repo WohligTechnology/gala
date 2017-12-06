@@ -281,6 +281,9 @@ h5 {
     p{
         margin: 15px 0px!important;
     }
+    b,strong{
+        font-family: "AvenirBold";
+    }
 }
 
 .rows-flex {
@@ -631,12 +634,12 @@ h5 {
 .abouts {
     @extend .relative;
     margin: 60px 0px 15px 0;
-    background-image: linear-gradient(to right, $brand-green 60%, white 40%);
+    background-image: linear-gradient(to right, $brand-green 56%, white 40%);
     opacity: 0.9;
 }
 
 .about-info {
-    padding: 15% 680px 100px 0px;
+    padding: 10% 680px 40px 0px;
 }
 
 .aboutGala{
@@ -645,9 +648,10 @@ h5 {
 
 .about-img {
     @include position(absolute,
-    55px null null 54%);
-    @include size (590px,
+    51% null null 90%);
+    @include size (700px,
     auto);
+    transform: translate(-50%,-50%);
 }
 
 .about-data {
@@ -786,13 +790,13 @@ h5 {
         // -50%));
         @include position(absolute,
         0% null null 0%);
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 .creativity {
     @include position(absolute,
-    15% null null 0%);
+    11% null null 0%);
     @include fontsize(18px); // font-family: "Savoye";
     // font-style: italic;
     color: $brand-white;
@@ -1269,7 +1273,7 @@ sup {
 }
 
 .category-name {
-    margin: 40% 0%;
+    margin: 31% 0%;
     h1 {
         color: #fff;
         font-weight: 900;

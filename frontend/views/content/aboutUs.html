@@ -70,110 +70,49 @@
                             The company is ever expanding a nd by launching new products every year we help you culminate your
                             interior shopping at one destination. "</p> -->
 
-                            <h4 class="ourProgress">OUR PROGRESS</h4>
-                            <div class="para-color">
-                                    <p>In the past 18 years, Gala has become the one-stop solution for all interior needs. No matter what
-                                            you require, we have the interiors for you. Now, no more wandering the streets for trendy and
-                                            affordable interiors, with our varied divisions, we ensure all your Interior Needs are met under
-                                            one roof.</p>
-                            </div>
+                        <h4 class="ourProgress">OUR PROGRESS</h4>
+                        <div class="para-color">
+                            <p>In the past 18 years, Gala has become the one-stop solution for all interior needs. No matter
+                                what you require, we have the interiors for you. Now, no more wandering the streets for trendy
+                                and affordable interiors, with our varied divisions, we ensure all your Interior Needs are
+                                met under one roof.</p>
+                        </div>
                     </div>
                 </div>
-                
-                    <section class="listings">
-                        <div class="aboutGala">
-                            <div class="product cat-list">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12" >
-                                        <div class="padd">
-                                            <h3>Euro Veneer World</h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="padd aboutcon">
 
-                                            <div class="door-shadow">
-                                                <div class="overlay"></div>
-
-                                               
-                                                    <img src="img/home/1-Euro-veneer-world.jpg" class="img-responsive">
-                                                
-                                                <!-- <div class="door-info">
-                                                        
-                                                        <p class="text-uppercase text-center">{{p.name}}</p>
-                                                    </div> -->
-                                            </div>
-                                            <p>Headed by Manish Gala, Uro Veneer World was the first venture by Gala group.
-                                                With an Experience of more than 19 years in the world of decorative Industry,
-                                                We Always believe in giving the best possible product range at a reasonable
-                                                price. We showcase live to our customers more than 4000 Laminates & 3000
-                                                variants of veneer, thus catering to all furniture needs and decorative designing
-                                                material for your Décor.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <section class="listings">
+                    <div class="aboutGala">
+                        <div class="product cat-list">
                             <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
+                                <div class="col-md-12 col-sm-12 col-xs-12" ng-repeat="about in aboutUs">
                                     <div class="padd">
-                                        <h3>Wood & Mouldings</h3>
+                                        <h3>{{about.name}}</h3>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="padd aboutcon">
 
                                         <div class="door-shadow">
                                             <div class="overlay"></div>
 
-                                           
-                                                <img src="img/home/2-Wood-n-mulding.jpg" class="img-responsive">
-                                            
+
+                                            <img ng-src="{{about.categoryImage | serverimage}}" class="img-responsive">
+
                                             <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
+                                                                                                    
+                                                                                                    <p class="text-uppercase text-center">{{p.name}}</p>
+                                                                                                </div> -->
                                         </div>
-                                        <p>Headed by Chetan Gada & Krishabh Gala, primarily deals in EURO Wooden Flooring, Dupont
-                                            Corian, Wallpaper, Luxury Doors, Exterior Cladding, Exterior Decking. We keep
-                                            a complete basket of wooden flooring products which includes natural wood, engineered,
-                                            laminated and exotic bamboo. We in this division also bring to our customer’s
-                                            quality luxury products with complete application solution products.</p>
+                                        <div ng-bind-html="about.aboutCompData | highlight"></div>
 
                                     </div>
                                 </div>
+                                <!-- <div class="col-md-12 col-sm-12 col-xs-12" ng-repeat="about in aboutUs">
+                                
+                                    </div> -->
                             </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Bath World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
+                        </div>
 
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
 
-                                            
-                                                <img src="img/home/3-bathworld.jpg" class="img-responsive">
-                                            
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Mukesh Gala, offers the best products for your bathrooms with the live
-                                            display of brands like JAQUAR, KOHLER, RAK, NITCO, along with DURAVIT, HINDWARE,
-                                            GROHE to choose from having a multi brand store, Bath World provides you the
-                                            widest range and different patterns to choose from and deals in products ranging
-                                            from wall and floor tiles, kitchen sinks, Shower Panels, Bath Tubs, faucets &
-                                            Sanitary ware.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
+                        <!-- <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12" >
                                     <div class="padd">
                                         <h3>Gala Furniture World</h3>
@@ -186,12 +125,12 @@
                                             <div class="overlay"></div>
 
                                            
-                                                <img src="img/home/4-Gala-furniture-world.jpg" class="img-responsive">
-                                            <!-- <div class="door-info">
+                                                <img src="img/home/4-Gala-furniture-world.jpg" class="img-responsive"> -->
+                        <!-- <div class="door-info">
                                                     
                                                     <p class="text-uppercase text-center">{{p.name}}</p>
                                                 </div> -->
-                                        </div>
+                        <!-- </div>
                                         <p>Gala Furniture World is new set up which is now a part of the ‘GALA GROUP’. It is
                                             headed by M. V. Athamaram & Dhaval Shah. The magnificent 20,000 Sq.ft showroom
                                             is largest of its kind and provides room to a large variety of furniture for
@@ -200,211 +139,10 @@
 
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Euro Hardware World / Gala Hardware World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
+                            </div> -->
 
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
+                    </div>
 
-                                           
-                                                <img src="img/home/5-Gala-Hardware-world.jpg" class="img-responsive">
-                                           
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Manish Ahuja and Krishabh Gala, to give our architects and customers a
-                                            complete hardware solution. It constitutes a variety of products such as handles,
-                                            locks, wardrobe side fittings, kitchen baskets & accessories, Glass fittings,
-                                            bathroom accessories, shower enclosure fittings, Glass door/ window fittings
-                                            & S.S railings. The products are minute but form an important crux to the durability
-                                            of your interiors.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Gala Marble World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                            
-                                                <img src="img/home/6-Gala-Marble-world.jpg" class="img-responsive">
-                                          
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Mahek Bheda & Chintan Shah, offers a diverse range of Italian & Indian
-                                            Marbles. We deal with premium Marbles like Buttochino, Diana, Crea a Marfil,
-                                            Moon Cream, Vegas Gold, Satvario, Vietnam White, Blue Bracia, Bracia Aurora and
-                                            many more of 18mm plus thickness.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Euro Lighting World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                            
-                                                <img src="img/home/7-Euro-lighting-world.jpg" class="img-responsive">
-                                           
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Pradeep Shah, bring to you the most exclusive lights and designer fans
-                                            to select from. This division deals in Decorative Wall Lights, Hanging Lights,
-                                            LED lighting etc... Anemos Fans made by Fanimation bring exotic designs aerodynamically
-                                            that gives every interior a unique appeal.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Gala Stone World / Stone World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                            
-                                                <img src="img/home/8-Gala-Stone-world.jpg" class="img-responsive">
-                                          
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Mahek Bheda & Chintan Shah, offers a diverse range of natural stones. Stone
-                                            World sells various stone related products such as stone jaali, stone fountains,
-                                            stone basins, exclusive cladding options, natural stone temples etc... Stone
-                                            aim at adding timeless beauty to your interiors and exteriors with minimal maintenance.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Gala Curtain World / Drape World</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                            
-                                                <img src="img/home/9-Gala-Curtain-world.jpg" class="img-responsive">
-                                         
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Mohit Jain, Pramit Bafna and Samar Shroff brings to you a wide selection
-                                            of cotton, linen, silk and polyester draperies that add flavor and character
-                                            to any interior. The division also deals in a variety of Blinds, Upholstery,
-                                            Home Linens, Mattresses & Carpets. This division prides itself on the variety
-                                            and choice available to the customer according to their personal needs.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Gala Kitchen World / Hafele & Blum Design Studio</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                            
-                                                <img src="img/home/10-Gala-Kitchen-world.jpg" class="img-responsive">
-                                            
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by Nitin Ahuja and Preet Shah, is among the largest showrooms in India in
-                                            association with Hafele and Blum, and brings you a splendid selection of kitchen
-                                            fittings and accessories that seamlessly merge form and functionality. Products
-                                            such as Kitchen Drawers, Shelves and Storage Unit Drawers from state-of-the art
-                                            designed to provide an environment that is smart and elegant, making the best
-                                            utilization of space with these products. We promise all the elements that come
-                                            together to create a stunning Kitchen and Wardrobe.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="padd">
-                                        <h3>Mahaveer Corporation (India)</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="padd aboutcon">
-
-                                        <div class="door-shadow">
-                                            <div class="overlay"></div>
-
-                                           
-                                                <img src="img/home/11-Mahaveer.jpg" class="img-responsive">
-                                            
-                                            <!-- <div class="door-info">
-                                                    
-                                                    <p class="text-uppercase text-center">{{p.name}}</p>
-                                                </div> -->
-                                        </div>
-                                        <p>Headed by H. C. Jain, brings to Karnataka a diversified range of aluminum composite
-                                            panel manufactured using state-of-the-art German technology for exterior cladding.
-                                            EUROBOND is available in a wide variety of platinum, pearl, ruby, gold, wooden,
-                                            emerald, crystal, marble, diamond, mirror & fire grades.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
                 </section>
             </div>
         </div>
