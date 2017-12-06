@@ -648,8 +648,8 @@ h5 {
 }
 
 .about-img {
-    @include position(absolute,51% null null 90%);
-    @include size (700px,auto);
+    @include position(absolute,51% null null 77%);
+    @include size (650px,auto);
     @include transform(translate(-50%,-50%));
 }
 
