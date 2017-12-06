@@ -647,11 +647,9 @@ h5 {
 }
 
 .about-img {
-    @include position(absolute,
-    51% null null 90%);
-    @include size (700px,
-    auto);
-    transform: translate(-50%,-50%);
+    @include position(absolute,51% null null 90%);
+    @include size (700px,auto);
+    @include transform(translate(-50%,-50%));
 }
 
 .about-data {
