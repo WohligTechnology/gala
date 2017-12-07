@@ -282,6 +282,9 @@ h5 {
     p{
         margin: 15px 0px!important;
     }
+    b,strong{
+        font-family: "AvenirBold";
+    }
 }
 
 .rows-flex {
@@ -411,6 +414,7 @@ h5 {
 
 .address {
     @include margin(20px null 20px null);
+    color: #777;
 }
 
 .mail-tel {
@@ -632,12 +636,12 @@ h5 {
 .abouts {
     @extend .relative;
     margin: 60px 0px 15px 0;
-    background-image: linear-gradient(to right, $brand-green 60%, white 40%);
+    background-image: linear-gradient(to right, $brand-green 56%, white 40%);
     opacity: 0.9;
 }
 
 .about-info {
-    padding: 15% 680px 100px 0px;
+    padding: 10% 680px 40px 0px;
 }
 
 .aboutGala{
@@ -645,10 +649,9 @@ h5 {
 }
 
 .about-img {
-    @include position(absolute,
-    55px null null 54%);
-    @include size (590px,
-    auto);
+    @include position(absolute,51% null null 77%);
+    @include size (650px,auto);
+    @include transform(translate(-50%,-50%));
 }
 
 .about-data {
@@ -763,6 +766,15 @@ h5 {
         background: $brand-red;
     }
 }
+
+.contactPop{
+    font-size: 24px;
+    margin-top: 0px;
+    &:hover {
+        background: $brand-red;
+    }
+}
+
 .main-banner {
     .listings {
         h1 {
@@ -787,13 +799,13 @@ h5 {
         // -50%));
         @include position(absolute,
         0% null null 0%);
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 .creativity {
     @include position(absolute,
-    15% null null 0%);
+    11% null null 0%);
     @include fontsize(18px); // font-family: "Savoye";
     // font-style: italic;
     color: $brand-white;
@@ -1100,7 +1112,7 @@ sup {
 
 .img-boy {
     position: absolute;
-    left: 0%;
+    left: 5%;
     bottom: 0;
     width: 30%;
 }
@@ -1270,7 +1282,7 @@ sup {
 }
 
 .category-name {
-    margin: 40% 0%;
+    margin: 31% 0%;
     h1 {
         color: #fff;
         font-weight: 900;
@@ -1369,7 +1381,7 @@ sup {
 .h3comName{
     padding:10px 0px 5px 0px!important;
     font-weight: 900;
-    font-size: 23px!important;
+    font-size: 14px!important;
 }
 
 .brands{
@@ -1458,6 +1470,101 @@ sup {
         }
     }
 }
+
+.our-brandInside {
+    margin: 20px 0px;
+    background-color: white;
+    .client-title {
+        padding: 10% 10% 5%;
+        position: relative;
+        .img-holder {
+            position: relative;
+            height: 250px;
+            width: 300px;
+            padding-left: 60px;
+        }
+        .title {
+            position: absolute;
+            left: 0;
+            top: 12%;
+            h1 {
+                font-weight: bold;
+            }
+            .head1 {
+                color: $brand-green;
+                margin-bottom: 0;
+            }
+            .head2 {
+                margin-top: 10px;
+                color: $brand-green;
+                margin-top: 0;
+            }
+        }
+        .our-img {
+            position: absolute;
+            left: 0;
+            bottom: 22%;
+            width: 290px;
+        }
+    }
+
+    .marginb10{
+        margin:15px 0px;
+    }
+    .content-slider {
+        // padding: 3% 1% 0;
+        // margin: 20px 0px;
+        position: relative;
+        .flexslider {
+            background-color: transparent;
+            color: #fff;
+        }
+        p {
+            text-align: justify;
+            position: relative;
+            .quote-left {
+                position: absolute;
+                top: -20px;
+                left: -35px;
+                width: 25px;
+            }
+            .quote-right {
+                position: absolute;
+                bottom: -20px;
+                right: -10px;
+                width: 25px;
+            }
+        }
+        .flex-control-nav {
+            z-index: 222;
+            bottom: -100px;
+            a {
+                background-color: #8E9092;
+            }
+            .flex-active {
+                background-color: #fff;
+            }
+        }
+        .client-img {
+            position: absolute;
+            right: 0;
+            width: 500px;
+        }
+    }
+}
 // .loading-img {
 //      
 //    }
+
+     
+// @media (max-width: 1920px){
+//     .navbar{
+//         .container{
+//             width: 1650px;
+//         }
+//         .navs li{
+//             font-size: 16px;
+//             padding: 16px 40px;
+//         }
+//     }
+// }

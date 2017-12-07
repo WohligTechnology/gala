@@ -11,6 +11,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.loaded = true;
     });
 
+    NavigationService.callApi("BrandsHomeImage/search", function (data) {
+        $scope.brandImage = data.data.data.results[0];
+        console.log("brandImage",$scope.brandImage)
+        $scope.loaded = true;
+    });
+
     var imagePopup = null;
     $scope.openpopup = function () {
         imagePopup = $uibModal.open({
@@ -146,7 +152,7 @@ $scope.brands=[]
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
         console.log("companybrands",data)
-        $scope.companyBrands = data.data.data[0].company.brands;
+        $scope.companyBrands = data.data.data[0].company.brandImage;
 console.log("hellobrands",$scope.companyBrands)
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
@@ -310,15 +316,25 @@ console.log("hellobrands",$scope.companyBrands)
 })
 
 
-.controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('AboutUsCtrl', function ($scope, TemplateService, NavigationService, $timeout, $sce) {
     $scope.template = TemplateService.getHTML("content/aboutUs.html");
     TemplateService.title = "AboutUs"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
+
+    NavigationService.callApi("company/getAllCompany", function (data) {
+        $scope.aboutUs = data.data.data;
+        // _.each($scope.aboutUs,function(value){
+        //     value.content = $sce.trustAsHtml(value.aboutCompData)
+        // })
+        console.log("aboutUsData",$scope.aboutUs)
+        $scope.loaded = true;
+    });
+
 })
 
 // start of contact
 
-.controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     $scope.template = TemplateService.getHTML("content/contact.html");
     TemplateService.title = "Contact"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
@@ -338,6 +354,20 @@ console.log("hellobrands",$scope.companyBrands)
            
         })
     }
+
+    $scope.allDivisions = function () {
+        allDivisions = $uibModal.open({
+            templateUrl: "views/modal/alldivisions.html",
+            size: "md",
+            scope: $scope
+        });
+    };
+
+    $scope.closepopup = function () {
+        $.jStorage.set('popNot', false);
+        allDivisions.close();
+        $state.reload()
+    };
 })
 
 .controller('GroupActivitiesCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {

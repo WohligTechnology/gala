@@ -2,10 +2,23 @@
     <section class="bg-division relative" style="background: url('{{banner.backgroundBanner | serverimage}}')">
         <div class="overlay"></div>
         <div class="container">
+                <div class="img-boy">
+                        <img ng-if="banner.name=='Bath World'" src="img/division/Bath world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Euro Lighting World'" src="img/division/Euro lighting world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Gala Curtain World / Drape World'" src="img/division/Gala curtain world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Gala Furniture World'" src="img/division/Gala Furniture world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Euro Hardware World / Gala Hardware World'" src="img/division/Gala hardware world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Gala Kitchen World / Hafele & Blum Design Studio'" src="img/division/Gala kitchen world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Gala Stone World / Stone World'" src="img/division/Gala stone world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Mahaveer Corporation (India)'" src="img/division/Mahaveer corporation (india).png" alt="">
+                        <img ng-if="banner.name=='Uro Veneer World'" src="img/division/Uro veneer world-mascot.png" alt="">
+                        <img ng-if="banner.name=='Wood & Mouldings'" src="img/division/Wood & Mouldings-mascot.png" alt="">
+                        <img ng-if="banner.name=='Gala Marble World'" src="img/division/Wood & Mouldings-mascot.png" alt="">
+                    </div>
             <!--<div class="heart">
                 <img src="img/product/heart.png" class="img-responsive" alt="heart">
             </div>-->
-            <div class="category-name text-center"></div>
+            <div class="category-name text-center"><h1></h1></div>
         </div>
     </section>
     <div class="division-info bg-img">
@@ -52,7 +65,7 @@
                                
                                 
                                 <div class="door door-shadow" ng-if="product.name=='SOLID WOOD'">
-                                        <a  href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f">
+                                        <a  href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                             </div>
@@ -63,7 +76,7 @@
                                     </a>
                                 </div>
                                 <div class="door" ng-if="product.name=='ENGINEERED'">
-                                        <a  href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021">
+                                        <a  href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                     </div>
@@ -74,7 +87,7 @@
                                     </a>
                                 </div>
                                 <div class="door door-shadow" ng-if="product.name=='LAMINATED FLOORING'">
-                                        <a  href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130">
+                                        <a  href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                    </div>
@@ -85,7 +98,7 @@
                                     </a>
                                 </div>
                                 <div class="door door-shadow" ng-if="product.name=='EXOTIC BAMBOO'">
-                                        <a  href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328">
+                                        <a  href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                             </div>
@@ -96,7 +109,7 @@
                                     </a>
                                 </div>
                                 <div class="door door-shadow" ng-if="product.name=='KAINDL VENEER'">
-                                        <a  href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9">
+                                        <a  href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                     </div>
@@ -107,7 +120,7 @@
                                     </a>
                                 </div>
                                 <div class="door door-shadow" ng-if="product.name=='EXTERIOR DECK TILE'">
-                                        <a  href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7">
+                                        <a  href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                   </div>

@@ -33,4 +33,23 @@ myApp.filter('myFilter', function () {
                 return ;
             }
         };
-    });
+    })
+
+    .filter('rawHtml', ['$sce',
+    function ($sce) {
+    return function (val) {
+    console.log(val);
+    return $sce.trustAsHtml(val);
+    };
+    }
+    ])
+
+    .filter('highlight', function($sce) {
+        return function(text, phrase) {
+          if (phrase) text = text.replace(new RegExp('('+phrase+')', 'gi'),
+            '<span class="highlighted">$1</span>')
+    
+          return $sce.trustAsHtml(text)
+        }
+      })
+        

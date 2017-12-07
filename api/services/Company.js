@@ -20,11 +20,14 @@ var schema = new Schema({
     order: {
         type: Number,
     },
-    brands: [{
-        brandImage: {
-            type: String
-        }
-    }],
+    // brands: [{
+    //     brandImage: {
+    //         type: String
+    //     }
+    // }],
+    brandImage: {
+                type: String
+            },
     aboutCompData:String
 });
 // schema.plugin(URLSlugs('name', {
