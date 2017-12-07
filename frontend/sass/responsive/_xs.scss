@@ -91,6 +91,11 @@
      }
      .types {
          padding: 20px;
+         li{
+             &:after{
+                 display: none;
+             }
+         }
      }
      .types a {
          font-size: 18px;
