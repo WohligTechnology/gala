@@ -414,6 +414,7 @@ h5 {
 
 .address {
     @include margin(20px null 20px null);
+    color: #777;
 }
 
 .mail-tel {
@@ -1371,7 +1372,7 @@ sup {
 .h3comName{
     padding:10px 0px 5px 0px!important;
     font-weight: 900;
-    font-size: 23px!important;
+    font-size: 14px!important;
 }
 
 .brands{
