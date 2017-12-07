@@ -78,23 +78,18 @@
             "id": "order",
             "validation": ["", "trim", "unique"],
             "url": ""
-        }, {
-            "name": "Brands",
-            "type": "box",
-            "tableRef": "brands",
-            "validation": ["required", "trim", ""],
-            "field": [{
-                "name": "Brand Image",
-                "type": "image",
-                "tableRef": "brandImage",
-                "size": "250× 120px",
-                "placeholder": "Enter brandImage",
-                "id": "brandImage",
-                "validation": ["", "trim", ""],
-                "url": "",
-                "onView": true,
-                "view": true
-            }]
+        },
+        {
+            "name": "Brand Image",
+            "type": "image",
+            "tableRef": "brandImage",
+            "size": "330 × 150px",
+            "placeholder": "Enter brandImage",
+            "id": "brandImage",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "onView": true,
+            "view": true
         }
     ],
     "action": [{
