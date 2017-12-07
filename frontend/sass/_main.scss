@@ -766,6 +766,15 @@ h5 {
         background: $brand-red;
     }
 }
+
+.contactPop{
+    font-size: 24px;
+    margin-top: 0px;
+    &:hover {
+        background: $brand-red;
+    }
+}
+
 .main-banner {
     .listings {
         h1 {
@@ -1103,7 +1112,7 @@ sup {
 
 .img-boy {
     position: absolute;
-    left: 0%;
+    left: 5%;
     bottom: 0;
     width: 30%;
 }

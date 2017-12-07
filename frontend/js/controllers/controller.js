@@ -334,7 +334,7 @@ console.log("hellobrands",$scope.companyBrands)
 
 // start of contact
 
-.controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('ContactCtrl', function ($scope, TemplateService, NavigationService, $timeout, $uibModal) {
     $scope.template = TemplateService.getHTML("content/contact.html");
     TemplateService.title = "Contact"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
@@ -354,6 +354,20 @@ console.log("hellobrands",$scope.companyBrands)
            
         })
     }
+
+    $scope.allDivisions = function () {
+        allDivisions = $uibModal.open({
+            templateUrl: "views/modal/alldivisions.html",
+            size: "md",
+            scope: $scope
+        });
+    };
+
+    $scope.closepopup = function () {
+        $.jStorage.set('popNot', false);
+        allDivisions.close();
+        $state.reload()
+    };
 })
 
 .controller('GroupActivitiesCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {

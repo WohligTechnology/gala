@@ -9710,6 +9710,12 @@ h5 {
   .Groupact:hover {
     background: #ff3a40; }
 
+.contactPop {
+  font-size: 24px;
+  margin-top: 0px; }
+  .contactPop:hover {
+    background: #ff3a40; }
+
 .main-banner .listings h1 {
   color: #ff3a40;
   font-size: 30px;
@@ -9999,7 +10005,7 @@ sup {
 
 .img-boy {
   position: absolute;
-  left: 0%;
+  left: 5%;
   bottom: 0;
   width: 30%; }
 
