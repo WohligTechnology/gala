@@ -10342,6 +10342,9 @@ sup {
       right: 0;
       width: 500px; }
 
+.space-top {
+  padding-top: 40px; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
@@ -10493,6 +10496,8 @@ sup {
     left: 5px; }
   .types {
     padding: 20px; }
+    .types li:after {
+      display: none; }
   .types a {
     font-size: 18px; }
   .bg-division,
