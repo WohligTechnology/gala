@@ -1470,6 +1470,101 @@ sup {
         }
     }
 }
+
+.our-brandInside {
+    margin: 20px 0px;
+    background-color: white;
+    .client-title {
+        padding: 10% 10% 5%;
+        position: relative;
+        .img-holder {
+            position: relative;
+            height: 250px;
+            width: 300px;
+            padding-left: 60px;
+        }
+        .title {
+            position: absolute;
+            left: 0;
+            top: 12%;
+            h1 {
+                font-weight: bold;
+            }
+            .head1 {
+                color: $brand-green;
+                margin-bottom: 0;
+            }
+            .head2 {
+                margin-top: 10px;
+                color: $brand-green;
+                margin-top: 0;
+            }
+        }
+        .our-img {
+            position: absolute;
+            left: 0;
+            bottom: 22%;
+            width: 290px;
+        }
+    }
+
+    .marginb10{
+        margin:15px 0px;
+    }
+    .content-slider {
+        // padding: 3% 1% 0;
+        // margin: 20px 0px;
+        position: relative;
+        .flexslider {
+            background-color: transparent;
+            color: #fff;
+        }
+        p {
+            text-align: justify;
+            position: relative;
+            .quote-left {
+                position: absolute;
+                top: -20px;
+                left: -35px;
+                width: 25px;
+            }
+            .quote-right {
+                position: absolute;
+                bottom: -20px;
+                right: -10px;
+                width: 25px;
+            }
+        }
+        .flex-control-nav {
+            z-index: 222;
+            bottom: -100px;
+            a {
+                background-color: #8E9092;
+            }
+            .flex-active {
+                background-color: #fff;
+            }
+        }
+        .client-img {
+            position: absolute;
+            right: 0;
+            width: 500px;
+        }
+    }
+}
 // .loading-img {
 //      
 //    }
+
+     
+// @media (max-width: 1920px){
+//     .navbar{
+//         .container{
+//             width: 1650px;
+//         }
+//         .navs li{
+//             font-size: 16px;
+//             padding: 16px 40px;
+//         }
+//     }
+// }

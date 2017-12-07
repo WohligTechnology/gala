@@ -152,7 +152,7 @@ $scope.brands=[]
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
         console.log("companybrands",data)
-        $scope.companyBrands = data.data.data[0].company.brands;
+        $scope.companyBrands = data.data.data[0].company.brandImage;
 console.log("hellobrands",$scope.companyBrands)
         $scope.companyCategory = data.data.data;
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
