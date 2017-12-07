@@ -70,7 +70,17 @@
             "id": "order",
             "validation": ["required", "trim", "unique"],
             "url": ""
-        }
+        },
+        {
+            "name": "Brand Image",
+            "type": "image",
+            "tableRef": "brandImage",
+            "size": "1296 × 296px",
+            "placeholder": "Enter Brand Image",
+            "id": "brandImage",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
     ],
     "action": [{
         "name": "submit",
