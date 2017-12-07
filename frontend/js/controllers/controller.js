@@ -321,8 +321,8 @@ console.log("hellobrands",$scope.companyBrands)
     TemplateService.title = "AboutUs"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
 
-    NavigationService.callApi("company/search", function (data) {
-        $scope.aboutUs = data.data.data.results;
+    NavigationService.callApi("company/getAllCompany", function (data) {
+        $scope.aboutUs = data.data.data;
         // _.each($scope.aboutUs,function(value){
         //     value.content = $sce.trustAsHtml(value.aboutCompData)
         // })

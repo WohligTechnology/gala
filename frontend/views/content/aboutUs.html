@@ -84,7 +84,7 @@
                     <div class="aboutGala">
                         <div class="product cat-list">
                             <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12" ng-repeat="about in aboutUs">
+                                <div class="col-md-12 col-sm-12 col-xs-12" ng-repeat="about in aboutUs | orderBy:'order'">
                                     <div class="padd">
                                         <h3>{{about.name}}</h3>
                                     </div>
