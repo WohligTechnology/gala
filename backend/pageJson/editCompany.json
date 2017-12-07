@@ -83,7 +83,7 @@
             "name": "Brand Image",
             "type": "image",
             "tableRef": "brandImage",
-            "size": "330 × 150px",
+            "size": "1296 × 296px",
             "placeholder": "Enter brandImage",
             "id": "brandImage",
             "validation": ["", "trim", ""],
