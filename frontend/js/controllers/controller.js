@@ -368,6 +368,74 @@ console.log("hellobrands",$scope.companyBrands)
         allDivisions.close();
         $state.reload()
     };
+
+    // var pdf = new jsPDF();
+    // var img = new Image;
+    // img.onload = function() {
+    //     pdf.addImage(this, 500, 500);
+    //     pdf.save("test.pdf");
+    // };
+    // img.crossOrigin = "";  // for demo as we are at different origin than image
+    // img.src = "../../img/contact/Contact-page.jpg";  // some random imgur image
+
+    // function getBase64Image(url) {
+        
+    //     // alert(url);
+    //     var canvas = document.createElement('canvas');
+    //     var context = canvas.getContext('2d');
+    //     var img = new Image();
+    //     img.src = url;
+    //     img.style.height ="181px";
+    //     img.style.width ="183px";
+    //     //img.crossOrigin ="Anonymous";
+        
+    //     context.drawImage(img,0,0);
+        
+    //     var dataURL = canvas.toDataURL("image/png");
+    //     // alert(dataURL);
+    //     document.body.appendChild(img);
+        
+        
+    //     var doc = new jsPDF('landscape');
+        
+    //     doc.addImage(img,'PNG',0,0,50,50);
+    //     doc.save('Saved.pdf');
+        
+    //      }
+        
+    //     getBase64Image("http://galaapi.wohlig.co.in/api/upload/readFile?file=59edc1abd77a1b3b59726684.jpg");
+$scope.pdf = function() {
+    function getBase64Image() {
+        var img = new Image();
+        var dataURL;
+    
+        img.src = "../../img/contact/Contact-page.jpg";
+        img.crossOrigin = "";  
+        img.onload = function() {
+            var canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+    
+            var context = canvas.getContext('2d');
+            context.drawImage(img, 0, 0);
+    
+            dataURL = canvas.toDataURL('image/jpeg');
+            var doc = new jsPDF();
+            doc.addImage(dataURL, "JPEG", 15, 15,180, 240); 
+            doc.save("test.pdf");
+            // return dataURL;   /* MOVED */
+        }
+    } 
+       getBase64Image();
+}
+  
+    
+})
+
+.controller('DivisioncontactCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+    $scope.template = TemplateService.getHTML("content/divisionscontact.html");
+    TemplateService.title = "divisionscontact"; //This is the Title of the Website
+    $scope.navigation = NavigationService.getNavigation();
 })
 
 .controller('GroupActivitiesCtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {

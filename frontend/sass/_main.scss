@@ -507,6 +507,8 @@ h5 {
     background-size: cover!important;
 }
 
+
+
 .img1 {
     background-image: url("../img/division/door1.jpg");
 }
@@ -568,6 +570,10 @@ h5 {
     .bg-division {
         background-image: url("../img/about/banner.jpg");
     }
+}
+
+.pad20{
+    padding: 20px;
 }
 
 .main-list {
@@ -770,6 +776,7 @@ h5 {
 .contactPop{
     font-size: 24px;
     margin-top: 0px;
+    font-size: 14px;
     &:hover {
         background: $brand-red;
     }
@@ -1384,6 +1391,15 @@ sup {
     font-size: 14px!important;
 }
 
+
+.emailTel{
+    padding:0px 0px 5px 0px!important;
+    font-weight: 900;
+    font-size: 14px!important;
+    color: black!important;
+    font-weight: 900;
+}
+
 .brands{
     color:$brand-green!important;
     font-size: 30px;
@@ -1555,19 +1571,23 @@ sup {
 .space-top{
     padding-top: 40px;
 }
+
+.numberMail{
+    padding: 10px;
+    font-size: 18px;
+    color: $brand-red;
+}
 // .loading-img {
 //      
 //    }
 
      
-// @media (max-width: 1920px){
-//     .navbar{
-//         .container{
-//             width: 1650px;
-//         }
-//         .navs li{
-//             font-size: 16px;
-//             padding: 16px 40px;
-//         }
-//     }
-// }
+@media (max-width: 1920px){
+    .bg-division,
+    .bg-divisions {
+       
+        height:533px; 
+       
+       
+    }
+}

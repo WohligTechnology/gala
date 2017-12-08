@@ -9572,6 +9572,9 @@ h5 {
 .about .bg-division {
   background-image: url("../img/about/banner.jpg"); }
 
+.pad20 {
+  padding: 20px; }
+
 .main-list {
   padding: 80px 0;
   margin-bottom: 40px;
@@ -9712,7 +9715,8 @@ h5 {
 
 .contactPop {
   font-size: 24px;
-  margin-top: 0px; }
+  margin-top: 0px;
+  font-size: 14px; }
   .contactPop:hover {
     background: #ff3a40; }
 
@@ -10213,6 +10217,13 @@ sup {
   font-weight: 900;
   font-size: 14px !important; }
 
+.emailTel {
+  padding: 0px 0px 5px 0px !important;
+  font-weight: 900;
+  font-size: 14px !important;
+  color: black !important;
+  font-weight: 900; }
+
 .brands {
   color: #76c04f !important;
   font-size: 30px;
@@ -10342,6 +10353,16 @@ sup {
 
 .space-top {
   padding-top: 40px; }
+
+.numberMail {
+  padding: 10px;
+  font-size: 18px;
+  color: #ff3a40; }
+
+@media (max-width: 1920px) {
+  .bg-division,
+  .bg-divisions {
+    height: 533px; } }
 
 #fancybox-loading,
 .fancybox-close,
