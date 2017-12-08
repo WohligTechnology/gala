@@ -38,7 +38,7 @@
             "name": "BackgroundBanner",
             "type": "image",
             "tableRef": "backgroundBanner",
-            "size": "1296 × 296px",
+            "size": "1296 × 350px",
             "placeholder": "Enter BackgroundBanner",
             "id": "backgroundBanner",
             "validation": ["required", "trim", "unique"],
