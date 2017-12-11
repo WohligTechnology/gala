@@ -405,6 +405,7 @@ console.log("hellobrands",$scope.companyBrands)
         
     //     getBase64Image("http://galaapi.wohlig.co.in/api/upload/readFile?file=59edc1abd77a1b3b59726684.jpg");
 $scope.pdf = function() {
+    window.open('http://galagroup.in/divisioncontact', 'test'); 
     function getBase64Image() {
         var img = new Image();
         var dataURL;
@@ -422,7 +423,7 @@ $scope.pdf = function() {
             dataURL = canvas.toDataURL('image/jpeg');
             var doc = new jsPDF();
             doc.addImage(dataURL, "JPEG", 15, 15,180, 240); 
-            doc.save("test.pdf");
+            doc.save("All Divisions Contact Details.pdf");
             // return dataURL;   /* MOVED */
         }
     } 
