@@ -4,6 +4,14 @@
      h1 {
          font-size: 40px;
      }
+.content-padd{
+    padding: 10px 20px;
+}
+
+.aboutCompany{
+    font-size: 20px;
+}
+
      h2 {
          font-size: 26px;
      }
@@ -35,6 +43,7 @@
      }
      .about-us {
          padding: 25px 0px 30px;
+         font-size: 20px;
      }
      //contact
 
@@ -51,6 +60,11 @@
          width: auto;
          padding: 150px 10px;
      }
+     .about-main-head{
+         font-size: 16px;
+     }
+
+     
      .about-data {
          margin-top: 136px;
      }
@@ -98,7 +112,7 @@
          }
      }
      .types a {
-         font-size: 18px;
+         font-size: 14px;
      }
      .bg-division,
      .bg-divisions {
@@ -144,8 +158,43 @@
      .Groupact{
          float: none;
          margin-bottom: 20px;
+         display: block;
+         margin: 0 auto;
+         font-size: 20px;
+     }
+     .homeCompanyHead{
+         font-size: 20px!important;
+     }
+     .types {
+        @include padding(35px 0 30px 0);
+        li {
+           
+            @include padding(0 15px 0 15px);
+            &:after {
+                content: "";
+                border-right: 1px solid $brand-red;
+                @include size(5px,
+                20px);
+                @include position(absolute,
+                0 0 null null);
+            }
+        }
+        li:last-child {
+            &:after {
+                border-right: transparent;
+            }
+        }
+        a {
+            font-size: 14px;
+            &:hover {
+                color: $brand-green;
+            }
+        }
+    }
+     .main-banner .listings h1{
+         font-size: 20px;
      }
      .chairman,.ourProgress{
          text-align: center;
      }
- }
+    }

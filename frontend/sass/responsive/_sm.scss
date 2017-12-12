@@ -8,15 +8,32 @@
          font-size: 11px;
      }
      .about-img {
-         position: absolute;
-         top: 69px;
-         right: 24px;
-         width: 300px;
-         height: auto;
+        position: absolute;
+        top: 50%;
+        left: 78%;
+        width: 335px;
+        height: auto;
+     }
+
+     .main-banner{
+         .offers{
+left: 3%;
+         }
      }
      .about-info {
          width: 80%;
-         padding: 53px 180px 60px 20px;
+         padding: 80px 180px 60px 20px;
+     }
+     .about-main-head{
+         text-align: center;
+     }
+
+     .chairman{
+         text-align: center;
+     }
+
+     .door-shadow{
+        box-shadow: 5px 5px 1px #ccc !important;
      }
      .abouts {
          margin: 60px 0;
@@ -52,9 +69,15 @@
      }
      //home
      .creativity {
-         top: 25%;
+        top: 8%;
          left: 19px;
-         font-size: 15px;
+         font-size: 14px;
+     }
+
+     .knoMore{
+        position: absolute;
+        right: 42%;
+        transform: translate(-50%,-50%);
      }
      .para-color p {
          margin-top: 10px;

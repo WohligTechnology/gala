@@ -32,7 +32,7 @@
                 
                         <ul class="padtb15">
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
-                            <li ng-repeat="category in companyCategory track by $index"><a  ui-sref-active="active" ui-sref="divisions({product:category._id})" >{{category.name}}</a></li>
+                            <li ng-repeat="category in companyCategory track by $index"><a  ui-sref-active="active" ui-sref="divisions({product:category._id,productName:category.name})" >{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
                             <li><a href="#">Decking </a></li>
                             <li><a href="#">Wallpaper</a></li>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-md-9 padding0">
-                    <h3 class="text-center">PRODUCTS</h3>
+                    <h3 class="text-center">{{productName.name}}</h3>
                     <div class="text-center product relative">
                         <!--<div class="handss1">
                             <img src="img/product/hand6.png" class="img-responsive" alt="product">

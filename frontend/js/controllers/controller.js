@@ -170,11 +170,16 @@ console.log("hellobrands",$scope.companyBrands)
     $scope.template = TemplateService.getHTML("content/division1.html");
     TemplateService.title = "Division1"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
+    $scope.productName = {
+      name:  $stateParams.productName
+    };
+    console.log("productName",$scope.productName )
     $scope.loaded = false;
     TemplateService.social = "views/template/social.html";
     $scope.product = {
         _id: $stateParams.product
     };
+   
 
     $scope.company = {
         _id: $stateParams.category
@@ -195,8 +200,9 @@ console.log("hellobrands",$scope.companyBrands)
     });
 
     NavigationService.callApiWithData("CompanyProduct/getCompanyOfCategory", $scope.product, function (data) {
-        console.log("companyNAme",$scope.companyCategory)
+        console.log("companyNAmetop",$scope.companyCategory)
         $scope.companyCategory = data.data.data;
+        console.log("companyNAmetop",$scope.companyCategory)
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         $scope.loaded = true;
     });

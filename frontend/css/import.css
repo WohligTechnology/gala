@@ -10215,14 +10215,14 @@ sup {
 .h3comName {
   padding: 0px 0px 5px 0px !important;
   font-weight: 900;
-  font-size: 14px !important; }
+  font-size: 20px !important; }
 
 .emailTel {
   padding: 0px 0px 5px 0px !important;
   font-weight: 900;
   font-size: 14px !important;
   font-weight: 900;
-  color: #76c04f !important; }
+  color: black !important; }
 
 .brands {
   color: #76c04f !important;
@@ -10359,11 +10359,6 @@ sup {
   font-size: 18px;
   color: #ff3a40; }
 
-@media (max-width: 1920px) {
-  .bg-division,
-  .bg-divisions {
-    height: 533px; } }
-
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
@@ -10411,13 +10406,21 @@ sup {
     font-size: 11px; }
   .about-img {
     position: absolute;
-    top: 69px;
-    right: 24px;
-    width: 300px;
+    top: 50%;
+    left: 78%;
+    width: 335px;
     height: auto; }
+  .main-banner .offers {
+    left: 3%; }
   .about-info {
     width: 80%;
-    padding: 53px 180px 60px 20px; }
+    padding: 80px 180px 60px 20px; }
+  .about-main-head {
+    text-align: center; }
+  .chairman {
+    text-align: center; }
+  .door-shadow {
+    box-shadow: 5px 5px 1px #ccc !important; }
   .abouts {
     margin: 60px 0;
     background-image: linear-gradient(to right, #76c04f 55%, white 20%); }
@@ -10438,9 +10441,14 @@ sup {
   .products-info {
     padding: 20px 0; }
   .creativity {
-    top: 25%;
+    top: 8%;
     left: 19px;
-    font-size: 15px; }
+    font-size: 14px; }
+  .knoMore {
+    position: absolute;
+    right: 42%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
   .para-color p {
     margin-top: 10px;
     font-size: 14px; }
@@ -10454,6 +10462,10 @@ sup {
 @media (max-width: 767px) {
   h1 {
     font-size: 40px; }
+  .content-padd {
+    padding: 10px 20px; }
+  .aboutCompany {
+    font-size: 20px; }
   h2 {
     font-size: 26px; }
   .row-flex {
@@ -10477,7 +10489,8 @@ sup {
     margin-top: 10px;
     font-size: 14px; }
   .about-us {
-    padding: 25px 0px 30px; }
+    padding: 25px 0px 30px;
+    font-size: 20px; }
   .mar-t {
     margin-top: 5px; }
   .abouts {
@@ -10487,6 +10500,8 @@ sup {
   .about-info {
     width: auto;
     padding: 150px 10px; }
+  .about-main-head {
+    font-size: 16px; }
   .about-data {
     margin-top: 136px; }
   .about-img {
@@ -10518,7 +10533,7 @@ sup {
     .types li:after {
       display: none; }
   .types a {
-    font-size: 18px; }
+    font-size: 14px; }
   .bg-division,
   .bg-divisions {
     height: 40vh; }
@@ -10549,6 +10564,31 @@ sup {
     text-transform: uppercase; }
   .Groupact {
     float: none;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px; }
+  .homeCompanyHead {
+    font-size: 20px !important; }
+  .types {
+    padding: 35px 0 30px; }
+    .types li {
+      padding: 0 15px; }
+      .types li:after {
+        content: "";
+        border-right: 1px solid #ff3a40;
+        width: 5px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: 0; }
+    .types li:last-child:after {
+      border-right: transparent; }
+    .types a {
+      font-size: 14px; }
+      .types a:hover {
+        color: #76c04f; }
+  .main-banner .listings h1 {
+    font-size: 20px; }
   .chairman, .ourProgress {
     text-align: center; } }

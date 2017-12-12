@@ -89,7 +89,7 @@
                     <div class="row" ng-repeat="CompCat in companyCategoryBrands | orderBy:'order'">
                         <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
                             <div class="padd">
-                                <h3>{{CompCat.name}}</h3>
+                                <h3 class="homeCompanyHead">{{CompCat.name}}</h3>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
@@ -185,13 +185,14 @@
                                 solution under one roof spread across 2 acres at Mysore Road and 30000 sq. ft. at our newly opened
                                 showroom at RV Road.</p>
                     <div>
-                        <a ui-sref="aboutUs">Know More</a>
+                        <a ui-sref="knoMore">Know More</a>
                     </div>
                 </div>
-                <div class="about-img">
+                
+            </div>
+            <div class="about-img">
                     <img src="img/home/11.jpg" class="img-responsive" alt="">
                 </div>
-            </div>
         </div>
     </section>
     </div>
