@@ -10410,6 +10410,12 @@ sup {
     left: 78%;
     width: 335px;
     height: auto; }
+  .bg-division,
+  .bg-divisions {
+    height: 267px; }
+  .bg-faq-banner {
+    height: 14vh !important;
+    margin-top: 80px; }
   .main-banner .offers {
     left: 3%; }
   .about-info {
@@ -10452,6 +10458,10 @@ sup {
   .para-color p {
     margin-top: 10px;
     font-size: 14px; }
+  .thumb {
+    left: 15px; }
+  .cols-flex {
+    width: 26%; }
   .mar-l {
     margin-left: 50px; }
   .search {
@@ -10499,7 +10509,7 @@ sup {
     background-image: none; }
   .about-info {
     width: auto;
-    padding: 150px 10px; }
+    padding: 100px 10px; }
   .about-main-head {
     font-size: 16px; }
   .about-data {
@@ -10525,9 +10535,11 @@ sup {
   .product-inform {
     margin-top: 20px; }
   .creativity {
-    font-size: 16px;
+    font-size: 14px;
     top: 7%;
-    left: 5px; }
+    left: 20px;
+    line-height: 20px;
+    padding-left: 5px; }
   .types {
     padding: 20px; }
     .types li:after {
@@ -10537,13 +10549,18 @@ sup {
   .bg-division,
   .bg-divisions {
     height: 40vh; }
+  .catName {
+    font-size: 12px; }
+  .division-info h3 {
+    padding: 20px 0px 20px;
+    font-size: 20px; }
   .thumb {
     width: 100px;
     height: auto;
     position: absolute;
     /* bottom: -10px; */
     top: 60px;
-    left: 15px; }
+    left: 1px; }
   .bg-color .content-padd {
     padding: 10px 0px 0px 0px; }
   .img-boy {
@@ -10570,6 +10587,13 @@ sup {
     font-size: 20px; }
   .homeCompanyHead {
     font-size: 20px !important; }
+  .door .door-info p {
+    font-size: 16px; }
+  .search-suggest {
+    top: 98%;
+    right: 23%; }
+  .door-img {
+    height: 134px; }
   .types {
     padding: 35px 0 30px; }
     .types li {
@@ -10590,5 +10614,8 @@ sup {
         color: #76c04f; }
   .main-banner .listings h1 {
     font-size: 20px; }
+  .main-banner .offers {
+    font-size: 20px;
+    left: 7%; }
   .chairman, .ourProgress {
     text-align: center; } }

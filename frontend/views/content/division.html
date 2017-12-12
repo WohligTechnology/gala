@@ -36,7 +36,7 @@
                 <div class="container">
                     <div class="text-center product relative">
                         <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
-                            <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
+                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
                                     
@@ -47,8 +47,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4" ng-if="s2.length==1"></div>
-                            <div class="col-md-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
+                            <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
+                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
                                     <div class="bg-shadow">
@@ -59,9 +59,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4" ng-if="s2.length==1"></div>
-                            <div class="col-md-2" ng-if="s2.length==2"></div>
-                            <div class="col-md-4" ng-if="s2.length==2" ng-repeat="s in s2">
+                            <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
+                            <div class="col-md-2 col-sm-2" ng-if="s2.length==2"></div>
+                            <div class="col-md-4 col-sm-4" ng-if="s2.length==2" ng-repeat="s in s2">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
                                     <div class="bg-shadow">
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2" ng-if="s2.length==2"></div>
+                            <div class="col-md-2 col-sm-2" ng-if="s2.length==2"></div>
                         </div>
                     </div>
                 </div>

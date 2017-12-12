@@ -32,7 +32,7 @@
                 
                         <ul class="padtb15">
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
-                            <li ng-repeat="category in companyCategory track by $index"><a  ui-sref-active="active" ui-sref="divisions({product:category._id,productName:category.name})" >{{category.name}}</a></li>
+                            <li ng-repeat="category in companyCategory track by $index"><a class="catName" ui-sref-active="active" ui-sref="divisions({product:category._id,productName:category.name})" >{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
                             <li><a href="#">Decking </a></li>
                             <li><a href="#">Wallpaper</a></li>
@@ -131,7 +131,7 @@
                             <img src="img/product/hand8.png" class="img-responsive" alt="product">
                         </div>-->
                         <div class="row" ng-repeat="row in companyproductdata">
-                            <div class="col-md-4" ng-repeat="product in row">
+                            <div class="col-md-4 col-xs-4" ng-repeat="product in row">
                                 <div class="door door-shadow" ng-if="product.name != 'SOLID WOOD' && product.name !='ENGINEERED' && product.name !='LAMINATED FLOORING' && product.name !='EXOTIC BAMBOO' && product.name !='KAINDL VENEER' && product.name !='EXTERIOR DECK TILE'" ui-sref="gallery({category:company._id,productId:product._id})">
                                         <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                     <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>

@@ -15,9 +15,21 @@
         height: auto;
      }
 
+     .bg-division,
+     .bg-divisions {
+        height: 267px;
+     }
+
+     .bg-faq-banner{
+        height: 14vh!important;
+        margin-top: 80px;
+     }
+
+     
+
      .main-banner{
          .offers{
-left: 3%;
+        left: 3%;
          }
      }
      .about-info {
@@ -82,6 +94,13 @@ left: 3%;
      .para-color p {
          margin-top: 10px;
          font-size: 14px;
+     }
+
+     .thumb{
+         left: 15px;
+     }
+     .cols-flex{
+        width: 26%;
      }
      .mar-l{
          margin-left: 50px;

@@ -58,7 +58,7 @@
      }
      .about-info {
          width: auto;
-         padding: 150px 10px;
+         padding: 100px 10px;
      }
      .about-main-head{
          font-size: 16px;
@@ -99,9 +99,11 @@
          margin-top: 20px;
      }
      .creativity {
-         font-size: 16px;
+         font-size: 14px;
          top: 7%;
-        left: 5px
+        left: 20px;
+        line-height: 20px;
+        padding-left: 5px;
      }
      .types {
          padding: 20px;
@@ -118,6 +120,15 @@
      .bg-divisions {
          height: 40vh;
      }
+
+     .catName{
+         font-size: 12px;
+     }
+
+     .division-info h3{
+        padding:20px 0px 20px;
+        font-size: 20px;
+     }
      //division//
      //category
      .thumb {
@@ -126,7 +137,7 @@
          position: absolute;
          /* bottom: -10px; */
          top: 60px;
-         left: 15px;
+         left: 1px;
      }
      .bg-color {
          .content-padd {
@@ -165,6 +176,18 @@
      .homeCompanyHead{
          font-size: 20px!important;
      }
+     .door .door-info p{
+         font-size: 16px;
+     }
+
+     .search-suggest{
+        top: 98%;
+        right: 23%
+     }
+
+     .door-img{
+         height: 134px;
+     }
      .types {
         @include padding(35px 0 30px 0);
         li {
@@ -191,9 +214,17 @@
             }
         }
     }
-     .main-banner .listings h1{
+     .main-banner {
+         .listings {
+             h1{
          font-size: 20px;
      }
+    }
+    .offers{
+        font-size: 20px;
+        left: 7%;
+    }
+    }
      .chairman,.ourProgress{
          text-align: center;
      }
