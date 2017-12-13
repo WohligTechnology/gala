@@ -10459,7 +10459,7 @@ sup {
     margin-top: 10px;
     font-size: 14px; }
   .thumb {
-    left: 15px; }
+    left: 2px; }
   .cols-flex {
     width: 26%; }
   .mar-l {
@@ -10545,7 +10545,7 @@ sup {
     .types li:after {
       display: none; }
   .types a {
-    font-size: 14px; }
+    font-size: 12px; }
   .bg-division,
   .bg-divisions {
     height: 40vh; }

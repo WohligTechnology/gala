@@ -25,7 +25,7 @@
         <div class="container">
             <ul class="list-inline types">
                 <li ng-repeat="category in companyCategory track by $index">
-                    <a  ui-sref="divisions({category:company._id,product:category._id})">{{category.name}}</a>
+                    <a  ui-sref="divisions({category:company._id,product:category._id,productName:category.name})">{{category.name}}</a>
                 </li>
             </ul>
         </div>
