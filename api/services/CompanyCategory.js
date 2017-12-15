@@ -15,6 +15,9 @@ var schema = new Schema({
     image: {
         type: String,
     },
+    noImage: {
+        type: String,
+    },
     company: {
         type: Schema.Types.ObjectId,
         ref: 'Company',

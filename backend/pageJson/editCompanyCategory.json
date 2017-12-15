@@ -27,6 +27,18 @@
             "view": true
         },
         {
+            "name": "productImage",
+            "type": "image",
+            "tableRef": "noImage",
+            "size": "1296 × 680px",
+            "placeholder": "Enter Banner",
+            "id": "noImage",
+            "validation": ["required", "trim", "unique"],
+            "url": "",
+            "onView": true,
+            "view": true
+        },
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",

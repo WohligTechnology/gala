@@ -46,18 +46,6 @@
                 "onView": true,
                 "view": true,
                 "url": ""
-            },
-            {
-                "name": "Small Image",
-                "type": "image",
-                "tableRef": "smallImage",
-                "size": "130 × 129px",
-                "placeholder": "Enter Small Image",
-                "id": "smallImage",
-                "validation": ["", "trim", ""],
-                "onView": true,
-                "view": true,
-                "url": ""
             }
         ]
     }, {

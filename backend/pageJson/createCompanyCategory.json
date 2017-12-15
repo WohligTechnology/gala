@@ -22,7 +22,21 @@
             "placeholder": "Enter Banner",
             "id": "image",
             "validation": ["required", "trim", "unique"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
+        },
+        {
+            "name": "productImage",
+            "type": "image",
+            "tableRef": "noImage",
+            "size": "1296 × 680px",
+            "placeholder": "Enter Banner",
+            "id": "noImage",
+            "validation": ["required", "trim", "unique"],
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "Order",
@@ -31,7 +45,9 @@
             "placeholder": "Enter Order",
             "id": "order",
             "validation": ["required"],
-            "url": ""
+            "url": "",
+            "onView": true,
+            "view": true
         }, {
             "name": "Company",
             "type": "tags",
