@@ -28,7 +28,7 @@
             "name": "Backeground Image",
             "type": "image",
             "tableRef": "backgroundImage",
-            "size": "1600 × 990px",
+            "size": "1296 × 350px",
             "placeholder": "Enter backgroundImage",
             "id": "backgroundImage",
             "validation": ["required", "trim", "unique"],
