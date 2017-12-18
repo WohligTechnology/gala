@@ -80,7 +80,7 @@
             "id": "brandImage",
             "validation": ["required", "trim", "unique"],
             "url": ""
-        },
+        }
     ],
     "action": [{
         "name": "submit",

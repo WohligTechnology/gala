@@ -10,10 +10,13 @@
             "name": "Image ",
             "type": "image",
             "tableRef": "image",
+            "size": "1001 × 534px",
             "placeholder": "Enter Image",
             "id": "image",
-            "validation": ["", "", ""],
-            "url": ""
+            "validation": ["required", "", ""],
+            "url": "",
+            "onView": true,
+            "view": true
         },
         {
             "name": "pdf",
@@ -21,7 +24,7 @@
             "tableRef": "pdf",
             "placeholder": "Enter Image",
             "id": "pdf",
-            "validation": ["", "", ""],
+            "validation": ["required", "", ""],
             "url": ""
         }
        
