@@ -25,7 +25,7 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             onlyAdmin: true
         },
          {
-            name: "viewPdfImageUpload",
+            name: "Pdf/Image Upload",
             classis: "active",
             sref: "#!/page/viewPdfImageUpload//",
             onlyAdmin: true

@@ -18,6 +18,15 @@
             "onView": true,
             "view": true
         },
+         {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter Order",
+            "id": "order",
+            "validation": ["required"],
+            "url": ""
+        },
         {
             "name": "pdf",
             "type": "image",

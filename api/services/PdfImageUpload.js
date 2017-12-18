@@ -2,6 +2,9 @@ var schema = new Schema({
    image: {
         type: String
     },
+     order: {
+        type: Number
+    },
       pdf: {
         type: String
     },
@@ -12,7 +15,7 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('PdfImageUpload', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "order", "asc"));
 var model = {
     getAllPdfData: function (data, callback) {
         PdfImageUpload.find({}).exec(function (err, found) {
