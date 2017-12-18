@@ -9408,7 +9408,8 @@ h5 {
   margin-top: 10px; }
 
 .whitey {
-  color: #fff; }
+  color: #fff;
+  text-align: justify; }
 
 .nav li a {
   padding: 10px 25px; }
