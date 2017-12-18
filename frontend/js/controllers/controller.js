@@ -171,10 +171,9 @@ console.log("hellobrands",$scope.companyBrands)
     $scope.loaded = false;
     $scope.navigation = NavigationService.getNavigation();
     TemplateService.social = "views/template/social.html";
-
-NavigationService.callApi("PdfImageUpload/search", function (data) {
+NavigationService.callApi("PdfImageUpload/getAllPdfData", function (data) {
      console.log("inside  download api",data)
-     $scope.PdfData=data.data.data.results;
+     $scope.PdfData=data.data.data;
      console.log("inside     $scope.PdfData",   $scope.PdfData)
     });
  
