@@ -23,6 +23,13 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             classis: "active",
             sref: "#!/page/viewConfig//",
             onlyAdmin: true
+        },
+         {
+            name: "viewPdfImageUpload",
+            classis: "active",
+            sref: "#!/page/viewPdfImageUpload//",
+            onlyAdmin: true
+
         }, {
             name: "Company",
             classis: "active",

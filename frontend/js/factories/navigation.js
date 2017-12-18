@@ -94,12 +94,12 @@ myApp.factory('NavigationService', function ($http) {
         },
         callApiWithData: function (url, data, callback) {
             $http.post(adminurl + url, data).then(function (data) {
-                console.log(data);
+        
                 callback(data);
             });
         },
         callApi: function (url, callback) {
-            console.log("data", url)
+        
             $http.post(adminurl + url).then(function (data) {
                 callback(data);
             });

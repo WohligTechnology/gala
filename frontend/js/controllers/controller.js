@@ -165,6 +165,20 @@ console.log("hellobrands",$scope.companyBrands)
     });
 
 })
+.controller('DownloadCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+    $scope.template = TemplateService.getHTML("content/download.html");
+    TemplateService.title = "download"; //This is the Title of the Website
+    $scope.loaded = false;
+    $scope.navigation = NavigationService.getNavigation();
+    TemplateService.social = "views/template/social.html";
+
+NavigationService.callApi("PdfImageUpload/search", function (data) {
+     console.log("inside  download api",data)
+     $scope.PdfData=data.data.data.results;
+     console.log("inside     $scope.PdfData",   $scope.PdfData)
+    });
+ 
+})
 
 .controller('Division1Ctrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.getHTML("content/division1.html");

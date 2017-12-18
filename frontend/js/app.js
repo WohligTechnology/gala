@@ -32,6 +32,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'Division1Ctrl'
         })
+         .state('download', {
+        url: "/download",
+        templateUrl:tempateURL,
+        controller: 'DownloadCtrl',
+       
+    })
         .state('gallery', {
             url: "/gallery/:category/:productId/",
             templateUrl: tempateURL,

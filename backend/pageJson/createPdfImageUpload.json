@@ -1,0 +1,51 @@
+{
+    "title": "Create PdfImageUpload",
+    "name": "PdfImageUpload",
+    "jsonPage": "viewPdfImageUpload",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["PdfImageUpload"],
+    "fields": [
+        {
+            "name": "Image ",
+            "type": "image",
+            "tableRef": "image",
+            "placeholder": "Enter Image",
+            "id": "image",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "pdf",
+            "type": "image",
+            "tableRef": "pdf",
+            "placeholder": "Enter Image",
+            "id": "pdf",
+            "validation": ["", "", ""],
+            "url": ""
+        }
+       
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitPdfImageUpload",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPdfImageUpload"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPdfImageUpload"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "PdfImageUpload/save"
+    }
+}
