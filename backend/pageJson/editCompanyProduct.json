@@ -19,7 +19,7 @@
             "tableRef": "description",
             "placeholder": "Enter description",
             "id": "description",
-            "validation": ["required"],
+            "validation": [""],
             "url": ""
         },
         {

@@ -179,7 +179,7 @@ console.log("hellobrands",$scope.companyBrands)
     $scope.product = {
         _id: $stateParams.product
     };
-   
+
 
     $scope.company = {
         _id: $stateParams.category
@@ -205,6 +205,13 @@ console.log("hellobrands",$scope.companyBrands)
         console.log("companyNAmetop",$scope.companyCategory)
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
         $scope.loaded = true;
+    });
+    NavigationService.callApiWithData("CompanyCategory/getOne", $scope.product, function (data) {
+        $scope.productImage = data.data.data;
+        console.log("doneshowProducts",$scope.productImage)
+        // $scope.productIdimage = data.data.data.images;
+        // $scope.bigImage = $scope.productId.images[0].bigImage;
+
     });
 })
 
