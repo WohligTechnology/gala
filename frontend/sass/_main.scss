@@ -315,17 +315,20 @@ h5 {
             color: $brand-green;
         }
         &:active {
-            color: #000 !important;
+            color:$brand-red !important;
             font-weight: 900 !important;
+            font-size: 15px;
         }
         &:focus {
-            color: #000;
+            color: $brand-red;
             font-weight: 900;
+            font-size: 15px;
         }
     }
     .active {
-        color: #000!important;
-        font-weight: 900!important;
+        color: $brand-red;
+        font-weight: 900;
+        font-size: 15px;
     }
 }
 
