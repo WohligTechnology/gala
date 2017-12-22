@@ -12,6 +12,9 @@ var schema = new Schema({
         type: Number,
 
     },
+      urlLink: {
+        type: String,
+    },
     images: [{
         bigImage: {
             type: String,

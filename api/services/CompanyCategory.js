@@ -15,6 +15,9 @@ var schema = new Schema({
     image: {
         type: String,
     },
+      link: {
+        type: String,
+    },
     noImage: {
         type: String,
     },

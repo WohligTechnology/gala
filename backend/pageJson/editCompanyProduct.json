@@ -13,6 +13,14 @@
             "id": "name",
             "validation": ["required"],
             "url": ""
+        },
+        {
+            "name": "Link",
+            "type": "text",
+            "tableRef": "urlLink",
+            "placeholder": "Enter Link",
+            "id": "urlLink",
+            "url": ""
         }, {
             "name": "Description",
             "type": "textarea",

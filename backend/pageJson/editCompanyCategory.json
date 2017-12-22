@@ -14,6 +14,14 @@
             "validation": ["required"],
             "url": ""
         },
+       {
+            "name": "Link",
+            "type": "text",
+            "tableRef": "link",
+            "placeholder": "Enter Link",
+            "id": "link",
+            "url": ""
+        },
         {
             "name": "Image",
             "type": "image",
