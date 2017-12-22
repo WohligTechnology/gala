@@ -9168,6 +9168,9 @@ a,
   cursor: pointer;
   transition: all ease 300ms; }
 
+.click {
+  cursor: pointer; }
+
 footer {
   font-size: 12px;
   background-color: #76c04f;
@@ -9400,6 +9403,11 @@ h5 {
 
 .types-list .active {
   color: #ff3a40;
+  font-weight: 900;
+  font-size: 15px; }
+
+.catName {
+  color: #ff3a40 !important;
   font-weight: 900;
   font-size: 15px; }
 
@@ -10371,6 +10379,9 @@ sup {
   padding: 10px;
   font-size: 18px;
   color: #ff3a40; }
+
+.ytp-icon-sharrow {
+  display: none !important; }
 
 #fancybox-loading,
 .fancybox-close,

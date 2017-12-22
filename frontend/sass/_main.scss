@@ -65,6 +65,10 @@ a,
     @include transition(all ease 300ms);
 }
 
+
+.click{
+    cursor: pointer;
+}
 //footer//
 footer {
     font-size: 12px;
@@ -330,6 +334,12 @@ h5 {
         font-weight: 900;
         font-size: 15px;
     }
+}
+
+.catName{
+    color: $brand-red!important;
+    font-weight: 900;
+    font-size: 15px;
 }
 
 .myclass {
@@ -1462,6 +1472,7 @@ sup {
     .marginb10{
         margin:15px 0px;
     }
+    
     .content-slider {
         padding: 3% 1% 0;
         position: relative;
@@ -1592,6 +1603,10 @@ sup {
     padding: 10px;
     font-size: 18px;
     color: $brand-red;
+}
+
+.ytp-icon-sharrow{
+    display: none!important;
 }
 // .loading-img {
 //      

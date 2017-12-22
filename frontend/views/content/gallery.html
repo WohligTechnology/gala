@@ -25,7 +25,7 @@
                     <div class="flexy  hidden-sm hidden-xs">
                         <flex-slider class="bg-trans" slide="s in productIdimage track by $index" item-width="130" item-margin="20" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
-                            <li  ng-click="changeBigImage(s.bigImage)">
+                            <li  ng-click="changeBigImage(s.bigImage)" class="click">
                                 <img  ng-src="{{s.bigImage | serverimage}}">
                             </li>
                         </flex-slider>
@@ -34,7 +34,7 @@
                     <div class="flexy visible-xs hidden-md visible-sm">
                         <flex-slider slide="s in productIdimage track by $index" item-width="80" item-margin="10" animation="slide" slideshow="true"
                             animationLoop="true" prev-text="" next-text="">
-                            <li ng-click="changeBigImage(s.bigImage)" ng-if="s.smallImage!='' || !s.smallImage">
+                            <li ng-click="changeBigImage(s.bigImage)" ng-if="s.smallImage!='' || !s.smallImage" class="click">
                                 <img  ng-src="{{s.bigImage | serverimage}}">
                             </li>
                         </flex-slider>

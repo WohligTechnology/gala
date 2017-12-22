@@ -32,7 +32,7 @@
                 
                         <ul class="padtb15">
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
-                            <li ng-repeat="category in companyCategory track by $index"><a class="catName" ui-sref-active="active" ui-sref="divisions({product:category._id,productName:category.name})" >{{category.name}}</a></li>
+                            <li ng-repeat="category in companyCategory track by $index"><a ng-class="{'catName': productImage.name == category.name}" class="" ui-sref-active="active" ui-sref="divisions({product:category._id,productName:category.name})" >{{category.name}}</a></li>
                             <!--<li><a href="#">Exterior Cladding</a></li>
                             <li><a href="#">Decking </a></li>
                             <li><a href="#">Wallpaper</a></li>
@@ -132,7 +132,7 @@
                         </div>-->
                         <div class="row" ng-repeat="row in companyproductdata">
                             <div class="col-md-4 col-xs-4" ng-repeat="product in row">
-                                <div class="door door-shadow" ng-if="product.name != 'SOLID WOOD' && product.name !='ENGINEERED' && product.name !='LAMINATED FLOORING' && product.name !='EXOTIC BAMBOO' && product.name !='KAINDL VENEER' && product.name !='EXTERIOR DECK TILE'" ui-sref="gallery({category:company._id,productId:product._id})">
+                                <div class="door door-shadow" ng-if="!product.urlLink" ui-sref="gallery({category:company._id,productId:product._id})">
                                         <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                     <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
                                         </div>
@@ -143,18 +143,18 @@
                                 </div>
                                
                                 
-                                <div class="door door-shadow" ng-if="product.name=='SOLID WOOD'">
-                                        <a  href="http://euroflooring.co.in/solid-wood/58edd69c1d42174d44801f5f" target="_blank">
+                                <div class="door door-shadow" ng-if="product.urlLink && product.urlLink!='' && product.urlLink!=null">
+                                        
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
-                                            <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
+                                                    <a  href="{{product.urlLink}}" target="_blank"><div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div></a>
                                             </div>
                                             <h3 class="text-center" ng-if="product.images[0].bigImage=='' && product.images[0].bigImage==null && !product.images[0].bigImage">No Products Available Right Now.</h3>                                            
                                             <div class="door-info" >
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
-                                    </a>
+                                
                                 </div>
-                                <div class="door" ng-if="product.name=='ENGINEERED'">
+                                <!-- <div class="door door-shadow" ng-if="product.name=='ENGINEERED'">
                                         <a  href="http://euroflooring.co.in/engineered/58eddc351d42174d44802021" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
@@ -164,8 +164,8 @@
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
-                                </div>
-                                <div class="door door-shadow" ng-if="product.name=='LAMINATED FLOORING'">
+                                </div> -->
+                                <!-- <div class="door door-shadow" ng-if="product.name=='LAMINATED FLOORING'">
                                         <a  href="http://euroflooring.co.in/laminated-flooring/58eddf0d1d42174d44802130" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
@@ -175,8 +175,8 @@
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
-                                </div>
-                                <div class="door door-shadow" ng-if="product.name=='EXOTIC BAMBOO'">
+                                </div> -->
+                                <!-- <div class="door door-shadow" ng-if="product.name=='EXOTIC BAMBOO'">
                                         <a  href="http://euroflooring.co.in/exotic-bamboo/58ede7401d42174d44802328" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
@@ -186,8 +186,8 @@
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
-                                </div>
-                                <div class="door door-shadow" ng-if="product.name=='KAINDL VENEER'">
+                                </div> -->
+                                <!-- <div class="door door-shadow" ng-if="product.name=='KAINDL VENEER'">
                                         <a  href="http://euroflooring.co.in/kaindl-veneer/58edf3b61d42174d448024b9" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
@@ -197,8 +197,8 @@
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
-                                </div>
-                                <div class="door door-shadow" ng-if="product.name=='EXTERIOR DECK TILE'">
+                                </div> -->
+                                <!-- <div class="door door-shadow" ng-if="product.name=='EXTERIOR DECK TILE'">
                                         <a  href="http://euroflooring.co.in/exterior-deck-tile/58ee2acc1d42174d448036e7" target="_blank">
                                             <div class="" ng-if="product.images[0].bigImage!='' && product.images[0].bigImage!=null">
                                             <div class="door-img img1" style="background: url('{{product.images[0].bigImage | serverimage}}')"></div>
@@ -208,10 +208,10 @@
                                             <p class="pcolor text-uppercase">{{product.name}}</p>
                                     </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="text-center categoryImage" ng-if="productImage.noImage!='' && productImage.noImage && productImage.noImage!=null"><img class="img-responsive" src="{{productImage.noImage | serverimage}}" alt=""></div>
+                        <div class="text-center categoryImage" ng-if="productImage.noImage!='' && productImage.noImage && productImage.noImage!=null"><a  href="{{productImage.link}}" target="_blank"><img class="img-responsive" src="{{productImage.noImage | serverimage}}" alt=""></a></div>
                         <h3 class="text-center" ng-if="companyproduct=='noDataound' && !productImage.noImage">No Products Available Right Now.</h3>
                             <!--<div class="col-flex">
                                 <div class="door" ui-sref="gallery">
