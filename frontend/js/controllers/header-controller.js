@@ -18,6 +18,7 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.category, function (data) {
         $scope.companyCategory = data.data.data.results;
+        console.log(' $scope.companyCategory', $scope.companyCategory)
     });
 
     NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
@@ -35,8 +36,11 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
 
                 if (data.data.value) {
                     $scope.companyCategory = data.data.data.companyCategory;
+                    console.log("companycategory",$scope.companyCategory)
                     $scope.company1 = data.data.data.company;
+                    console.log("$scope.company1",$scope.company1)
                     $scope.companyProduct = data.data.data.companyProduct;
+                    console.log('$scope.companyProduct',$scope.companyProduct)
                 } else {
                     console.log("Event data false");
                 }

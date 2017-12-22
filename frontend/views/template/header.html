@@ -37,7 +37,7 @@
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
+                                <p class="text-wrapper" ui-sref="divisions({company:item.company,product:item._id,productName:s.name})">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled" ng-repeat="item in company1">
@@ -99,7 +99,7 @@
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <p class="text-wrapper" ui-sref="divisions({category:item._id,product:item._id})">{{item.name}}</p>
+                                <p class="text-wrapper" ui-sref="divisions({category:item.company,product:item._id,productName:s.name})">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled" ng-repeat="item in company1">
