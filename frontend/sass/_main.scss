@@ -282,6 +282,10 @@ h5 {
     margin-top: 30px;
 }
 
+.aboutCompany{
+    color: $brand-red;
+}
+
 .aboutcon{
     p{
         margin: 15px 0px!important;
@@ -1235,7 +1239,7 @@ sup {
 }
 
 .about-us {
-    color: #79797d;
+    color: $brand-red;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
