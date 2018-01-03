@@ -10315,9 +10315,15 @@ sup {
       width: 500px; }
 
 .showroomImage {
-  width: 50%; }
-  .showroomImage img {
-    width: 100%; }
+  position: relative; }
+  .showroomImage i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    color: red;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
 
 .our-brandInside {
   margin: 20px 0px;
