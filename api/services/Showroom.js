@@ -23,5 +23,20 @@ schema.plugin(timestamps);
 module.exports = mongoose.model('Showroom', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
-var model = {};
+var model = {
+    getAllShowroom: function (data, callback) {
+        Showroom.find({}).exec(function (err, found) {
+            console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                console.log("found in getAllShowroom", found);
+                callback(null, found);
+            }
+
+        });
+    },
+};
 module.exports = _.assign(module.exports, exports, model);

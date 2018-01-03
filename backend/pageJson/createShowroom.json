@@ -27,7 +27,7 @@
             "name": "Thumbnail",
             "type": "image",
             "tableRef": "thumbnail",
-            "size": "1536 × 713px",
+            "size": "120 × 90px",
             "placeholder": "Upload thumbnail",
             "id": "thumbnail",
             "validation": ["required"],

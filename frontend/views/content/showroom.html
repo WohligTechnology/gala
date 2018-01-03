@@ -1,18 +1,23 @@
 <div class="gallery division bg-img">
-    <!--<section class="bg-division bg-divisions relative" style="background: url('/img/home/2.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <h2 class="text-uppercase">SHOWROOM</h2>
-        </div>
-    </section>-->
-    <div class="top-space">
-        <img src="img/5.jpg" class="img-responsive">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
+    <section class="bg-division relative" style="background: url('img/Showroom.jpg')">
+        
+     </section>
+          <div>
+                 <div class="container">
+                     <div class="text-center download relative mar-top30">
+                          <div class="row">
+           <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="showrooms in showroom">
+               <div class="showroomImage">
+                   <a  href="{{showrooms.link}}" target="_blank"><img ng-src="{{showrooms.thumbnail|serverimage}}" alt="" class="img-responsive" ></a>
+               </div>
+               <div >
+ 
+               </div>
+           </div>
+       </div>
+                     </div>
+                 </div>
+             </div>
         <!--<div class="products-info relative">
             <div class="product-inform ">
                 <h3 class="text-capitalize text-center pad-10">{{name}} </h3>
@@ -57,5 +62,5 @@
                 <img src="img/product/ok.png" class="img-responsive" alt="ok">
             </div>
         </div>-->
-    </div>
+        
 </div>

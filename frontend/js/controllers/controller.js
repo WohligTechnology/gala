@@ -300,39 +300,10 @@ NavigationService.callApi("PdfImageUpload/getAllPdfData", function (data) {
     $scope.template = TemplateService.getHTML("content/showroom.html");
     TemplateService.title = "Showroom"; //This is the Title of the Website
     $scope.navigation = NavigationService.getNavigation();
-
-    NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
-        $scope.companyName = data.data.data;
+    NavigationService.callApi("Showroom/getAllShowroom", function (data) {
+        $scope.showroom = data.data.data;
+        console.log("showroom images",$scope.showroom)
     });
-
-    NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
-        $scope.productId = data.data.data;
-        $scope.productIdimage = data.data.data.images;
-        $scope.bigImage = $scope.productId.images[0].bigImage;
-
-    });
-
-    NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
-        $scope.ProductDetails = data.data.data;
-        $scope.ProductDetails = data.data.data;
-        if ($scope.ProductDetails.length != 0) {
-            $scope.bigImage = $scope.ProductDetails[0].images[0].bigImage;
-            $scope.name = $scope.ProductDetails[0].name;
-            $scope.backgroundImage = $scope.ProductDetails[0].companyCategory.company.backgroundImage;
-        } else {
-            console.log("hello")
-        }
-
-        $scope.changeBigImage = function (bigImage, name, backgroundImage) {
-            $scope.bigImage = bigImage;
-            $scope.name = name;
-            $scope.backgroundImage = backgroundImage;
-        };
-    });
-
-    $scope.product = {};
-    $scope.bigImage = {};
-    $scope.name = {};
 })
 
 .controller('FAQCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
