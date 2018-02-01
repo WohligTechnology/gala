@@ -277,6 +277,7 @@ NavigationService.callApi("PdfImageUpload/getAllPdfData", function (data) {
         $state.reload()
     };
 
+
     $scope.saveEnquiry = function (detail) {
         detail.productName = $scope.productId.name;
         detail.image = $scope.bigImage;
