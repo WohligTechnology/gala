@@ -37,28 +37,41 @@
                             </div>
                             <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
                             <div class="col-md-4 col-sm-4" ng-repeat="s in s2 | orderBy:'order' track by $index" ng-if="s2.length==1">
-                                <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
-                                    <div class="overlay"></div>
-                                    <!-- <div class="bg-shadow"> -->
-                                    <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                    <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
+                                        <div class="overlay"></div>
+                                        
+                                        <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                       
+                                        <div class="door-info">
+                                            <p class="" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">{{s.name}}</p>
+                                        </div>
                                     </div>
-                                    <div class="door-info">
-                                        <p class="" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">{{s.name}}</p>
+                                </div>
+                                <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
+                            <div class="col-md-2 col-sm-2" ng-if="s2.length==2"></div>
+                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 | orderBy:'order' track by $index" ng-if="s2.length==2">
+                                    <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
+                                        <div class="overlay"></div>
+                                        
+                                        <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
+                                       
+                                        <div class="door-info">
+                                            <p class="" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">{{s.name}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
-                            <div class="col-md-2 col-sm-2" ng-if="s2.length==2"></div>
-                            <div class="col-md-4 col-sm-4" ng-if="s2.length==2" ng-repeat="s in s2">
+                            
+                            <!-- <div class="col-md-4 col-sm-4" ng-if="s2.length==2" ng-repeat="s in s2">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
-                                    <div class="overlay"></div>
+                                    <div class="overlay"></div> -->
                                     <!-- <div class="bg-shadow"> -->
-                                    <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
+                                    <!-- <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
                                 </div>
                                     <div class="door-info">
                                         <p class="" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">{{s.name}}</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-2 col-sm-2" ng-if="s2.length==2"></div>
                         </div>
