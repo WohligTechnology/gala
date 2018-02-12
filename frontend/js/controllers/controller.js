@@ -18,13 +18,13 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     });
 
     var imagePopup = null;
-    $scope.openpopup = function () {
-        imagePopup = $uibModal.open({
-            templateUrl: "views/popupmodal.html",
-            size: "md",
-            scope: $scope
-        });
-    };
+    // $scope.openpopup = function () {
+    //     imagePopup = $uibModal.open({
+    //         templateUrl: "views/popupmodal.html",
+    //         size: "md",
+    //         scope: $scope
+    //     });
+    // };
 
     var data = {};
     data.page = 1;
@@ -72,27 +72,27 @@ $scope.brands=[]
     //     });
     // };
 
-    function getPopUpImage() {
+    // function getPopUpImage() {
       
-        NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
+    //     NavigationService.callApiWithData("PopUpImage/search", data, function (data) {
         
-            $scope.popUpImage = data.data.data.results[0].image;
-            console.log("popupnotcoming",$scope.popUpImage)
+    //         $scope.popUpImage = data.data.data.results[0].image;
+    //         console.log("popupnotcoming",$scope.popUpImage)
            
          
-        });
-    }
+    //     });
+    // }
 
-    getPopUpImage();
+    // getPopUpImage();
 
-    $scope.$on('$viewContentLoaded', function () {
-        if (_.isEmpty($.jStorage.get('firstTime'))) {
-            $.jStorage.set('firstTime', {
-                value: true
-            });
-            $scope.openpopup();
-        }
-    });
+    // $scope.$on('$viewContentLoaded', function () {
+    //     if (_.isEmpty($.jStorage.get('firstTime'))) {
+    //         $.jStorage.set('firstTime', {
+    //             value: true
+    //         });
+    //         $scope.openpopup();
+    //     }
+    // });
  
     //category
        NavigationService.callApi("CompanyCategory/getAllCategory", function (data) {
@@ -153,8 +153,9 @@ $scope.brands=[]
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.company, function (data) {
         console.log("companybrands",data)
         $scope.companyBrands = data.data.data[0].company.brandImage;
-console.log("hellobrands",$scope.companyBrands)
+
         $scope.companyCategory = data.data.data;
+        console.log("hellobrands",$scope.companyCategory)
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
       
     });

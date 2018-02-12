@@ -477,7 +477,7 @@ img{
 }
 
 .product {
-    @include padding (20px 20px 20px 20px);
+    @include padding (12px 12px 12px 12px);
 }
 
 .download {
@@ -829,7 +829,13 @@ img{
         }
     }
     .door-info {
-        background-color: $brand-white;
+        @include padding(10px 0);
+        box-shadow: 2px 2px 2px #ccc;
+        background: white;
+        p {
+            margin: 0;
+            font-size: 18px;
+        }
     }
     .offers {
         // @include transform(translate(-50%,

@@ -12,7 +12,7 @@
     <section class="types-list text-center">
         <div class="container">
             <ul class="list-inline types">
-                <li ng-repeat="category in companyCategory track by $index">
+                <li ng-repeat="category in companyCategory | orderBy:'order' track by $index">
                     <a  ui-sref="divisions({category:company._id,product:category._id,productName:category.name})">{{category.name}}</a>
                 </li>
             </ul>
@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="text-center product relative">
                         <div class="row" ng-repeat="s2 in companyCategoryData track by $index">
-                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==3">
+                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 | orderBy:'order' track by $index" ng-if="s2.length==3">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
                                     
@@ -36,10 +36,10 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4" ng-if="s2.length==1"></div>
-                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 track by $index" ng-if="s2.length==1">
+                            <div class="col-md-4 col-sm-4" ng-repeat="s in s2 | orderBy:'order' track by $index" ng-if="s2.length==1">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
-                                    <div class="bg-shadow">
+                                    <!-- <div class="bg-shadow"> -->
                                     <div class="door-img img1" style="background: url('{{s.image | serverimage}}')"></div>
                                     </div>
                                     <div class="door-info">
@@ -52,7 +52,7 @@
                             <div class="col-md-4 col-sm-4" ng-if="s2.length==2" ng-repeat="s in s2">
                                 <div class="door door-shadow" ui-sref="divisions({category:company._id,product:s._id,productName:s.name})">
                                     <div class="overlay"></div>
-                                    <div class="bg-shadow">
+                                    <!-- <div class="bg-shadow"> -->
                                     <div class="door-img img4" style="background: url('{{s.image | serverimage}}')"></div>
                                 </div>
                                     <div class="door-info">
