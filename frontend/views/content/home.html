@@ -108,7 +108,7 @@
                         </div>
                         <section class="types-list text-center">
                             <div class="container">
-                                <ul class="list-inline types">
+                                <ul class="list-inline types hidden-xs">
                                     <li ng-repeat="catarr in CompCat.categories | orderBy:'order'" ui-sref="divisions({category:CompCat._id,product:catarr._id})">
                                         <a>{{catarr.name}}</a>
                                     </li>
