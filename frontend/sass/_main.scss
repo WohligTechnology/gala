@@ -1063,8 +1063,7 @@ sup {
 .thumb {
     @include size(200px,
     auto);
-    @include position(absolute,
-    null null 0 100px);
+   margin: 0 auto;
 }
 
 //scss for FAQ

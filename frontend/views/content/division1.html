@@ -28,7 +28,86 @@
                     <div class="bg-grey aside types-list text-center space-top">
                         <h3 class="h3comName" ng-repeat="name in bannerName track by $index">{{name}}<span ng-if="$index>=0 && $index<bannerName.length-1"> /</span></h3>
                         <!--<h4 class="text-capitalize ">door</h4>-->
-                       
+                        <div ng-if="banner.name=='Wood & Mouldings'">
+                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">Mysore Road Campus: 9880589246 / RV Road Campus: 8105921000</h3>
+                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">wood@galagroup.in</h3>
+                    </div>
+                   
+                    <div ng-if="banner.name=='Uro Veneer World'">
+                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">Mysore Road Campus: 9880589240 / RV Road Campus: 9902348240</h3>
+                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">veneer@galagroup.in</h3>
+                    </div>
+
+                    <div ng-if="banner.name=='Bath World'">
+                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">Mysore Road Campus: 9880520000</h3>
+                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">ceramic@galagroup.in</h3>
+                    </div>
+
+                    <div ng-if="banner.name=='Mahaveer Corporation (India)'">
+                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">Mysore Road Campus: 9739300015</h3>
+                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">acp@galagroup.in</h3>
+                    </div>
+
+                    <div ng-if="banner.name=='Euro Hardware World / Gala Hardware World'">
+                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">Mysore Road Campus: 984556577 / </h3>
+                            <h3 class="emailTel">RV Road Campus: 9900240660</h3>
+                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                            <h3 class="emailTel">hardware@galagroup.in</h3>
+                    </div>
+
+                    <div ng-if="banner.name=='Gala Furniture World'">
+                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">Mysore Road Campus: 9900710000</h3>
+                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">info.furniture@galagroup.in</h3>
+                </div>
+
+                <div ng-if="banner.name=='Gala Marble World'">
+                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">Mysore Road Campus: 9844756789</h3>
+                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">marble@galagroup.in</h3>
+                </div>
+
+                <div ng-if="banner.name=='Euro Lighting World'">
+                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">Mysore Road Campus: 9945446666</h3>
+                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">eurofanworld@gmail.com / info@eurolightingworld.com</h3>
+                </div>
+
+                <div ng-if="banner.name=='Gala Stone World / Stone World'">
+                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">Mysore Road Campus: 9036456788 / </h3>
+                        <h3 class="emailTel">RV Road Campus: 9632811911</h3>
+                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">stone@galagroup.in</h3>
+                </div>
+
+                <div ng-if="banner.name=='Gala Curtain World / Drape World'">
+                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">Mysore Road Campus: 9036839449 / </h3>
+                        <h3 class="emailTel">RV Road Campus: 9844431901</h3>
+                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                        <h3 class="emailTel">drapes@galagroup.in</h3>
+                </div>
+
+                <div ng-if="banner.name=='Gala Kitchen World / Hafele & Blum Design Studio'">
+                    <i class="fa fa-phone numberMail" aria-hidden="true"></i>
+                    <h3 class="emailTel">Mysore Road Campus: 9945163360 / </h3>
+                    <h3 class="emailTel">RV Road Campus: 7829773850</h3>
+                    <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
+                    <h3 class="emailTel">kitchen@galagroup.in</h3>
+            </div>
                 
                         <ul class="padtb15">
                             <!--<li ng-repeat="s in companyproduct"><a ui-sref="divisions({divisioncategory:s.category,inner:s.name})">{{s.name}}</a></li>-->
@@ -38,87 +117,13 @@
                             <li><a href="#">Wallpaper</a></li>
                             <li><a href="#">Dupont Corian</a></li>
                             <li class="active"><a href="#">Door</a></li>-->
+                            <div class="thumb">
+                                <img src="img/product/thumb.png" class="img-responsive" alt="thumb">
+                            </div>
                         </ul>
-                        <div ng-if="banner.name=='Wood & Mouldings'">
-                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">9880589246 / 8105921000</h3>
-                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">wood@galagroup.in</h3>
-                    </div>
-                   
-                    <div ng-if="banner.name=='Uro Veneer World'">
-                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">9880589240 / 9902348240</h3>
-                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">veneer@galagroup.in</h3>
-                    </div>
+                     
 
-                    <div ng-if="banner.name=='Bath World'">
-                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">9880520000</h3>
-                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">ceramic@galagroup.in</h3>
-                    </div>
-
-                    <div ng-if="banner.name=='Mahaveer Corporation (India)'">
-                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">9739300015</h3>
-                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">acp@galagroup.in</h3>
-                    </div>
-
-                    <div ng-if="banner.name=='Euro Hardware World / Gala Hardware World'">
-                            <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">984556577 / 9900240660</h3>
-                            <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                            <h3 class="emailTel">hardware@galagroup.in</h3>
-                    </div>
-
-                    <div ng-if="banner.name=='Gala Furniture World'">
-                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">9900710000</h3>
-                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">info.furniture@galagroup.in</h3>
-                </div>
-
-                <div ng-if="banner.name=='Gala Marble World'">
-                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">9844756789</h3>
-                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">marble@galagroup.in</h3>
-                </div>
-
-                <div ng-if="banner.name=='Euro Lighting World'">
-                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">9945446666</h3>
-                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">eurofanworld@gmail.com / info@eurolightingworld.com</h3>
-                </div>
-
-                <div ng-if="banner.name=='Gala Stone World / Stone World'">
-                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">9036456788 / 9632811911</h3>
-                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">stone@galagroup.in</h3>
-                </div>
-
-                <div ng-if="banner.name=='Gala Curtain World / Drape World'">
-                        <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">9036839449 / 9844431901</h3>
-                        <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                        <h3 class="emailTel">drapes@galagroup.in</h3>
-                </div>
-
-                <div ng-if="banner.name=='Gala Kitchen World / Hafele & Blum Design Studio'">
-                    <i class="fa fa-phone numberMail" aria-hidden="true"></i>
-                    <h3 class="emailTel">9945163360 / 7829773850</h3>
-                    <i class="fa fa-envelope-o numberMail" aria-hidden="true"></i>
-                    <h3 class="emailTel">kitchen@galagroup.in</h3>
-            </div>
-
-                        <div class="thumb">
-                            <img src="img/product/thumb.png" class="img-responsive" alt="thumb">
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-md-9 padding0">

@@ -155,6 +155,7 @@ $scope.brands=[]
         $scope.companyBrands = data.data.data[0].company.brandImage;
 
         $scope.companyCategory = data.data.data;
+        $scope.companyCategory = _.orderBy($scope.companyCategory, ['order'], ['asc', 'desc'])
         console.log("hellobrands",$scope.companyCategory)
         $scope.companyCategoryData = _.chunk($scope.companyCategory, 3);
       
