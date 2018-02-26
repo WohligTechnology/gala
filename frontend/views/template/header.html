@@ -37,17 +37,17 @@
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <p class="text-wrapper" ui-sref="divisions({company:item.company,product:item._id,productName:s.name})">{{item.name}}</p>
+                                <p class="text-wrapper"  ng-click="divisions(item.company.name,item.name)">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled" ng-repeat="item in company1">
-                            <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
+                            <li class="search-item"  ng-click="division(item.name)" ng-if="company1.length > 0">
                                 <p class="text-wrapper">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
-                                <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
+                                <p class="text-wrapper" ng-click="gallery(item.companyCategory.company.name,item.name)">{{item.name}}</p>
                             </li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@
                         <ul class="dropdown-menu">
                             <li class="rows-flex margin0 padding0">
                                 <div class="cols-flex" ng-repeat="cat in company">
-                                    <a ui-sref="division({category:cat._id,categoryName:cat.name})" ng-if="cat.name!='Euro Flooring'">{{cat.name}}</a>
+                                    <a  ng-click="division(cat.name)" ng-if="cat.name!='Euro Flooring'">{{cat.name}}</a>
                                     <a href="http://euroflooring.co.in/" ng-if="cat.name=='Euro Flooring'">{{cat.name}}</a>
                                 </div>
                                 <!-- <div ng-if="cat.name==Euro Flooring">
@@ -99,17 +99,17 @@
                     <div class="search-suggest" ng-if="searchText.searchText != '' && isText == true">
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyCategory" ng-if="companyCategory.length > 0">
-                                <p class="text-wrapper" ui-sref="divisions({category:item.company,product:item._id,productName:s.name})">{{item.name}}</p>
+                                <p class="text-wrapper" ng-click="divisions(item.company.name,item.name)">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled" ng-repeat="item in company1">
-                            <li class="search-item" ui-sref="division({category:item._id})" ng-if="company1.length > 0">
+                            <li class="search-item" ng-click="division(item.name)" ng-if="company1.length > 0">
                                 <p class="text-wrapper">{{item.name}}</p>
                             </li>
                         </ul>
                         <ul class="list-unstyled">
                             <li class="search-item" ng-repeat="item in companyProduct" ng-if="companyProduct.length > 0">
-                                <p class="text-wrapper" ui-sref="gallery({category:item.companyCategory.company._id ,productId:item._id})">{{item.name}}</p>
+                                <p class="text-wrapper"  ng-click="gallery(item.companyCategory.company.name,item.name)">{{item.name}}</p>
                             </li>
                         </ul>
                     </div>

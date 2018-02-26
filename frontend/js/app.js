@@ -16,18 +16,18 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
     $stateProvider
-        .state('home', {
+          .state('home', {
             url: "/",
             templateUrl: tempateURL,
             controller: 'HomeCtrl'
         })
         .state('division', {
-            url: "/division/:category/:categoryName",
+            url: "/division/:comapnyName",
             templateUrl: tempateURL,
             controller: 'DivisionCtrl'
         })
         .state('divisions', {
-            url: "/divisions/:category/:product/:productName",
+            url: "/divisions/:companyName/:categoryName",
             // url: "/divisions/:product",
             templateUrl: tempateURL,
             controller: 'Division1Ctrl'
@@ -39,7 +39,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
        
     })
         .state('gallery', {
-            url: "/gallery/:category/:productId/",
+            url: "/gallery/:companyName/:productName",
             templateUrl: tempateURL,
             controller: 'GalleryCtrl'
         })

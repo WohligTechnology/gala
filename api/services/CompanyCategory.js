@@ -41,27 +41,41 @@ module.exports = mongoose.model('CompanyCategory', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "order", "asc"));
 var model = {
-    getAllCategory: function (data, callback) {
-        CompanyCategory.find({}).deepPopulate('company').exec(function (err, found) {
-            console.log("Found: ", found);
+           getCategory: function (data, callback) {
+        console.log("data inside comapny: ", data);
+        CompanyCategory.findOne({
+            name: data.name
+            // "myslug": data.myslug
+        }).exec(function (err, found) {
+            // console.log("Found: ", found);
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
             } else {
-                console.log("found in getAllCompany", found);
+                callback(null, found);
+            }
+        });
+    },
+    getAllCategory: function (data, callback) {
+        CompanyCategory.find({}).deepPopulate('company').exec(function (err, found) {
+          
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
                 callback(null, found);
             }
 
         });
     },
     getAllCategoriesOfCompany: function (data, callback) {
-        console.log("data: ", data);
+       
         CompanyCategory.find({
             company: mongoose.Types.ObjectId(data._id)
         }).deepPopulate('company').lean().exec(function (err, found) {
             if (err) {
-                console.log("**** inside getCategoryWithCompany of CompanyCategoryjs ******", err);
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
@@ -83,9 +97,8 @@ var model = {
             }
         }
 
-        CompanyCategory.find(queryString).limit(5).exec(function (error, companyCategoryFound) {
+        CompanyCategory.find(queryString).deepPopulate('company').limit(5).exec(function (error, companyCategoryFound) {
             if (error || companyCategoryFound == undefined) {
-                console.log("CompanyCategory >>> searchCompanyCategory >>> find  >>> error >>> ", error);
                 callback(error, null);
             } else {
                 if (!_.isEmpty(companyCategoryFound)) {
@@ -109,7 +122,6 @@ var model = {
             } else {
 
                 if (found) {
-                    console.log("Found", found);
                     callback(null, found);
                 } else {
                     callback(null, {
@@ -146,7 +158,6 @@ var model = {
             start: (page - 1) * maxRow,
             count: maxRow
         };
-        console.log("sssssssssssss", data);
         var match = {};
         if (!_.isEmpty(data.filter)) {
             match = {
@@ -157,7 +168,6 @@ var model = {
             match = {}
 
         }
-        console.log("match---", match);
         CompanyCategory.find(match)
             .order(options)
             .keyword(options)
@@ -167,7 +177,6 @@ var model = {
                     if (err) {
                         callback(err, null);
                     } else if (found) {
-                        console.log("found", found);
                         callback(null, found);
                     } else {
                         callback("Invalid data", null);

@@ -87,12 +87,14 @@
             <div class="about-info">
                 <div class="product cat-list">
                     <div class="row" ng-repeat="CompCat in companyCategoryBrands | orderBy:'order'">
-                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
+                        <!--<div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">-->
+                        <div class="col-md-12 col-sm-12 col-xs-12" ng-click="division(CompCat.name)">
                             <div class="padd">
                                 <h3 class="homeCompanyHead">{{CompCat.name}}</h3>
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">
+                        <!--<div class="col-md-12 col-sm-12 col-xs-12" ui-sref="division({category:CompCat._id, categoryName:CompCat.name})">-->
+                        <div class="col-md-12 col-sm-12 col-xs-12" ng-click="division(CompCat.name)">
                             <div class="padd">
 
                                 <div class=" door-shadow">
@@ -109,7 +111,7 @@
                         <section class="types-list text-center">
                             <div class="container">
                                 <ul class="list-inline types hidden-xs">
-                                    <li ng-repeat="catarr in CompCat.categories | orderBy:'order'" ui-sref="divisions({category:CompCat._id,product:catarr._id})">
+                                    <li ng-repeat="catarr in CompCat.categories | orderBy:'order'" ng-click="divisions(CompCat.name,catarr.name)">
                                         <a>{{catarr.name}}</a>
                                     </li>
                                 </ul>
@@ -122,14 +124,14 @@
     </section>
     <section class="listings">
         <div class="container">
-                <h1 class="text-capitalize brands">OUR BRANDS</h1>
-                
-                        <div class="our-client">
-                
-                            <div class="container-fluid">
-                
-                                <div class="row">
-                                    <!-- <div class="col-md-2 pad-rem">
+            <h1 class="text-capitalize brands">OUR BRANDS</h1>
+
+            <div class="our-client">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <!-- <div class="col-md-2 pad-rem">
                                         <div class="client-title">
                                             <div class="img-holder">
                                                 <div class="title">
@@ -139,31 +141,31 @@
                                             </div>
                                         </div>
                                     </div> -->
-                
-                
+
+
+                        <div class="col-md-12">
+
+                            <div class="content-slider">
+                                <div class="row pad-tb15 ">
                                     <div class="col-md-12">
-                
-                                        <div class="content-slider">
-                                            <div class="row pad-tb15 ">
-                                                <div class="col-md-12">
-                                                    <img src="{{brandImage.brandImage | serverimage}}" class="img-responsive marginb10" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                
-                
-                
+                                        <img src="{{brandImage.brandImage | serverimage}}" class="img-responsive marginb10" alt="">
                                     </div>
-                
-                
-                
-                
-                
                                 </div>
                             </div>
+
+
+
                         </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
     </section>
     <section class="abouts ">
         <div class="container relative">
@@ -171,19 +173,19 @@
             <p class="creativity"> "creativity is limitless and so are the ways to expressions !" </p>
             <div class="about-info">
                 <div class=" text-right ">
-                    <p class="whitey ">Our vision is to bring your dream space alive. We believe that a house can only be turned into a
-                        home, when it evokes emotions in its residents and is instilled with memorable moments. We at
-                        Gala Group, offer modern interior design solution with a touch of elegant architecture, and much
-                        more. With a variety of high quality and luxury home décor products, we make your idea of a dream
-                        home, come to life.</p>
-                        <p class="whitey ">Gala Group, inspired to Enhance Life Style, is a live merchandising showroom of global reference,
-                            culminating the finest interior products to help cater to all requirements, for creating a unique
-                            and trendy architecture of your house. We wish to make your peaceful environment a luxurious
-                            one. Today we are a cohesive unit of 14 divisions in a single campus that strives together in
-                            bringing a one stop solution for all interior needs.</p>
-                            <p class="whitey ">Incepted in the year, 1998, it has developed into an Interior Hub delivering complete interior decoration
-                                solution under one roof spread across 2 acres at Mysore Road and 30000 sq. ft. at our newly opened
-                                showroom at RV Road.</p>
+                    <p class="whitey ">Our vision is to bring your dream space alive. We believe that a house can only be turned into a home,
+                        when it evokes emotions in its residents and is instilled with memorable moments. We at Gala Group,
+                        offer modern interior design solution with a touch of elegant architecture, and much more. With a
+                        variety of high quality and luxury home décor products, we make your idea of a dream home, come to
+                        life.</p>
+                    <p class="whitey ">Gala Group, inspired to Enhance Life Style, is a live merchandising showroom of global reference, culminating
+                        the finest interior products to help cater to all requirements, for creating a unique and trendy
+                        architecture of your house. We wish to make your peaceful environment a luxurious one. Today we are
+                        a cohesive unit of 14 divisions in a single campus that strives together in bringing a one stop solution
+                        for all interior needs.</p>
+                    <p class="whitey ">Incepted in the year, 1998, it has developed into an Interior Hub delivering complete interior decoration
+                        solution under one roof spread across 2 acres at Mysore Road and 30000 sq. ft. at our newly opened
+                        showroom at RV Road.</p>
                     <div>
                         <a ui-sref="knoMore">Know More</a>
                     </div>

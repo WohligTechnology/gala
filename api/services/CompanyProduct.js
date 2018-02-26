@@ -69,6 +69,22 @@ var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "co
 
 
 var model = {
+       getProduct: function (data, callback) {
+        console.log("data inside comapny: ", data);
+        CompanyProduct.findOne({
+            name: data.name
+            // "myslug": data.myslug
+        }).exec(function (err, found) {
+            // console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                callback(null, found);
+            }
+        });
+    },
     getAllProduct: function (data, callback) {
         CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
             .exec(function (err, found) {
@@ -78,7 +94,6 @@ var model = {
                 } else if (_.isEmpty(found)) {
                     callback(null, "noDataound");
                 } else {
-                    console.log("found in getAllProduct", found);
                     callback(null, found);
                 }
 
@@ -99,15 +114,12 @@ var model = {
     },
 
     getAllProductWithCategory: function (data, callback) {
-        console.log("data inside product: ", data);
         CompanyProduct.find({
             companyCategory: mongoose.Types.ObjectId(data._id)
         }).sort({
             'order': 1
         }).lean().exec(function (err, found) {
-            console.log("Found: ", found);
             if (err) {
-                console.log("**** inside getAllProductWithCategory of CompanyProduct ******", err);
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
@@ -119,18 +131,14 @@ var model = {
     },
 
     getOneProductDetails: function (data, callback) {
-        console.log("data inside productDetail : ", data);
         CompanyProduct.findOne({
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, found) {
-            console.log("Found: ", found);
             if (err) {
-                console.log("**** inside getOneProductDetails description  ******", err);
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
             } else {
-                console.log("**** inside getOneProductDetails description  ******", found);
                 callback(null, found);
             }
 
@@ -149,9 +157,8 @@ var model = {
             }
         }
 
-        CompanyProduct.find(queryString).limit(5).exec(function (error, companyProductFound) {
+        CompanyProduct.find(queryString).deepPopulate('companyCategory.company').limit(5).exec(function (error, companyProductFound) {
             if (error || companyProductFound == undefined) {
-                console.log("CompanyProduct >>> searchCompanyProducts >>> find  >>> error >>> ", error);
                 callback(error, null);
             } else {
                 if (!_.isEmpty(companyProductFound)) {
@@ -243,8 +250,6 @@ var model = {
                 if (err) {
                     callback(err, null);
                 } else {
-
-                    console.log("In Res", res);
                     callback(null, res);
                 }
             });
@@ -262,7 +267,6 @@ var model = {
             } else {
 
                 if (found) {
-                    console.log("Found", found);
                     callback(null, found);
                 } else {
                     callback(null, {
@@ -351,7 +355,6 @@ var model = {
             count: maxRow
         };
 
-        console.log("sssssssssssss", data);
 
         var match = {};
         if (!_.isEmpty(data.filter)) {
@@ -363,7 +366,6 @@ var model = {
             match = {}
 
         }
-        console.log("match---", match);
         CompanyProduct.find(match)
             .order(options)
             .keyword(options)
@@ -372,7 +374,6 @@ var model = {
                     if (err) {
                         callback(err, null);
                     } else if (found) {
-                        console.log("found", found);
                         callback(null, found);
                     } else {
                         callback("Invalid data", null);

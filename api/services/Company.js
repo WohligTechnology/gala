@@ -43,20 +43,20 @@ var exports = _.cloneDeep(require("sails-wohlig-service")(schema, null, null, "o
 var model = {
     getAllCompany: function (data, callback) {
         Company.find({}).exec(function (err, found) {
-            console.log("Found: ", found);
+            // console.log("Found: ", found);
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
             } else {
-                console.log("found in getAllCompany", found);
+                // console.log("found in getAllCompany", found);
                 callback(null, found);
             }
 
         });
     },
     getAllCompanyWithCategory: function (data, callback) {
-        console.log("Inside getAllCompanyWithCategory service", data);
+        // console.log("Inside getAllCompanyWithCategory service", data);
 
         Company.aggregate([{
             $lookup: {
@@ -73,22 +73,37 @@ var model = {
             if (err) {
                 callback(err);
             } else {
-                console.log("last result", result); // OUTPUT OK
+                // console.log("last result", result); // OUTPUT OK
                 callback(null, result);
             }
         });
 
 
     },
+        getCompany: function (data, callback) {
+        console.log("data inside comapny: ", data);
+        Company.findOne({
+            name: data.name
+            // "myslug": data.myslug
+        }).exec(function (err, found) {
+            // console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                callback(null, found);
+            }
+        });
+    },
     getCompanyBanner: function (data, callback) {
-        console.log("data inside product: ", data);
+        // console.log("data inside product: ", data);
         Company.findOne({
             _id: mongoose.Types.ObjectId(data._id)
             // "myslug": data.myslug
         }).exec(function (err, found) {
-            console.log("Found: ", found);
+            // console.log("Found: ", found);
             if (err) {
-                console.log("**** inside getCompanyBanner  ******", err);
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
@@ -112,7 +127,7 @@ var model = {
 
         Company.find(queryString).limit(5).exec(function (error, companyFound) {
             if (error || companyFound == undefined) {
-                console.log("Company >>> searchCompany >>> find  >>> error >>> ", error);
+                // console.log("Company >>> searchCompany >>> find  >>> error >>> ", error);
                 callback(error, null);
             } else {
                 if (!_.isEmpty(companyFound)) {
@@ -130,7 +145,7 @@ var model = {
             _id: data._id
         }).deepPopulate("").exec(function (err, found) {
             if (err) {
-                console.log('**** error at findOneCompany of Company.js ****', err);
+                // console.log('**** error at findOneCompany of Company.js ****', err);
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, 'noDataFound');

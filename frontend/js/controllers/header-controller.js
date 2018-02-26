@@ -1,4 +1,4 @@
-myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, NavigationService) {
+myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, NavigationService, $state) {
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
@@ -12,13 +12,12 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
     var data = {};
     $scope.searchText = {};
     data.page = 1;
-    NavigationService.callApiWithData("Company/search", data, function (data) {
-        $scope.company = data.data.data.results;
+    NavigationService.callApiWithData("Company/getAllCompany", data, function (data) {
+        $scope.company = data.data.data
     });
 
     NavigationService.callApiWithData("CompanyCategory/getAllCategoriesOfCompany", $scope.category, function (data) {
         $scope.companyCategory = data.data.data.results;
-        console.log(' $scope.companyCategory', $scope.companyCategory)
     });
 
     NavigationService.callApi("CompanyProduct/getAllProduct", function (data) {
@@ -36,15 +35,36 @@ myApp.controller('headerCtrl', function ($scope, TemplateService, $stateParams, 
 
                 if (data.data.value) {
                     $scope.companyCategory = data.data.data.companyCategory;
-                    console.log("companycategory",$scope.companyCategory)
                     $scope.company1 = data.data.data.company;
-                    console.log("$scope.company1",$scope.company1)
                     $scope.companyProduct = data.data.data.companyProduct;
-                    console.log('$scope.companyProduct',$scope.companyProduct)
                 } else {
                     console.log("Event data false");
                 }
             });
         }
     };
+    $scope.division = function (comapnyName) {
+        // console.log("*********************", comapnyName)
+        var comapnyName = comapnyName.split(' ').join('-');
+        $state.go('division', {
+            comapnyName: comapnyName
+        })
+    }
+    $scope.divisions = function (companyName, categoryName) {
+        var categoryName = categoryName.split(' ').join('-');
+        var companyName = companyName.split(' ').join('-');
+        $state.go('divisions', {
+            companyName: companyName,
+            categoryName: categoryName
+        })
+    }
+     $scope.gallery = function (companyName,productName) {
+          console.log("*********************", companyName,productName)
+           var companyName = companyName.split(' ').join('-');
+            var productName = productName.split(' ').join('-');
+            $state.go('gallery', {
+                companyName: companyName,
+                productName: productName
+            })
+        }
 });

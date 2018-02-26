@@ -12,7 +12,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="p in val | orderBy:'order'">
-                                            <div class="door door-shadow" ui-sref="divisions({category:p.company._id,product:p._id})">
+                                            <!--<div class="door door-shadow" ui-sref="divisions({category:p.company._id,product:p._id})" >-->
+                                            <div class="door door-shadow"  ng-click="divisions(p.company.name,p.name)">
+                                                
                                                     <div class="overlay"></div>
                                                     <!-- <div class="bg-shadow"> -->
                                                     <div class="door-img img1" style="background: url('{{p.image | serverimage}}')"></div>

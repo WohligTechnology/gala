@@ -3,90 +3,88 @@ var imgpath = imgurl + "readFile";
 var uploadurl = imgurl;
 myApp.factory('NavigationService', function ($http) {
     var navigation = [{
-            name: "HOME",
+        name: "HOME",
+        classis: "active",
+        anchor: "home",
+        subnav: []
+    }, {
+        name: "ABOUT US",
+        classis: "active",
+        anchor: "aboutUs",
+        subnav: []
+    }, {
+        name: "DIVISION",
+        classis: "active",
+        anchor: "division",
+        subnav: [{
+            name: "uro Veneer World",
             classis: "active",
-            anchor: "home",
-            subnav: []
+            anchor: "home"
         }, {
-            name: "ABOUT US",
+            name: "Wood & Mouldings",
             classis: "active",
-            anchor: "aboutUs",
-            subnav: []
+            anchor: "home"
         }, {
-            name: "DIVISION",
+            name: "Mahaveer Corporation",
             classis: "active",
-            anchor: "division",
-            subnav: [{
-                name: "uro Veneer World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Wood & Mouldings",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Mahaveer Corporation",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Euro Ceramic World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Euro Hardware World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Euro Flooring(p) LTD",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Euro Lighting World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Bath World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "vridhi Woods",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Drapes World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Hafele & Blum",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Stone World",
-                classis: "active",
-                anchor: "home"
-            }, {
-                name: "Gala Furniture World",
-                classis: "active",
-                anchor: "home"
-            }]
+            anchor: "home"
         }, {
-            name: "GALLERY",
+            name: "Euro Ceramic World",
             classis: "active",
-            anchor: "gallery",
-            subnav: []
+            anchor: "home"
         }, {
-            name: "CONTACT",
+            name: "Euro Hardware World",
             classis: "active",
-            anchor: "contact",
-            subnav: []
-        }
-        , {
-            name: "Form",
+            anchor: "home"
+        }, {
+            name: "Euro Flooring(p) LTD",
             classis: "active",
-            anchor: "form",
-            subnav: []
-        }
-    ];
+            anchor: "home"
+        }, {
+            name: "Euro Lighting World",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "Bath World",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "vridhi Woods",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "Drapes World",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "Hafele & Blum",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "Stone World",
+            classis: "active",
+            anchor: "home"
+        }, {
+            name: "Gala Furniture World",
+            classis: "active",
+            anchor: "home"
+        }]
+    }, {
+        name: "GALLERY",
+        classis: "active",
+        anchor: "gallery",
+        subnav: []
+    }, {
+        name: "CONTACT",
+        classis: "active",
+        anchor: "contact",
+        subnav: []
+    }, {
+        name: "Form",
+        classis: "active",
+        anchor: "form",
+        subnav: []
+    }];
 
     return {
         getNavigation: function () {
@@ -94,15 +92,15 @@ myApp.factory('NavigationService', function ($http) {
         },
         callApiWithData: function (url, data, callback) {
             $http.post(adminurl + url, data).then(function (data) {
-        
+
                 callback(data);
             });
         },
         callApi: function (url, callback) {
-        
+
             $http.post(adminurl + url).then(function (data) {
                 callback(data);
             });
-        }
+        },
     };
 });
