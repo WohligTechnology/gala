@@ -70,7 +70,7 @@ var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "co
 
 var model = {
        getProduct: function (data, callback) {
-        console.log("data inside comapny: ", data);
+        // console.log("data inside comapny: ", data);
         CompanyProduct.findOne({
             name: data.name
             // "myslug": data.myslug
@@ -88,7 +88,7 @@ var model = {
     getAllProduct: function (data, callback) {
         CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
             .exec(function (err, found) {
-                console.log("Found: ", found);
+                // console.log("Found: ", found);
                 if (err) {
                     callback(err, null);
                 } else if (_.isEmpty(found)) {
@@ -104,7 +104,7 @@ var model = {
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, category) {
             if (!_.isEmpty(category)) {
-                console.log("Category: ", category);
+                // console.log("Category: ", category);
                 var input = {};
                 input._id = category.company;
 
@@ -131,9 +131,11 @@ var model = {
     },
 
     getOneProductDetails: function (data, callback) {
+        console.log("data inside get one product",data)
         CompanyProduct.findOne({
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, found) {
+            console.log("found inside get one product",found)
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {

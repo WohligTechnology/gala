@@ -42,7 +42,7 @@ module.exports = mongoose.model('CompanyCategory', schema);
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "order", "asc"));
 var model = {
            getCategory: function (data, callback) {
-        console.log("data inside comapny: ", data);
+        // console.log("data inside comapny: ", data);
         CompanyCategory.findOne({
             name: data.name
             // "myslug": data.myslug

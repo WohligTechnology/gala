@@ -25,13 +25,13 @@ var exports = _.cloneDeep(require("sails-wohlig-service")(schema, null, null, "o
 var model = {
     getAllBrand: function (data, callback) {
         Brand.find({}).exec(function (err, found) {
-            console.log("Found: ", found);
+            // console.log("Found: ", found);
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
             } else {
-                console.log("found in getAllBrand", found);
+                // console.log("found in getAllBrand", found);
                 callback(null, found);
             }
 
