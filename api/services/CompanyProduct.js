@@ -369,6 +369,7 @@ var model = {
 
         }
         CompanyProduct.find(match)
+        .deepPopulate('companyCategory company')
             .order(options)
             .keyword(options)
             .page(options,
