@@ -6,7 +6,7 @@
     "pageType": "edit",
     "urlFields": ["CompanyProduct"],
     "fields": [{
-            "name": "Name",
+            "name": "Name (Please Enter Name without (-) hyphen)",
             "type": "text",
             "tableRef": "name",
             "placeholder": "Enter Name",

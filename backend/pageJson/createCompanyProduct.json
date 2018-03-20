@@ -7,7 +7,7 @@
     "pageType": "create",
     "urlFields": ["CompanyProduct"],
     "fields": [{
-        "name": "Product Name",
+        "name": "Product Name (Please Enter Name without (-) hyphen)",
         "type": "text",
         "tableRef": "name",
         "placeholder": "Enter Product Name",
