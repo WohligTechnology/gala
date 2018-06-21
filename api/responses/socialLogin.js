@@ -6,8 +6,11 @@ module.exports = function (profile) {
         res.callback("Error fetching profile in Social Login", profile);
         // res.serverError();
     } else {
+        console.log("profileprofileprofileprofileprofile", profile)
+
         if (req.session.returnUrl) {
             User.existsSocial(profile, function (err, data) {
+                console.log("datadatadata", data)
                 if (err || !data) {
                     res.callback(err, data);
                 } else {

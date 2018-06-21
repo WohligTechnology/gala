@@ -2,17 +2,15 @@ var objectId = require("mongodb").ObjectID;
 var schema = new Schema({
     name: {
         type: String,
-
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     order: {
         type: Number,
 
     },
-      urlLink: {
+    urlLink: {
         type: String,
     },
     images: [{
@@ -69,7 +67,7 @@ var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "co
 
 
 var model = {
-       getProduct: function (data, callback) {
+    getProduct: function (data, callback) {
         // console.log("data inside comapny: ", data);
         CompanyProduct.findOne({
             name: data.name
@@ -131,11 +129,11 @@ var model = {
     },
 
     getOneProductDetails: function (data, callback) {
-        console.log("data inside get one product",data)
+        console.log("data inside get one product", data)
         CompanyProduct.findOne({
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, found) {
-            console.log("found inside get one product",found)
+            console.log("found inside get one product", found)
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
@@ -369,7 +367,7 @@ var model = {
 
         }
         CompanyProduct.find(match)
-        .deepPopulate('companyCategory company')
+            .deepPopulate('companyCategory company')
             .order(options)
             .keyword(options)
             .page(options,

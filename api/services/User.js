@@ -76,6 +76,9 @@ schema.plugin(deepPopulate, {
     populate: {
         'user': {
             select: 'name _id'
+        },
+        'company': {
+            select: 'name _id'
         }
     }
 });
@@ -84,7 +87,7 @@ schema.plugin(timestamps);
 
 module.exports = mongoose.model('User', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "user", "user"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "user company", "user company"));
 var model = {
     registerAppuser: function (data, callback) {
         var User = this(data);
@@ -281,6 +284,7 @@ var model = {
         User.find()
             .order(options)
             .keyword(options)
+            .deepPopulate("company")
             .page(options,
                 function (err, found) {
 
