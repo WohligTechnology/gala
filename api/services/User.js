@@ -302,7 +302,6 @@ var model = {
 
 
     findAllUser: function (data, callback) {
-
         User.find({
             _id: data._idfindAllUser
         }).select("name _id").exec(function (err, found) {

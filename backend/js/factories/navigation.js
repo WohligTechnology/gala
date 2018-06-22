@@ -18,12 +18,13 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             classis: "active",
             sref: "#!/page/viewHomeBanner//",
             onlyAdmin: true
-        }, {
-            name: "Config",
-            classis: "active",
-            sref: "#!/page/viewConfig//",
-            onlyAdmin: true
         },
+        // {
+        //     name: "Config",
+        //     classis: "active",
+        //     sref: "#!/page/viewConfig//",
+        //     onlyAdmin: true
+        // },
         {
             name: "Pdf/Image Upload",
             classis: "active",
@@ -63,7 +64,6 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             name: "Pop Up Image",
             classis: "active",
             sref: "#!/page/viewPopUpImage//",
-            icon: "phone",
             onlyAdmin: true
         },
         {
