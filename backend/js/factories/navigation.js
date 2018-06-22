@@ -24,7 +24,7 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             sref: "#!/page/viewConfig//",
             onlyAdmin: true
         },
-         {
+        {
             name: "Pdf/Image Upload",
             classis: "active",
             sref: "#!/page/viewPdfImageUpload//",
@@ -94,6 +94,7 @@ myApp.factory('NavigationService', function ($http, TemplateService) {
             };
             $http.post(adminurl + 'user/profile', data).then(function (data) {
                 data = data.data;
+                console.log("data", data)
                 if (data.value === true) {
                     TemplateService.profile = data.data;
                     $.jStorage.set("profile", data.data);

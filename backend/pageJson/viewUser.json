@@ -21,13 +21,6 @@
             "name": "User Type",
             "isSort": "",
             "tableRef": "accessLevel"
-        },
-        {
-            "name": "Company",
-            "isSort": "",
-            "tableRef": "company",
-            "type": "fkListView",
-            "field": "name"
         }
     ],
     "action": [{

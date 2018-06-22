@@ -36,7 +36,7 @@ var controller = {
         } else {
 
         }
-
+        console.log("res.socialLogin", res.socialLogin);
         passport.authenticate('google', {
             scope: ['openid', 'profile', 'email'],
             failureRedirect: '/'
