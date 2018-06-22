@@ -7,15 +7,15 @@
     "pageType": "create",
     "urlFields": ["CompanyProduct"],
     "fields": [{
-        "name": "Product Name (Please Enter Name without (-) hyphen)",
-        "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter Product Name",
-        "id": "name",
-        "validation": ["required"],
-        "url": ""
-    }, 
-      {
+            "name": "Product Name (Please Enter Name without (-) hyphen)",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Product Name",
+            "id": "name",
+            "validation": ["required"],
+            "url": ""
+        },
+        {
             "name": "Link",
             "type": "text",
             "tableRef": "urlLink",
@@ -24,27 +24,27 @@
             "url": ""
         },
         {
-        "name": "Description",
-        "type": "textarea",
-        "tableRef": "description",
-        "placeholder": "Enter description",
-        "id": "description",
-        "validation": [""],
-        "url": ""
-    }, {
-        "name": "order",
-        "type": "number",
-        "tableRef": "order",
-        "placeholder": "Enter order",
-        "id": "order",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Images",
-        "type": "box",
-        "tableRef": "images",
-        "validation": ["required", "trim", ""],
-        "field": [{
+            "name": "Description",
+            "type": "textarea",
+            "tableRef": "description",
+            "placeholder": "Enter description",
+            "id": "description",
+            "validation": [""],
+            "url": ""
+        }, {
+            "name": "order",
+            "type": "number",
+            "tableRef": "order",
+            "placeholder": "Enter order",
+            "id": "order",
+            "validation": ["", "trim", ""],
+            "url": ""
+        }, {
+            "name": "Images",
+            "type": "box",
+            "tableRef": "images",
+            "validation": ["required", "trim", ""],
+            "field": [{
                 "name": "Big Image",
                 "type": "image",
                 "tableRef": "bigImage",
@@ -55,21 +55,20 @@
                 "onView": true,
                 "view": true,
                 "url": ""
-            }
-        ]
-    }, {
-        "name": "Company Category",
-        "type": "tags",
-        "tableRef": "companyCategory",
-        "dropDownType": "single",
-        "dropDownField": "name",
-        "searchApi": "searchCall",
-        "placeholder": "Enter Company Category",
-        "id": "companyCategory",
-        "validation": ["", "trim", ""],
-        "url": "CompanyCategory/search"
-    },
-    {
+            }]
+        }, {
+            "name": "Company Category",
+            "type": "tags",
+            "tableRef": "companyCategory",
+            "dropDownType": "single",
+            "dropDownField": "name",
+            "searchApi": "searchCall",
+            "placeholder": "Enter Company Category",
+            "id": "companyCategory",
+            "validation": ["", "trim", ""],
+            "url": "CompanyCategory/searchForDropDown"
+        },
+        {
             "name": "Company",
             "type": "tags",
             "tableRef": "company",
@@ -80,32 +79,33 @@
             "id": "input1",
             "validation": ["", "trim", ""],
             "url": "Company/search"
-},
-     {
-        "name": "Enquiry",
-        "type": "box",
-        "tableRef": "enquiry",
-        "validation": ["required", "trim", ""],
-        "field": [{
-            "name": "Subject",
-            "type": "text",
-            "tableRef": "subject",
-            "placeholder": "Enter Subject",
-            "id": "subject",
-            "validation": ["", "trim", ""],
-            "url": "",
-            "onView": true
-        }, {
+        },
+        {
             "name": "Enquiry",
-            "type": "text",
+            "type": "box",
             "tableRef": "enquiry",
-            "placeholder": "Enter Enquiry",
-            "id": "enquiry",
-            "validation": ["", "trim", ""],
-            "url": "",
-            "onView": true
-        }]
-    }],
+            "validation": ["required", "trim", ""],
+            "field": [{
+                "name": "Subject",
+                "type": "text",
+                "tableRef": "subject",
+                "placeholder": "Enter Subject",
+                "id": "subject",
+                "validation": ["", "trim", ""],
+                "url": "",
+                "onView": true
+            }, {
+                "name": "Enquiry",
+                "type": "text",
+                "tableRef": "enquiry",
+                "placeholder": "Enter Enquiry",
+                "id": "enquiry",
+                "validation": ["", "trim", ""],
+                "url": "",
+                "onView": true
+            }]
+        }
+    ],
     "action": [{
         "name": "submit",
         "action": "submitCompanyProduct",

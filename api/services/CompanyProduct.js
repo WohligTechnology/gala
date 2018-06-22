@@ -63,7 +63,7 @@ module.exports = mongoose.model('CompanyProduct', schema);
 // var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company","company", "company","createdAt", "desc"));
 
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "companyCategory", "companyCategory", "createdAt", "desc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company companyCategory", "company companyCategory", "companyCategory", "companyCategory", "createdAt", "desc"));
 
 
 var model = {

@@ -41,7 +41,7 @@
             "placeholder": "Enter CompanyCategory Name",
             "id": "input1",
             "validation": ["", "trim", ""],
-            "url": "CompanyCategory/search"
+            "url": "CompanyCategory/searchForDropDown"
 
         },
         {
@@ -56,7 +56,7 @@
             "validation": ["", "trim", ""],
             "url": "Company/search"
         },
-         {
+        {
             "name": "Order",
             "type": "number",
             "tableRef": "order",
@@ -70,18 +70,17 @@
             "tableRef": "images",
             "validation": ["required", "trim", ""],
             "field": [{
-                    "name": "Big Image",
-                    "type": "image",
-                    "tableRef": "bigImage",
-                    "size": "750× 458px",
-                    "placeholder": "Enter Big Image",
-                    "id": "bigImage",
-                    "validation": ["", "trim", ""],
-                    "onView": true,
-                    "view": true,
-                    "url": ""
-                }
-            ]
+                "name": "Big Image",
+                "type": "image",
+                "tableRef": "bigImage",
+                "size": "750× 458px",
+                "placeholder": "Enter Big Image",
+                "id": "bigImage",
+                "validation": ["", "trim", ""],
+                "onView": true,
+                "view": true,
+                "url": ""
+            }]
         },
         {
             "name": "Enquiry",
