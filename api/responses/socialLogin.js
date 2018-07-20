@@ -6,12 +6,16 @@ module.exports = function (profile) {
         res.callback("Error fetching profile in Social Login", profile);
         // res.serverError();
     } else {
+        console.log("profileprofileprofileprofileprofile", profile)
+
         if (req.session.returnUrl) {
             User.existsSocial(profile, function (err, data) {
+                console.log("datadatadata", data)
                 if (err || !data) {
                     res.callback(err, data);
                 } else {
-                    if (data.accessLevel != "Admin") {
+                    console.log("data.accessLevel", data.accessLevel);
+                    if (data.accessLevel != "Admin" && data.accessLevel != 'Company') {
                         data.accessToken[0] = "AccessNotAvailable";
                     }
                     res.redirect(req.session.returnUrl + "/" + data.accessToken[0]);

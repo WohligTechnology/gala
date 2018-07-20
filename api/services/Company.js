@@ -81,7 +81,7 @@ var model = {
 
     },
         getCompany: function (data, callback) {
-        console.log("data inside comapny: ", data);
+        // console.log("data inside comapny: ", data);
         Company.findOne({
             name: data.name
             // "myslug": data.myslug

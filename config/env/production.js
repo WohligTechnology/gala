@@ -26,7 +26,9 @@ module.exports = {
    ***************************************************************************/
 
   port: 8080,
-  realHost: "http://galaapi.wohlig.co.in",
+  // realHost: "http://galaapi.wohlig.co.in",
+  realHost: "http://galagroup.in",
+
   emails: ["chintan@wohlig.com", "saili.rawnang@wohlig.com", "prajakta.kamble@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com"]
 
   /***************************************************************************

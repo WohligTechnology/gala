@@ -2,17 +2,15 @@ var objectId = require("mongodb").ObjectID;
 var schema = new Schema({
     name: {
         type: String,
-
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     order: {
         type: Number,
 
     },
-      urlLink: {
+    urlLink: {
         type: String,
     },
     images: [{
@@ -65,12 +63,12 @@ module.exports = mongoose.model('CompanyProduct', schema);
 // var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "companyCategory companyCategory.company", "companyCategory companyCategory.company","company", "company","createdAt", "desc"));
 
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "companyCategory", "companyCategory", "createdAt", "desc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company companyCategory", "company companyCategory", "companyCategory", "companyCategory", "createdAt", "desc"));
 
 
 var model = {
-       getProduct: function (data, callback) {
-        console.log("data inside comapny: ", data);
+    getProduct: function (data, callback) {
+        // console.log("data inside comapny: ", data);
         CompanyProduct.findOne({
             name: data.name
             // "myslug": data.myslug
@@ -88,7 +86,7 @@ var model = {
     getAllProduct: function (data, callback) {
         CompanyProduct.find({}).deepPopulate('companyCategory companyCategory.company')
             .exec(function (err, found) {
-                console.log("Found: ", found);
+                // console.log("Found: ", found);
                 if (err) {
                     callback(err, null);
                 } else if (_.isEmpty(found)) {
@@ -104,7 +102,7 @@ var model = {
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, category) {
             if (!_.isEmpty(category)) {
-                console.log("Category: ", category);
+                // console.log("Category: ", category);
                 var input = {};
                 input._id = category.company;
 
@@ -131,9 +129,11 @@ var model = {
     },
 
     getOneProductDetails: function (data, callback) {
+        console.log("data inside get one product", data)
         CompanyProduct.findOne({
             _id: mongoose.Types.ObjectId(data._id)
         }).exec(function (err, found) {
+            console.log("found inside get one product", found)
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
@@ -367,6 +367,7 @@ var model = {
 
         }
         CompanyProduct.find(match)
+            .deepPopulate('companyCategory company')
             .order(options)
             .keyword(options)
             .page(options,

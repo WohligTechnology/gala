@@ -69,6 +69,20 @@ var controller = {
             });
         }
     },
+
+    searchForDropDown: function (req, res) {
+        // console.log(req.body);
+        if (req.body) {
+            CompanyCategory.searchForDropDown(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+
+                }
+            });
+        }
+    },
 };
 
 module.exports = _.assign(module.exports, controller);

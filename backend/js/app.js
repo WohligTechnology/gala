@@ -80,20 +80,20 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: "views/template.html",
             controller: 'ExcelUploadCtrl'
         })
-        
+
         .state('categoryFilter', {
             url: "/categoryFilter",
             templateUrl: "views/template.html",
             controller: 'categoryFilterCtrl'
         })
-       
-       .state('productFilter', {
+
+        .state('productFilter', {
             url: "/productFilter",
             templateUrl: "views/template.html",
             controller: 'productFilterCtrl'
         })
 
-         .state('jagz', {
+        .state('jagz', {
             url: "/jagz",
             templateUrl: "views/jagz.html",
             controller: 'JagzCtrl'

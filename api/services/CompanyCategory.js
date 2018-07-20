@@ -15,7 +15,7 @@ var schema = new Schema({
     image: {
         type: String,
     },
-      link: {
+    link: {
         type: String,
     },
     noImage: {
@@ -41,8 +41,8 @@ module.exports = mongoose.model('CompanyCategory', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, "company", "company", "order", "asc"));
 var model = {
-           getCategory: function (data, callback) {
-        console.log("data inside comapny: ", data);
+    getCategory: function (data, callback) {
+        // console.log("data inside comapny: ", data);
         CompanyCategory.findOne({
             name: data.name
             // "myslug": data.myslug
@@ -59,7 +59,7 @@ var model = {
     },
     getAllCategory: function (data, callback) {
         CompanyCategory.find({}).deepPopulate('company').exec(function (err, found) {
-          
+
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
@@ -71,7 +71,7 @@ var model = {
         });
     },
     getAllCategoriesOfCompany: function (data, callback) {
-       
+
         CompanyCategory.find({
             company: mongoose.Types.ObjectId(data._id)
         }).deepPopulate('company').lean().exec(function (err, found) {
@@ -169,6 +169,50 @@ var model = {
 
         }
         CompanyCategory.find(match)
+            .deepPopulate('company')
+            .order(options)
+            .keyword(options)
+            .page(options,
+                function (err, found) {
+
+                    if (err) {
+                        callback(err, null);
+                    } else if (found) {
+                        callback(null, found);
+                    } else {
+                        callback("Invalid data", null);
+                    }
+                });
+
+    },
+
+    searchForDropDown: function (data, callback) {
+        if (data.count) {
+            var maxCount = data.count;
+        } else {
+            var maxCount = Config.maxRow;
+        }
+        var maxRow = maxCount
+        var page = 1;
+        if (data.page) {
+            page = data.page;
+        }
+        var field = data.field;
+        var options = {
+            field: data.field,
+            filters: {
+                keyword: {
+                    fields: ['name'],
+                    term: data.keyword
+                }
+            },
+            sort: {
+                desc: 'createdAt'
+            },
+            start: (page - 1) * maxRow,
+            count: maxRow
+        };
+        CompanyCategory.find({})
             .order(options)
             .keyword(options)
             .page(options,

@@ -90,7 +90,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 
-    .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout,$state) {
+    .controller('allProductCtrl', function ($rootScope, $scope, $stateParams, TemplateService, NavigationService, $timeout, $state) {
         $scope.template = TemplateService.getHTML("content/allProduct.html");
         TemplateService.title = "Product"; //This is the Title of the Website
         $scope.loaded = false;
@@ -116,7 +116,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.loaded = true;
         });
         $scope.divisions = function (companyName, categoryName) {
-            console.log("************************8",companyName,categoryName)
+            console.log("************************8", companyName, categoryName)
             var categoryName = categoryName.split(' ').join('-');
             var companyName = companyName.split(' ').join('-');
             $state.go('divisions', {
@@ -238,10 +238,10 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 productName: productName
             })
         }
-          $scope.divisions = function (categoryName) {
+        $scope.divisions = function (categoryName) {
             var categoryName = categoryName.split(' ').join('-');
             $state.go('divisions', {
-                companyName:  $stateParams.companyName,
+                companyName: $stateParams.companyName,
                 categoryName: categoryName
             })
         }
@@ -267,7 +267,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.bigImage = "";
         NavigationService.callApiWithData("Company/getCompany", $scope.companyName, function (data) {
             if (data.data.value == true) {
-                
+
                 $scope.companyName = data.data.data;
                 $scope.loaded = true;
                 $scope.company = {
@@ -287,7 +287,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 // NavigationService.callApiWithData("Company/getCompanyBanner", $scope.company, function (data) {
                 //     $scope.companyName = data.data.data;
                 // });
-
+                console.log("Product id is", $scope.productId)
                 NavigationService.callApiWithData("CompanyProduct/getOneProductDetails", $scope.productId, function (data) {
                     $scope.productId = data.data.data;
                     $scope.productIdimage = data.data.data.images;
@@ -408,7 +408,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $state.reload()
         };
 
-       
+
         $scope.pdf = function () {
             window.open('http://galagroup.in/divisioncontact', 'test');
 

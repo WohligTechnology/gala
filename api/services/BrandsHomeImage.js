@@ -12,13 +12,13 @@ var model = {
 
     getAllData: function (data, callback) {
         BrandsHomeImage.find({}).exec(function (err, found) {
-            console.log("Found: ", found);
+            // console.log("Found: ", found);
             if (err) {
                 callback(err, null);
             } else if (_.isEmpty(found)) {
                 callback(null, "noDataound");
             } else {
-                console.log("found in getAllCompany", found);
+                // console.log("found in getAllCompany", found);
                 callback(null, found);
             }
 

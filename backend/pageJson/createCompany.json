@@ -6,7 +6,7 @@
     "pageType": "create",
     "urlFields": ["Company"],
     "fields": [{
-            "name": "Name",
+            "name": "Name (Please Enter Name without (-) hyphen)",
             "type": "text",
             "tableRef": "name",
             "placeholder": "Enter Name",
